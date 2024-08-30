@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.code.CodeDao"> 
+<!--mapper와 연결될 dao //  ctrl+shift+c-->
+	  
+	  <resultMap id="resultMapObj" type="com.example.hybe.infra.code.CodeDto"></resultMap>
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  SELECT
+			a.ifcdseq
+			,a.ifcdName
+			,a.ifcdUseNy
+			,a.ifcdOrder
+			,a.ifcdDesc
+			,a.ifcdDelny
+            ,a.ifcdDelete
+            ,a.ifcdRegDate
+            ,a.ifcdRenDate
+			,a.codegroup_seq
+       FROM
+           code a
+      ORDER BY
+		   a.ifcdSeq desc
+          
+	  </select>
+	  <insert id=""></insert>
+</mapper>
+			
+			
+		

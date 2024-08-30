@@ -618,15 +618,16 @@
 											<tr>
 												<th><input type="checkbox"></th>
 												<th>#</th>
-												<th>코드그룹&nbsp;코드</th>
-												<th>코드그룹&nbsp;이름</th>
-												<th>코드</th>
-												<th>대체코드</th>
-												<th>코드이름</th>
-												<th>코드이름(영문)</th>
-												<th>사용</th>
+												<th>이름</th>
+												<th>ID</th>
+												<th>닉네임</th>
+												<th>이메일</th>
+												<th>번호</th>
+												<th>주소</th>
+												<th>사용여부</th>
 												<th>순서</th>
 												<th>등록일</th>
+												<th>수정일</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -639,16 +640,16 @@
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td th:text="${list.ifcgSeq}">171</td>
-												<td  th:text="${list.ifcgSeq}">57</td>
-												<td  th:text="${list.ifcgName}">테테테</td>
-												<td  th:text="${list.ifcgSeq}">278</td>
-												<td  th:text="${list.ifcgSeq}"></td>
-												<td  th:text="${list.ifcgSeq}">ㅁㄴㅇㄹ</td>
-												<td  th:text="${list.ifcgSeq}"></td>
-												<td  th:text="${list.ifcgSeq}">Y</td>
-												<td  th:text="${list.ifcgSeq}">1</td>
-												<td  th:text="${list.ifcgSeq}"></td>
+												<td th:text="${list.Seq}"></td>
+												<td th:text="${list.Name}"></td>
+												<td th:text="${list.id}"></td>
+												<td th:text="${list.Nickname}"></td>
+												<td th:text="${list.email}"></td>
+												<td th:text="${list.phonenumber}"></td>
+												<td th:text="${list.adress}"></td>
+												<td>Y</td>
+												<td>1</td>
+												<td></td>
 											</tr>
 										</tbody>
 									</table>

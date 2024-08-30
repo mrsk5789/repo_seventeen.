@@ -627,6 +627,8 @@
 												<th>사용</th>
 												<th>순서</th>
 												<th>등록일</th>
+												<th>사용</th>
+												<th>순서</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -639,16 +641,18 @@
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td th:text="${list.ifcgSeq}">171</td>
-												<td  th:text="${list.ifcgSeq}">57</td>
-												<td  th:text="${list.ifcgName}">테테테</td>
-												<td  th:text="${list.ifcgSeq}">278</td>
-												<td  th:text="${list.ifcgSeq}"></td>
-												<td  th:text="${list.ifcgSeq}">ㅁㄴㅇㄹ</td>
-												<td  th:text="${list.ifcgSeq}"></td>
-												<td  th:text="${list.ifcgSeq}">Y</td>
-												<td  th:text="${list.ifcgSeq}">1</td>
-												<td  th:text="${list.ifcgSeq}"></td>
+												<td th:text="${list.seq}">171</td>
+												<td  th:text="${list.name}">57</td>
+												<td  th:text="${list.opentime}">테테테</td>
+												<td  th:text="${list.closetime}">278</td>
+												<td  th:text="${list.telNumber}"></td>
+												<td  th:text="${list.eadress}">ㅁㄴㅇㄹ</td>
+												<td  th:text="${list.parking}"></td>
+												<td  th:text="${list.reservation}">Y</td>
+												<td  th:text="${list.freecal}">1</td>
+												<td  th:text="${list.letter}"></td>
+												<td  th:text="${list.regDate}"></td>
+												<td  th:text="${list.modDate}"></td>
 											</tr>
 										</tbody>
 									</table>
