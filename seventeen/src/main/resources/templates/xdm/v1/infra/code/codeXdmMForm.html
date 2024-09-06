@@ -608,7 +608,7 @@
 											<div class="col-sm-4 col-12">
 												 <div class="form-group">
 													<label for="ifcdRegDate">등록날짜</label>
-													<input class="form-control form-control-lg" id="ifcdRegDate" name="ifcdRegDate" type="datetime" th:value="${ #dates.format(item.ifcdRegDate, 'yyyy-MM-dd HH:mm:ss')}"disabled>
+													<input class="form-control form-control-lg" id="ifcdRegDate" name="ifcdRegDate" type="datetime" th:value="${ #dates.format(item.ifcdRegDate, 'yyyy-MM-dd HH:mm:ss')}">
 												 </div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -644,9 +644,9 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" class="btn btn-primary">
-											 <span class="icon-plus2"></span>
-									    </button>
+									   <button type="submit" action="redirect:/xdm/v1/infra/code/codeXdmList" class="btn btn-primary">
+										  <span class="icon-plus2"></span>
+									   </button>
 								   </div>
 								</td>
 						    </tr>
