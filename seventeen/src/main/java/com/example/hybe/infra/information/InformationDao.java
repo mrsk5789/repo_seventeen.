@@ -9,6 +9,10 @@ public interface InformationDao {
 	
 	public List<InformationDto>selectList();
 
+	public int insert(InformationDto informationDto);
+	
+	public InformationDto selectOne(InformationDto informationDto);
+
 
 }
 

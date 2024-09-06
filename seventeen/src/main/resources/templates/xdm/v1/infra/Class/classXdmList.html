@@ -20,6 +20,13 @@
 	<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
 	<title>Modern Admin Dashboards - Datatables</title>
 
+	<!--<link rel="apple-touch-icon" sizes="180x180" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/apple-touch-icon.png">
+		    <link rel="icon" type="image/png" sizes="32x32" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon-32x32.png">
+		    <link rel="icon" type="image/png" sizes="16x16" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon-16x16.png">
+		    <link rel="shortcut icon" type="image/x-icon" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon.ico">
+		    <link rel="manifest" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/manifest.json">
+		    <meta name="msapplication-TileImage" content="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/mstile-150x150.png">
+		    <meta name="theme-color" content="#ffffff">-->
 
 	<!-- Common CSS -->
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
@@ -167,6 +174,8 @@
 				</div>
 			</div>
 		</header>
+		<!-- END: .app-heading -->
+		<!-- BEGIN .app-container -->
 		<div class="app-container">
 			<!-- BEGIN .app-side -->
 			<aside class="app-side" id="app-side">
@@ -492,7 +501,7 @@
 									</nav>
 									<div class="row gutters">
 										<div class="col-sm-4 col-12">
-											<h1>code</h1>
+											<h1>강의정보</h1>
 										</div>
 									</div>
 									<div class="col-sm-4 col-12">
@@ -605,14 +614,14 @@
 											<tr>
 												<th><input type="checkbox"></th>
 												<th>#</th>
-												<th>코드</th>
-												<th>코드그룹&nbsp;이름</th>
-												<th>코드이름</th>
-												<th>순서</th>
-												<th>사용여부</th>
-												<th>삭제여부</th>
-												<th>등록일</th>
+												<th>수업명</th>
+												<th>강사명</th>
+												<th>수업설명</th>
+												<th>주소</th>
+												<th>가격</th>
+												<th>기간</th>
 												<th>수정일</th>
+												<th>등록일</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -625,17 +634,15 @@
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td></td>
-												<td th:text="${list.ifcdSeq}"></td>
-												<td th:text="${list.ifcdSeq}"></td>
-												<td><a th:href="@{/xdm/v1/infra/code/codeXdmMForm(ifcdSeq=${list.ifcdSeq})}" th:text="${list.ifcdName}"></a></td>
-												<td th:if="${list.ifcdUseNy eq 0}"></td>
-												<td th:unless="${list.ifcdUseNy eq 0}"></td>
-												<td th:text="${list.ifcdOrder}"></td>
-												<td th:if="${list.ifcdDelny eq 0}">Y</td>
-												<td th:unless="${list.ifcdDelny eq 0}">N</td>
-												<td th:text="${#dates.format(list.ifcdRegDate, 'yyyy-mm-dd HH:mm:ss')}"></td>
-												<td th:text="${#dates.format(list.ifcdmodDate, 'yyyy-mm-dd HH:mm:ss')}"></td>
+												<td th:text="${list.Seq}"></td>
+												<td><a th:href="@{/xdm/v1/infra/Class/classXdmMForm(Seq=${list.Seq})}" th:text="${list.className}"></a></td>
+												<td th:text="${list.teacher}"></td>
+												<td th:text="${list.classDesc}"></td>
+												<td th:text="${list.adress}"></td>
+												<td th:text="${list.price}"></td>
+												<td th:text="${list.terms}"></td>
+												<td th:text="${list.modDate}"></td>
+												<td th:text="${list.regDate}"></td>
 											</tr>
 										</tbody>
 									</table>
@@ -659,6 +666,7 @@
 												<li class="page-item active">
 													<a href="#" class="page-link">4</a>
 												</li>
+												</li>
 												<li class="page-item">
 													<a class="page-link" href="#">5</a>
 												</li>
@@ -672,11 +680,24 @@
 													<a href="#" class="page-link">8</a>
 												</li>
 												<li class="page-item">
+													<a class="page-link" href="#">9</a>
+												</li>
+												<li class="page-item active">
+													<a href="#" class="page-link">10</a>
+												</li>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">11</a>
+												</li>
+												<li class="page-item active">
+													<a href="#" class="page-link">12</a>
+												</li>
+												<li class="page-item">
 													<a class="page-link" href="#">Next</a>
 												</li>
 											</ul>
-										</td>
-									  </th>
+										  </td>
+									    </th>
 									</table>
 								</div>
 							</div>
@@ -697,7 +718,7 @@
 									</button>
 								</div>
 							</td>
-							<td style="width : 1070px; "></td>
+							<td style="width : 1070px;"></td>
 							<td>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
 									<button type="button" class="btn btn-primary">
@@ -705,20 +726,16 @@
 									</button>
 								</div>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<a href="/xdm/v1/infra/code/codeXdmForm">
-									  <button type="submit"class="btn btn-primary">
-										 <span class="icon-plus2"></span>
-									  </button>
-									 </a>
+									<button type="button" class="btn btn-primary">
+										<span class="icon-plus2"></span>
+									</button>
 								</div>
 							</td>
 						</tr>
 					</table>
 				</div>
 			</div>
-			<!-- END: .app-main -->
 		</div>
-		<!-- END: .app-container -->
 		<footer class="main-footer fixed-btm">
 			© Bootstrap Gallery 2023
 		</footer>

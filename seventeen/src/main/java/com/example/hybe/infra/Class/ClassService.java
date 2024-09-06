@@ -12,8 +12,12 @@ public class ClassService {
 	
 	public List<ClassDto> selectList() {
 		
-		List<ClassDto> classes= classDao.selectList();
-		return classes;
+		
+		return classDao.selectList();
+	}
+	
+	public int insert(ClassDto classDto) {
+		return classDao.insert(classDto);
 	}
 
 }

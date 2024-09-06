@@ -17,7 +17,7 @@
 	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
 	<meta property="og:type" content="Website">
 	<meta property="og:site_name" content="Bootstrap Gallery">
-	<link rel="shortcut icon" href="img/favicon.svg" />
+	<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
 	<title>Modern Admin Dashboards - Datatables</title>
 
 	<!--<link rel="apple-touch-icon" sizes="180x180" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/apple-touch-icon.png">
@@ -26,10 +26,7 @@
 		    <link rel="shortcut icon" type="image/x-icon" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon.ico">
 		    <link rel="manifest" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/manifest.json">
 		    <meta name="msapplication-TileImage" content="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/mstile-150x150.png">
-		    <meta name="theme-color" content="#ffffff">
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/vendors/simplebar/simplebar.min.js"></script>
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/assets/js/config.js"></script>-->
+		    <meta name="theme-color" content="#ffffff">-->
 
 	<!-- Common CSS -->
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
@@ -62,7 +59,7 @@
 						<i class="icon-chevron-thin-left"></i>
 					</a>
 					<a href="index.html" class="logo">
-						<img src="img/logo.svg" alt="Low Price Admin Dashboards" />
+						<img src="/xdm/v1/template/qwer/assert/img/logo.svg" alt="Low Price Admin Dashboards" />
 					</a>
 					<a style="width: 650px;"></a>
 					<div class="col-md-5 col-sm-3 col-4">
@@ -137,7 +134,7 @@
 							<li class="dropdown">
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
 									aria-haspopup="true">
-									<img class="avatar" src="img/user.png" alt="Admin Dashboards" />
+									<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
 									<i class="icon-chevron-small-down"></i>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
@@ -186,7 +183,7 @@
 				<div class="side-content ">
 					<!-- BEGIN .user-profile -->
 					<div class="user-profile">
-						<img src="img/user.png" class="profile-thumb" alt="Admin Dashboards">
+						<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb" alt="Admin Dashboards">
 						<ul class="profile-actions">
 							<li>
 								<a href="#">
@@ -618,17 +615,16 @@
 											<tr>
 												<th><input type="checkbox"></th>
 												<th>#</th>
-												<th>코드그룹&nbsp;코드</th>
-												<th>코드그룹&nbsp;이름</th>
-												<th>코드</th>
-												<th>대체코드</th>
-												<th>코드이름</th>
-												<th>코드이름(영문)</th>
-												<th>사용</th>
-												<th>순서</th>
+												<th>식당이름</th>
+												<th>오픈시간</th>
+												<th>마감시간</th>
+												<th>전화번호</th>
+												<th>사이트</th>
+												<th>주차가능</th>
+												<th>예약</th>
+												<th>설명</th>
 												<th>등록일</th>
-												<th>사용</th>
-												<th>순서</th>
+												<th>수정일</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -641,15 +637,14 @@
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td th:text="${list.seq}">171</td>
-												<td  th:text="${list.name}">57</td>
+												<td th:text="${list.seq}"></td>
+												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(Seq=${list.Seq})}" th:text="${list.name}"></a></td>
 												<td  th:text="${list.opentime}">테테테</td>
 												<td  th:text="${list.closetime}">278</td>
 												<td  th:text="${list.telNumber}"></td>
 												<td  th:text="${list.eadress}">ㅁㄴㅇㄹ</td>
 												<td  th:text="${list.parking}"></td>
 												<td  th:text="${list.reservation}">Y</td>
-												<td  th:text="${list.freecal}">1</td>
 												<td  th:text="${list.letter}"></td>
 												<td  th:text="${list.regDate}"></td>
 												<td  th:text="${list.modDate}"></td>
@@ -706,8 +701,8 @@
 													<a class="page-link" href="#">Next</a>
 												</li>
 											</ul>
-										</td>
-										</th>
+										 </td>
+									   </th>
 									</table>
 								</div>
 							</div>

@@ -24,14 +24,10 @@
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/fonts/icomoon/icomoon.css" />
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/main.min.css" />
-
 	</head>
 
 	<body>
-
-		<!-- BEGIN .app-wrap -->
 		<div class="app-wrap">
-			<!-- BEGIN .app-heading -->
 			<header class="app-header">
 				<div class="container-fluid">
 					<div class="row gutters">
@@ -154,8 +150,6 @@
 					</div>
 				</div>
 			</header>
-			<!-- END: .app-heading -->
-			<!-- BEGIN .app-container -->
 			<div class="app-container">
 				<!-- BEGIN .app-side -->
 				<aside class="app-side" id="app-side">
@@ -184,8 +178,6 @@
 								</li>
 							</ul>
 						</div>
-						<!-- END .user-profile -->
-						<!-- BEGIN .side-nav -->
 						<nav class="side-nav">
 							<!-- BEGIN: side-nav-content -->
 							<ul class="unifyMenu" id="unifyMenu">
@@ -489,13 +481,15 @@
 												</nav>
 											</div>
 										</div>
-										<h2>식당정보</h2>
+										<h1>Code</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<!-- END: .main-heading -->
+					<!-- BEGIN .main-content -->
+					<form id="form" name="form" method="post" action="/xdm/v1/infra/Class/classXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -507,11 +501,14 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<!--<label for="inputName">코드그룹</label>
+														<label for="inputName">코드그룹</label>
 														<select class="form-control form-control-lg">
 															<option>선택하세요</option>
-															<option></option>
-														</select>-->			
+															<option>선택하세요</option>
+															<option>선택하세요</option>
+															<option>선택하세요</option>
+															<option>선택하세요</option>
+														</select>			
 													</div>
 												</div>
 											<div class="col-sm-4 col-12">
@@ -531,35 +528,36 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">코드번호</label>
-													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
+													<label for="form-group">코드</label>
+													<input type="text" id="ifcdName" class="form-control" placeholder="자동생성"disabled >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">이름</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
+													<label for="ifcdName">코드(ANOTHER)</label>
+													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
 													<!-- th:value="${item?.ifcdName"}-->
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name"></label>
+													<label for="className">코드이름</label>
+													<input class="form-control form-control-lg" name="className" type="text" id="className" placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-												  <label for="disabledInput">코드이름(영문)</label>
+													<label for="disabledInput">코드이름(영문)</label>
 													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="parking">사용여부</label>
-													 <select class="form-control form-control-lg" id="parking" name="parking">
-														<option value="1" th:selected="${item?.parking==1}">사용</option>
-														<option value="0" th:selected="${item?.parking==0}">미사용</option>
-													 </select>					
+													<label for="UseNy">사용여부</label>
+														<select class="form-control form-control-lg" id="UseNy" name="UseNy">
+															<option value="1" th:selected="${item?.UseNy==1}">사용</option>
+															<option value="0" th:selected="${item?.UseNy==0}">미사용</option>
+														</select>					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -617,6 +615,36 @@
 													<input class="form-control form-control-lg" type="text" >
 												</div>
 											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어4</label>
+													<input class="form-control form-control-lg" type="text" >
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어5</label>
+													<input class="form-control form-control-lg" type="text" >
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어6</label>
+													<input class="form-control form-control-lg" type="text" >
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어7</label>
+													<input class="form-control form-control-lg" type="text" >
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어8</label>
+													<input class="form-control form-control-lg" type="text" >
+												</div>
+											</div>
 										</div>
 								    </div>
 								</div>
@@ -637,7 +665,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
+										<button type="submit" action="redirect:/xdm/v1/infra/Class/classXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -647,11 +675,11 @@
 					</div>
 				</div>
 			</div>
-			</div>
-			</div>
-			<footer class="main-footer fixed-btm">
-				© Bootstrap Gallery 2023
-			</footer>
+		 </div>
+	    </div>
+		<footer class="main-footer fixed-btm">
+			© Bootstrap Gallery 2023
+		</footer>
 		</div>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>

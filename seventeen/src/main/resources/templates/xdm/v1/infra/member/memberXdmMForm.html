@@ -28,8 +28,6 @@
 	</head>
 
 	<body>
-
-		<!-- BEGIN .app-wrap -->
 		<div class="app-wrap">
 			<!-- BEGIN .app-heading -->
 			<header class="app-header">
@@ -154,8 +152,6 @@
 					</div>
 				</div>
 			</header>
-			<!-- END: .app-heading -->
-			<!-- BEGIN .app-container -->
 			<div class="app-container">
 				<!-- BEGIN .app-side -->
 				<aside class="app-side" id="app-side">
@@ -489,13 +485,13 @@
 												</nav>
 											</div>
 										</div>
-										<h2>식당정보</h2>
+									   <h1>Code</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form id="form" name="form" method="post" action="/xdm/v1/infra/member/memberXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -507,11 +503,11 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<!--<label for="inputName">코드그룹</label>
+														<label for="inputName">코드그룹</label>
 														<select class="form-control form-control-lg">
 															<option>선택하세요</option>
 															<option></option>
-														</select>-->			
+														</select>			
 													</div>
 												</div>
 											<div class="col-sm-4 col-12">
@@ -531,35 +527,36 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">코드번호</label>
-													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
+													<label for="form-group">코드</label>
+													<input type="text" id="Name" class="form-control" placeholder="자동생성"disabled >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">이름</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
+													<label for="ifcdName">코드(ANOTHER)</label>
+													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
 													<!-- th:value="${item?.ifcdName"}-->
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name"></label>
+													<label for="Name">코드이름</label>
+													<input class="form-control form-control-lg" name="Name" th:value="${item?.Name}" type="text" id="Name" placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-												  <label for="disabledInput">코드이름(영문)</label>
+													<label for="disabledInput">코드</label>
 													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="parking">사용여부</label>
-													 <select class="form-control form-control-lg" id="parking" name="parking">
-														<option value="1" th:selected="${item?.parking==1}">사용</option>
-														<option value="0" th:selected="${item?.parking==0}">미사용</option>
-													 </select>					
+													<label for="UseNy">사용여부</label>
+														<select class="form-control form-control-lg" id="UseNy" name="UseNy">
+															<option value="1" th:selected="${item?.UseNy==1}">사용</option>
+															<option value="0" th:selected="${item?.UseNy==0}">미사용</option>
+														</select>					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -626,7 +623,7 @@
 					<div class="row gutters">
 						<table>
 							<tr>
-							  <td style="width : 10px; "></td>
+							  <td style="width : 10px;"></td>
 								<td>	
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
 									   <button type="submit" class="btn btn-primary">
@@ -634,10 +631,10 @@
 									   </button>
 								   </div>
 								</td>
-								<td style="width : 1160px; "></td>
+								<td style="width : 1160px;"></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
+										<button type="submit" action="redirect:/xdm/v1/infra/member/memberXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -648,6 +645,7 @@
 				</div>
 			</div>
 			</div>
+				<!-- END: .app-main -->
 			</div>
 			<footer class="main-footer fixed-btm">
 				© Bootstrap Gallery 2023

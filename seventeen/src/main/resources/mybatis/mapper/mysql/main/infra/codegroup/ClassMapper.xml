@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.Class.ClassDao"> 
+<!--mapper와 연결될 dao //  ctrl+shift+c-->
+	  
+	  <resultMap id="resultMapObj" type="com.example.hybe.infra.Class.ClassDto"></resultMap>
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  SELECT
+			a.seq
+			,a.className
+			,a.teacher
+			,a.classDesc
+			,a.adress
+			,a.regDate
+			,a.modDate
+			,a.price
+			,a.terms
+        FROM 
+			Class a
+		ORDER BY
+			a.seq desc
+	  </select>
+	  
+	  <insert id="insert">
+	  	INSERT INTO Class(
+			 className
+			,teacher
+			,classDesc
+			,adress
+			,regDate
+			,modDate
+			,price
+			,terms
+	  	)VALUES(
+			 #{className}
+			,#{teacher}
+			,#{classDesc}
+			,#{adress}
+			,now()
+			,now()
+			,#{price}
+			,#{terms}
+			)
+	  </insert>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	 SELECT
+	  	 	a.seq
+			,a.className
+			,a.teacher
+			,a.classDesc
+			,a.adress
+			,a.regDate
+			,a.modDate
+			,a.price
+			,a.terms
+        FROM 
+			Class a	
+		WHERE 1=1
+			AND	a.seq = #{seq}
+	  </select>
+	  <update id="update">
+	    UPDATE Class
+	    SET
+	       ,className = #{className}
+		   ,teacher = #{teacher}
+		   ,classDesc = #{classDesc}
+		   ,adress = #{adress}
+		   ,price = #{price}
+		   ,terms = #{terms}
+	    WHERE 1=1
+	       AND a.seq = #{seq}		   
+	  </update>
+</mapper>

@@ -8,7 +8,7 @@
 	  
 	  <select id="selectList" resultMap="resultMapObj">
 	  SELECT
-			a.seq 
+		a.seq 
 	   ,a.name 
        ,a.opentime 
        ,a.closetime 
@@ -26,5 +26,66 @@
 		   a.seq desc
            
 	  </select>
-	  <insert id=""></insert>
+	  <insert id="insert">
+	  INSERT INTO information(
+	  	name 
+       ,opentime 
+       ,closetime 
+       ,telNumber 
+       ,eadress 
+       ,parking 
+       ,reservation 
+       ,freecal 
+       ,letter 
+       ,regDate 
+       ,modDate
+	  )VALUES(
+	  	#{name}
+	   ,#{opentime}
+	   ,#{closetime} 
+       ,#{telNumber} 
+       ,#{eadress} 
+       ,#{parking} 
+       ,#{reservation} 
+       ,#{freecal} 
+       ,#{letter} 
+	  	,now()
+	    ,now()
+	  	)
+	  </insert>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	 SELECT
+	  	 	a.seq 
+		   ,a.name 
+	       ,a.opentime 
+	       ,a.closetime 
+	       ,a.telNumber 
+	       ,a.eadress 
+	       ,a.parking 
+	       ,a.reservation 
+	       ,a.freecal 
+	       ,a.letter 
+	       ,a.regDate 
+	       ,a.modDate
+        FROM 
+			information a	
+		WHERE 1=1
+			AND	a.seq = #{seq}
+	  </select>
+	  <update id="update">
+	  	UPDATE information
+	  	SET
+	  		name = #{name}
+	       ,opentime = #{opentime}
+	       ,closetime = #{closetime}
+	       ,telNumber = #{telNumber}
+	       ,eadress = #{eadress}
+	       ,parking = #{parking}
+	       ,reservation = #{reservation}
+	       ,freecal = #{freecal}
+	       ,letter 	= #{letter}
+	    WHERE 1=1
+	    	AND a.seq = #{seq}  
+	  </update>
 </mapper>

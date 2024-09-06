@@ -17,13 +17,10 @@ public class CodeGroupController {
 		
 		model.addAttribute("list", codegroupService.selectList());
 		
-//		System.out.println("codegroups.size():"+codeGroups.size());
-//		
+//		System.out.println("codegroups.size():"+codeGroups.size());	
 //		for(CodeGroupDto codeGroupDto:codeGroups) {
 //			System.out.println(codeGroupDto.getIfcgSeq() +"|"+
 //								codeGroupDto.getIfcgRenDate() +"|");
-//		}
-		
 		return "/xdm/v1/infra/codegroup/codegroupXdmList";
 	}	
 	
@@ -31,7 +28,7 @@ public class CodeGroupController {
 	public String codegroupXdmForm() {
 	
 	    return "/xdm/v1/infra/codegroup/codegroupXdmForm";
-}
+    }
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmInst")
 	public String codegroupXdmInst(CodeGroupDto codeGroupDto) {
 		
@@ -40,6 +37,24 @@ public class CodeGroupController {
 		
 	    
 	    return "redirect:/xdm/v1/infra/codegroup/codegroupXdmList";
+	}
+	
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmMForm")
+	public String codegroupXdmMForm(CodeGroupDto codeGroupDto, Model model){
+		//CodeGroupDto dto = codegroupService.selectOne(codeGroupDto);
+		model.addAttribute("item", codegroupService.selectOne(codeGroupDto));
+		System.out.println("codeGroupDto.getIfcgName()");
+	    return "/xdm/v1/infra/codegroup/codegroupXdmMForm";
+    }
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmUpdt")
+	public String codegroupXdmUpdt(CodeGroupDto codeGroupDto){
+		
+		
+		codegroupService.update(codeGroupDto);
+		System.out.println("codeGroupDto");
+		
+		
+		return "redirect:/xdm/v1/infra/codegroup/codegroupXdmList";
 	}
 }
 	

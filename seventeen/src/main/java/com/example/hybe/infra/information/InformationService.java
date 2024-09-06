@@ -12,8 +12,15 @@ public class InformationService {
 	
 	public List<InformationDto> selectList() {
 		
-		List<InformationDto> informations= informationDao.selectList();
-		return informations;
+		return informationDao.selectList();
+	}	
+		
+	public int insert(InformationDto informationDto) {
+		return informationDao.insert(informationDto);
+	}
+	
+	public InformationDto selectOne(InformationDto informationDto) {
+		return informationDao.selectOne(informationDto);
 	}
 
 }

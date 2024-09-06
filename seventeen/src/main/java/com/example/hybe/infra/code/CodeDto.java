@@ -9,14 +9,24 @@ public class CodeDto {
 	private Integer ifcdUseNy;
 	private Integer ifcdOrder;
 	private String ifcdDesc;
-	private Integer ifcdDelNy;
-	private String ifcdDelete;
+	private Integer ifcdDelny;
 	private Date ifcdRegDate;
-	private Date ifcdRenDate;
-	private Integer codegroup_seq;
+	private Date ifcdmodDate;
+	private String ifcgSeq;
+	private String ifcgName;
 	
-	
-	
+	public String getIfcgSeq() {
+		return ifcgSeq;
+	}
+	public void setIfcgSeq(String ifcgSeq) {
+		this.ifcgSeq = ifcgSeq;
+	}
+	public String getIfcgName() {
+		return ifcgName;
+	}
+	public void setIfcgName(String ifcgName) {
+		this.ifcgName = ifcgName;
+	}
 	public Integer getIfcdSeq() {
 		return ifcdSeq;
 	}
@@ -47,35 +57,24 @@ public class CodeDto {
 	public void setIfcdDesc(String ifcdDesc) {
 		this.ifcdDesc = ifcdDesc;
 	}
-	public Integer getIfcdDelNy() {
-		return ifcdDelNy;
+	public Integer getIfcdDelny() {
+		return ifcdDelny;
 	}
-	public void setIfcdDelNy(Integer ifcdDelNy) {
-		this.ifcdDelNy = ifcdDelNy;
+	public void setIfcdDelny(Integer ifcdDelny) {
+		this.ifcdDelny = ifcdDelny;
 	}
-	public String getIfcdDelete() {
-		return ifcdDelete;
-	}
-	public void setIfcdDelete(String ifcdDelete) {
-		this.ifcdDelete = ifcdDelete;
-	}
+	
 	public Date getIfcdRegDate() {
 		return ifcdRegDate;
 	}
 	public void setIfcdRegDate(Date ifcdRegDate) {
 		this.ifcdRegDate = ifcdRegDate;
 	}
-	public Date getIfcdRenDate() {
-		return ifcdRenDate;
+	public Date getIfcdmodDate() {
+		return ifcdmodDate;
 	}
-	public void setIfcdRenDate(Date ifcdRenDate) {
-		this.ifcdRenDate = ifcdRenDate;
-	}
-	public Integer getCodegroup_seq() {
-		return codegroup_seq;
-	}
-	public void setCodegroup_seq(Integer codegroup_seq) {
-		this.codegroup_seq = codegroup_seq;
+	public void setIfcdmodDate(Date ifcdmodDate) {
+		this.ifcdmodDate = ifcdmodDate;
 	}
 
 }

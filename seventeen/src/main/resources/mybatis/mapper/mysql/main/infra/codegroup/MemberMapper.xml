@@ -27,5 +27,67 @@
 			a.Seq desc   
             
 	  </select>
-	  <insert id=""></insert>
+	  <insert id="insert">
+	  INSERT INTO member(
+	  		Name
+			,id
+			,nickname
+			,delny
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desc
+            ,modDate
+      )VALUES(
+            #{Name}
+			,#{id}
+			,#{nickname}
+			,#{delny}
+			,#{email}
+			,#{phonenumber}
+            ,#{adress}
+            ,now()
+            ,#{gender} 
+            ,#{password} 
+			,#{desc}
+            ,now()
+            )
+	  </insert>
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	 SELECT
+	  	 	a.Seq
+			,a.Name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desc
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.Seq = #{Seq}
+	  </select>
+	   <update id="update">
+	  UPDATE member
+	  SET
+	  	    Name=#{Name}
+			,id=#{id}
+			,ifcgOrder=#{ifcgOrder}
+			,ifcgDesc=#{ifcgDesc}
+			,ifcgDelete=#{ifcgDelete}
+			,ifcgRegDate=#{ifcgRegDate}
+			,ifcgRenDate=#{ifcgRenDate}
+		WHERE 1=1
+			AND	ifcgSeq = #{ifcgSeq}	
+	  
+	  </update>
 </mapper>

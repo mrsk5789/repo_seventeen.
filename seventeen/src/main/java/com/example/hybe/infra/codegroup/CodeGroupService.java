@@ -19,5 +19,16 @@ public class CodeGroupService {
 		return codeGroupDao.insert(codeGroupDto);
 		
 	}
+		
+	
+	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {
+		return codeGroupDao.selectOne(codeGroupDto);
+	}
+
+	public int update(CodeGroupDto codeGroupDto){
+		System.out.println(codeGroupDto.getIfcgSeq());
+		return codeGroupDao.update(codeGroupDto);
+	   
+	}
 
 }

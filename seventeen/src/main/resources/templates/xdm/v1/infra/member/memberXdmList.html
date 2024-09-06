@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +16,7 @@
 	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
 	<meta property="og:type" content="Website">
 	<meta property="og:site_name" content="Bootstrap Gallery">
-	<link rel="shortcut icon" href="img/favicon.svg" />
+	<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
 	<title>Modern Admin Dashboards - Datatables</title>
 
 	<!--<link rel="apple-touch-icon" sizes="180x180" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/apple-touch-icon.png">
@@ -26,10 +25,7 @@
 		    <link rel="shortcut icon" type="image/x-icon" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon.ico">
 		    <link rel="manifest" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/manifest.json">
 		    <meta name="msapplication-TileImage" content="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/mstile-150x150.png">
-		    <meta name="theme-color" content="#ffffff">
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/vendors/simplebar/simplebar.min.js"></script>
-		    <script src="/xdm/v1/template/phoenix-v1.13.0/assets/js/config.js"></script>-->
+		    <meta name="theme-color" content="#ffffff">-->
 
 	<!-- Common CSS -->
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
@@ -62,7 +58,7 @@
 						<i class="icon-chevron-thin-left"></i>
 					</a>
 					<a href="index.html" class="logo">
-						<img src="img/logo.svg" alt="Low Price Admin Dashboards" />
+						<img src="/xdm/v1/template/qwer/assert/img/logo.svg" alt="Low Price Admin Dashboards" />
 					</a>
 					<a style="width: 650px;"></a>
 					<div class="col-md-5 col-sm-3 col-4">
@@ -137,7 +133,7 @@
 							<li class="dropdown">
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
 									aria-haspopup="true">
-									<img class="avatar" src="img/user.png" alt="Admin Dashboards" />
+									<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
 									<i class="icon-chevron-small-down"></i>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
@@ -186,7 +182,7 @@
 				<div class="side-content ">
 					<!-- BEGIN .user-profile -->
 					<div class="user-profile">
-						<img src="img/user.png" class="profile-thumb" alt="Admin Dashboards">
+						<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb" alt="Admin Dashboards">
 						<ul class="profile-actions">
 							<li>
 								<a href="#">
@@ -510,17 +506,17 @@
 									<div class="col-sm-4 col-12">
 										<table>
 											<th>
-												<tr>
-													<td>
-														<select id="shape">
+											   <tr>
+												  <td>
+													  <select id="shape">
 															<option value="" selected disabled hidden>Y</option>
 															<option value="1">Y</option>
 															<option value="2">N</option>
 															<option value="3">옵션3</option>
 															<option value="4">옵션4</option>
 															<option value="5">옵션5</option>
-														</select>
-													</td>
+													  </select>
+												   </td>
 													<td>
 														<select id="shape">
 															<option value="" selected disabled hidden>Y</option>
@@ -599,7 +595,6 @@
 													<td style="width : 900px;"></td>
 													<td>
 														<select id="shape">
-															<!--<select id = "shape" select id="righ">-->
 															<option value="" selected disabled hidden>1</option>
 															<option value="2">2</option>
 															<option value="3">3</option>
@@ -641,7 +636,7 @@
 													<input type="checkbox" />
 												</td>
 												<td th:text="${list.Seq}"></td>
-												<td th:text="${list.Name}"></td>
+												<td><a th:href="@{/xdm/v1/infra/member/memberXdmMForm(Seq=${list.Seq})}" th:text="${list.Name}"></a></td>
 												<td th:text="${list.id}"></td>
 												<td th:text="${list.Nickname}"></td>
 												<td th:text="${list.email}"></td>
@@ -703,7 +698,7 @@
 													<a class="page-link" href="#">Next</a>
 												</li>
 											</ul>
-										</td>
+										  </td>
 										</th>
 									</table>
 								</div>
@@ -725,7 +720,7 @@
 									</button>
 								</div>
 							</td>
-							<td style="width : 1070px; "></td>
+							<td style="width : 1070px;"></td>
 							<td>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
 									<button type="button" class="btn btn-primary">
@@ -742,9 +737,7 @@
 					</table>
 				</div>
 			</div>
-			<!-- END: .app-main -->
 		</div>
-		<!-- END: .app-container -->
 		<footer class="main-footer fixed-btm">
 			© Bootstrap Gallery 2023
 		</footer>
@@ -760,13 +753,10 @@
 	<!-- Data Tables -->
 	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.min.js"></script>
 	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bootstrap.min.js"></script>
-
 	<!-- Custom Data tables -->
 	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/custom-datatables.js"></script>
 	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/fixedHeader.js"></script>
-
 	<!-- Common JS -->
 	<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
 </body>
-
 </html>

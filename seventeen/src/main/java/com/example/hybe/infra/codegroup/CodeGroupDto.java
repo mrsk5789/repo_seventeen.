@@ -4,21 +4,26 @@ import java.util.Date;
 
 public class CodeGroupDto {
 	
-	private Integer ifcgSeq;
+	private String ifcgSeq;
 	private String ifcgName;
 	private Integer ifcgUseNy;
 	private Integer ifcgOrder;
 	private String ifcgDesc;
 	private Integer ifcgDelNy;
-	private String ifcgDelete;
-	private String ifcgRegDate;
-	private String ifcgRenDate;
+	private Date ifcgRegDate;
+	private Date ifcgRenDate;
+	private Integer codegroup_seq;
 	
-	//	-----
-	public Integer getIfcgSeq() {
+	public Integer getCodegroup_seq() {
+		return codegroup_seq;
+	}
+	public void setCodegroup_seq(Integer codegroup_seq) {
+		this.codegroup_seq = codegroup_seq;
+	}
+	public String getIfcgSeq() {
 		return ifcgSeq;
 	}
-	public void setIfcgSeq(Integer ifcgSeq) {
+	public void setIfcgSeq(String ifcgSeq) {
 		this.ifcgSeq = ifcgSeq;
 	}
 	public String getIfcgName() {
@@ -30,7 +35,7 @@ public class CodeGroupDto {
 	public Integer getIfcgUseNy() {
 		return ifcgUseNy;
 	}
-	public void setIfcgUseNY(Integer ifcgUseNy) {
+	public void setIfcgUseNy(Integer ifcgUseNy) {
 		this.ifcgUseNy = ifcgUseNy;
 	}
 	public Integer getIfcgOrder() {
@@ -48,26 +53,21 @@ public class CodeGroupDto {
 	public Integer getIfcgDelNy() {
 		return ifcgDelNy;
 	}
-	public void setIfcgDelNY(Integer ifcgDelNy) {
+	public void setIfcgDelNy(Integer ifcgDelNy) {
 		this.ifcgDelNy = ifcgDelNy;
 	}
-	public String getIfcgDelete() {
-		return ifcgDelete;
-	}
-	public void setIfcgDelete(String ifcgDelete) {
-		this.ifcgDelete = ifcgDelete;
-	}
-	public String getIfcgRegDate() {
+	public Date getIfcgRegDate() {
 		return ifcgRegDate;
 	}
-	public void setIfcgRegDate(String ifcgRegDate) {
+	public void setIfcgRegDate(Date ifcgRegDate) {
 		this.ifcgRegDate = ifcgRegDate;
 	}
-	public String getIfcgRenDate() {
+	public Date getIfcgRenDate() {
 		return ifcgRenDate;
 	}
-	public void setIfcgRenDate(String ifcgRenDate) {
+	public void setIfcgRenDate(Date ifcgRenDate) {
 		this.ifcgRenDate = ifcgRenDate;
 	}
+	
 	
 }

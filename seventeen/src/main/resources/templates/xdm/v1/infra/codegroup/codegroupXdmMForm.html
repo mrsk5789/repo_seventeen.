@@ -454,6 +454,9 @@
 					</div>
 					<!-- END: .side-content -->
 				</aside>
+				<!-- END: .app-side -->
+
+				<!-- BEGIN .app-main -->
 				<div class="app-main">
 					<!-- BEGIN .main-heading -->
 					<header class="main-heading">
@@ -489,13 +492,13 @@
 												</nav>
 											</div>
 										</div>
-										<h2>식당정보</h2>
+										<h1>Code Group</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form id="form" name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmUpdt"autocomplete="off" enctype="multipart/form-data" class="row">
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -510,7 +513,6 @@
 														<!--<label for="inputName">코드그룹</label>
 														<select class="form-control form-control-lg">
 															<option>선택하세요</option>
-															<option></option>
 														</select>-->			
 													</div>
 												</div>
@@ -531,41 +533,14 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">코드번호</label>
-													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
+													<label for="ifcgSeq">코드그룹 번호</label>
+													<input type="text" id="ifcgSeq" name="ifcgSeq" th:value="${item?.ifcgSeq}" class="form-control" placeholder="자동생성"readonly >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">이름</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
-													<!-- th:value="${item?.ifcdName"}-->
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="name"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-												  <label for="disabledInput">코드이름(영문)</label>
-													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="parking">사용여부</label>
-													 <select class="form-control form-control-lg" id="parking" name="parking">
-														<option value="1" th:selected="${item?.parking==1}">사용</option>
-														<option value="0" th:selected="${item?.parking==0}">미사용</option>
-													 </select>					
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">순서</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="ifcgName">코드이름</label>
+													<input class="form-control form-control-lg" name="ifcgName" type="text" id="ifcgName" th:value="${item?.ifcgName}"placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -580,8 +555,33 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">설명</label>
-													<textarea class="form-control" rows="2" type="text" style="width: 570px; height: 80px;"></textarea>
+													<label for="ifcgUseNy">사용여부</label>
+													  <select class="form-control form-control-lg" id="ifcgUseNy" name="ifcgUseNy" th:value="${item?.ifcgUseNy}">
+														<option value="1" th:selected="${item?.ifcgUseNy==1}">Y</option>
+														<option value="0" th:selected="${item?.ifcgUseNy==0}">N</option>
+													  </select>					
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="ifcgOrder">순서</label>
+													<input class="form-control form-control-lg" type="text" name="ifcgOrder" id="ifcgOrder" th:value="${item?.ifcgOrder}">
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput"></label>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput"></label>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="ifcgDesc">설명</label>
+													<textarea class="form-control" rows="2" name="ifcgDesc" id="ifcgDesc" type="text" th:text="${item?.ifcgDesc}" style="width: 570px; height: 80px;"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -600,23 +600,26 @@
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어1</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
+											  <div class="form-group">
+												<label for="ifcgDelNy">삭제여부</label>
+												<select class="form-control form-control-lg" name="ifcgDelNy" disabled>
+													<option value="1" th:selected="${item?.ifcgDelNy==1}">Y</option>
+													<option value="0" th:selected="${item?.ifcgDelNy==0}">N</option>
+												</select>					
+											  </div>
+											</div>										
+										    <div class="col-sm-4 col-12">
+											  <div class="form-group">
+												<label for="ifcgRegDate">등록날짜</label>
+											    <input class="form-control form-control-lg" id="ifcgRegDate" name="ifcgRegDate" type="datetime" th:value="${ #dates.format(item.ifcgRegDate, 'yyyy-MM-dd HH:mm:ss')}"disabled>
+											  </div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">다국어2</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="ifcgRenDate">수정날짜</label>
+													<input class="form-control form-control-lg" id="ifcgRenDate" name="ifcgRenDate" type="datetime" th:value="${ #dates.format(item.ifcgRenDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
 												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어3</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
+							   				</div>
 										</div>
 								    </div>
 								</div>
@@ -625,19 +628,21 @@
 					</div>	
 					<div class="row gutters">
 						<table>
-							<tr>
+						   <tr>
 							  <td style="width : 10px; "></td>
 								<td>	
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+									 <a href="/xdm/v1/infra/codegroup/codegroupXdmList">
 									   <button type="submit" class="btn btn-primary">
 											 <span class="icon-times-outline"></span>
 									   </button>
+									 </a> 
 								   </div>
 								</td>
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
+										<button type="submit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -647,8 +652,8 @@
 					</div>
 				</div>
 			</div>
-			</div>
-			</div>
+        	</div>
+ 		</div>
 			<footer class="main-footer fixed-btm">
 				© Bootstrap Gallery 2023
 			</footer>
@@ -658,7 +663,6 @@
 		<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/vendor/onoffcanvas/onoffcanvas.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/moment.js"></script>
-
 		<!-- Common JS -->
 		<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
 	</body>

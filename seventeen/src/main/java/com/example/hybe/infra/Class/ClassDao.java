@@ -9,5 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface ClassDao {
 	
 	public List<ClassDto>selectList();
+	
+	public int insert(ClassDto classDto);
 
 }

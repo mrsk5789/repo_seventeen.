@@ -489,14 +489,13 @@
 												</nav>
 											</div>
 										</div>
-										<h2>식당정보</h2>
+										<h1>Code</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
-						
+					<form id="form" name="form" method="post" action="/xdm/v1/infra/code/codeXdmUpdt"autocomplete="off" enctype="multipart/form-data" class="row">
 					<div class="main-content">
 						<div class="row gutters">
 							<div class="col-sm-12">
@@ -507,11 +506,11 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<!--<label for="inputName">코드그룹</label>
+														<label for="inputName">코드그룹</label>
 														<select class="form-control form-control-lg">
 															<option>선택하세요</option>
 															<option></option>
-														</select>-->			
+														</select>			
 													</div>
 												</div>
 											<div class="col-sm-4 col-12">
@@ -531,41 +530,14 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">코드번호</label>
-													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
+													<label for="ifcdSeq">코드번호</label>
+													<input type="text" id="ifcdSeq" name="ifcdSeq" th:value="${item?.ifcdSeq}" class="form-control" placeholder="자동생성"readonly>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">이름</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
-													<!-- th:value="${item?.ifcdName"}-->
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="name"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-												  <label for="disabledInput">코드이름(영문)</label>
-													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="parking">사용여부</label>
-													 <select class="form-control form-control-lg" id="parking" name="parking">
-														<option value="1" th:selected="${item?.parking==1}">사용</option>
-														<option value="0" th:selected="${item?.parking==0}">미사용</option>
-													 </select>					
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">순서</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="ifcdName">코드이름</label>
+													<input class="form-control form-control-lg" name="ifcdName" type="text" id="ifcdName" th:value="${item?.ifcdName}"placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -580,8 +552,33 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">설명</label>
-													<textarea class="form-control" rows="2" type="text" style="width: 570px; height: 80px;"></textarea>
+													<label for="ifcdUseNy">사용여부</label>
+													<select class="form-control form-control-lg" id="ifcdUseNy" name="ifcdUseNy" th:value="${item?.ifcdUseNy}">
+														<option value="1" th:selected="${item?.ifcdUseNy==1}">Y</option>
+														<option value="0" th:selected="${item?.ifcdUseNy==0}">N</option>
+													</select>							
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="ifcdOrder">순서</label>
+													<input class="form-control form-control-lg" type="text" name="ifcdOrder" id="ifcdOrder" th:value="${item?.ifcdOrder}">
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput"></label>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput"></label>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="ifcdDesc">설명</label>
+													<textarea class="form-control" rows="2" name="ifcdDesc" id="ifcdDesc" type="text" th:text="${item?.ifcdDesc}" style="width: 570px; height: 80px;"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -601,15 +598,18 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">다국어1</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="ifcdDelny">삭제여부</label>
+													<select class="form-control form-control-lg" name="ifcdDelny" disabled>
+														<option value="1" th:selected="${item?.ifcdDelny==1}">Y</option>
+														<option value="0" th:selected="${item?.ifcdDely==0}">N</option>
+													</select>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어2</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
+												 <div class="form-group">
+													<label for="ifcdRegDate">등록날짜</label>
+													<input class="form-control form-control-lg" id="ifcdRegDate" name="ifcdRegDate" type="datetime" th:value="${ #dates.format(item.ifcdRegDate, 'yyyy-MM-dd HH:mm:ss')}"disabled>
+												 </div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
@@ -617,6 +617,13 @@
 													<input class="form-control form-control-lg" type="text" >
 												</div>
 											</div>
+											<!-- <div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">다국어8</label>
+													<input class="form-control is-valid"  placeholder="Valid state"type="text">
+													<div class="valid-feedback">Looks good!</div>
+												</div>
+											</div> -->
 										</div>
 								    </div>
 								</div>
@@ -637,7 +644,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
+										<button type="submit" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -648,6 +655,7 @@
 				</div>
 			</div>
 			</div>
+				<!-- END: .app-main -->
 			</div>
 			<footer class="main-footer fixed-btm">
 				© Bootstrap Gallery 2023

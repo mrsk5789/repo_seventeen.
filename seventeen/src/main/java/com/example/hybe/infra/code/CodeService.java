@@ -12,8 +12,24 @@ public class CodeService {
 	
 	public List<CodeDto> selectList() {
 		
-		List<CodeDto> codes=  codeDao.selectList();
-		return codes;
+		return codeDao.selectList();
+	}
+	
+	public int insert(CodeDto codeDto) {
+		return codeDao.insert(codeDto);
+	}
+	
+	public CodeDto selectOne(CodeDto codeDto) {
+		return codeDao.selectOne(codeDto);
+	}
+	
+	public int update(CodeDto codeDto) {
+		System.out.println(codeDto.getIfcdSeq());
+		return codeDao.update(codeDto);
+	}
+	
+	public List<CodeDto>selectlistCodeGroup(){
+		return codeDao.selectlistCodeGroup();
 	}
 
 }

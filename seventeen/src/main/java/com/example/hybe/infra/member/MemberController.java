@@ -38,4 +38,11 @@ public class MemberController {
 		
 		return "redirect:/xdm/v1/infra/member/memberXdmList";
 	}
+	@RequestMapping(value="/xdm/v1/infra/member/memberXdmMForm")
+	public String MemberXdmMForm(MemberDto memberDto, Model model) {
+	model.addAttribute("list",memberService.selectOne(memberDto));	
+	System.out.println();
+		
+		return "/xdm/v1/infra/member/memberXdmMForm";
+	}
 }
