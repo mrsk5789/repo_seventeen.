@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CodeDto {
 	
-	private Integer ifcdSeq;
+	private String ifcdSeq;
 	private String ifcdName;
 	private Integer ifcdUseNy;
 	private Integer ifcdOrder;
@@ -14,7 +14,14 @@ public class CodeDto {
 	private Date ifcdmodDate;
 	private String ifcgSeq;
 	private String ifcgName;
+	private Integer codegroup_seq;
 	
+	public Integer getCodegroup_seq() {
+		return codegroup_seq;
+	}
+	public void setCodegroup_seq(Integer codegroup_seq) {
+		this.codegroup_seq = codegroup_seq;
+	}
 	public String getIfcgSeq() {
 		return ifcgSeq;
 	}
@@ -27,10 +34,10 @@ public class CodeDto {
 	public void setIfcgName(String ifcgName) {
 		this.ifcgName = ifcgName;
 	}
-	public Integer getIfcdSeq() {
+	public String getIfcdSeq() {
 		return ifcdSeq;
 	}
-	public void setIfcdSeq(Integer ifcdSeq) {
+	public void setIfcdSeq(String ifcdSeq) {
 		this.ifcdSeq = ifcdSeq;
 	}
 	public String getIfcdName() {

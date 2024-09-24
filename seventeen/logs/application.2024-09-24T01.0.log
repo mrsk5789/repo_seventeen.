@@ -1,0 +1,33 @@
+2024-09-24T01:02:07.616 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+291. SELECT COUNT(*)
+
+        FROM 
+			codegroup a
+		WHERE 1=1
+ {executed in 29 msec} 
+2024-09-24T01:02:07.636 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+291. select aa.* from (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			a.ifcgSeq desc
+        ) aa
+		limit 10 offset 0
+ {executed in 8 msec} 
+2024-09-24T01:04:10.130 [RMI TCP Connection(643)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-24T01:04:10.253 [RMI TCP Connection(643)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-24T01:04:11.308 [RMI TCP Connection(643)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown initiated... 
+2024-09-24T01:04:11.324 [RMI TCP Connection(643)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown completed. 

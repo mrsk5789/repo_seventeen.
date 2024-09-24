@@ -501,7 +501,7 @@
 									</nav>
 									<div class="row gutters">
 										<div class="col-sm-4 col-12">
-											<h1>code</h1>
+											<h5>센터</h5>
 										</div>
 									</div>
 									<div class="col-sm-4 col-12">
@@ -513,9 +513,6 @@
 															<option value="" selected disabled hidden>Y</option>
 															<option value="1">Y</option>
 															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
 														</select>
 													</td>
 													<td>
@@ -523,9 +520,6 @@
 															<option value="" selected disabled hidden>Y</option>
 															<option value="1">Y</option>
 															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
 														</select>
 													</td>
 													<td>
@@ -533,9 +527,6 @@
 															<option value="" selected disabled hidden>수정일</option>
 															<option value="1">Y</option>
 															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
 														</select>
 													</td>
 													<td>
@@ -552,9 +543,6 @@
 														<option value="" selected disabled hidden>검색구분</option>
 														<option value="1">Y</option>
 														<option value="2">N</option>
-														<option value="3">옵션3</option>
-														<option value="4">옵션4</option>
-														<option value="5">옵션5</option>
 													</select>
 												</td>
 												<td>
@@ -615,7 +603,8 @@
 											<tr>
 												<th><input type="checkbox"></th>
 												<th>#</th>
-												<th>식당이름</th>
+												<th>종목</th>
+												<th>센터명</th>
 												<th>오픈시간</th>
 												<th>마감시간</th>
 												<th>전화번호</th>
@@ -638,12 +627,14 @@
 													<input type="checkbox" />
 												</td>
 												<td th:text="${list.seq}"></td>
-												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(Seq=${list.Seq})}" th:text="${list.name}"></a></td>
-												<td  th:text="${list.opentime}">테테테</td>
-												<td  th:text="${list.closetime}">278</td>
+												<td></td>
+												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(seq=${list.seq})}" th:text="${list.name}"></a></td>
+												<td></td>
+												<td  th:text="${list.opentime}"></td>
+												<td  th:text="${list.closetime}"></td>
 												<td  th:text="${list.telNumber}"></td>
-												<td  th:text="${list.eadress}">ㅁㄴㅇㄹ</td>
-												<td  th:text="${list.parking}"></td>
+												<td  th:text="${list.eadress}"></td>
+												<td  th:text="${list.parkingNy}"></td>
 												<td  th:text="${list.reservation}">Y</td>
 												<td  th:text="${list.letter}"></td>
 												<td  th:text="${list.regDate}"></td>
@@ -664,38 +655,6 @@
 												</li>
 												<li class="page-item active">
 													<a href="#" class="page-link">2</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">3</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">4</a>
-												</li>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">5</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">6</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">7</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">8</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">9</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">10</a>
-												</li>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">11</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">12</a>
 												</li>
 												<li class="page-item">
 													<a class="page-link" href="#">Next</a>

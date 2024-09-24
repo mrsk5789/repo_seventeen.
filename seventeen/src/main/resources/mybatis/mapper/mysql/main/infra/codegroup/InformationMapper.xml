@@ -14,14 +14,33 @@
        ,a.closetime 
        ,a.telNumber 
        ,a.eadress 
-       ,a.parking 
-       ,a.reservation 
-       ,a.freecal 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
        ,a.letter 
        ,a.regDate 
-       ,a.modDate
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.orders 
+       ,a.UseNy 
+       ,a.ceoName
      FROM
            information a
+     WHERE 1=1
+			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>	
+			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>
+			<choose>
+			    <when test="shOption==1">AND seq=#{shValue}</when>
+			    <when test="shOption==2">AND name=#{shValue}</when>
+			    <when test="shOption==3">AND ceoName=#{shValue}</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 1">AND a.regdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
 	ORDER BY
 		   a.seq desc
            
@@ -33,41 +52,59 @@
        ,closetime 
        ,telNumber 
        ,eadress 
-       ,parking 
-       ,reservation 
-       ,freecal 
+       ,parkingNy 
+       ,ptNy 
+       ,groupNy 
        ,letter 
        ,regDate 
-       ,modDate
+       ,modDate 
+       ,specifics 
+       ,adress 
+       ,delny 
+       ,orders 
+       ,UseNy 
+       ,ceoName
 	  )VALUES(
 	  	#{name}
 	   ,#{opentime}
 	   ,#{closetime} 
        ,#{telNumber} 
        ,#{eadress} 
-       ,#{parking} 
-       ,#{reservation} 
-       ,#{freecal} 
+       ,#{parkingNy} 
+       ,#{ptNy} 
+       ,#{groupNy} 
        ,#{letter} 
-	  	,now()
-	    ,now()
+       ,now()
+       ,now() 
+       ,#{specifics} 
+       ,#{adress} 
+       ,#{delny} 
+       ,#{orders} 
+       ,#{UseNy} 
+       ,#{ceoName}
 	  	)
 	  </insert>
 	  
 	  <select id="selectOne" resultMap="resultMapObj">
 	  	 SELECT
 	  	 	a.seq 
-		   ,a.name 
+	  	   ,a.name 
 	       ,a.opentime 
 	       ,a.closetime 
 	       ,a.telNumber 
 	       ,a.eadress 
-	       ,a.parking 
-	       ,a.reservation 
-	       ,a.freecal 
+	       ,a.parkingNy 
+	       ,a.ptNy 
+	       ,a.groupNy 
 	       ,a.letter 
 	       ,a.regDate 
-	       ,a.modDate
+	       ,a.modDate 
+	       ,a.specifics 
+	       ,a.adress 
+	       ,a.delny 
+	       ,a.orders 
+	       ,a.UseNy 
+	       ,a.ceoName
         FROM 
 			information a	
 		WHERE 1=1
@@ -81,11 +118,31 @@
 	       ,closetime = #{closetime}
 	       ,telNumber = #{telNumber}
 	       ,eadress = #{eadress}
-	       ,parking = #{parking}
-	       ,reservation = #{reservation}
-	       ,freecal = #{freecal}
+	       ,parkingNy = #{parkingNy}
+	       ,ptNy = #{ptNy}
 	       ,letter 	= #{letter}
+	       ,groupNy = #{groupNy}
+	       ,letter = #{letter}
+	       ,specifics = #{specifics}
+	       ,adress = #{adress}
+	       ,delny = #{delny}
+	       ,orders = #{orders}
+	       ,UseNy = #{UseNy}
+	       ,ceoName= #{ceoName}
 	    WHERE 1=1
 	    	AND a.seq = #{seq}  
 	  </update>
+	  <update id="uelete">
+	  	UPDATE information
+	  	SET
+	  		delny=1
+	  	WHERE 1=1
+	  		AND seq=#{seq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	DELETE FROM information
+	  	WHERE 1=1
+	  		AND seq=#{seq}	
+	  </delete>
 </mapper>

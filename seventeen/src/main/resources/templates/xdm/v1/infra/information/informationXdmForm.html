@@ -489,7 +489,7 @@
 												</nav>
 											</div>
 										</div>
-										<h2>식당정보</h2>
+										<h2>센터정보</h2>
 									</div>
 								</div>
 							</div>
@@ -507,11 +507,14 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<!--<label for="inputName">코드그룹</label>
-														<select class="form-control form-control-lg">
-															<option>선택하세요</option>
-															<option></option>
-														</select>-->			
+														<label for="specifics">센터종류</label>
+														<select class="form-control form-control-lg" id="specifics" name="specifics">
+															<option value="1" th:selected="${item?.specifics==1}">필라테스</option>
+															<option value="2" th:selected="${item?.specifics==2}">요가</option>
+															<option value="3" th:selected="${item?.specifics==3}">플라잉요가</option>
+															<option value="4" th:selected="${item?.specifics==4}">헬스</option>
+															<option value="5" th:selected="${item?.specifics==5}">클라이밍</option>
+														</select>			
 													</div>
 												</div>
 											<div class="col-sm-4 col-12">
@@ -531,34 +534,34 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">코드번호</label>
+													<label for="seq">번호</label>
 													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">이름</label>
+													<label for="name">센터명</label>
 													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
-													<!-- th:value="${item?.ifcdName"}-->
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name"></label>
+													<label for="ceoName">대표명</label>
+													<input class="form-control form-control-lg" name="ceoName" type="text" id="ceoName" th:value="${item?.ceoName}" placeholder="한글, 영대소문자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-												  <label for="disabledInput">코드이름(영문)</label>
-													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
+												    <label for="telNumber">전화번호</label>
+													<input class="form-control form-control-lg" name="telNumber" type="text" id="telNumber" th:value="${item?.telNumber}" placeholder="숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="parking">사용여부</label>
-													 <select class="form-control form-control-lg" id="parking" name="parking">
-														<option value="1" th:selected="${item?.parking==1}">사용</option>
-														<option value="0" th:selected="${item?.parking==0}">미사용</option>
+													<label for="parkingNy">주차여부</label>
+													 <select class="form-control form-control-lg" id="parkingNy" name="parkingNy">
+														<option value="1" th:selected="${item?.parkingNy==1}">N</option>
+														<option value="0" th:selected="${item?.parkingNy==0}">Y</option>
 													 </select>					
 												</div>
 											</div>
@@ -570,7 +573,47 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput"></label>
+													<label for="ptNy">PT</label>
+													  <select class="form-control form-control-lg" id="ptNy" name="ptNy">
+														 <option value="1" th:selected="${item?.ptNy==1}">N</option>
+														 <option value="0" th:selected="${item?.ptNy==0}">Y</option>
+													  </select>	
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+												  <label for="groupNy">그룹레슨</label>
+												   <select class="form-control form-control-lg" id="groupNy" name="groupNy">
+													  <option value="1" th:selected="${item?.groupNy==1}">N</option>
+													  <option value="0" th:selected="${item?.groupNy==0}">Y</option>
+											   	   </select>	
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput">주소</label>
+													<input class="form-control form-control-lg" type="text" style="width: 570px;">
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+																							<div class="form-group">
+																								<label for="disabledInput"></label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4 col-12">
+																							<div class="form-group">
+																								<label for="disabledInput"></label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4 col-12">
+																							<div class="form-group">
+																								<label for="disabledInput"></label>
+																							</div>
+																						</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="letter">설명</label>
+													<textarea class="form-control" rows="2" name="letter" id="letter" type="text" style="width: 570px; height: 80px;" th:value="${item?.letter}"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -580,41 +623,12 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">설명</label>
-													<textarea class="form-control" rows="2" type="text" style="width: 570px; height: 80px;"></textarea>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
 													<label for="disabledInput"></label>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어1</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어2</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어3</label>
-													<input class="form-control form-control-lg" type="text" >
 												</div>
 											</div>
 										</div>

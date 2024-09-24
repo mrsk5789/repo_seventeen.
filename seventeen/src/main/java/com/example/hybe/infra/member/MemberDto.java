@@ -1,36 +1,37 @@
 package com.example.hybe.infra.member;
 
-import org.thymeleaf.expression.Dates;
+import java.util.Date;
 
 public class MemberDto {
 	
 	
-	private Integer Seq;
-	private String Name;
+	private Integer seq;
+	private String name;
 	private String id;
-	private String Nickname;
-	private Integer Delny;
+	private String nickname;
+	private Integer delny;
+	private Integer UseNy;
+	private Integer ordere;
 	private String email;
-	private Integer phonenumber;
+	private String phonenumber;
 	private String adress;
-	private Dates regdate;
+	private Date regdate;
 	private String gender;
 	private String password;
-	private String desc;
-	private Dates modDate;
-	
+	private String desce;
+	private Date modDate;
 	
 	public Integer getSeq() {
-		return Seq;
+		return seq;
 	}
 	public void setSeq(Integer seq) {
-		Seq = seq;
+		this.seq = seq;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getId() {
 		return id;
@@ -39,16 +40,28 @@ public class MemberDto {
 		this.id = id;
 	}
 	public String getNickname() {
-		return Nickname;
+		return nickname;
 	}
 	public void setNickname(String nickname) {
-		Nickname = nickname;
+		this.nickname = nickname;
 	}
 	public Integer getDelny() {
-		return Delny;
+		return delny;
 	}
 	public void setDelny(Integer delny) {
-		Delny = delny;
+		this.delny = delny;
+	}
+	public Integer getUseNy() {
+		return UseNy;
+	}
+	public void setUseNy(Integer useNy) {
+		UseNy = useNy;
+	}
+	public Integer getOrdere() {
+		return ordere;
+	}
+	public void setOrdere(Integer ordere) {
+		this.ordere = ordere;
 	}
 	public String getEmail() {
 		return email;
@@ -56,10 +69,10 @@ public class MemberDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getPhonenumber() {
+	public String getPhonenumber() {
 		return phonenumber;
 	}
-	public void setPhonenumber(Integer phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 	public String getAdress() {
@@ -68,10 +81,10 @@ public class MemberDto {
 	public void setAdress(String adress) {
 		this.adress = adress;
 	}
-	public Dates getRegdate() {
+	public Date getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(Dates regdate) {
+	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
 	public String getGender() {
@@ -86,18 +99,19 @@ public class MemberDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDesce() {
+		return desce;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDesce(String desce) {
+		this.desce = desce;
 	}
-	public Dates getModDate() {
+	public Date getModDate() {
 		return modDate;
 	}
-	public void setModDate(Dates modDate) {
+	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
+	
 	
 	
 	

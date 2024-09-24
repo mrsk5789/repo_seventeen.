@@ -6,17 +6,24 @@ import java.util.Date;
 public class InformationDto {
 	
 	private Integer seq;
+	private Integer specifics;
+	private Integer ptNy;
+	private Integer groupNy;
+	private Integer UseNy;
+	private Integer orders;
+	private Integer delny;
 	private String name;
+	private String ceoName;
+	private String adress;
 	private String opentime;
 	private String closetime;
 	private String telNumber;
 	private String eadress;
-	private String parking;
-	private String reservation;
-	private String freecal;
+	private Integer parkingNy;
 	private String letter;
 	private Date regDate;
 	private Date modDate;
+	
 	
 	public Integer getSeq() {
 		return seq;
@@ -24,11 +31,59 @@ public class InformationDto {
 	public void setSeq(Integer seq) {
 		this.seq = seq;
 	}
+	public Integer getSpecifics() {
+		return specifics;
+	}
+	public void setSpecifics(Integer specifics) {
+		this.specifics = specifics;
+	}
+	public Integer getPtNy() {
+		return ptNy;
+	}
+	public void setPtNy(Integer ptNy) {
+		this.ptNy = ptNy;
+	}
+	public Integer getGroupNy() {
+		return groupNy;
+	}
+	public void setGroupNy(Integer groupNy) {
+		this.groupNy = groupNy;
+	}
+	public Integer getUseNy() {
+		return UseNy;
+	}
+	public void setUseNy(Integer useNy) {
+		UseNy = useNy;
+	}
+	public Integer getOrders() {
+		return orders;
+	}
+	public void setOrders(Integer orders) {
+		this.orders = orders;
+	}
+	public Integer getDelny() {
+		return delny;
+	}
+	public void setDelny(Integer delny) {
+		this.delny = delny;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getCeoName() {
+		return ceoName;
+	}
+	public void setCeoName(String ceoName) {
+		this.ceoName = ceoName;
+	}
+	public String getAdress() {
+		return adress;
+	}
+	public void setAdress(String adress) {
+		this.adress = adress;
 	}
 	public String getOpentime() {
 		return opentime;
@@ -54,23 +109,11 @@ public class InformationDto {
 	public void setEadress(String eadress) {
 		this.eadress = eadress;
 	}
-	public String getParking() {
-		return parking;
+	public Integer getParkingNy() {
+		return parkingNy;
 	}
-	public void setParking(String parking) {
-		this.parking = parking;
-	}
-	public String getReservation() {
-		return reservation;
-	}
-	public void setReservation(String reservation) {
-		this.reservation = reservation;
-	}
-	public String getFreecal() {
-		return freecal;
-	}
-	public void setFreecal(String freecal) {
-		this.freecal = freecal;
+	public void setParkingNy(Integer parkingNy) {
+		this.parkingNy = parkingNy;
 	}
 	public String getLetter() {
 		return letter;
@@ -90,9 +133,6 @@ public class InformationDto {
 	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
-	
-	
-	
 	
 	
 }

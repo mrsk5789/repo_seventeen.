@@ -1,0 +1,19 @@
+2024-09-17T15:17:07.384 [HikariPool-20 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-20 - Thread starvation or clock leap detected (housekeeper delta=12h29m28s813ms417µs100ns). 
+2024-09-17T15:19:56.092 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+444. SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+		ORDER BY
+			a.ifcgSeq desc
+ {executed in 48 msec} 

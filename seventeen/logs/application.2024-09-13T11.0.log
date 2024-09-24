@@ -1,0 +1,19 @@
+2024-09-13T11:43:35.535 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+274. SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+			 AND a.ifcgRegDate BETWEEN '2024-09-11' AND '' 
+		ORDER BY
+			a.ifcgSeq desc
+ {executed in 33 msec} 

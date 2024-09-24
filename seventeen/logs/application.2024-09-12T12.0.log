@@ -1,0 +1,96 @@
+2024-09-12T12:25:07.055 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 256320 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-12T12:25:07.055 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T12:25:07.209 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-12T12:25:07.210 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T12:25:07.210 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T12:25:07.220 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T12:25:07.221 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 164 ms 
+2024-09-12T12:25:07.332 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T12:25:07.340 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-12T12:25:07.346 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.393 seconds (process running for 5788.603) 
+2024-09-12T12:25:07.349 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T12:25:59.228 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 24 class path changes (0 additions, 0 deletions, 24 modifications) 
+2024-09-12T12:25:59.459 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 256320 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-12T12:25:59.460 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T12:25:59.642 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-12T12:25:59.643 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T12:25:59.644 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T12:25:59.658 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T12:25:59.659 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 195 ms 
+2024-09-12T12:25:59.826 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T12:25:59.834 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-12T12:25:59.843 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.412 seconds (process running for 5841.1) 
+2024-09-12T12:25:59.845 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T12:33:59.691 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T12:33:59.984 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 256320 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-12T12:33:59.985 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T12:34:00.277 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-12T12:34:00.278 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T12:34:00.279 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T12:34:00.294 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T12:34:00.294 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 308 ms 
+2024-09-12T12:34:00.321 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-12T12:34:00.325 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classController': Unsatisfied dependency expressed through field 'classService': Error creating bean with name 'classService': Unsatisfied dependency expressed through field 'classDao': Error creating bean with name 'classDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\Class\ClassDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-12T12:34:00.325 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-12T12:34:00.331 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-12T12:34:00.341 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-12T12:34:23.479 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-12T12:34:23.482 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T12:34:23.564 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-12T12:34:23.564 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-12T12:34:24.588 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-12T12:34:24.600 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-12T12:34:24.605 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T12:34:24.605 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T12:34:24.662 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T12:34:24.663 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1098 ms 
+2024-09-12T12:34:25.299 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T12:34:25.316 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-12T12:34:25.339 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-12T12:34:25.351 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 2.13 seconds (process running for 3.08) 
+2024-09-12T12:34:31.771 [http-nio-8090-exec-5] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-12T12:34:31.771 [http-nio-8090-exec-5] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-12T12:34:31.772 [http-nio-8090-exec-5] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-12T12:34:33.709 [http-nio-8090-exec-2] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-12T12:34:34.182 [http-nio-8090-exec-2] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@5a22d123 
+2024-09-12T12:34:34.186 [http-nio-8090-exec-2] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-12T12:34:34.226 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+			a.ifcdSeq
+			,a.ifcdName
+			,a.ifcdUseNy
+			,a.ifcdOrder
+			,a.ifcdDesc
+			,a.ifcdDelny
+            ,a.ifcdRegDate
+            ,a.ifcdmodDate
+            ,a.codegroup_seq
+            ,b.ifcgName
+       FROM
+           code as a
+      JOIN codegroup as b ON b.ifcgSeq=a.codegroup_seq
+      WHERE 1=1
+
+      ORDER BY 
+      		a.ifcdSeq Desc
+ {executed in 18 msec} 

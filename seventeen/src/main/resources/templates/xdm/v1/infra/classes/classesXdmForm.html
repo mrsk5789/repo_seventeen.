@@ -17,21 +17,17 @@
 		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
 		<meta property="og:type" content="Website">
 		<meta property="og:site_name" content="Bootstrap Gallery">
-		<link rel="shortcut icon" href="img/favicon.svg" />
+		<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
 		<title>Modern Admin Dashboards - Form Inputs</title>
 
 		<!-- Common CSS -->
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/fonts/icomoon/icomoon.css" />
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/main.min.css" />
-
 	</head>
 
 	<body>
-
-		<!-- BEGIN .app-wrap -->
 		<div class="app-wrap">
-			<!-- BEGIN .app-heading -->
 			<header class="app-header">
 				<div class="container-fluid">
 					<div class="row gutters">
@@ -154,8 +150,6 @@
 					</div>
 				</div>
 			</header>
-			<!-- END: .app-heading -->
-			<!-- BEGIN .app-container -->
 			<div class="app-container">
 				<!-- BEGIN .app-side -->
 				<aside class="app-side" id="app-side">
@@ -184,8 +178,6 @@
 								</li>
 							</ul>
 						</div>
-						<!-- END .user-profile -->
-						<!-- BEGIN .side-nav -->
 						<nav class="side-nav">
 							<!-- BEGIN: side-nav-content -->
 							<ul class="unifyMenu" id="unifyMenu">
@@ -454,9 +446,6 @@
 					</div>
 					<!-- END: .side-content -->
 				</aside>
-				<!-- END: .app-side -->
-
-				<!-- BEGIN .app-main -->
 				<div class="app-main">
 					<!-- BEGIN .main-heading -->
 					<header class="main-heading">
@@ -492,15 +481,13 @@
 												</nav>
 											</div>
 										</div>
-										<h1>Code</h1>
+										<h1>수업</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<!-- END: .main-heading -->
-					<!-- BEGIN .main-content -->
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form id="form" name="form" method="post" action="/xdm/v1/infra/classes/classesXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -512,12 +499,8 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<label for="inputName">코드그룹</label>
+														<label for="inputName">센터명</label>
 														<select class="form-control form-control-lg">
-															<option>선택하세요</option>
-															<option>선택하세요</option>
-															<option>선택하세요</option>
-															<option>선택하세요</option>
 															<option>선택하세요</option>
 														</select>			
 													</div>
@@ -539,42 +522,66 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="form-group">코드</label>
-													<input type="text" id="ifcdName" class="form-control" placeholder="자동생성"disabled >
+													<label for="seq">코드</label>
+													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ifcdName">코드(ANOTHER)</label>
-													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
-													<!-- th:value="${item?.ifcdName"}-->
+													<label for="className">수업명</label>
+													<input class="form-control form-control-lg" name="className" type="text"  th:value="${item?.className}"  id="className" placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ifcgName">코드이름</label>
-													<input class="form-control form-control-lg" name="ifcgName" type="text" id="ifcgName" placeholder="한글,영대소문자, 숫자">
+													<label for="teacher">강사명</label>
+													<input class="form-control form-control-lg" name="teacher"  th:value="${item?.teacher}" type="text" id="teacher" placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">코드이름(영문)</label>
-													<input class="form-control form-control-lg" type="text" placeholder="영대소문자, 숫자">
+													<label for="price">가격</label>
+													<input class="form-control form-control-lg" name="price" th:value="${item?.price}" type="text" id="price" placeholder="숫자">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ifcdUseNy">사용여부</label>
-														<select class="form-control form-control-lg" id="ifcdUseNy" name="ifcdUseNy">
-															<option value="1" th:selected="${item?.ifcdUseNy==1}">사용</option>
-															<option value="0" th:selected="${item?.ifcdUseNy==0}">미사용</option>
+													<label for="terms">기간</label>
+													<input class="form-control form-control-lg" name="terms" th:value="${item?.terms}" type="text" id="terms" placeholder="숫자,한글">
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="UseNy">사용여부</label>
+														<select class="form-control form-control-lg" id="UseNy" name="UseNy">
+															<option value="1" th:selected="${item?.UseNy==1}">Y</option>
+															<option value="0" th:selected="${item?.UseNy==0}">N</option>
 														</select>					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">순서</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="orders">순서</label>
+														<select class="form-control form-control-lg" id="orders" name="orders">
+															<option value="1" th:selected="${item?.orders==1}">1</option>
+															<option value="2" th:selected="${item?.orders==2}">2</option>
+															<option value="3" th:selected="${item?.orders==3}">3</option>
+															<option value="4" th:selected="${item?.orders==4}">4</option>
+															<option value="5" th:selected="${item?.orders==5}">5</option>
+															<option value="6" th:selected="${item?.orders==6}">6</option>
+														</select>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="disabledInput"></label>
+												</div>
+											</div>
+											
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="classDesc">설명</label>
+													<textarea class="form-control" rows="2" name="classDesc" id="classDesc" type="text" style="width: 570px; height: 80px;" th:value="${item?.classDesc}"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -589,80 +596,9 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">설명</label>
-													<textarea class="form-control" rows="2" type="text" style="width: 570px; height: 80px;"></textarea>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
 													<label for="disabledInput"></label>
 												</div>
 											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어1</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어2</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어3</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어4</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어5</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어6</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어7</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어8</label>
-													<input class="form-control form-control-lg" type="text" >
-												</div>
-											</div>
-											<!-- <div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어8</label>
-													<input class="form-control is-valid"  placeholder="Valid state"type="text">
-													<div class="valid-feedback">Looks good!</div>
-												</div>
-											</div> -->
 										</div>
 								    </div>
 								</div>
@@ -683,7 +619,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmList" class="btn btn-primary">
+										<button type="submit" action="redirect:/xdm/v1/infra/classes/classesXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -693,12 +629,11 @@
 					</div>
 				</div>
 			</div>
-			</div>
-				<!-- END: .app-main -->
-			</div>
-			<footer class="main-footer fixed-btm">
-				© Bootstrap Gallery 2023
-			</footer>
+		 </div>
+	    </div>
+		<footer class="main-footer fixed-btm">
+			© Bootstrap Gallery 2023
+		</footer>
 		</div>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>

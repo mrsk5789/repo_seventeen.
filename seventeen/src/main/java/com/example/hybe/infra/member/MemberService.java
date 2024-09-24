@@ -13,9 +13,9 @@ public class MemberService {
 	@Autowired
 	private MemberDao memberDao;
 	
-	public List<MemberDto> selectList() {
+	public List<MemberDto> selectList(MemberVo membervo) {
 		
-		return memberDao.selectList();
+		return memberDao.selectList(membervo);
 	}
 	
 	public int insert(MemberDto memberDto) {
@@ -23,6 +23,21 @@ public class MemberService {
 	}
 	public MemberDto selectOne(MemberDto memberDto) {
 		return memberDao.selectOne(memberDto);
+	}
+	
+	public int update(MemberDto memberDto) {
+		System.out.println(memberDto.getSeq());
+		return memberDao.update(memberDto);
+	}
+	
+	public int uelete(MemberDto memberDto) {
+		System.out.println(memberDto.getSeq());
+		return memberDao.uelete(memberDto);
+	}
+	
+	public int delete(MemberDto memberDto) {
+		System.out.println(memberDto.getSeq());
+		return memberDao.delete(memberDto);
 	}
 
 

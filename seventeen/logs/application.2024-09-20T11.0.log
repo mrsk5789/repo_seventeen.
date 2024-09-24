@@ -1,0 +1,1541 @@
+2024-09-20T11:03:49.138 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:04:29.247 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 12 msec} 
+2024-09-20T11:05:34.087 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:15:04.836 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:15:05.126 [Thread-251] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:15:05.389 [Thread-251] INFO c.z.h.HikariDataSource - HikariPool-33 - Shutdown initiated... 
+2024-09-20T11:15:05.486 [Thread-251] INFO c.z.h.HikariDataSource - HikariPool-33 - Shutdown completed. 
+2024-09-20T11:15:06.848 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:15:06.850 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:15:07.384 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:15:07.386 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:15:07.386 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:15:07.386 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:15:07.410 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:15:07.410 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 547 ms 
+2024-09-20T11:15:07.798 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:15:07.812 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:15:07.818 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:15:07.829 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 1.07 seconds (process running for 686435.244) 
+2024-09-20T11:15:07.832 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:15:07.880 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T11:15:07.880 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T11:15:07.882 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-20T11:15:07.885 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-34 - Starting... 
+2024-09-20T11:15:07.992 [http-nio-8090-exec-1] INFO c.z.h.p.HikariPool - HikariPool-34 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@7b577d9c 
+2024-09-20T11:15:07.992 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-34 - Start completed. 
+2024-09-20T11:15:08.018 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 25 msec} 
+2024-09-20T11:15:16.138 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 21
+ {executed in 9 msec} 
+2024-09-20T11:15:19.057 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=21
+ {executed in 35 msec} 
+2024-09-20T11:15:19.073 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:16:02.043 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            '냥이'
+			,''
+			,''
+			,NULL
+			,1
+			,''
+			,''
+            ,''
+            ,now()
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            )
+ {executed in 17 msec} 
+2024-09-20T11:16:02.043 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+734. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:16:48.839 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:16:48.930 [Thread-255] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:16:49.092 [Thread-255] INFO c.z.h.HikariDataSource - HikariPool-34 - Shutdown initiated... 
+2024-09-20T11:16:49.133 [Thread-255] INFO c.z.h.HikariDataSource - HikariPool-34 - Shutdown completed. 
+2024-09-20T11:16:49.512 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:16:49.513 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:16:49.911 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:16:49.912 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:16:49.912 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:16:49.912 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:16:49.936 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:16:49.936 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 421 ms 
+2024-09-20T11:16:50.197 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:16:50.208 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:16:50.211 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:16:50.223 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.743 seconds (process running for 686537.638) 
+2024-09-20T11:16:50.224 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:17:22.607 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:17:22.635 [Thread-259] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:17:22.960 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:17:22.961 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:17:23.262 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:17:23.262 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:17:23.263 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:17:23.263 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:17:23.281 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:17:23.281 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 318 ms 
+2024-09-20T11:17:23.561 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:17:23.579 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:17:23.585 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:17:23.598 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.659 seconds (process running for 686571.014) 
+2024-09-20T11:17:23.602 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:18:07.232 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T11:18:07.247 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T11:18:07.266 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 19 ms 
+2024-09-20T11:18:07.299 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-35 - Starting... 
+2024-09-20T11:18:07.431 [http-nio-8090-exec-1] INFO c.z.h.p.HikariPool - HikariPool-35 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6874fd7a 
+2024-09-20T11:18:07.438 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-35 - Start completed. 
+2024-09-20T11:18:07.470 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 32 msec} 
+2024-09-20T11:18:40.093 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            '김냥이'
+			,'asdfg123456'
+			,''
+			,NULL
+			,1
+			,''
+			,''
+            ,''
+            ,now()
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            )
+ {executed in 115 msec} 
+2024-09-20T11:18:40.101 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:18:43.037 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 23
+ {executed in 4 msec} 
+2024-09-20T11:18:46.935 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=23
+ {executed in 10 msec} 
+2024-09-20T11:18:46.942 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:18:51.038 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,now()
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            )
+ {executed in 9 msec} 
+2024-09-20T11:18:51.045 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 7 msec} 
+2024-09-20T11:18:54.584 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,now()
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            )
+ {executed in 8 msec} 
+2024-09-20T11:18:54.584 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:18:55.171 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,now()
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            )
+ {executed in 5 msec} 
+2024-09-20T11:18:55.171 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:18:55.387 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,now()
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            )
+ {executed in 0 msec} 
+2024-09-20T11:18:55.398 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 11 msec} 
+2024-09-20T11:18:57.302 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,now()
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            )
+ {executed in 0 msec} 
+2024-09-20T11:18:57.302 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+744. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:23:05.332 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:23:05.652 [Thread-263] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:23:05.845 [Thread-263] INFO c.z.h.HikariDataSource - HikariPool-35 - Shutdown initiated... 
+2024-09-20T11:23:05.898 [Thread-263] INFO c.z.h.HikariDataSource - HikariPool-35 - Shutdown completed. 
+2024-09-20T11:23:06.308 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:23:06.309 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:23:06.585 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:23:06.586 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:23:06.586 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:23:06.586 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:23:06.604 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:23:06.604 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 293 ms 
+2024-09-20T11:23:06.815 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:23:06.820 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:23:06.827 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:23:06.832 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.557 seconds (process running for 686914.247) 
+2024-09-20T11:23:06.833 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:23:09.007 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T11:23:09.007 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T11:23:09.014 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 7 ms 
+2024-09-20T11:23:13.042 [http-nio-8090-exec-3] INFO c.z.h.HikariDataSource - HikariPool-36 - Starting... 
+2024-09-20T11:23:13.126 [http-nio-8090-exec-3] INFO c.z.h.p.HikariPool - HikariPool-36 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6f2827fc 
+2024-09-20T11:23:13.126 [http-nio-8090-exec-3] INFO c.z.h.HikariDataSource - HikariPool-36 - Start completed. 
+2024-09-20T11:23:13.143 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 17 msec} 
+2024-09-20T11:24:04.188 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress  
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+            ,regdate
+
+      )VALUES(
+            '김고양이'
+			,'789'
+			,'ㄴㄴㅇㅇ'
+			,NULL
+			,1
+			,'ㅇㅀ'
+			,'ㅇㄹ호'
+            ,''
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            ,now()
+            )
+ {executed in 166 msec} 
+2024-09-20T11:24:04.213 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:28:03.557 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+		ORDER BY
+			a.ifcgSeq desc
+ {executed in 16 msec} 
+2024-09-20T11:28:08.774 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+	  	 	a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+        FROM 
+			codegroup a	
+		WHERE 1=1
+			AND	a.ifcgSeq = '63'
+ {executed in 2 msec} 
+2024-09-20T11:29:55.352 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+	  	 	a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+        FROM 
+			codegroup a	
+		WHERE 1=1
+			AND	a.ifcgSeq = '63'
+ {executed in 7 msec} 
+2024-09-20T11:33:33.910 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'sdfghj'
+			,1
+			,1
+			,''
+			,NULL
+			,now()
+			,now()
+			)
+ {executed in 84 msec} 
+2024-09-20T11:33:33.941 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+		ORDER BY
+			a.ifcgSeq desc
+ {executed in 14 msec} 
+2024-09-20T11:36:55.152 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+754. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:41:28.893 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:41:28.994 [Thread-267] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:41:29.255 [Thread-267] INFO c.z.h.HikariDataSource - HikariPool-36 - Shutdown initiated... 
+2024-09-20T11:41:29.316 [Thread-267] INFO c.z.h.HikariDataSource - HikariPool-36 - Shutdown completed. 
+2024-09-20T11:41:30.370 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:41:30.370 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:41:30.817 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:41:30.818 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:41:30.819 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:41:30.819 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:41:30.842 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:41:30.842 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 467 ms 
+2024-09-20T11:41:31.160 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:41:31.171 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:41:31.179 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:41:31.187 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.904 seconds (process running for 688018.603) 
+2024-09-20T11:41:31.190 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:42:05.231 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T11:42:05.288 [Thread-271] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:42:06.495 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T11:42:06.496 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T11:42:06.936 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T11:42:06.936 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:42:06.937 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T11:42:06.937 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T11:42:06.962 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T11:42:06.962 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 463 ms 
+2024-09-20T11:42:07.211 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T11:42:07.223 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T11:42:07.228 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T11:42:07.239 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.799 seconds (process running for 688054.654) 
+2024-09-20T11:42:07.242 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T11:42:33.144 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T11:42:33.144 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T11:42:33.146 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-20T11:42:33.148 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-37 - Starting... 
+2024-09-20T11:42:33.270 [http-nio-8090-exec-1] INFO c.z.h.p.HikariPool - HikariPool-37 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@45eff7f1 
+2024-09-20T11:42:33.270 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-37 - Start completed. 
+2024-09-20T11:42:33.290 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 19 msec} 
+2024-09-20T11:46:20.463 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 29
+ {executed in 56 msec} 
+2024-09-20T11:47:59.459 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 29
+ {executed in 20 msec} 
+2024-09-20T11:48:21.136 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 24
+ {executed in 2 msec} 
+2024-09-20T11:48:24.125 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=24
+ {executed in 67 msec} 
+2024-09-20T11:48:24.201 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 3 msec} 
+2024-09-20T11:48:25.777 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 26
+ {executed in 0 msec} 
+2024-09-20T11:48:27.780 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=26
+ {executed in 3 msec} 
+2024-09-20T11:48:27.780 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:48:29.049 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 27
+ {executed in 1 msec} 
+2024-09-20T11:48:31.677 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=27
+ {executed in 14 msec} 
+2024-09-20T11:48:31.677 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:48:33.271 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 28
+ {executed in 1 msec} 
+2024-09-20T11:48:35.793 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=28
+ {executed in 1 msec} 
+2024-09-20T11:48:35.793 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:48:37.446 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 25
+ {executed in 0 msec} 
+2024-09-20T11:48:39.946 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=25
+ {executed in 1 msec} 
+2024-09-20T11:48:39.946 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:48:59.527 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress  
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+            ,regdate
+
+      )VALUES(
+            NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+			,NULL
+            ,NULL
+            ,NULL 
+            ,NULL 
+			,NULL
+			,NULL
+            ,now()
+            ,now()
+            )
+ {executed in 17 msec} 
+2024-09-20T11:48:59.527 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:53:58.052 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 49 msec} 
+2024-09-20T11:54:00.427 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 17 msec} 
+2024-09-20T11:54:04.623 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:54:05.243 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:54:08.109 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:54:15.097 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:54:17.377 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+			 AND UseNy = 1 
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T11:54:21.467 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-20T11:54:32.609 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+764. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+            ,a.regdate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+			 AND a.modDate BETWEEN '2024-09-02' AND '2024-09-03' 
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 

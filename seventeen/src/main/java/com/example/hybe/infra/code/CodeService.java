@@ -10,9 +10,9 @@ public class CodeService {
 	@Autowired
 	private CodeDao codeDao;
 	
-	public List<CodeDto> selectList() {
+	public List<CodeDto> selectList(CodeVo codevo) {
 		
-		return codeDao.selectList();
+		return codeDao.selectList(codevo);
 	}
 	
 	public int insert(CodeDto codeDto) {
@@ -30,6 +30,16 @@ public class CodeService {
 	
 	public List<CodeDto>selectlistCodeGroup(){
 		return codeDao.selectlistCodeGroup();
+	}
+	
+	public int uelete(CodeDto codeDto) {
+		System.out.println(codeDto.getIfcdSeq());
+		return codeDao.uelete(codeDto);
+	}
+	
+	public int delete(CodeDto codeDto) {
+		System.out.println(codeDto.getIfcdSeq());
+		return codeDao.delete(codeDto);
 	}
 
 }

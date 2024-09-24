@@ -12,13 +12,13 @@ public class CodeGroupDto {
 	private Integer ifcgDelNy;
 	private Date ifcgRegDate;
 	private Date ifcgRenDate;
-	private Integer codegroup_seq;
+	private Integer xcount;
 	
-	public Integer getCodegroup_seq() {
-		return codegroup_seq;
+	public Integer getXcount() {
+		return xcount;
 	}
-	public void setCodegroup_seq(Integer codegroup_seq) {
-		this.codegroup_seq = codegroup_seq;
+	public void setXcount(Integer xcount) {
+		this.xcount = xcount;
 	}
 	public String getIfcgSeq() {
 		return ifcgSeq;
@@ -68,6 +68,5 @@ public class CodeGroupDto {
 	public void setIfcgRenDate(Date ifcgRenDate) {
 		this.ifcgRenDate = ifcgRenDate;
 	}
-	
 	
 }

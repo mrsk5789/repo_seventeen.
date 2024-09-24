@@ -1,762 +1,742 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<meta name="description" content="Modern Admin Panel" />
-	<meta name="keywords"
-		content="Admin, Datatables, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
-	<meta name="author" content="Bootstrap Gallery" />
-	<link rel="canonical" href="https://www.bootstrap.gallery/">
-	<meta property="og:url" content="https://www.bootstrap.gallery">
-	<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
-	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
-	<meta property="og:type" content="Website">
-	<meta property="og:site_name" content="Bootstrap Gallery">
-	<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
-	<title>Modern Admin Dashboards - Datatables</title>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="Modern Admin Panel" />
+		<meta name="keywords"
+			content="Admin, Datatables, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="canonical" href="https://www.bootstrap.gallery/">
+		<meta property="og:url" content="https://www.bootstrap.gallery">
+		<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+		<meta property="og:type" content="Website">
+		<meta property="og:site_name" content="Bootstrap Gallery">
+		<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/img/favicon.svg" />
+		<title>Modern Admin Dashboards - Datatables</title>
 
-	<!--<link rel="apple-touch-icon" sizes="180x180" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/apple-touch-icon.png">
-		    <link rel="icon" type="image/png" sizes="32x32" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon-32x32.png">
-		    <link rel="icon" type="image/png" sizes="16x16" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon-16x16.png">
-		    <link rel="shortcut icon" type="image/x-icon" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/favicon.ico">
-		    <link rel="manifest" href="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/manifest.json">
-		    <meta name="msapplication-TileImage" content="/xdm/v1/template/phoenix-v1.13.0/assets/img/favicons/mstile-150x150.png">
-		    <meta name="theme-color" content="#ffffff">-->
+		<!-- Common CSS -->
+		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/fonts/icomoon/icomoon.css" />
+		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/main.min.css" />
 
-	<!-- Common CSS -->
-	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/fonts/icomoon/icomoon.css" />
-	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/main.min.css" />
-
-	<!-- Data Tables -->
-	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4.css" />
-	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
-	<style>
-		#shape {
-			width: 200px;
-			height: 28px;
-			border-radius: 5px;
-		}
-	</style>
-</head>
-
-<body>
-	<!-- BEGIN .app-wrap -->
-	<div class="app-wrap">
-		<!-- BEGIN .app-heading -->
-		<header class="app-header">
-			<div class="container-fluid">
-				<div class="row gutters">
-					<a class="mini-nav-btn" href="#" id="app-side-mini-toggler">
-						<i class="icon-sort"></i>
-					</a>
-					<a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
-						<i class="icon-chevron-thin-left"></i>
-					</a>
-					<a href="index.html" class="logo">
-						<img src="/xdm/v1/template/qwer/assert/img/logo.svg" alt="Low Price Admin Dashboards" />
-					</a>
-					<a style="width: 650px;"></a>
-					<div class="col-md-5 col-sm-3 col-4">
-						<ul class="header-actions">
-							<li class="dropdown">
-								<div class="card-header">Search:<input></div>
-								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="notifications">
-									<ul class="imp-notify">
-										<li>
-											<div class="icon">W</div>
-											<div class="details">
-												<p><span>Wilson</span> The best Dashboard design I have seen ever.</p>
-											</div>
-										</li>
-										<li>
-											<div class="icon">J</div>
-											<div class="details">
-												<p><span>John Smith</span> Jhonny sent you a message. Read now!</p>
-											</div>
-										</li>
-										<li>
-											<div class="icon secondary">R</div>
-											<div class="details">
-												<p><span>Justin Mezzell</span> Stella, Added you as a Friend. Accept it!
-												</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="#" id="todos" data-toggle="dropdown" aria-haspopup="true">
-									<i class="icon-person_outline"></i>
-									<span class="count-label red"></span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="todos">
-									<ul class="stats-widget">
-										<li>
-											<h4>$37895</h4>
-											<p>Revenue <span>+2%</span></p>
-											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="87"
-													aria-valuemin="0" aria-valuemax="100" style="width: 87%">
-													<span class="sr-only">87% Complete (success)</span>
+		<!-- Data Tables -->
+		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4.css" />
+		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
+		<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
+		<style>
+			#shapee{
+            width : 200px;
+            height: 28px;
+            border-radius: 5px;
+        }
+		</style>
+	</head>
+	<body>
+		<!-- BEGIN .app-wrap -->
+		<div class="app-wrap">
+			<!-- BEGIN .app-heading -->
+			<header class="app-header">
+				<div class="container-fluid">
+					<div class="row gutters">
+						<a class="mini-nav-btn" href="#" id="app-side-mini-toggler">
+								<i class="icon-sort"></i>
+						</a>
+						<a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
+							<i class="icon-chevron-thin-left"></i>
+						</a>
+						<a href="index.html" class="logo">
+							<img src="/xdm/v1/template/qwer/assert/img/logo.svg" alt="Low Price Admin Dashboards" />
+						</a>
+						<a style="width: 650px;"></a>
+						<div class="col-md-5 col-sm-3 col-4">
+							<ul class="header-actions">
+								<li class="dropdown">
+									<div class="card-header">Search:<input></div>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="notifications">
+										<ul class="imp-notify">
+											<li>
+												<div class="icon">W</div>
+												<div class="details">
+													<p><span>Wilson</span> The best Dashboard design I have seen ever.</p>
 												</div>
-											</div>
-										</li>
-										<li>
-											<h4>4,897</h4>
-											<p>Downloads <span>+39%</span></p>
-											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="65"
-													aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-													<span class="sr-only">65% Complete (success)</span>
+											</li>
+											<li>
+												<div class="icon">J</div>
+												<div class="details">
+													<p><span>John Smith</span> Jhonny sent you a message. Read now!</p>
 												</div>
-											</div>
-										</li>
-										<li>
-											<h4>2,219</h4>
-											<p>Uploads <span class="text-secondary">-7%</span></p>
-											<div class="progress">
-												<div class="progress-bar bg-danger" role="progressbar"
-													aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"
-													style="width: 42%">
-													<span class="sr-only">42% Complete (success)</span>
+											</li>
+											<li>
+												<div class="icon secondary">R</div>
+												<div class="details">
+													<p><span>Justin Mezzell</span> Stella, Added you as a Friend. Accept it!</p>
 												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
-									aria-haspopup="true">
-									<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
-									<i class="icon-chevron-small-down"></i>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
-									<ul class="user-settings-list">
-										<li>
-											<a href="profile.html">
-												<div class="icon">
-													<i class="icon-account_circle"></i>
-												</div>
-												<p>Profile</p>
-											</a>
-										</li>
-										<li>
-											<a href="profile.html">
-												<div class="icon red">
-													<i class="icon-cog3"></i>
-												</div>
-												<p>Settings</p>
-											</a>
-										</li>
-										<li>
-											<a href="filters.html">
-												<div class="icon yellow">
-													<i class="icon-schedule"></i>
-												</div>
-												<p>Activity</p>
-											</a>
-										</li>
-									</ul>
-									<div class="logout-btn">
-										<a href="login.html" class="btn btn-primary">Logout</a>
+											</li>
+										</ul>
 									</div>
-								</div>
-							</li>
-						</ul>
+								</li>
+								<li>
+									<a href="#" id="todos" data-toggle="dropdown" aria-haspopup="true">
+										<i class="icon-person_outline"></i>
+										<span class="count-label red"></span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="todos">
+										<ul class="stats-widget">
+											<li>
+												<h4>$37895</h4>
+												<p>Revenue <span>+2%</span></p>
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0"
+														aria-valuemax="100" style="width: 87%">
+														<span class="sr-only">87% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<h4>4,897</h4>
+												<p>Downloads <span>+39%</span></p>
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+														aria-valuemax="100" style="width: 65%">
+														<span class="sr-only">65% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<h4>2,219</h4>
+												<p>Uploads <span class="text-secondary">-7%</span></p>
+												<div class="progress">
+													<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="42" aria-valuemin="0"
+														aria-valuemax="100" style="width: 42%">
+														<span class="sr-only">42% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+										<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
+										<i class="icon-chevron-small-down"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
+										<ul class="user-settings-list">
+											<li>
+												<a href="profile.html">
+													<div class="icon">
+														<i class="icon-account_circle"></i>
+													</div>
+													<p>Profile</p>
+												</a>
+											</li>
+											<li>
+												<a href="profile.html">
+													<div class="icon red">
+														<i class="icon-cog3"></i>
+													</div>
+													<p>Settings</p>
+												</a>
+											</li>
+											<li>
+												<a href="filters.html">
+													<div class="icon yellow">
+														<i class="icon-schedule"></i>
+													</div>
+													<p>Activity</p>
+												</a>
+											</li>
+										</ul>
+										<div class="logout-btn">
+											<a href="login.html" class="btn btn-primary">Logout</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
-		<!-- END: .app-heading -->
-		<!-- BEGIN .app-container -->
-		<div class="app-container">
-			<!-- BEGIN .app-side -->
-			<aside class="app-side" id="app-side">
-				<!-- BEGIN .side-content -->
-				<div class="side-content ">
-					<!-- BEGIN .user-profile -->
-					<div class="user-profile">
-						<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb" alt="Admin Dashboards">
-						<ul class="profile-actions">
-							<li>
-								<a href="#">
-									<i class="icon-social-skype"></i>
-									<span class="count-label red"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="icon-social-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a href="login.html">
-									<i class="icon-export"></i>
-								</a>
-							</li>
-						</ul>
+			</header>
+			<!-- END: .app-heading -->
+			<!-- BEGIN .app-container -->
+			<div class="app-container">
+				<!-- BEGIN .app-side -->
+				<aside class="app-side" id="app-side">
+					<!-- BEGIN .side-content -->
+					<div class="side-content ">
+						<!-- BEGIN .user-profile -->
+						<div class="user-profile">
+							<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb" alt="Admin Dashboards">
+							<ul class="profile-actions">
+								<li>
+									<a href="#">
+										<i class="icon-social-skype"></i>
+										<span class="count-label red"></span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-social-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="login.html">
+										<i class="icon-export"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<nav class="side-nav">
+							<ul class="unifyMenu" id="unifyMenu">
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-laptop_windows"></i>
+										</span>
+										<span class="nav-title">Dashboards</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='index.html'>Dashboard</a>
+										</li>
+										<li>
+											<a href='dashboard2.html'>CRM</a>
+										</li>
+										<li>
+											<a href='dashboard3.html'>Analytics</a>
+										</li>
+										<li>
+											<a href='quick-dashboard.html'>Quick Dashboard</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="widgets.html">
+										<span class="has-icon">
+											<i class="icon-flash-outline"></i>
+										</span>
+										<span class="nav-title">Graph Widgets</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-adjust2"></i>
+										</span>
+										<span class="nav-title">Cool Features</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href="filters.html">Content Filter</a>
+										</li>
+										<li>
+											<a href="datepickers.html">Datepickers</a>
+										</li>
+										<li>
+											<a href='map-skins.html'>Gmap Skins</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-tabs-outline"></i>
+										</span>
+										<span class="nav-title">Pages</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='profile.html'>Profile</a>
+										</li>
+										<li>
+											<a href='calendar.html'>Calendar</a>
+										</li>
+										<li>
+											<a href='gallery.html'>Gallery</a>
+										</li>
+										
+										<li>
+											<a href='timeline.html'>Timeline</a>
+										</li>
+										<li>
+											<a href="pricing.html">Pricing</a>
+										</li>
+										<li>
+											<a href="faq.html">Faq's</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-layers"></i>
+										</span>
+										<span class="nav-title">Layouts</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='custom-drag.html'>Drag &amp; Drop</a>
+										</li>
+										<li>
+											<a href='layout.html'>Default Layout</a>
+										</li>
+										<li>
+											<a href='layout-range-date-header.html'>Layout Date Range</a>
+										</li>
+										<li>
+											<a href='fixed-sidebar.html'>Fixed Sidebar</a>
+										</li>
+										<li>
+											<a href='layout-logo-left.html'>Logo on Left</a>
+										</li>
+										<li>
+											<a href='dark-header.html'>Dark Header</a>
+										</li>
+										<li>
+											<a href='dark-sidebar.html'>Dark Sidebar</a>
+										</li>
+										<li>
+											<a href='rtl.html'>RTL Layout</a>
+										</li>
+										<li>
+											<a href='boxed.html'>Boxed Layout</a>
+										</li>
+										<li>
+											<a href='boxed-slim-sidebar.html'>Boxed Slim Sidebar</a>
+										</li>
+										<li>
+											<a href='slim-sidebar.html'>Slim Sidebar</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="comments.html">
+										<span class="has-icon">
+											<i class="icon-chat_bubble_outline"></i>
+										</span>
+										<span class="nav-title">Comments</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-chart-area-outline"></i>
+										</span>
+										<span class="nav-title">Graphs</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='c3-graphs.html'>C3 Graphs</a>
+										</li>
+										<li>
+											<a href='flot.html'>Flot Graphs</a>
+										</li>
+										<li>
+											<a href='morris.html'>Morris Graphs</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-center_focus_strong"></i>
+										</span>
+										<span class="nav-title">Forms</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='form-inputs.html'>Form Inputs</a>
+										</li>
+										<li>
+											<a href='input-groups.html'>Inputs Groups</a>
+										</li>
+										<li>
+											<a href='checkbox-radio.html'>Checkbox &amp; Radio</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-beaker"></i>
+										</span>
+										<span class="nav-title">UI Elements</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='general-elements.html'>General Elements</a>
+										</li>
+										<li>
+											<a href='buttons.html'>Buttons</a>
+										</li>
+										<li>
+											<a href='tabs.html'>Tabs</a>
+										</li>
+										<li>
+											<a href="modals.html">Modals</a>
+										</li>
+										<li>
+											<a href='accordion.html'>Accordion</a>
+										</li>
+										<li>
+											<a href="labels-badges.html">Labels &amp; Badges</a>
+										</li>
+										<li>
+											<a href='notifications.html'>Notifications</a>
+										</li>
+										<li>
+											<a href='carousel.html'>Carousels</a>
+										</li>
+										<li>
+											<a href='list-items.html'>List Items</a>
+										</li>
+										<li>
+											<a href='cards.html'>Cards</a>
+										</li>
+										<li>
+											<a href='navbars.html'>Navbars</a>
+										</li>
+										<li>
+											<a href='popovers-tooltips.html'>Popovers &amp; Tooltips</a>
+										</li>
+										<li>
+											<a href='typography.html'>Typography</a>
+										</li>
+										<li>
+											<a href='icons.html'>Icons</a>
+										</li>
+									</ul>
+								</li>
+								<li class="active selected">
+									<a href="datatables.html">
+										<span class="has-icon">
+											<i class="icon-border_all"></i>
+										</span>
+										<span class="nav-title">Data Tables</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="has-arrow" aria-expanded="false">
+										<span class="has-icon">
+											<i class="icon-lock_outline"></i>
+										</span>
+										<span class="nav-title">Authentication</span>
+									</a>
+									<ul aria-expanded="false">
+										<li>
+											<a href='login.html'>Login</a>
+										</li>
+										<li>
+											<a href='signup.html'>Signup</a>
+										</li>
+										<li>
+											<a href='forgot-pwd.html'>Forgot Password</a>
+										</li>
+										<li>
+											<a href="locked-screen.html">Locked Screen</a>
+										</li>
+										<li>
+											<a href='error404.html'>Error 404</a>
+										</li>
+										<li>
+											<a href='error505.html'>Error 505</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<!-- END: side-nav-content -->
+						</nav>
+						<!-- END: .side-nav -->
 					</div>
-					<nav class="side-nav">
-						<ul class="unifyMenu" id="unifyMenu">
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-laptop_windows"></i>
-									</span>
-									<span class="nav-title">Dashboards</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='index.html'>Dashboard</a>
-									</li>
-									<li>
-										<a href='dashboard2.html'>CRM</a>
-									</li>
-									<li>
-										<a href='dashboard3.html'>Analytics</a>
-									</li>
-									<li>
-										<a href='quick-dashboard.html'>Quick Dashboard</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="widgets.html">
-									<span class="has-icon">
-										<i class="icon-flash-outline"></i>
-									</span>
-									<span class="nav-title">Graph Widgets</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-adjust2"></i>
-									</span>
-									<span class="nav-title">Cool Features</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href="filters.html">Content Filter</a>
-									</li>
-									<li>
-										<a href="datepickers.html">Datepickers</a>
-									</li>
-									<li>
-										<a href='map-skins.html'>Gmap Skins</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-tabs-outline"></i>
-									</span>
-									<span class="nav-title">Pages</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='profile.html'>Profile</a>
-									</li>
-									<li>
-										<a href='calendar.html'>Calendar</a>
-									</li>
-									<li>
-										<a href='gallery.html'>Gallery</a>
-									</li>
-
-									<li>
-										<a href='timeline.html'>Timeline</a>
-									</li>
-									<li>
-										<a href="pricing.html">Pricing</a>
-									</li>
-									<li>
-										<a href="faq.html">Faq's</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
+					<!-- END: .side-content -->
+				</aside>
+				<!-- BEGIN .app-main -->
+				<div class="app-main">
+					<!-- BEGIN .main-heading -->
+					<header class="main-heading">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8">
+									<div class="page-icon">
 										<i class="icon-layers"></i>
-									</span>
-									<span class="nav-title">Layouts</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='custom-drag.html'>Drag &amp; Drop</a>
-									</li>
-									<li>
-										<a href='layout.html'>Default Layout</a>
-									</li>
-									<li>
-										<a href='layout-range-date-header.html'>Layout Date Range</a>
-									</li>
-									<li>
-										<a href='fixed-sidebar.html'>Fixed Sidebar</a>
-									</li>
-									<li>
-										<a href='layout-logo-left.html'>Logo on Left</a>
-									</li>
-									<li>
-										<a href='dark-header.html'>Dark Header</a>
-									</li>
-									<li>
-										<a href='dark-sidebar.html'>Dark Sidebar</a>
-									</li>
-									<li>
-										<a href='rtl.html'>RTL Layout</a>
-									</li>
-									<li>
-										<a href='boxed.html'>Boxed Layout</a>
-									</li>
-									<li>
-										<a href='boxed-slim-sidebar.html'>Boxed Slim Sidebar</a>
-									</li>
-									<li>
-										<a href='slim-sidebar.html'>Slim Sidebar</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="comments.html">
-									<span class="has-icon">
-										<i class="icon-chat_bubble_outline"></i>
-									</span>
-									<span class="nav-title">Comments</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-chart-area-outline"></i>
-									</span>
-									<span class="nav-title">Graphs</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='c3-graphs.html'>C3 Graphs</a>
-									</li>
-									<li>
-										<a href='flot.html'>Flot Graphs</a>
-									</li>
-									<li>
-										<a href='morris.html'>Morris Graphs</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-center_focus_strong"></i>
-									</span>
-									<span class="nav-title">Forms</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='form-inputs.html'>Form Inputs</a>
-									</li>
-									<li>
-										<a href='input-groups.html'>Inputs Groups</a>
-									</li>
-									<li>
-										<a href='checkbox-radio.html'>Checkbox &amp; Radio</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-beaker"></i>
-									</span>
-									<span class="nav-title">UI Elements</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='general-elements.html'>General Elements</a>
-									</li>
-									<li>
-										<a href='buttons.html'>Buttons</a>
-									</li>
-									<li>
-										<a href='tabs.html'>Tabs</a>
-									</li>
-									<li>
-										<a href="modals.html">Modals</a>
-									</li>
-									<li>
-										<a href='accordion.html'>Accordion</a>
-									</li>
-									<li>
-										<a href="labels-badges.html">Labels &amp; Badges</a>
-									</li>
-									<li>
-										<a href='notifications.html'>Notifications</a>
-									</li>
-									<li>
-										<a href='carousel.html'>Carousels</a>
-									</li>
-									<li>
-										<a href='list-items.html'>List Items</a>
-									</li>
-									<li>
-										<a href='cards.html'>Cards</a>
-									</li>
-									<li>
-										<a href='navbars.html'>Navbars</a>
-									</li>
-									<li>
-										<a href='popovers-tooltips.html'>Popovers &amp; Tooltips</a>
-									</li>
-									<li>
-										<a href='typography.html'>Typography</a>
-									</li>
-									<li>
-										<a href='icons.html'>Icons</a>
-									</li>
-								</ul>
-							</li>
-							<li class="active selected">
-								<a href="datatables.html">
-									<span class="has-icon">
-										<i class="icon-border_all"></i>
-									</span>
-									<span class="nav-title">Data Tables</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="has-arrow" aria-expanded="false">
-									<span class="has-icon">
-										<i class="icon-lock_outline"></i>
-									</span>
-									<span class="nav-title">Authentication</span>
-								</a>
-								<ul aria-expanded="false">
-									<li>
-										<a href='login.html'>Login</a>
-									</li>
-									<li>
-										<a href='signup.html'>Signup</a>
-									</li>
-									<li>
-										<a href='forgot-pwd.html'>Forgot Password</a>
-									</li>
-									<li>
-										<a href="locked-screen.html">Locked Screen</a>
-									</li>
-									<li>
-										<a href='error404.html'>Error 404</a>
-									</li>
-									<li>
-										<a href='error505.html'>Error 505</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<!-- END: side-nav-content -->
-					</nav>
-					<!-- END: .side-nav -->
-				</div>
-				<!-- END: .side-content -->
-			</aside>
-			<!-- BEGIN .app-main -->
-			<div class="app-main">
-				<!-- BEGIN .main-heading -->
-				<header class="main-heading">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-sm-8">
-								<div class="page-icon">
-									<i class="icon-layers"></i>
-								</div>
-								<div class="page-title">
-									<nav class="navbar-expand">
-										<button class="navbar-toggler" type="button" data-toggle="collapse"
-											data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false"
-											aria-label="Toggle navigation">
-											<span class="navbar-toggler-icon"></span>
-										</button>
-										<div class="collapse navbar-collapse" id="navbarTwo">
-											<ul class="navbar-nav">
-												<li class="nav-item active">
-													<a class="nav-link" href="#">page1><span
-															class="sr-only">(current)</span></a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" href="#">page2></a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" href="#">default</a>
-												</li>
-											</ul>
+									</div>
+									<div class="page-title">
+										<nav class="navbar-expand">
+											<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo"aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
+												<span class="navbar-toggler-icon"></span>
+											</button>
+											<div class="collapse navbar-collapse" id="navbarTwo">
+												<ul class="navbar-nav">
+													<li class="nav-item active">
+														<a class="nav-link" href="#">page1><span class="sr-only">(current)</span></a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">page2></a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">default</a>
+													</li>
+												</ul>
+											</div>
+										</nav>
+										<div class="row gutters">
+											<div class="col-sm-4 col-12">
+												<h7>회원정보</h7>
+											</div>
 										</div>
-									</nav>
-									<div class="row gutters">
+									<form name="form" method="post" action="/xdm/v1/infra/member/memberXdmList">	
 										<div class="col-sm-4 col-12">
-											<h1>code</h1>
+											<table>
+												<th>
+													<tr>
+														<td>     
+															<select id="shapee" name="shDelny">
+																<option value="">삭제여부</option>
+																<option value="1">Y</option>
+																<option value="0">N</option>
+															</select>
+														</td> 
+														<td>     
+															<select id="shapee" name="shUseNy">
+																<option value="">사용여부</option>
+																<option value="1">Y</option>
+																<option value="0">N</option>
+															</select>
+														</td> 
+														<td>     
+															<select id="shapee" name="shOptionDate">
+																<option value="" selected disabled hidden>등록일</option>
+																<option value="1" >등록일</option>
+																<option value="2" >수정일</option>
+															</select>
+														</td> 
+														<td>     
+															<input id="shDateStart" name="shDateStart" placeholder="시작일" type="text" autocomplete="off">
+														</td>
+														<td>     
+															<input id="shDateEnd" name="shDateEnd"  placeholder="종료일" type="text" autocomplete="off">
+														</td> 
+													</tr>
+												</th>
+													<tr>
+														<td>     
+															<select id="shapee" name="shOption">
+																<option value="" selected disabled hidden>검색구분</option>
+																<option value="1">코드</option>
+																<option value="2">이름</option>
+																<option value="3">순서</option>
+															</select>
+														</td> 
+														<td>     
+															<input id="shapee" name="shValue">
+														</td> 
+														<td>
+															<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+																<button type="submit" class="btn btn-primary">
+																	<span class="icon-search"></span>
+																</button>
+															</div>
+															<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+																<button type="button" class="btn btn-primary">
+																	<span class="icon-spinner11"></span>
+																</button>
+															</div>
+														</td>
+													</tr>
+										   	</table>
 										</div>
 									</div>
-									<div class="col-sm-4 col-12">
+								</div>
+							</div>
+					</header>
+					  <div class="main-content" >
+						<div class="row gutters">
+							<div class="col-sm-12">
+							   <div class="card">
+								<ul class="header-actions">	
+								    <div class="card-header">
 										<table>
 											<th>
 											   <tr>
-												  <td>
-													  <select id="shape">
-															<option value="" selected disabled hidden>Y</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
-													  </select>
-												   </td>
-													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>Y</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
+												  <td>&nbsp;&nbsp;&nbsp; total : 171 </td>
+												  <td style="width : 900px;"></td>
+												    <td>
+														<select id = "shapee" >
+														<option value="" selected disabled hidden>1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
 														</select>
-													</td>
-													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>수정일</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
-															<option value="3">옵션3</option>
-															<option value="4">옵션4</option>
-															<option value="5">옵션5</option>
-														</select>
-													</td>
-													<td>
-														<input id="shape" input type="date">
-													</td>
-													<td>
-														<input id="shape" input type="date">
-													</td>
+												   </td>	
 												</tr>
-											</th>
-											<tr>
-												<td>
-													<select id="shape">
-														<option value="" selected disabled hidden>검색구분</option>
-														<option value="1">Y</option>
-														<option value="2">N</option>
-														<option value="3">옵션3</option>
-														<option value="4">옵션4</option>
-														<option value="5">옵션5</option>
-													</select>
-												</td>
-												<td>
-													<input id="shape" input value="검색어">
-												</td>
-												<td>
-													<div class="btn-group-vertical" role="group"
-														aria-label="Vertical button group">
-														<button type="button" class="btn btn-primary">
-															<span class="icon-search"></span>
-														</button>
-													</div>
-													<div class="btn-group-vertical" role="group"
-														aria-label="Vertical button group">
-														<button type="button" class="btn btn-primary">
-															<span class="icon-spinner11"></span>
-														</button>
-													</div>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-				</header>
-				<!-- BEGIN .main-content -->
-				<div class="main-content">
-					<!-- Row start -->
-					<div class="row gutters">
-						<div class="col-sm-12">
-							<div class="card">
-								<ul class="header-actions">
-									<div class="card-header">
-										<table>
-											<th>
-												<tr>
-													<td>&nbsp;&nbsp;&nbsp; total : 171 </td>
-													<td style="width : 900px;"></td>
-													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
-														</select>
-													</td>
-												</tr>
-											</th>
-										</table>
+											</th>						
+										</table>				
 									</div>
 								</ul>
-								<div class="card-body">
-									<table class="table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th><input type="checkbox"></th>
-												<th>#</th>
-												<th>이름</th>
-												<th>ID</th>
-												<th>닉네임</th>
-												<th>이메일</th>
-												<th>번호</th>
-												<th>주소</th>
-												<th>사용여부</th>
-												<th>순서</th>
-												<th>등록일</th>
-												<th>수정일</th>
-											</tr>
-										</thead>
-										<tbody>
-											<!--<tr th:if="${lists.isEmpty(list)}" class="hover-actions-trigger btn-reveal-trigger">
-												<td colspan="10">
-													<p style="padding-top: 12px;">no data!</p>
-												</td>
-											</tr>-->
-											<tr th:each="list:${list}">
+									<div class="card-body">
+										<table class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th><input type="checkbox"></th>
+													<th>#</th>
+													<th>회원명</th>
+													<th>ID</th>
+													<th>닉네임</th>
+													<th>이메일</th>
+													<th>전화번호</th>
+													<th>주소</th>
+													<th>성별</th>
+													<th>사용여부</th>
+													<th>삭제여부</th>
+													<th>순서</th>
+													<th>등록일</th>
+													<th>수정일</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:if="${#lists.isEmpty(list)}" >
+													<td colspan="10">
+														<p style="width:100px;"></p>
+														<p style="padding-top: 12px;">no data!</p>
+													</td>
+												</tr>
+												<tr th:if="!${#lists.isEmpty(list)}" th:each="list:${list}">
+													<td><input type="checkbox"/></td>
+													<td><a th:href="@{/xdm/v1/infra/member/memberXdmMForm(seq=${list.seq})}" th:text="${list.seq}"></a></td>
+													<td><a th:href="@{/xdm/v1/infra/member/memberXdmMForm(seq=${list.seq})}" th:text="${list.name}"></a></td>
+													<td th:text="${list.id}"></td>
+													<td th:text="${list.nickname}"></td>
+													<td th:text="${list.email}"></td>
+													<td th:text="${list.phonenumber}"></td>
+													<td th:text="${list.adress}"></td>
+													<td th:if="${list.gender eq 0}">F</td>
+													<td th:unless="${list.gender eq 0}">M</td>
+													<td th:if="${list.UseNy eq 0}">Y</td>
+													<td th:unless="${list.UseNy eq 0}">N</td>
+													<td th:if="${list.delny eq 0}">Y</td>
+													<td th:unless="${list.delny eq 0}">N</td>
+													<td th:text="${list.ordere}"></td>
+													<td th:text="${#dates.format(list.regdate, 'yyyy-mm-dd HH:MM:ss')}"></td>
+													<td th:text="${#dates.format(list.modDate, 'yyyy-mm-dd HH:MM:ss')}"></td>
+												</tr>
+											</tbody>
+										</table>
+										<table>
+											<th>
+											  <td style = "width : 400px;"></td>
 												<td>
-													<input type="checkbox" />
+												   <ul class="pagination justify-content-right">
+													  <li class="page-item disabled"><span class="page-link">Prev</span></li>
+													  <li class="page-item"><a class="page-link" href="#">1</a></li>
+													  <li class="page-item active"><a href="#" class="page-link">2</a></li>
+													  <li class="page-item"><a class="page-link" href="#">3</a></li>
+													  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+												   </ul>
 												</td>
-												<td th:text="${list.Seq}"></td>
-												<td><a th:href="@{/xdm/v1/infra/member/memberXdmMForm(Seq=${list.Seq})}" th:text="${list.Name}"></a></td>
-												<td th:text="${list.id}"></td>
-												<td th:text="${list.Nickname}"></td>
-												<td th:text="${list.email}"></td>
-												<td th:text="${list.phonenumber}"></td>
-												<td th:text="${list.adress}"></td>
-												<td>Y</td>
-												<td>1</td>
-												<td></td>
-											</tr>
-										</tbody>
-									</table>
-									<table>
-										<th>
-										<td style="width : 300px;"></td>
-										<td>
-											<ul class="pagination justify-content-right">
-												<li class="page-item disabled">
-													<span class="page-link">Prev</span>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">1</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">2</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">3</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">4</a>
-												</li>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">5</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">6</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">7</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">8</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">9</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">10</a>
-												</li>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">11</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">12</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">Next</a>
-												</li>
-											</ul>
-										  </td>
-										</th>
-									</table>
+											</th>		
+										</table>
+									</div>
 								</div>
-							</div>
+						    </div>
 						</div>
+						</form>
+						<!-- Row ends -->
+						<table>
+							<tr>
+							   <td>
+								  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+									 <button type="button" class="btn btn-primary">
+										 <span class="icon-times-outline"></span>
+									 </button>
+								  </div>
+								  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+									 <button type="button" class="btn btn-primary">
+									     <span class="icon-bin"></span>
+									 </button>
+									 <!--modal-->
+									 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									 	<div class="modal-dialog" role="document">
+									 	   <div class="modal-content">
+									 		  <div class="modal-header">
+									 			<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+									 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									 			    	<span aria-hidden="true">&times;</span>
+									 				</button>
+									 		   </div>
+									 		<div class="modal-body">
+									 		 목록을 삭제하시겠습니까
+									 		</div>
+									 		 <div class="modal-footer">
+									 				 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="delete">삭제</button>
+									 				 <button type="button" class="btn btn-primary">취소</button>
+									 		 </div>
+									 		</div>
+									 	</div>
+									 </div>
+								  </div>
+							   </td>
+							   <td style="width : 1070px; "></td>
+							   <td>
+								  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+									 <button type="button" class="btn btn-primary">
+										 <span class="icon-document-add"></span>
+									 </button>
+								  </div>
+								  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+									<a href="/xdm/v1/infra/member/memberXdmForm">
+									 <button type="submit" class="btn btn-primary">
+										 <span class="icon-plus2"></span>
+									 </button>
+									</a>
+								  </div>
+							   </td>
+						    </tr>
+						</table>
 					</div>
-					<!-- Row ends -->
-					<table>
-						<tr>
-							<td>
-								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary">
-										<span class="icon-times-outline"></span>
-									</button>
-								</div>
-								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary">
-										<span class="icon-bin"></span>
-									</button>
-								</div>
-							</td>
-							<td style="width : 1070px;"></td>
-							<td>
-								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary">
-										<span class="icon-document-add"></span>
-									</button>
-								</div>
-								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary">
-										<span class="icon-plus2"></span>
-									</button>
-								</div>
-							</td>
-						</tr>
-					</table>
 				</div>
+				<!-- END: .app-main -->
 			</div>
+			<!-- END: .app-container -->
+			<footer class="main-footer fixed-btm">
+				© Bootstrap Gallery 2023
+			</footer>
+			<!-- END: .main-footer -->
 		</div>
-		<footer class="main-footer fixed-btm">
-			© Bootstrap Gallery 2023
-		</footer>
-		<!-- END: .main-footer -->
-	</div>
-	<!-- END: .app-wrap -->
-	<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/vendor/onoffcanvas/onoffcanvas.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/js/moment.js"></script>
+		<!-- END: .app-wrap -->
+		<script type="text/javascript">
+					window.addEventListener('load',function(){
+						$.datetimepicker.setLocale('ko');
+					   $("#shDateStart,#shDateEnd").datetimepicker({
+						 timepicker:false,
+						 format:'Y-m-d'
+					   });	
+					});
+		</script>
 
-	<!-- Data Tables -->
-	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.min.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bootstrap.min.js"></script>
-	<!-- Custom Data tables -->
-	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/custom-datatables.js"></script>
-	<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/fixedHeader.js"></script>
-	<!-- Common JS -->
-	<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
-</body>
+		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/vendor/onoffcanvas/onoffcanvas.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/js/moment.js"></script>
+
+		<!-- Data Tables -->
+		<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.min.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bootstrap.min.js"></script>
+
+		<!-- Custom Data tables -->
+		<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/custom-datatables.js"></script>
+		<script src="/xdm/v1/template/qwer/assert/vendor/datatables/custom/fixedHeader.js"></script>
+
+		<!-- Common JS -->
+		<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
+		<script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
+		<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+	</body>
 </html>

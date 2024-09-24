@@ -1,0 +1,1866 @@
+2024-09-20T10:01:53.973 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+684. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 5
+ {executed in 14 msec} 
+2024-09-20T10:01:57.981 [http-nio-8090-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.delete] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.delete
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy64/jdk.proxy64.$Proxy620.delete(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy64/jdk.proxy64.$Proxy621.delete(Unknown Source)
+	at com.example.hybe.infra.member.MemberService.delete(MemberService.java:40)
+	at com.example.hybe.infra.member.MemberController.memberXdmDele(MemberController.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-20T10:02:33.308 [http-nio-8090-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.delete] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.delete
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy64/jdk.proxy64.$Proxy620.delete(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy64/jdk.proxy64.$Proxy621.delete(Unknown Source)
+	at com.example.hybe.infra.member.MemberService.delete(MemberService.java:40)
+	at com.example.hybe.infra.member.MemberController.memberXdmDele(MemberController.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-20T10:03:41.202 [http-nio-8090-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.uelete] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.hybe.infra.member.MemberDao.uelete
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy64/jdk.proxy64.$Proxy620.uelete(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy64/jdk.proxy64.$Proxy621.uelete(Unknown Source)
+	at com.example.hybe.infra.member.MemberService.uelete(MemberService.java:35)
+	at com.example.hybe.infra.member.MemberController.memberXdmUele(MemberController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-20T10:04:11.545 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:04:11.630 [Thread-243] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:04:11.817 [Thread-243] INFO c.z.h.HikariDataSource - HikariPool-31 - Shutdown initiated... 
+2024-09-20T10:04:11.883 [Thread-243] INFO c.z.h.HikariDataSource - HikariPool-31 - Shutdown completed. 
+2024-09-20T10:04:12.641 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T10:04:12.641 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:04:13.358 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T10:04:13.361 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:04:13.362 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:04:13.362 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:04:13.456 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:04:13.457 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 813 ms 
+2024-09-20T10:04:13.975 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:04:13.984 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:04:13.993 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T10:04:13.999 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T10:04:13.999 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T10:04:13.999 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-20T10:04:13.999 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 1.459 seconds (process running for 682181.415) 
+2024-09-20T10:04:14.000 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:04:15.460 [http-nio-8090-exec-8] INFO c.z.h.HikariDataSource - HikariPool-32 - Starting... 
+2024-09-20T10:04:15.556 [http-nio-8090-exec-8] INFO c.z.h.p.HikariPool - HikariPool-32 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4bf7a2c0 
+2024-09-20T10:04:15.556 [http-nio-8090-exec-8] INFO c.z.h.HikariDataSource - HikariPool-32 - Start completed. 
+2024-09-20T10:04:15.569 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 5
+ {executed in 11 msec} 
+2024-09-20T10:04:18.055 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 7 msec} 
+2024-09-20T10:04:18.070 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 5 msec} 
+2024-09-20T10:04:23.975 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 5
+ {executed in 0 msec} 
+2024-09-20T10:04:27.180 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:04:27.187 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:04:33.276 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 5
+ {executed in 0 msec} 
+2024-09-20T10:04:35.908 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:04:35.920 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:05:01.176 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 11
+ {executed in 1 msec} 
+2024-09-20T10:05:05.624 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 12 msec} 
+2024-09-20T10:05:05.625 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:07:05.654 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 41 msec} 
+2024-09-20T10:07:07.556 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 2
+ {executed in 6 msec} 
+2024-09-20T10:07:12.003 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 11
+ {executed in 1 msec} 
+2024-09-20T10:07:15.764 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 17 msec} 
+2024-09-20T10:07:15.781 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:07:42.363 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-20T10:07:48.048 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 2
+ {executed in 0 msec} 
+2024-09-20T10:07:51.632 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:07:51.648 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:08:39.471 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-20T10:08:50.993 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-20T10:11:07.001 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 22 msec} 
+2024-09-20T10:11:27.409 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            ''
+			,''
+			,''
+			,NULL
+			,1
+			,''
+			,''
+            ,''
+            ,now()
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            )
+ {executed in 33 msec} 
+2024-09-20T10:11:27.409 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:11:30.078 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 12
+ {executed in 3 msec} 
+2024-09-20T10:11:33.075 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:11:33.079 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:11:35.642 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 12
+ {executed in 1 msec} 
+2024-09-20T10:11:38.249 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 1 msec} 
+2024-09-20T10:11:38.250 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:14:16.844 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            '1234567'
+			,''
+			,''
+			,NULL
+			,1
+			,''
+			,''
+            ,''
+            ,now()
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            )
+ {executed in 154 msec} 
+2024-09-20T10:14:16.859 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 3 msec} 
+2024-09-20T10:14:19.771 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 13
+ {executed in 6 msec} 
+2024-09-20T10:14:22.619 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:14:22.636 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:19:11.216 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 5
+ {executed in 17 msec} 
+2024-09-20T10:19:18.123 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 6 msec} 
+2024-09-20T10:19:18.150 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 15 msec} 
+2024-09-20T10:21:17.240 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 2
+ {executed in 28 msec} 
+2024-09-20T10:21:17.501 [http-nio-8090-exec-8] ERROR o.t.TemplateEngine - [THYMELEAF][http-nio-8090-exec-8] Exception processing template "/xdm/v1/infra/member/memberXdmMForm": An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/member/memberXdmMForm.html]") 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/member/memberXdmMForm.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: " #dates.format(item.regdate, 'yyyy-MM-dd HH:mm:ss')" (template: "/xdm/v1/infra/member/memberXdmMForm" - line 644, col 105)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: " #dates.format(item.regdate, 'yyyy-MM-dd HH:mm:ss')" (template: "/xdm/v1/infra/member/memberXdmMForm" - line 644, col 105)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlVoidElement.handleOpenElementEnd(HtmlVoidElement.java:92)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'regdate' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97)
+	at org.springframework.expression.spel.ast.MethodReference.getArguments(MethodReference.java:177)
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:94)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:75)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:96)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 69 common frames omitted
+2024-09-20T10:21:17.534 [http-nio-8090-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/member/memberXdmMForm.html]")] with root cause 
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'regdate' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97)
+	at org.springframework.expression.spel.ast.MethodReference.getArguments(MethodReference.java:177)
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:94)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:75)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:96)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlVoidElement.handleOpenElementEnd(HtmlVoidElement.java:92)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-20T10:21:17.810 [http-nio-8090-exec-8] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/xdm/v1/infra/member/memberXdmMForm] and exception [An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/member/memberXdmMForm.html]")] as the response has already been committed. As a result, the response may have the wrong status code. 
+2024-09-20T10:23:23.579 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 2
+ {executed in 12 msec} 
+2024-09-20T10:23:28.182 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. UPDATE member
+	  	SET
+	  		delny=1
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 16 msec} 
+2024-09-20T10:23:28.201 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:23:37.393 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 2
+ {executed in 1 msec} 
+2024-09-20T10:23:42.167 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. UPDATE member
+	  	SET
+	  		delny=1
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 2 msec} 
+2024-09-20T10:23:42.169 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:31:11.953 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. INSERT INTO member(
+	  		name
+			,id
+			,nickname
+			,delny
+			,ordere
+			,email
+			,phonenumber
+            ,adress 
+            ,regdate 
+            ,gender 
+            ,password 
+			,desce 
+			,UseNy
+            ,modDate
+
+      )VALUES(
+            ''
+			,''
+			,''
+			,NULL
+			,1
+			,''
+			,''
+            ,''
+            ,now()
+            ,'1' 
+            ,NULL 
+			,NULL
+			,1
+            ,now()
+            )
+ {executed in 58 msec} 
+2024-09-20T10:31:11.972 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 11 msec} 
+2024-09-20T10:31:16.105 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 13
+ {executed in 8 msec} 
+2024-09-20T10:31:19.259 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:31:19.276 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:33:19.712 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+694. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 13
+ {executed in 4 msec} 
+2024-09-20T10:37:29.157 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 13
+ {executed in 78 msec} 
+2024-09-20T10:37:32.011 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 17 msec} 
+2024-09-20T10:37:32.082 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:37:37.236 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 14
+ {executed in 0 msec} 
+2024-09-20T10:37:40.933 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:37:40.943 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:41:57.680 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+704. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 28 msec} 
+2024-09-20T10:43:01.783 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:43:01.864 [Thread-247] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:43:02.018 [Thread-247] INFO c.z.h.HikariDataSource - HikariPool-32 - Shutdown initiated... 
+2024-09-20T10:43:02.128 [Thread-247] INFO c.z.h.HikariDataSource - HikariPool-32 - Shutdown completed. 
+2024-09-20T10:43:02.717 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 268688 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-20T10:43:02.717 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:43:03.184 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-20T10:43:03.186 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:43:03.186 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:43:03.186 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:43:03.210 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:43:03.210 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 491 ms 
+2024-09-20T10:43:03.573 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:43:03.588 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-20T10:43:03.605 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-20T10:43:03.614 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.943 seconds (process running for 684511.03) 
+2024-09-20T10:43:03.616 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:43:03.636 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T10:43:03.636 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T10:43:03.637 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-20T10:43:03.641 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-33 - Starting... 
+2024-09-20T10:43:03.750 [http-nio-8090-exec-1] INFO c.z.h.p.HikariPool - HikariPool-33 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3c5880f1 
+2024-09-20T10:43:03.750 [http-nio-8090-exec-1] INFO c.z.h.HikariDataSource - HikariPool-33 - Start completed. 
+2024-09-20T10:43:03.780 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 14
+ {executed in 28 msec} 
+2024-09-20T10:43:08.443 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 11 msec} 
+2024-09-20T10:43:08.457 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 12 msec} 
+2024-09-20T10:43:10.793 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 14
+ {executed in 0 msec} 
+2024-09-20T10:43:13.178 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:43:13.183 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 
+2024-09-20T10:49:10.329 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 51 msec} 
+2024-09-20T10:51:27.529 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 79 msec} 
+2024-09-20T10:51:45.017 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 13
+ {executed in 8 msec} 
+2024-09-20T10:51:48.138 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 17 msec} 
+2024-09-20T10:51:48.167 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 11 msec} 
+2024-09-20T10:51:51.774 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+	  	 	a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			member a	
+		WHERE 1=1
+			AND	a.seq = 14
+ {executed in 0 msec} 
+2024-09-20T10:51:53.941 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. DELETE FROM member
+	  	WHERE 1=1
+	  		AND seq=NULL
+ {executed in 0 msec} 
+2024-09-20T10:51:53.963 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+714. SELECT
+			a.seq
+			,a.name
+			,a.id
+			,a.nickname
+			,a.delny
+			,a.ordere
+			,a.email
+			,a.phonenumber
+            ,a.adress 
+            ,a.regdate 
+            ,a.gender 
+            ,a.password 
+			,a.desce 
+			,a.UseNy
+            ,a.modDate
+        FROM 
+			seventeen.member a
+		 WHERE 1=1
+
+		ORDER BY
+			a.seq desc
+ {executed in 0 msec} 

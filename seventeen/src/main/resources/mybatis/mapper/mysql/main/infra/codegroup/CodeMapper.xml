@@ -17,10 +17,24 @@
             ,a.ifcdRegDate
             ,a.ifcdmodDate
             ,a.codegroup_seq
+            ,b.ifcgName
        FROM
-           code a
-      ORDER BY
-		   a.ifcdSeq desc
+           code as a
+      JOIN codegroup as b ON b.ifcgSeq=a.codegroup_seq
+      WHERE 1=1
+			<if test="shDelny !=null and !shDelny.equals('')">AND ifcdDelny = #{shDelny}</if>	
+			<if test="shUseNy !=null and !shUseNy.equals('')">AND ifcdUseNy = #{shUseNy}</if>
+			<choose>
+			    <when test="shOption==1">AND ifcdSeq=#{shValue}</when>
+			    <when test="shOption==2">AND ifcdName=#{shValue}</when>
+			    <when test="shOption==3">AND ifcdOrder=#{shValue}</when>
+			</choose>
+			 <choose>
+				<when test="shOptionDate == 1">AND a.ifcdRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.ifcdmodDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
+      ORDER BY 
+      		a.ifcdSeq Desc
 	  </select>
 	  
 	  <insert id="insert">
@@ -62,7 +76,7 @@
 			AND	a.ifcdSeq = #{ifcdSeq}
 	  </select>
 	  
-	  <insert id="update">
+	  <update id="update">
 	  	UPDATE code
 	    SET
 	  	    ifcdName = #{ifcdName}
@@ -70,9 +84,9 @@
 			,ifcdOrder = #{ifcdOrder}
 			,ifcdDesc = #{ifcdDesc}
 			,ifcdDelny = #{ifcdDelny}
-		WHERE 1=1
-			AND	a.ifcdSeq = #{ifcdSeq}		
-	  </insert>
+		WHERE 1=1	
+		     AND ifcdSeq = #{ifcdSeq}
+	  </update>
 	  
 	  <select id="selectlistCodeGroup">
 	    SELECT
@@ -85,6 +99,20 @@
 	    ORDER BY
 		    a.ifcgOrder DESC	
 	  </select>
+	  
+	  <update id="uelete">
+	  	UPDATE code
+	  	SET
+	  		ifcdDelny=1
+	  	WHERE 1=1
+	  		AND ifcdSeq=#{ifcdSeq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	DELETE FROM code
+	  	WHERE 1=1
+	  		AND ifcdSeq=#{ifcdSeq}	
+	  </delete>
 </mapper>
 			
 			

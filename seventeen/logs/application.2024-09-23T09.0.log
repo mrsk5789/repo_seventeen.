@@ -1,0 +1,630 @@
+2024-09-23T09:17:41.520 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 17756 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:17:41.523 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:17:41.607 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:17:41.608 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:17:43.228 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:17:43.243 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:17:43.248 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:17:43.249 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:17:43.317 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:17:43.318 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1709 ms 
+2024-09-23T09:17:43.405 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:17:43.409 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:17:43.412 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:17:43.434 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:17:43.460 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:17:49.396 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 8860 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:17:49.398 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:17:49.439 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:17:49.445 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:17:50.622 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:17:50.632 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:17:50.637 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:17:50.638 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:17:50.695 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:17:50.697 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1249 ms 
+2024-09-23T09:17:50.776 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:17:50.781 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:17:50.784 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:17:50.806 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:17:50.830 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:17:56.748 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 9692 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:17:56.758 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:17:56.868 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:17:56.868 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:17:57.861 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:17:57.870 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:17:57.873 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:17:57.873 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:17:57.922 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:17:57.923 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1055 ms 
+2024-09-23T09:17:57.993 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:17:57.997 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:17:58.004 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:17:58.021 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:17:58.040 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:04.609 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 14524 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:04.612 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:04.652 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:04.652 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:05.507 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:05.516 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:05.518 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:05.518 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:05.562 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:05.563 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 910 ms 
+2024-09-23T09:19:05.620 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:05.623 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:05.626 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:05.640 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:05.655 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:07.214 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 3092 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:07.216 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:07.256 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:07.256 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:08.043 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:08.054 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:08.059 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:08.059 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:08.101 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:08.102 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 846 ms 
+2024-09-23T09:19:08.153 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:08.156 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:08.159 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:08.173 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:08.191 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:11.159 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 19088 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:11.160 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:11.196 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:11.196 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:11.987 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:11.996 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:11.999 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:11.999 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:12.035 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:12.036 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 840 ms 
+2024-09-23T09:19:12.096 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:12.100 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:12.103 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:12.127 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:12.151 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:21.951 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 9868 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:21.953 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:21.987 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:21.987 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:22.821 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:22.828 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:22.830 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:22.831 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:22.869 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:22.870 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 882 ms 
+2024-09-23T09:19:22.923 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:22.926 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:22.929 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:22.944 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:22.958 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:44.911 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 12976 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:44.915 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:44.986 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:44.986 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:45.817 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:45.826 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:45.829 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:45.829 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:45.868 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:45.869 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 883 ms 
+2024-09-23T09:19:45.926 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:45.930 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:45.932 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:45.947 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:45.961 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:51.678 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 9580 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:51.680 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:51.715 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:51.715 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:52.508 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:52.517 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:52.519 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:52.519 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:52.557 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:52.558 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 841 ms 
+2024-09-23T09:19:52.612 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:52.615 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:52.617 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:52.633 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:52.648 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:19:57.035 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 16876 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:19:57.038 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:19:57.078 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:19:57.079 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:19:57.909 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:19:57.917 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:19:57.919 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:19:57.919 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:19:57.960 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:19:57.960 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 881 ms 
+2024-09-23T09:19:58.012 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:19:58.016 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:19:58.018 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:19:58.032 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:19:58.047 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:21:11.963 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 7080 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:21:11.965 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:21:12.007 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:21:12.007 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:21:13.046 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:21:13.056 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:21:13.060 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:21:13.061 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:21:13.110 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:21:13.111 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1103 ms 
+2024-09-23T09:21:13.181 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:21:13.186 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:21:13.189 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:21:13.206 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:21:13.223 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:21:59.427 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 19920 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:21:59.429 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:21:59.502 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:21:59.502 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:22:01.002 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:22:01.016 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:22:01.021 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:22:01.022 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:22:01.099 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:22:01.100 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1597 ms 
+2024-09-23T09:22:01.202 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:22:01.207 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'classesController': Unsatisfied dependency expressed through field 'classesService': Error creating bean with name 'classesService': Unsatisfied dependency expressed through field 'classesDao': Error creating bean with name 'classesDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\classes\ClassesDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:22:01.213 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:22:01.244 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:22:01.279 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:33:05.531 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 20056 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:33:05.542 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:33:05.606 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:33:05.607 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:33:07.168 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:33:07.183 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:33:07.191 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:33:07.191 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:33:07.267 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:33:07.268 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1661 ms 
+2024-09-23T09:33:07.392 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:33:07.401 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:33:07.405 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:33:07.440 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:33:07.476 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:36:46.587 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 5060 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:36:46.592 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:36:46.659 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:36:46.660 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:36:48.054 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:36:48.065 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:36:48.071 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:36:48.072 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:36:48.138 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:36:48.139 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1476 ms 
+2024-09-23T09:36:48.223 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:36:48.228 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:36:48.233 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:36:48.259 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:36:48.282 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:37:14.653 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 19480 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:37:14.655 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:37:14.703 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:37:14.703 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:37:15.997 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:37:16.016 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:37:16.022 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:37:16.023 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:37:16.089 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:37:16.090 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1386 ms 
+2024-09-23T09:37:16.176 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:37:16.181 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:37:16.184 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:37:16.207 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:37:16.231 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:39:36.698 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 16480 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:39:36.701 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:39:36.768 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:39:36.768 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:39:38.164 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:39:38.184 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:39:38.191 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:39:38.192 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:39:38.286 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:39:38.287 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1518 ms 
+2024-09-23T09:39:38.408 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:39:38.434 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:39:38.439 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:39:38.470 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:39:38.512 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:42:15.250 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 22332 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:42:15.253 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:42:15.342 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:42:15.344 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:42:16.781 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:42:16.793 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:42:16.797 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:42:16.798 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:42:16.850 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:42:16.850 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1504 ms 
+2024-09-23T09:42:16.924 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:42:16.930 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:42:16.933 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:42:16.960 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:42:16.987 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 
+2024-09-23T09:54:22.935 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 22972 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-23T09:54:22.939 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-23T09:54:22.992 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-23T09:54:22.993 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-23T09:54:24.351 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-23T09:54:24.363 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-23T09:54:24.369 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-23T09:54:24.370 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-23T09:54:24.430 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-23T09:54:24.431 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1437 ms 
+2024-09-23T09:54:24.500 [restartedMain] ERROR c.z.h.HikariConfig - Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+2024-09-23T09:54:24.504 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-09-23T09:54:24.506 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-23T09:54:24.528 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-23T09:54:24.545 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.mysql.main' to javax.sql.DataSource:
+
+    Property: spring.datasource.mysql.main.driver-class-name
+    Value: "net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+    Origin: class path resource [application.properties] - 8:48
+    Reason: java.lang.RuntimeException: Failed to load driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+ 

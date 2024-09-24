@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.hybe.infra.codegroup.CodeGroupDto;
 import com.example.hybe.infra.codegroup.CodeGroupService;
 
 @Controller
@@ -16,8 +17,8 @@ public class CodeController {
 	CodeService codeService;
 	
 	@RequestMapping(value="/xdm/v1/infra/code/codeXdmList")
-	public String codeXdmList(Model model) {
-		model.addAttribute("list",codeService.selectList());
+	public String codeXdmList(Model model, CodeVo codevo) {
+		model.addAttribute("list",codeService.selectList(codevo));
 		
 //		System.out.println("codes.size():"+codes.size());
 //		for(CodeDto codeDto:codes) {
@@ -53,4 +54,21 @@ public class CodeController {
 	
 	    return "/xdm/v1/infra/code/codeXdmForm";
     }
+	
+	//uelete
+		@RequestMapping(value="/xdm/v1/infra/code/codeXdmUele")
+		public String codeXdmUele(CodeDto codeDto){
+			codeService.uelete(codeDto);
+			System.out.println("codeD");
+			return "redirect:/xdm/v1/infra/code/codeXdmList";
+		}
+		
+		//delete
+		@RequestMapping(value="/xdm/v1/infra/code/codeXdmDele")
+		public String codegroupXdmDele(CodeDto codeDto){
+			codeService.delete(codeDto);
+			System.out.println(codeDto.getIfcdSeq());
+			return "redirect:/xdm/v1/infra/code/codeXdmList";
+		}
+		
 }
