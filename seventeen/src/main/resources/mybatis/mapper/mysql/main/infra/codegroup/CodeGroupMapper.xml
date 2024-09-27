@@ -8,7 +8,7 @@
 	  
 	  <select id="selectList" resultMap="resultMapObj">
 	 
-	  select aa.* from (
+	  SELECT aa.* FROM (
 	   SELECT
 			a.ifcgSeq
 			,a.ifcgName
@@ -18,17 +18,16 @@
 			,a.ifcgDelNy
 			,a.ifcgRegDate
 			,a.ifcgRenDate
-			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
 			<include refid="selectCommon"/>
 			ORDER BY
-			a.ifcgSeq desc
-        ) aa
-		limit #{rowNumToShow} offset #{startRnumForMysql}
+			   a.ifcgSeq desc
+        ) aa limit #{rowNumToShow} offset #{startRnumForMysql}
 		</select>
 			
 		<sql id="selectCommon">
         FROM 
-			codegroup a
+			seventeen.codegroup a
 		WHERE 1=1
 			<if test="shDelNy !=null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if>	
 			<if test="shUseNy !=null and !shUseNy.equals('')">AND ifcgUseNy = #{shUseNy}</if>
@@ -59,10 +58,13 @@
 			,#{ifcgUseNy}
 			,#{ifcgOrder}
 			,#{ifcgDesc}
-			,#{ifcgDelNy}
+			,0
 			,now()
 			,now()
 			)
+			<selectKey resultType="String" keyProperty="ifcgSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
 	  </insert>
 	  
 	  <select id="selectOne" resultMap="resultMapObj">
@@ -96,18 +98,18 @@
 	  <update id="uelete">
 	  	UPDATE codegroup
 	  	SET
-	  		ifcgDelNy=1
+	  		ifcgDelNy = 1
 	  	WHERE 1=1
-	  		AND ifcgSeq=#{ifcgSeq}
+	  		AND ifcgSeq = #{ifcgSeq}
 	  </update>
 	  
 	  <delete id="delete">
 	  	DELETE FROM codegroup
 	  	WHERE 1=1
-	  		AND ifcgSeq=#{ifcgSeq}	
+	  		AND ifcgSeq = #{ifcgSeq}	
 	  </delete>
 	  
-	  <select id="selectOneCount" resultType="Integer">
+	  <select id="selectOneCount">
 	  	SELECT COUNT(*)
 	  	<include refid="selectCommon"/>
 	  </select>

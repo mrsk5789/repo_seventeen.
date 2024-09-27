@@ -1,0 +1,68 @@
+/*=== theme-btn ====*/
+.theme-btn {
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-15;
+  color: $white;
+  padding: 12px 24px;
+  background-color: $theme-color-2;
+  @include transition(0.3s);
+  position: relative;
+  display: inline-block;
+  @include border-radius(4px);
+  text-align: center;
+  &:hover {
+    background-color: $theme-color-3;
+    color: $white;
+  }
+}
+/*==== theme-btn-sm ====*/
+.theme-btn-sm {
+  padding: 6px 20px;
+}
+/*==== theme-btn-gray ====*/
+.theme-btn-gray {
+  background-color: $gray;
+  color: $theme-color;
+  &:hover {
+    background-color: $gray-2;
+    color: $theme-color;
+  }
+}
+/*==== btn-link ====*/
+.btn-link {
+  color: $theme-color-4;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  &:hover {
+    color: $theme-color-2;
+  }
+}
+/*==== collapse-btn ====*/
+.collapse-btn {
+  i {
+    @include transition(0.3s);
+  }
+  &[aria-expanded="true"] {
+    .collapse-icon-show {
+      display: none;
+    }
+    .collapse-icon-hide {
+      display: inline-block;
+    }
+  }
+}
+.collapse-icon-hide {
+  display: none;
+}
+/*===== close btn =====*/
+
+.modal-container .close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  background: none !important;
+}

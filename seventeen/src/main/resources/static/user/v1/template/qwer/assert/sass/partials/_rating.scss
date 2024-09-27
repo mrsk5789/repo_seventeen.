@@ -1,0 +1,40 @@
+/*== rate-progress-bar ==*/
+.rate-progress-bar {
+  background-color: $color-5;
+}
+.rating-total {
+  font-size: $font-60;
+  font-weight: $font-weight-semi-bold;
+  color: $theme-color;
+}
+/*====== leave-rating ========*/
+.leave-rating {
+  display: table;
+  border: 1px solid rgba(128, 137, 150, 0.2);
+  padding: 20px;
+  @include border-radius(4px);
+  input[type="radio"] {
+    display: none;
+    &:hover,
+    &:checked {
+      ~ label {
+        &:before {
+          color: $color-5;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+  label {
+    float: right;
+    letter-spacing: 4px;
+    cursor: pointer;
+    @include transition(0.3s);
+    margin-bottom: 0;
+    font-size: $font-22;
+    &:before {
+      color: $gray-3;
+      font-weight: $font-weight-regular;
+    }
+  }
+}

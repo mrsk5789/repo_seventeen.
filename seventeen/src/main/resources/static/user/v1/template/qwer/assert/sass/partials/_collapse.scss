@@ -1,0 +1,34 @@
+.my-accordion {
+  .card {
+    @include border-radius(6px!important);
+    margin-bottom: 15px;
+  }
+  .card-header {
+    border-bottom-color: rgba(128, 137, 150, 0.1);
+    background-color: transparent;
+    padding: 0;
+    .btn {
+      width: 100%;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem 1.25rem;
+      text-decoration: none;
+      color: $theme-color;
+      font-size: $font-18;
+      &[aria-expanded=true] {
+        .accordion-icon {
+          &::before {
+            content: "\f068";
+          }
+        }
+      }
+    }
+  }
+  .card-body {
+    font-weight: $font-weight-regular;
+  }
+}

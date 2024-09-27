@@ -7,7 +7,8 @@
 	  <resultMap id="resultMapObj" type="com.example.hybe.infra.code.CodeDto"></resultMap>
 	  
 	  <select id="selectList" resultMap="resultMapObj">
-	  SELECT
+	  select aa.* from (
+	   SELECT
 			a.ifcdSeq
 			,a.ifcdName
 			,a.ifcdUseNy
@@ -18,6 +19,14 @@
             ,a.ifcdmodDate
             ,a.codegroup_seq
             ,b.ifcgName
+            <include refid="selectCommon"/>
+			ORDER BY
+			a.ifcdSeq desc
+        ) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+		</select>
+            
+     <sql id="selectCommon">       
        FROM
            code as a
       JOIN codegroup as b ON b.ifcgSeq=a.codegroup_seq
@@ -33,9 +42,7 @@
 				<when test="shOptionDate == 1">AND a.ifcdRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 2">AND a.ifcdmodDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
-      ORDER BY 
-      		a.ifcdSeq Desc
-	  </select>
+	  </sql>
 	  
 	  <insert id="insert">
 	  INSERT INTO code(
@@ -55,7 +62,7 @@
 			,#{ifcdDelny}
             ,now()
             ,now()
-            ,1
+            ,#{codegroup_seq}
 	  		)	
 	  </insert>
 	  
@@ -113,7 +120,21 @@
 	  	WHERE 1=1
 	  		AND ifcdSeq=#{ifcdSeq}	
 	  </delete>
+	  
+	  <select id="selectOneCount" resultType="Integer">
+	  	SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
+	  
+	  <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+      </select>
 </mapper>
-			
-			
-		

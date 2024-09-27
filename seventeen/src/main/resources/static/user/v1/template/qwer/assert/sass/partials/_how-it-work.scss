@@ -1,0 +1,52 @@
+/*====================================================
+    hiw-area
+ ====================================================*/
+.hiw-area {
+  position: relative;
+  z-index: 1;
+}
+.add-business-item {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+  bottom: -15%;
+  width: 33%;
+  background-color: $white;
+  @include border-radius(4px);
+  @include box-shadow(0 0 40px rgba(82, 85, 90, 0.1));
+  @include transition(0.3s);
+  border: 1px dashed $gray;
+  @media #{$tab_device} {
+    width: 50%;
+    bottom: -10%;
+  }
+  a {
+    display: block;
+    width: 100%;
+    padding: 35px 20px 27px 20px;
+    span {
+      font-size: $font-40;
+      width: 65px;
+      height: 65px;
+      line-height: 65px;
+      margin-bottom: 20px;
+      background-color: rgba(128, 137, 150, 0.2);
+      color: $theme-color-4;
+      @include border-radius(50%);
+    }
+    p {
+      color: $theme-color-4;
+      font-size: $font-16;
+      font-weight: $font-weight-medium;
+    }
+  }
+  &:hover {
+    @include transform(translateX(-50%) scale(1.02));
+    @media #{$large_mobile} {
+      @include transform(translateX(0) scale(1.02));
+    }
+    @media #{$small_mobile} {
+      @include transform(translateX(0) scale(1.02));
+    }
+  }
+}

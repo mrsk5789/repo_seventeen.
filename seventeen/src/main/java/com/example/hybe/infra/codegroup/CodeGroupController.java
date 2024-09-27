@@ -9,17 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.hybe.common.util.UtilDateTime;
+
 @Controller
 public class CodeGroupController {
 	
 	@Autowired
 	CodeGroupService codegroupService;
-//	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmList")
-//	public String codegroupXdmList(Model model, CodeGroupVo codegroupvo) {
-//		model.addAttribute("list", codegroupService.selectList(codegroupvo));
 ////		System.out.println("codegroups.size():"+codeGroups.size());	
 ////		for(CodeGroupDto codeGroupDto:codeGroups) {System.out.println(codeGroupDto.getIfcgSeq() +"|"+codeGroupDto.getIfcgRenDate() +"|");
-//		return "/xdm/v1/infra/codegroup/codegroupXdmList";}	
+		
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmForm")
 	public String codegroupXdmForm() {
 	    return "/xdm/v1/infra/codegroup/codegroupXdmForm";
@@ -51,7 +50,7 @@ public class CodeGroupController {
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codegroupXdmUele")
 	public String codegroupXdmUele(CodeGroupDto codeGroupDto){
 		codegroupService.uelete(codeGroupDto);
-		System.out.println("codeGroupD");
+		System.out.println("uelete");
 		return "redirect:/xdm/v1/infra/codegroup/codegroupXdmList";
 	}
 	
@@ -66,10 +65,13 @@ public class CodeGroupController {
 	@RequestMapping(value= "/xdm/v1/infra/codegroup/codegroupXdmList")
 	public String codegroupXdmList(@ModelAttribute("vo")CodeGroupVo codegroupvo, Model model){
 		codegroupvo.setParamsPaging(codegroupService.selectOneCount(codegroupvo));
-		
+		System.out.println("start : "+codegroupvo.getStartRnumForMysql());
+//		/* 초기값 세팅이 없는 경우 사용 */
+		codegroupvo.setShDateStart(codegroupvo.getShDateStart() == null || codegroupvo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(codegroupvo.getShDateStart()));
+		codegroupvo.setShDateEnd(codegroupvo.getShDateEnd() == null || codegroupvo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(codegroupvo.getShDateEnd()));
 		if (codegroupvo.getTotalRows() > 0) {
 			model.addAttribute("list", codegroupService.selectList(codegroupvo));
-			model.addAttribute("vo", codegroupvo);
+		//	model.addAttribute("vo", codegroupvo);
 		}
 		return "/xdm/v1/infra/codegroup/codegroupXdmList";
   	}

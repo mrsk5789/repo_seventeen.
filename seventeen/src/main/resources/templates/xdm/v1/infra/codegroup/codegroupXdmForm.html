@@ -487,7 +487,7 @@
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmInst">
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -498,32 +498,16 @@
 											<div class="row gutters">
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
-														<h4 class="sub-heading">기본정보</h4>
-														<!--<label for="inputName">코드그룹</label>
-														<select class="form-control form-control-lg">
-															<option>선택하세요</option>
-														</select>-->			
+														<h4 class="sub-heading">기본정보</h4>		
 													</div>
 												</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgSeq">코드그룹 번호</label>
-													<input type="text" id="ifcgSeq" name="ifcgSeq" th:value="${item?.ifcgSeq}" class="form-control" placeholder="자동생성"readonly disabled>
+													<input type="text" id="ifcgSeq" name="ifcgSeq" th:value="${item?.ifcgSeq}" class="form-control" placeholder="자동생성"readonly>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -532,22 +516,14 @@
 													<input class="form-control form-control-lg" name="ifcgName" th:value="${item?.ifcgName}" type="text" id="ifcgName" placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													 <label for="disabledInput"></label>
-												</div>
-											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgUseNy">사용여부</label>
 														<select class="form-control form-control-lg" id="ifcgUseNy" name="ifcgUseNy">
-															<option value="1" th:selected="${item?.ifcgUseNy==1}">Y</option>
-															<option value="0" th:selected="${item?.ifcgUseNy==0}">N</option>
+															<option value="1" th:selected="${item?.ifcgUseNy==1}">N</option>
+															<option value="0" th:selected="${item?.ifcgUseNy==0}">Y</option>
 														</select>					
 												</div>
 											</div>
@@ -564,35 +540,12 @@
 														</select>
 												</div>
 											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgDesc">설명</label>
 													<textarea class="form-control" rows="2" name="ifcgDesc" id="ifcgDesc" type="text" style="width: 570px; height: 80px;" th:value="${item?.ifcgDesc}"></textarea>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
 												</div>
 											</div>
 										</div>
@@ -607,7 +560,7 @@
 							  <td style="width : 10px; "></td>
 								<td>	
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									   <button type="submit" class="btn btn-primary">
+									   <button type="button" id="btnSubmit"   class="btn btn-primary">
 											<span class="icon-times-outline"></span>
 									   </button>
 								   </div>
@@ -615,7 +568,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmList" class="btn btn-primary">
+										<button type="submit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmInst" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -624,6 +577,7 @@
 						</table>
 					 </div>
 				  </div>
+					</form>
 			   </div>
 			 </div>
 		  </div>
@@ -631,6 +585,22 @@
 			© Bootstrap Gallery 2023
 		</footer>
 		</div>
+		<script type="text/javascript">
+			document.getElementById("btnSubmit").onclick = function (){
+
+		    var ifcgName = document.getElementById("ifcgName");
+		    var ifcgNameValue = document.getElementById("ifcgName").value.trim();
+			
+		    if (ifcgNameValue == "" || ifcgNameValue == null) {
+				alert("이름을 입력해 주세요");
+				ifcgName.focus();
+				return false;
+		      } else {
+		    }
+			  form.action = "/xdm/v1/infra/codegroup/codegroupXdmInst";
+			  form.submit();
+			}
+		</script>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>

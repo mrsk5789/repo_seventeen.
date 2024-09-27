@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.hybe.infra.codegroup.CodeGroupDto;
+import com.example.hybe.infra.codegroup.CodeGroupVo;
 
 @Repository
 public interface MemberDao {
@@ -22,6 +23,8 @@ public interface MemberDao {
 	//public String addNowTimeString(MemberDto memberDto);
 
 	public int update(MemberDto memberDto);
+	
+	public int selectOneCount(MemberVo membervo);
 
 	
 }

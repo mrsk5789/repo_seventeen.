@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.classes.ClassesDao"> 
+<!--mapper와 연결될 dao //  ctrl+shift+c-->
+	  
+	  <resultMap id="resultMapObj" type="com.example.hybe.infra.classes.ClassesDto"></resultMap>
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  SELECT
+			a.seq
+			,a.className
+			,a.teacher
+			,a.classDesc
+			,a.regDate
+			,a.modDate
+			,a.price
+			,a.terms
+			,a.delny 
+			,a.UseNy 
+			,a.orders
+        FROM 
+			class a
+		WHERE 1=1
+			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>	
+			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>
+			<choose>
+			    <when test="shOption==1">AND seq=#{shValue}</when>
+			    <when test="shOption==2">AND className=#{shValue}</when>
+			    <when test="shOption==3">AND orders=#{shValue}</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 1">AND a.regDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
+		ORDER BY
+			a.seq desc
+	  </select>
+	  
+	  <insert id="insert">
+	  	INSERT INTO class(
+			 className
+			,teacher
+			,classDesc
+			,regDate
+			,modDate
+			,price
+			,terms
+			,delny 
+			,UseNy 
+			,orders
+	  	)VALUES(
+			 #{className}
+			,#{teacher}
+			,#{classDesc}
+			,now()
+			,now()
+			,#{price}
+			,#{terms}
+			,#{delny} 
+			,#{UseNy} 
+			,#{orders}
+			)
+	  </insert>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	 SELECT
+	  	 	a.seq
+			,a.className
+			,a.teacher
+			,a.classDesc
+			,a.regDate
+			,a.modDate
+			,a.price
+			,a.terms
+			,a.delny 
+			,a.UseNy 
+			,a.orders
+        FROM 
+			class a	
+		WHERE 1=1
+			AND	a.seq = #{seq}
+	  </select>
+	  <update id="update">
+	    UPDATE class
+	    SET
+	       ,className = #{className}
+		   ,teacher = #{teacher}
+		   ,classDesc = #{classDesc}
+		   ,price = #{price}
+		   ,terms = #{terms}
+		   ,UseNy = #{UseNy}
+		   ,orders= #{orders}
+	    WHERE 1=1
+	       AND a.seq = #{seq}		   
+	  </update>
+	  
+	  <update id="uelete">
+	  	UPDATE class
+	  	SET
+	  		delny=1
+	  	WHERE 1=1
+	  		AND seq=#{seq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	DELETE FROM class
+	  	WHERE 1=1
+	  		AND seq=#{seq}	
+	  </delete>
+</mapper>

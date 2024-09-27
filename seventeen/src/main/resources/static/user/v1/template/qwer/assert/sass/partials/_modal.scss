@@ -1,0 +1,72 @@
+.modal-container {
+  &.fade {
+    .modal-dialog {
+      @include transform(scale(.8) translate(0, 0));
+      @include transition(0.2s)
+    }
+  }
+}
+/* modal container */
+.note-modal,
+.modal-container {
+  .modal-content {
+    @include border-radius(8px);
+  }
+  .modal-header {
+    border-bottom-color: rgba(128, 137, 150, 0.1);
+  }
+  .modal-title {
+    font-size: $font-18;
+    font-weight: $font-weight-semi-bold;
+  }
+  button {
+    border: none;
+  }
+}
+.modal-container {
+  .modal-dialog {
+    @include transform(scale(.8) translate(0, 0));
+  }
+  &.show{
+    display: block;
+    .modal-dialog {
+      @include transform(scale(1) translate(0, 0));
+    }
+  }
+}
+
+/*====== copy-to-clipboard =======*/
+.copy-to-clipboard {
+  position: relative;
+  z-index: 1;
+}
+/*====== text-success-message=======*/
+.text-success-message {
+  background-color: $theme-color-5;
+  color: $white;
+  @include border-radius(4px);
+  padding: 3px 6px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  @include transition(0.4s);
+  font-size: $font-15;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(translateX(-50%));
+  &.active {
+    top: -40px;
+    opacity: 1;
+    visibility: visible;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: -4px;
+    left: 50%;
+    @include transform(translateX(-50%) rotate(45deg));
+    background-color: $theme-color-5;
+    width: 8px;
+    height: 8px;
+  }
+}

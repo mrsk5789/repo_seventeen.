@@ -1,0 +1,89 @@
+/*====================================================
+    funfact-area
+ ====================================================*/
+.funfact-pattern {
+  position: relative;
+  overflow: hidden;
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: -10px;
+    width: 20%;
+    height: 50%;
+    background-image: url("../images/dots.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    @include transition(0.7s);
+  }
+  &:after {
+    left: auto;
+    right: -10px;
+    top: auto;
+    bottom: -5px;
+  }
+}
+.fun-bg1 {
+  background-color: $color-4 !important;
+}
+.fun-bg2 {
+  background-color: $color-5 !important;
+}
+.fun-bg3 {
+  background-color: $color-6 !important;
+}
+.fun-bg4 {
+  background-color: $color-7 !important;
+}
+/*===== counter-item =====*/
+.counter-item {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  .counter-number {
+    width: 135px;
+    height: 135px;
+    line-height: 135px;
+    background-color: $gray;
+    margin-left: auto;
+    margin-right: auto;
+    @include border-radius(50%);
+    color: $white;
+    span {
+      font-size: $font-30;
+      font-weight: $font-weight-bold;
+    }
+  }
+  .counter__title {
+    font-size: $font-18;
+    font-weight: $font-weight-semi-bold;
+    color: $white;
+  }
+}
+
+.counter-item.counter-item-layout-2 {
+  background-color: $white;
+  @include border-radius(6px);
+  z-index: 1;
+  @include transition(0.3s);
+  .counter-number {
+    width: auto;
+    height: auto;
+    line-height: inherit;
+    @include border-radius(6px 6px 0 0);
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .theme-btn {
+    background-color: rgba(51, 63, 87, 0.1);
+    color: $theme-color;
+  }
+  &:hover {
+    .theme-btn {
+      background-color: $theme-color;
+      color: $white;
+    }
+  }
+}

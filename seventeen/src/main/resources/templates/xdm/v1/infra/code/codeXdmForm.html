@@ -512,10 +512,11 @@
 												<div class="col-sm-4 col-12">
 													<div class="form-group">
 														<h4 class="sub-heading">기본정보</h4>
-														<label for="inputName">코드그룹</label>
-														<select class="form-control form-control-lg">
+														<label for="codegroup_seq">코드그룹</label>
+														<select class="form-control form-control-lg" name="codegroup_seq">
 															<option>선택하세요</option>
-															<option th:each="list:${listCodeGroup}" th:value="${list.ifcgSeq}" th:text="${list.ifcgName}" th:selected="${list.ifcgSeq==item?.ifcgSeq}"></option>
+															<option th:each="list:${listCodeGroup}" th:value="${list.ifcgSeq}" th:text="${list.ifcgName}" ></option>
+															<!--th:selected="${list.ifcgSeq==item?.ifcgSeq}"-->
 														</select>			
 													</div>
 												</div>

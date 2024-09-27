@@ -1,0 +1,73 @@
+.icon-element {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: $theme-color-2;
+  @include border-radius(100%);
+  font-size: $font-18;
+  @include transition(0.3s);
+  color: $white;
+}
+.icon-element-lg {
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
+  font-size: $font-30;
+}
+.icon-element-sm {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: $font-16;
+}
+
+.icon-element-bg-slim-1 {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: $theme-color-2;
+}
+.icon-element-bg-slim-2 {
+  background-color: rgba(64, 204, 111, 0.1);
+  color: $theme-color-5;
+}
+.icon-element-bg-slim-3 {
+  background-color: rgba(140, 67, 255, 0.1);
+  color: $color-3;
+}
+.icon-element-bg-slim-4 {
+  background-color: rgba(40, 213, 167, 0.1);
+  color: $color-4;
+}
+.icon-element-bg-slim-5 {
+  background-color: rgba(249, 184, 81, 0.1);
+  color: $color-5;
+}
+.icon-element-bg-slim-6 {
+  background-color: rgba(204, 8, 233, 0.1);
+  color: $color-6;
+}
+.icon-element-bg-slim-7 {
+  background-color: rgba(255, 42, 7, 0.1);
+  color: $color-7;
+}
+.icon-element-bg-slim-8 {
+  background-color: rgba(156, 206, 9, 0.1);
+  color: $color-8;
+}
+.icon-element-bg-slim-9 {
+  background-color: rgba(59, 89, 152, 0.1);
+  color: $alter-color;
+}
+.icon-element-bg-slim-10 {
+  background-color: rgba(29, 61, 242, 0.1);
+  color: $alter-color-2;
+}
+.icon-element-bg-slim-11 {
+  background-color: rgba(255, 48, 108, 0.1);
+  color: $alter-color-3;
+}
+.icon-element-bg-slim-12 {
+  background-color: rgba(40, 109, 81, 0.1);
+  color: $alter-color-4;
+}

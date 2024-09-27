@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "../.."
+        },
+        {
+            "path": "../../../html_ui"
+        },
+        {
+            "path": "../../../html_homepage"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "html_ui"
+    }
+}

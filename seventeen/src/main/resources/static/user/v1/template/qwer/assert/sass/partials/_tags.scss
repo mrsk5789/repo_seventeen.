@@ -1,0 +1,22 @@
+.tag-list {
+  li {
+    display: inline-block;
+    text-transform: capitalize;
+    margin-bottom: 6px;
+    a {
+      border: 1px solid rgba(128, 137, 150, 0.2);
+      color: $theme-color-4;
+      @include border-radius(4px);
+      @include transition(0.2s);
+      padding: 6px 20px;
+      display: block;
+    }
+    &:hover {
+      a {
+        background-color: $theme-color-2;
+        color: $white;
+        border-color: $theme-color-2;
+      }
+    }
+  }
+}

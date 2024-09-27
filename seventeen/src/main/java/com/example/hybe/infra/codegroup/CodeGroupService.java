@@ -42,27 +42,6 @@ public class CodeGroupService {
 		return codeGroupDao.delete(codeGroupDto);
 	}
 	
-//	public static String addNowTimeString(String date) {
-//		LocalDateTime localDateTime=LocalDateTime.now();
-//		String localDateTimeString=localDateTime.format(DateTimeFormatter.ofPattern(Constants.TIME_FORMAT_BASIC));
-//		return date+" "+localDateTimeString;
-//	}
-//	public static String add00TimeString(String date) {
-//		return date +"00:00:00";
-//	}
-//	public static String add59TimeString(String date) {
-//		return date +"23:59:59";
-//	}	
-//	public static String dateToString(Date dateParam) {
-//		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-//	    String dateRt=simpleDateFormat.format(dateParam);
-//	    return dateRt;
-//	}
-//	public static String dateTimeToString(Date dateTimeParam) {
-//		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		String dateTimeRt=simpleDateFormat.format(dateTimeParam);
-//		return dateTimeRt;
-//	}
 	  public int selectOneCount(CodeGroupVo codegroupvo) { 
 	    	return codeGroupDao.selectOneCount(codegroupvo); 
 	    }

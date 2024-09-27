@@ -1,9 +1,14 @@
 package com.example.hybe.infra.code;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.hybe.infra.codegroup.CodeGroupVo;
+
+import jakarta.annotation.PostConstruct;
 
 @Service
 public class CodeService {
@@ -21,6 +26,7 @@ public class CodeService {
 	
 	public CodeDto selectOne(CodeDto codeDto) {
 		return codeDao.selectOne(codeDto);
+		
 	}
 	
 	public int update(CodeDto codeDto) {
@@ -42,6 +48,45 @@ public class CodeService {
 		return codeDao.delete(codeDto);
 	}
 
-}
+	public int selectOneCount(CodeVo codevo) { 
+    	return codeDao.selectOneCount(codevo); 
+    }
+    @PostConstruct
+	public void selectListCachedCodeArrayList() {
+		List<CodeDto> codeListFromDb = (ArrayList<CodeDto>) codeDao.selectListCachedCodeArrayList();
+//		codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
+		CodeDto.cachedCodeArrayList.clear(); 
+		CodeDto.cachedCodeArrayList.addAll(codeListFromDb);
+		System.out.println("cachedCodeArrayList: " + CodeDto.cachedCodeArrayList.size() + " chached !");
+	}
+    public static void clear() {
+		CodeDto.cachedCodeArrayList.clear();
+	}
 	
-
+	
+	public static List<CodeDto> selectListCachedCode(String codegroup_seq) {
+		List<CodeDto> rt = new ArrayList<CodeDto>();
+		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
+			if (codeRow.getCodegroup_seq().equals(codegroup_seq)) {
+				rt.add(codeRow);
+			} else {
+				// by pass
+			}
+		}
+		return rt;
+	}
+	
+	public static String selectOneCachedCode(int code) {
+		System.out.println("code: " + code);
+		String rt = "";
+		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
+			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {
+				rt = codeRow.getIfcdName();
+			} else {
+				// by pass
+			}
+		}
+		return rt;
+	}
+    
+}

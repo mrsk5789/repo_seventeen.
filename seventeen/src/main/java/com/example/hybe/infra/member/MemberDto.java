@@ -3,28 +3,26 @@ package com.example.hybe.infra.member;
 import java.util.Date;
 
 public class MemberDto {
-	
-	
-	private Integer seq;
+	private String seq;
 	private String name;
 	private String id;
-	private String nickname;
-	private Integer delny;
-	private Integer UseNy;
-	private Integer ordere;
-	private String email;
-	private String phonenumber;
-	private String adress;
-	private Date regdate;
-	private String gender;
 	private String password;
-	private String desce;
+	private Integer gender;
+	private String nickname;
+	private String phonenumber;
+	private String email;
+	private String adress;
+	private String desc;
+	private Date regdate;
 	private Date modDate;
+	private Integer delny;
 	
-	public Integer getSeq() {
+//	----- getter/setter -----
+	
+	public String getSeq() {
 		return seq;
 	}
-	public void setSeq(Integer seq) {
+	public void setSeq(String seq) {
 		this.seq = seq;
 	}
 	public String getName() {
@@ -39,35 +37,23 @@ public class MemberDto {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Integer getGender() {
+		return gender;
+	}
+	public void setGender(Integer gender) {
+		this.gender = gender;
+	}
 	public String getNickname() {
 		return nickname;
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
-	}
-	public Integer getDelny() {
-		return delny;
-	}
-	public void setDelny(Integer delny) {
-		this.delny = delny;
-	}
-	public Integer getUseNy() {
-		return UseNy;
-	}
-	public void setUseNy(Integer useNy) {
-		UseNy = useNy;
-	}
-	public Integer getOrdere() {
-		return ordere;
-	}
-	public void setOrdere(Integer ordere) {
-		this.ordere = ordere;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getPhonenumber() {
 		return phonenumber;
@@ -75,11 +61,23 @@ public class MemberDto {
 	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getAdress() {
 		return adress;
 	}
 	public void setAdress(String adress) {
 		this.adress = adress;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	public Date getRegdate() {
 		return regdate;
@@ -87,32 +85,17 @@ public class MemberDto {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getDesce() {
-		return desce;
-	}
-	public void setDesce(String desce) {
-		this.desce = desce;
-	}
 	public Date getModDate() {
 		return modDate;
 	}
 	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
-	
-	
-	
+	public Integer getDelny() {
+		return delny;
+	}
+	public void setDelny(Integer delny) {
+		this.delny = delny;
+	}
 	
 }

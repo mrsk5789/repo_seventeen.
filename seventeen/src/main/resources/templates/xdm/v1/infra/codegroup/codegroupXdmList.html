@@ -28,11 +28,13 @@
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
 	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 	<style>
-		#shapee {
-			width: 200px;
-			height: 28px;
-			border-radius: 5px;
-		}
+		#shapee {width: 200px; height: 28px; border-radius: 5px; }
+		#shDelNy{width: 200px; height: 28px; border-radius: 5px; }
+		#shUseNy{ width: 200px; height: 28px; border-radius: 5px; }
+	    #shOption{ width: 200px; height: 28px; border-radius: 5px; }
+		#rowNumToShow{ width: 200px; height: 28px; border-radius: 5px; }
+		#shOptionDate{ width: 200px; height: 28px; border-radius: 5px; }
+		#shValue{ width: 200px; height: 28px; border-radius: 5px; }
 	</style>
 </head>
 
@@ -466,15 +468,9 @@
 										</button>
 										<div class="collapse navbar-collapse" id="navbarTwo">
 											<ul class="navbar-nav">
-												<li class="nav-item active">
-													<a class="nav-link" href="#">page1><span class="sr-only">(current)</span></a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" href="#">page2></a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" href="#">default</a>
-												</li>
+												<li class="nav-item active"><a class="nav-link" href="#">page1><span class="sr-only">(current)</span></a></li>
+												<li class="nav-item"><a class="nav-link" href="#">page2></a></li>
+												<li class="nav-item"><a class="nav-link" href="#">default</a></li>
 											</ul>
 										</div>
 									</nav>
@@ -491,45 +487,46 @@
 											<th>
 												<tr>
 													<td>
-														<select id="shapee" name="shDelNy">
-															<option value="">삭제여부</option>
-															<option value="1">Y</option>
-															<option value="0">N</option>
+														<select name="shDelNy" id="shDelNy">
+															<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
+															<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shDelNy == 0}">N</option>            
 														</select>
 													</td>
 													<td>
-														<select id="shapee" name="shUseNy">
-															<option value="" selected disabled hidden>사용여부</option>
-															<option value="1">Y</option>
-															<option value="0">N</option>
+														<select name="shUseNy" id="shUseNy">
+															<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
+															<option value="1" th:selected="${vo.shUseNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shUseNy == 0}">N</option>
 														</select>
 													</td>
 													<td>
-														<select id="shapee" name="shOptionDate">
-															<option value="" selected disabled hidden>등록일</option>
-															<option value="1" >등록일</option>
-															<option value="2" >수정일</option>
+														<select id="shOptionDate" name="shOptionDate">
+															<option value="" th:selected="${vo.shOptionDate == null}">검색구분</option>
+															<option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
+															<option value="2" th:selected="${vo.shOptionDate == 2}">수정날짜</option>
 														</select>
 													</td>
 													<td>
-														<input id="shDateStart" name="shDateStart" placeholder="시작일" type="text" autocomplete="off">
+														<input type="text" id="shDateStart" name="shDateStart" th:value="${#strings.substring(vo.shDateStart, 0, 10)}" placeholder="시작일" autocomplete="off">
 													</td>
 													<td>
-														<input id="shDateEnd" name="shDateEnd" placeholder="종료일" type="text" autocomplete="off">
+														<input type="text" id="shDateEnd" name="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" placeholder="종료일" autocomplete="off">
 													</td>
 												</tr>
 											</th>
 											<tr>
 												<td>
-													<select id="shapee" name="shOption">
-														<option value="" selected disabled hidden>검색구분</option>
-														<option value="1">코드</option>
-														<option value="2">이름</option>
-														<option value="3">순서</option>
+													<select id="shOption" name="shOption">
+														<option value="" th:selected="${vo.shOption == null}">검색구분</option>
+														<option value="1" th:selected="${vo.shOption == 1}">작성날짜</option>
+														<option value="2" th:selected="${vo.shOption == 2}">이름</option>
+														<option value="3" th:selected="${vo.shOption == 3}">순서</option>
 													</select>
 												</td>
 												<td>
-													<input id="shapee" name="shValue">
+													<input type="text" id="shValue" name="shValue" th:value="${vo.shValue}" onkeyup="enterkey()" placeholder="검색어" >
+												<!--	<div class="invalid-feedback" id="shValueFeedback"></div>-->
 												</td>
 												<td>
 													<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
@@ -546,6 +543,7 @@
 											</tr>
 										</table>
 									</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -563,9 +561,9 @@
 												   <td style="width : 900px;"></td>
 												    <td>
 														<select id="shapee">
+															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
 															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
 															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
-															<option value="30" th:selected="${vo.rowNumToShow eq 30}">30</option>
 															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40</option>
 															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
 															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60</option>
@@ -595,26 +593,26 @@
 										</thead>
 										<tbody>
 											<tr th:if="${#lists.isEmpty(list)}" >
-												<td colspan="10">
+												<td colspan="14">
 													<p style="width:100px;"></p>
-													<p style="padding-top: 12px;">no data!</p>
+													<p style="padding-top: 12px;">There is no data!</p>
 												</td>
 											</tr>
 											<tr th:if="!${#lists.isEmpty(list)}"th:each="list:${list}">
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td></td>
+												<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
 												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgSeq}"></a></td>
 												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgName}"></a></td>
 												<td th:text="${list.ifcgOrder}"></td>
 												<td th:text="${list.xcount}"></td>
-												<td th:if="${list.ifcgUseNy eq 0}">Y</td>
-												<td th:unless="${list.ifcgUseNy eq 0}">N</td>
-												<td th:if="${list.ifcgDelNy eq 0}">Y</td>
-												<td th:unless="${list.ifcgDelNy eq 0}">N</td>
-												<td th:text="${#dates.format(list.ifcgRegDate, 'yyyy-mm-dd HH:MM:ss')}"></td>
-												<td th:text="${#dates.format(list.ifcgRenDate, 'yyyy-mm-dd HH:MM:ss')}"></td>
+												<td th:if="${list.ifcgUseNy eq 0}">N</td>
+												<td th:unless="${list.ifcgUseNy eq 0}">Y</td>
+												<td th:if="${list.ifcgDelNy eq 0}">N</td>
+												<td th:unless="${list.ifcgDelNy eq 0}">Y</td>
+												<td th:text="${#dates.format(list.ifcgRegDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+												<td th:text="${#dates.format(list.ifcgRenDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 											</tr>
 										</tbody>
 									</table>
@@ -648,7 +646,7 @@
 							</div>
 						</div>
 					</div>
-					</form>
+					
 					<!-- Row ends -->
 					<table>
 						<tr>
@@ -719,8 +717,15 @@
 				    document.querySelector("form[name=form]").action = "/xdm/v1/infra/codegroup/codegroupXdmList";
 				    document.querySelector("form[name=form]").submit();
 				}
+				
+				document.getElementById("changeRowNum").onchange = function () {
+					    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+					    form.action = "/xdm/v1/infra/codegroup/codegroupXdmList";
+					    form.submit();
+					}
+						
+						
 		</script>
-		
 		
 		<footer class="main-footer fixed-btm">
 			© Bootstrap Gallery 2023

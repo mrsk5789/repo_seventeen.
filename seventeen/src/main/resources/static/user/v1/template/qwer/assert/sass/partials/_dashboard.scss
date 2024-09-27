@@ -1,0 +1,10 @@
+/*====================================================
+    dashboard-nav
+ ====================================================*/
+/*===== edit-profile-photo ======*/
+.edit-profile-photo {
+  .profile-img {
+    @include border-radius(4px);
+    width: 200px;
+  }
+}

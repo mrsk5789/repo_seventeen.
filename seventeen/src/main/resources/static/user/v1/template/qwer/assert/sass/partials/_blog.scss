@@ -1,0 +1,59 @@
+.posts-nav {
+  li {
+    a {
+      position: relative;
+      display: inline-block;
+      color: $theme-color;
+      @include transition(0.2s);
+      span {
+        display: block;
+        color: $theme-color-4;
+        font-size: $font-15;
+        margin-bottom: 1px;
+        font-weight: $font-weight-regular;
+      }
+      &:after {
+        font-family: "Font Awesome 5 Pro", sans-serif;
+        font-size: $font-22;
+        position: absolute;
+        top: 50%;
+        @include transform(translate3d(0,-50%,0));
+        @include transition(0.2s);
+      }
+      &:hover {
+        color: $theme-color-2;
+      }
+    }
+    &.prev-post {
+      a {
+        padding-left: 30px;
+        &:after {
+          left: 0;
+          content: "\f104";
+        }
+        &:hover {
+          &:after {
+            @include transform(translate3d(-5px,-50%,0));
+          }
+        }
+      }
+    }
+    &.next-post {
+      a {
+        padding-right: 30px;
+        &:after {
+          right: 0;
+          content: "\f105";
+        }
+        &:hover {
+          &:after {
+            @include transform(translate3d(5px,-50%,0));
+          }
+        }
+      }
+    }
+
+  }
+}
+
+

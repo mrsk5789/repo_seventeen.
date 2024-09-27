@@ -1,0 +1,109 @@
+/*====================================================
+    hero-wrapper
+ ====================================================*/
+.hero-bg {
+  background-image: url("../images/hero-bg.jpg");
+}
+.hero-bg-2 {
+  background-image: url("../images/hero-bg2.jpg");
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: $black;
+  opacity: 0.6;
+  z-index: -1;
+}
+.hero-wrapper {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding-top: 240px;
+  padding-bottom: 200px;
+  @media #{$tab_device} {
+    padding-top: 130px;
+    padding-bottom: 140px;
+  }
+  @media #{$large_mobile} {
+    padding-top: 130px;
+    padding-bottom: 140px;
+  }
+  @media #{$small_mobile} {
+    padding-top: 130px;
+    padding-bottom: 115px;
+  }
+}
+.hero-svg-content {
+  position: absolute;
+  bottom: -37px;
+  left: 50%;
+  @include transform(translateX(-50%));
+  width: 210px;
+  height: 90px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../images/hero-shape.png");
+  color: $theme-color;
+  font-size: $font-28;
+}
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/*====================================================
+    hero-wrapper4
+ ====================================================*/
+.hero-wrapper5 {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: $light-slim;
+    bottom: -20px;
+    left: 50%;
+    @include transform(translateX(-50%) rotate(45deg));
+  }
+}
+.hero-heading {
+  .sec__title {
+    font-size: $font-45;
+    @media #{$tab_device} {
+      font-size: $font-32;
+    }
+    @media #{$large_mobile} {
+      font-size: $font-32;
+    }
+    @media #{$small_mobile} {
+      font-size: $font-26;
+    }
+  }
+  .sec__desc {
+    font-size: $font-22;
+    margin-top: 15px;
+    @media #{$tab_device} {
+      font-size: $font-18;
+    }
+    @media #{$large_mobile} {
+      font-size: $font-18;
+      line-height: 27px;
+    }
+    @media #{$small_mobile} {
+      font-size: $font-18;
+      line-height: 27px;
+    }
+  }
+}

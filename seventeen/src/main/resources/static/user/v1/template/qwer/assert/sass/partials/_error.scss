@@ -1,0 +1,30 @@
+/*====================================================
+   error-area
+ ====================================================*/
+.error-area {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    width: 300px;
+    height: 300px;
+    top: 15px;
+    left: 16px;
+    background-image: url("../images/dots.png");
+    background-size: cover;
+    background-position: center;
+    @include border-radius(50%);
+    z-index: -1;
+    opacity: 0.1;
+  }
+  &:after {
+    left: auto;
+    right: 15px;
+    bottom: 10px;
+    top: auto;
+  }
+}

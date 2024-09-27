@@ -1,134 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.hybe.infra.member.MemberDao"> 
-<!--mapper와 연결될 dao //  ctrl+shift+c-->
-	  
-	  <resultMap id="resultMapObj" type="com.example.hybe.infra.member.MemberDto"></resultMap>
-	  
-	  <select id="selectList" resultMap="resultMapObj">
-	  SELECT
-			a.seq
-			,a.name
-			,a.id
-			,a.nickname
-			,a.delny
-			,a.ordere
-			,a.email
-			,a.phonenumber
-            ,a.adress 
-            ,a.gender 
-            ,a.password 
-			,a.desce 
-			,a.UseNy
-            ,a.modDate
-            ,a.regdate
-        FROM 
+<mapper namespace="com.example.hybe.infra.member.MemberDao">
+	<!--mapper와 연결될 dao // ctrl+shift+c -->
+
+	<resultMap id="resultMapObj"
+		type="com.example.hybe.infra.member.MemberDto"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+	select aa.* from (
+		SELECT
+			a.seq,
+			a.name,
+			a.id,
+			a.password,
+			a.gender,
+			a.nickname,
+			a.phonenumber,
+			a.email,
+			a.adress,
+			a.desc,
+			a.regdate,
+			a.modDate,
+			a.delny
+			<include refid="selectCommon"/>
+			 ) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+		</select>
+		
+		<sql id="selectCommon">
+		FROM
 			seventeen.member a
-		 WHERE 1=1
-			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>	
+		WHERE 1=1
+			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>
 			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>
 			<choose>
-			    <when test="shOption==1">AND seq=#{shValue}</when>
-			    <when test="shOption==2">AND name=#{shValue}</when>
-			    <when test="shOption==3">AND ordere=#{shValue}</when>
+				<when test="shOption==1">AND seq=#{shValue}</when>
+				<when test="shOption==2">AND name=#{shValue}</when>
 			</choose>
-			
+	
 			<choose>
 				<when test="shOptionDate == 1">AND a.regdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 2">AND a.modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
-		ORDER BY
-			a.seq desc   
-            
-	  </select>
-	  <insert id="insert">
-	  INSERT INTO member(
-	  		name
-			,id
-			,nickname
-			,delny
-			,ordere
-			,email
-			,phonenumber
-            ,adress  
-            ,gender 
-            ,password 
-			,desce 
-			,UseNy
-            ,modDate
-            ,regdate
-            
-      )VALUES(
-            #{name}
-			,#{id}
-			,#{nickname}
-			,#{delny}
-			,#{ordere}
-			,#{email}
-			,#{phonenumber}
-            ,#{adress}
-            ,#{gender} 
-            ,#{password} 
-			,#{desce}
-			,#{UseNy}
-            ,now()
-            ,now()
-            )
-	  </insert>
-	 <select id="selectOne" resultMap="resultMapObj">
-	  	 SELECT
-	  	 	a.seq
-			,a.name
-			,a.id
-			,a.nickname
-			,a.delny
-			,a.ordere
-			,a.email
-			,a.phonenumber
-            ,a.adress 
-            ,a.regdate 
-            ,a.gender 
-            ,a.password 
-			,a.desce 
-			,a.UseNy
-            ,a.modDate
-        FROM 
-			member a	
+	</sql>
+
+	<insert id="insert">
+		INSERT INTO member(
+			name,
+			id,
+			password,
+			gender,
+			nickname,
+			phonenumber,
+			email,
+			adress,
+			desc,
+			regdate,
+			modDate,
+			delny
+		)VALUES(
+			#{name},
+			#{id},
+			#{password},
+			#{gender},
+			#{nickname},
+			#{phonenumber},
+			#{email},
+			#{adress},
+			#{desc},
+			now(),
+			now(),
+			0
+		)
+	</insert>
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+			a.name,
+			a.id,
+			a.password,
+			a.gender,
+			a.nickname,
+			a.phonenumber,
+			a.email,
+			a.adress,
+			a.desc,
+			a.regdate,
+			a.modDate,
+			a.delny
+		FROM
+			member a
 		WHERE 1=1
-			AND	a.seq = #{seq}
-	  </select>
-	   <update id="update">
-	  UPDATE member
-	  SET
-	  	    name = #{name}
-			,id = #{id}
-			,nickname = #{nickname}
-			,delny= #{delny}
-			,ordere= #{ordere}
-			,UseNy= #{UseNy}
-			,email= #{email}
-			,phonenumber= #{phonenumber}
-            ,adress = #{adress}
-            ,gender = #{gender}
-            ,password = #{password}
-			,desce = #{desce}
+			AND a.seq = #{seq}
+	</select>
+	
+	<update id="update">
+		UPDATE member
+		SET
+			name = #{name},
+			id = #{id},
+			password = #{password},
+			gender = #{gender},
+			nickname = #{nickname},
+			phonenumber = #{phonenumber},
+			email = #{email},
+			adress = #{adress},
+			desc = #{desc},
+			modDate = now(),
+			delny = #{delny}
 		WHERE 1=1
-			AND	seq = #{seq}	
-	  
-	  </update>
-	  
-	 <update id="uelete">
-	  	UPDATE member
-	  	SET
-	  		delny=1
-	  	WHERE 1=1
-	  		AND seq=#{seq}
-	  </update>
-	  
-	  <delete id="delete">
-	  	DELETE FROM member
-	  	WHERE 1=1
-	  		AND seq=#{seq}	
-	  </delete>
+			AND seq = #{seq}
+
+	</update>
+
+	<update id="uelete">
+		UPDATE member
+		SET
+			delny=1
+		WHERE 1=1
+			AND seq=#{seq}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM member
+		WHERE 1=1
+		AND seq=#{seq}
+	</delete>
+	
+	  <select id="selectOneCount" resultType="Integer">
+	  	SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
 </mapper>

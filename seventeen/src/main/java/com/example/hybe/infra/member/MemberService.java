@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.hybe.infra.codegroup.CodeGroupDto;
+import com.example.hybe.infra.codegroup.CodeGroupVo;
 
 
 @Service
@@ -40,5 +41,8 @@ public class MemberService {
 		return memberDao.delete(memberDto);
 	}
 
+	public int selectOneCount(MemberVo membervo) { 
+    	return memberDao.selectOneCount(membervo); 
+    }
 
 }

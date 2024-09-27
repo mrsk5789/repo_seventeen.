@@ -27,11 +27,12 @@
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
 	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 	<style>
-		#shapee {
-			width: 200px;
-			height: 28px;
-			border-radius: 5px;
-		}
+		#shapee {width: 200px; height: 28px; border-radius: 5px; }
+				#shDelNy{width: 200px; height: 28px; border-radius: 5px; }
+				#shUseNy{ width: 200px; height: 28px; border-radius: 5px; }
+			    #shOption{ width: 200px; height: 28px; border-radius: 5px; }
+				#rowNumToShow{ width: 200px; height: 28px; border-radius: 5px; }
+				#shOptionDate{ width: 200px; height: 28px; border-radius: 5px; }
 	</style>
 </head>
 
@@ -438,9 +439,6 @@
 									<li>
 										<a href='error404.html'>Error 404</a>
 									</li>
-									<li>
-										<a href='error505.html'>Error 505</a>
-									</li>
 								</ul>
 							</li>
 						</ul>
@@ -480,42 +478,44 @@
 										</div>
 									</div>
 								<form name="form" method="post" action="/xdm/v1/infra/code/codeXdmList">
+									<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+									<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
 									<div class="col-sm-4 col-12">
 										<table>
 											<th>
 												<tr>
 													<td>
-														<select id="shapee" name="shDelny">
-															<option value="">삭제여부</option>
-															<option value="1">Y</option>
-															<option value="0">N</option>
+														<select  name="shDelNy" id="shDelNy">
+															<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
+															<option value="1" th:selected="${vo.shDelNy == 1}">N</option>
+														    <option value="0" th:selected="${vo.shDelNy == 0}">Y</option>            
 														</select>
 													</td>
 													<td>
-														<select id="shapee" name="shUseNy">
-															<option value="">사용여부</option>
-															<option value="1">Y</option>
-															<option value="0">N</option>
+														<select name="shUseNy" id="shUseNy">
+															<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
+															<option value="1" th:selected="${vo.shUseNy == 1}">N</option>
+															<option value="0" th:selected="${vo.shUseNy == 0}">Y</option>
 														</select>
 													</td>
 													<td>
-														<select id="shapee" name="shOptionDate">
-															<option value="" selected disabled hidden>등록일</option>
-															<option value="1" >등록일</option>
-														 	<option value="2" >수정일</option>
+														<select id="shOptionDate" name="shOptionDate">
+															<option value="" th:selected="${vo.shOptionDate == null}">검색구분</option>
+															<option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
+															<option value="2" th:selected="${vo.shOptionDate == 2}">수정날짜</option>
 														</select>
 													</td>
 													<td>
-														<input id="shDateStart" name="shDateStart" placeholder="시작일" type="text" autocomplete="off">
+														<input type="text" id="shDateStart" name="shDateStart" th:value="${#strings.substring(vo.shDateStart, 0, 10)}" placeholder="시작일" autocomplete="off">
 													</td>
 													<td>
-														<input id="shDateEnd" name="shDateEnd"  placeholder="종료일" type="text" autocomplete="off">
+														<input type="text" id="shDateEnd" name="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" placeholder="종료일" autocomplete="off">
 													</td>
 												</tr>
 											</th>
 											<tr>
 												<td>
-													<select id="shapee" name="shOption">
+													<select id="shOption" name="shOption">
 														<option value="" selected disabled hidden>검색구분</option>
 														<option value="1">코드</option>
 														<option value="2">이름</option>
@@ -523,7 +523,7 @@
 													</select>
 												</td>
 												<td>
-													<input id="shapee" name="shValue">
+													<input type="text" id="shValue" name="shValue" th:value="${vo.shValue}" onkeyup="enterkey()" placeholder="검색어" >
 												</td>
 												<td>
 													<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
@@ -554,12 +554,17 @@
 										<table>
 											<th>
 												<tr>
-													<td>&nbsp;&nbsp;&nbsp; total : 171 </td>
+													<td th:text="'total : '+${vo.totalRows}"></td>
 													<td style="width : 900px;"></td>
 													<td>
-														<select id="shapee">
-															<option value="1" selected disabled hidden>1</option>
-															<option value="2">2</option>
+														<select id="rowNumToShow" name="rowNumToShow">
+															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
+															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
+															<option value="30" th:selected="${vo.rowNumToShow eq 30}">30</option>
+															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40</option>
+															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
+															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60</option>
+															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70</option>
 														</select>
 													</td>
 												</tr>
@@ -586,9 +591,9 @@
 										</thead>
 										<tbody>
 											<tr th:if="${#lists.isEmpty(list)}" >
-												<td colspan="10">
+												<td colspan="14">
 													<p style="width:100px;"></p>
-													<p style="padding-top: 12px;">no data!</p>
+													<p style="padding-top: 12px;">There is no data!</p>
 												</td>
 											</tr>
 											<tr th:if="!${#lists.isEmpty(list)}"th:each="list:${list}">
@@ -611,23 +616,35 @@
 										</tbody>
 									</table>
 									<table>
-									  <th>
-									   <td style="width : 400px;"></td>
-										<td>
-											<ul class="pagination justify-content-right">
-												<li class="page-item disabled"><span class="page-link">Prev</span></li>
-												<li class="page-item"><a class="page-link" href="#">1</a></li>
-												<li class="page-item active"><a href="#" class="page-link">2</a></li>
-												<li class="page-item"><a class="page-link" href="#">3</a></li>
-												<li class="page-item"><a class="page-link" href="#">Next</a></li>
-											</ul>
-										 </td>
-									   </th>
-									</table>
-								</div>
+										<!-- paging s  -->				
+									<div class="container-fluid px-0 mt-2 mb-2">
+										<div class="row">
+											<div class="col">
+												<ul class="pagination justify-content-center">
+													<li class="page-item disabled" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
+														<a class="page-link" aria-label="Previous" href="javascript:goList(${vo.startPage - 1})" 
+															th:attr="onclick=|goList('${vo.startPage - 1}')|"> 
+															<span aria-hidden="true">&laquo;</span>
+														</a>
+													</li>
+													<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" 
+														th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
+														<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+													</li>
+													<li class="page-item" th:if="${vo.endPage ne vo.totalPages}" style="cursor: pointer;">
+														<a class="page-link" aria-label="Next" th:attr="onclick=|goList('${vo.endPage + 1}')|"> 
+														   <span aria-hidden="true">&raquo;</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</table>
 							</div>
 						</div>
 					</div>
+				</div>
 				</form>
 					<table>
 						<tr>
@@ -672,6 +689,17 @@
 				  format:'Y-m-d'
 				 });	
 			  });
+			  
+			  goList = function (thisPage) {
+			    document.querySelector("input[name=thisPage]").value = thisPage;
+			    document.querySelector("form[name=form]").action = "/xdm/v1/infra/code/codeXdmList";
+			    document.querySelector("form[name=form]").submit();
+			  }
+			  document.getElementById("changeRowNum").onchange = function () {
+								    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+								    form.action = "/xdm/v1/infra/codegroup/codegroupXdmList";
+								    form.submit();
+								}
 		 </script>
 		
 		<footer class="main-footer fixed-btm">

@@ -1,0 +1,184 @@
+/*====================================================
+    contact-form-action
+ ====================================================*/
+.alert-message {
+  display: none;
+}
+.form-group,
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+.form-icon {
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  color: $theme-color-4;
+  z-index: 4;
+}
+.label-text {
+  font-size: $font-14;
+  color: $theme-color;
+  font-weight: $font-weight-medium;
+  text-transform: capitalize;
+  position: relative;
+}
+.form--control {
+  height: 50px;
+  padding-left: 40px;
+  font-size: $font-15;
+  color: $theme-color;
+  border: 1px solid rgba(128, 137, 150, 0.3);
+  @include transition(0.3s);
+  &:focus {
+    border-color: rgba(128, 137, 150, 0.6);
+    @include box-shadow(0 0 0 0);
+  }
+}
+.input-group {
+  .theme-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0;
+  }
+}
+/*====== subscriber-box =======*/
+.subscriber-box {
+  position: relative;
+  padding: 30px;
+  @include border-radius(6px);
+  z-index: 1;
+  &:before,
+  &:after {
+    position: absolute;
+    color: rgba(128, 137, 150, 0.2);
+    font-family: "Font Awesome 5 Pro";
+    font-size: 160px;
+    z-index: -1;
+  }
+  &:before {
+    content: "\f0e0";
+    top: 45px;
+    left: 0;
+    @include transform(rotate(-45deg));
+  }
+  &:after {
+    content: "\f040";
+    right: 0;
+    bottom: 0;
+  }
+}
+/*===== custom-checkbox ====*/
+.custom-control-label {
+  cursor: pointer;
+  font-weight: $font-weight-regular;
+}
+/*=========== toggle-password =============*/
+.toggle-password {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  &:focus {
+    @include box-shadow(none);
+  }
+  &:hover {
+    color: $theme-color-2;
+  }
+  .eye-off {
+    display: none;
+  }
+  &.active {
+    .eye-off {
+      display: block;
+    }
+    .eye-on {
+      display: none;
+    }
+  }
+}
+/*======== bootstrap-tagsinput =======*/
+.bootstrap-tagsinput {
+  @include box-shadow(none);
+  color: $theme-color;
+  border-color: rgba(128, 137, 150, 0.3);
+  width: 100%;
+  font-size: $font-14;
+  padding: 12px 16px;
+  &.focus {
+    border-color: rgba(128, 137, 150, 0.6);
+  }
+  .tag {
+    font-size: $font-12;
+  }
+}
+/*======== payment-method =======*/
+.payment-method {
+  .payment-method-label {
+    margin-bottom: 0;
+    color: $theme-color;
+    position: relative;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 30px;
+    display: block;
+    cursor: pointer;
+    input {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+    &:before {
+      border: 2px solid $gray;
+      @include border-radius(100%);
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      @include transition(0.3s);
+    }
+    &:after {
+      background-color: $theme-color-2;
+      @include border-radius(100%);
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 23px;
+      width: 8px;
+      height: 8px;
+      @include transition(0.3s);
+      @include transform(scale(0));
+    }
+  }
+  li {
+    background-color: $white;
+    @include border-radius(4px);
+    @include box-shadow(0 1px 8px rgba(82, 85, 90, 0.1));
+    margin-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    &.active {
+      .payment-method-label {
+        &:before {
+          border-color: $theme-color-2;
+        }
+        &:after {
+          background-color: $theme-color-2;
+          @include transform(scale(1));
+        }
+      }
+      .expanded-payment-method {
+        display: block;
+      }
+    }
+  }
+}
+.expanded-payment-method {
+  display: none;
+  font-weight: $font-weight-regular;
+  padding-bottom: 14px;
+  p {
+    font-size: $font-15;
+  }
+}

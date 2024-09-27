@@ -1,0 +1,74 @@
+.comment-title {
+  font-size: $font-18;
+  font-weight: $font-weight-semi-bold;
+  margin-bottom: 2px;
+  a {
+    color: $theme-color;
+  }
+}
+.comment-meta {
+  font-size: $font-15;
+}
+.comment-desc,
+.comment-meta {
+  font-weight: $font-weight-regular;
+}
+/*===== review-photos =====*/
+.review-photos {
+  margin-bottom: 5px;
+  a {
+    width: 15%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    @include border-radius(4px);
+    img {
+      width: 100%;
+      @include border-radius(4px);
+    }
+  }
+}
+/*===== feedback-box =====*/
+.feedback-box {
+  .theme-btn {
+    border: 1px solid rgba(128, 137, 150, 0.3);
+    color: $theme-color-4;
+    margin-right: 6px;
+    background-color: transparent;
+    font-weight: $font-weight-medium;
+    &:hover {
+      background-color: rgba(128, 137, 150, 0.1);
+      color: $theme-color;
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+/*===== comment-reply =====*/
+.comment-reply {
+  width: calc(100% - 85px);
+  border-left: 2px solid rgba(128, 137, 150, 0.3);
+  padding-left: 20px;
+  margin-left: auto;
+}
+/*===== badge-pill =====*/
+.badge-pill {
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 160px;
+}
+/*===== label =====*/
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+/*===== page-link =====*/
+
+.active > .page-link {
+  color: $white;
+}
+/*===== textarea =====*/
+
+textarea {
+  height: 100px !important;
+}

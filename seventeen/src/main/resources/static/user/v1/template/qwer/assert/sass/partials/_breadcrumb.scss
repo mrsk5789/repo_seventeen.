@@ -1,0 +1,124 @@
+/*====================================================
+    breadcrumb-area
+ ====================================================*/
+.bread-bg {
+  background-image: url("../images/bread-bg.jpg");
+}
+.bread-bg-2 {
+  background-image: url(../images/bread-bg2.jpg);
+}
+.breadcrumb-area {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media #{$small_mobile} {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+/*===== bread-svg =====*/
+.bread-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  svg {
+    width: 100%;
+    height: 100px;
+    stroke: none;
+    fill: $white;
+  }
+}
+/*===== bread-list =====*/
+.bread-list {
+  li {
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+    padding-right: 22px;
+    color: $white;
+    &:last-child {
+      padding-right: 0;
+      &:after {
+        display: none;
+      }
+    }
+    a {
+      @include transition(0.3s);
+      color: $white;
+      &:hover {
+        color: $theme-color-2;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "\f105";
+      font-family: "Font Awesome 5 Pro", sans-serif;
+      top: 0;
+      right: 5px;
+    }
+  }
+}
+/*===== bread-list-black =====*/
+.bread-list-black {
+  li {
+    color: $theme-color-4;
+    a {
+      @include transition(0.3s);
+      color: $theme-color;
+    }
+  }
+}
+/*========= listing-info ========*/
+.listing-info {
+  li {
+    margin-right: 2px;
+    display: inline-block;
+    .average-symbol {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: $white;
+    }
+    .listing-tag {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background-color: transparent;
+    }
+  }
+}
+
+.video-play-btn {
+  position: relative;
+  .icon-element-lg {
+    font-size: $font-20;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
+    background-color: rgba(255,255,255, 0.2);
+    @include border-radius(50%);
+    -webkit-animation: play-button-pulse 1.8s linear infinite;
+    -moz-animation: play-button-pulse 1.8s linear infinite;
+    animation: play-button-pulse 1.8s linear infinite;
+    opacity: 0;
+    z-index: -1;
+  }
+  &:after {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    animation-delay: .6s;
+  }
+}
+
+
+
+
+
+

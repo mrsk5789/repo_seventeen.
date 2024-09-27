@@ -1,0 +1,266 @@
+.card-svg-shape {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 120px;
+  @include transform(translateX(-50%));
+  fill: $white;
+  stroke: none;
+}
+/*======= card ========*/
+.card {
+  border: 0;
+  @include box-shadow(0 1px 15px rgba(82,85,90, 0.1));
+  @include border-radius(6px);
+  margin-bottom: 30px;
+  position: relative;
+  .icon-element {
+    position: relative;
+    .info-number {
+      position: absolute;
+      right: -5px;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      line-height: 27px;
+      background-color: $theme-color-2;
+      border: 2px solid $white;
+      @include border-radius(50%);
+      @include transition(0.3s);
+      font-weight: $font-weight-medium;
+      font-size: $font-15;
+    }
+  }
+}
+/*======= card-pattern =====*/
+.card-pattern {
+  position: relative;
+  z-index: 1;
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333f57' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+/*======= card-image =====*/
+.card-image {
+  position: relative;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  .card-img-top {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: $font-12;
+    font-weight: $font-weight-semi-bold;
+  }
+}
+.card-cat {
+  font-size: $font-14;
+  color: $theme-color-4;
+  display: block;
+  .icon-element-sm {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: $font-14;
+  }
+  &:hover {
+    color: $theme-color-2;
+  }
+}
+.card-title {
+  font-size: $font-20;
+  font-weight: $font-weight-semi-bold;
+  a {
+    color: $theme-color;
+    @include transition(0.2s);
+    &:hover {
+      color: $theme-color-2;
+    }
+  }
+}
+.author-img {
+  width: 60px;
+  height: 60px;
+  @include border-radius(50%);
+  border: 4px solid $white;
+  @include box-shadow(0 10px 40px rgba(82, 85, 90, 0.2));
+  position: absolute;
+  right: 20px;
+  top: 0;
+  margin-top: -30px;
+  img {
+    @include border-radius(50%);
+    width: 100%;
+    height: 100%;
+  }
+}
+/*====== post-author ======*/
+.post-author {
+  a {
+    color: $theme-color-4;
+    @include transition(0.2s);
+    &:hover {
+      color: $theme-color-2;
+    }
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    @include border-radius(100%);
+    border: 3px solid $white;
+    margin-right: 2px;
+    @include box-shadow(0 0 40px rgba(82, 85, 90, 0.1));
+  }
+}
+.card-meta {
+  a {
+    @include transition(0.2s);
+    color: $theme-color-4;
+    &:hover {
+      color: $theme-color-2;
+    }
+  }
+}
+/*=== card-carousel =====*/
+.card-carousel {
+  .owl-item {
+    padding: 15px;
+  }
+}
+/*=== card-hover-effect =====*/
+.card-hover-effect {
+  z-index: 1;
+  position: relative;
+  .card-title,
+  .card-text {
+    @include transition(0.4s);
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include border-radius(6px);
+    @include transition(0.4s);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:before {
+    background-size: cover;
+    background-position: center;
+    background-image: url("../images/img4.jpg");
+  }
+  &:after {
+    background-color: $black;
+  }
+  &:hover {
+    .card-title,
+    .card-text {
+      color: $white;
+    }
+    &:before {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:after {
+      opacity: 0.5;
+      visibility: visible;
+    }
+  }
+}
+/*=== card-flex =====*/
+.card-flex {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  @media #{$device-575} {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .card-image {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+    @media #{$device-575} {
+      border-top-right-radius: 6px;
+      border-bottom-left-radius: 0;
+    }
+    img {
+      object-fit: cover;
+      height: 100%;
+      &.card-img-top {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 6px;
+        @media #{$device-575} {
+          border-top-right-radius: 6px;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+  .card-body {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
+}
+/*===== fs-container ====*/
+.fs-container {
+  @media #{$laptop_m_four} {
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+/*===== fs-container-item ====*/
+.fs-container-item {
+  @media #{$laptop_m_four} {
+    width: 100% !important;
+  }
+}
+.fs-container-item-map {
+  @media #{$laptop_m_four} {
+    height: 400px!important;
+    position: relative!important;
+    top: auto!important;
+    right: auto!important;
+  }
+}
+.media-card {
+  img {
+    @include border-radius(4px);
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  .media-title {
+    font-size: $font-16;
+    font-weight: $font-weight-semi-bold;
+    a {
+      color: $theme-color;
+      @include transition(0.2s);
+      &:hover {
+        color: $theme-color-2;
+      }
+    }
+  }
+}

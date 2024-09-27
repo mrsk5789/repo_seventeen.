@@ -1,0 +1,113 @@
+/*====================================================
+    pricing-area
+ ====================================================*/
+.price-item {
+  text-align: center;
+  @include border-radius(6px);
+  background-color: $white;
+  @include box-shadow(0 0 40px rgba(82, 85, 90, 0.1));
+  @include transition(0.3s);
+  margin-bottom: 30px;
+  &:hover {
+    .price-head {
+      &:before {
+        bottom: -120px;
+      }
+      &:after {
+        left: -170px;
+      }
+    }
+  }
+}
+/*=== price-head ====*/
+.price-head {
+  background-color: $theme-color-2;
+  padding: 46px 0 43px 0;
+  position: relative;
+  color: $white;
+  overflow: hidden;
+  @include border-radius(4px 4px 0 0);
+  @include transition(0.3s);
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: $font-15;
+  }
+  .price__icon {
+    font-size: $font-60;
+  }
+  .price__title {
+    font-size: $font-20;
+    font-weight: $font-weight-semi-bold;
+    color: $white;
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background-color: $white;
+    @include border-radius(50%);
+    opacity: 0.1;
+    @include transition(0.3s);
+  }
+  &:after {
+    bottom: 20px;
+    right: auto;
+    left: -200px;
+    width: 300px;
+    height: 300px;
+  }
+}
+/*=== price-content ====*/
+.price-content {
+  padding: 0 30px 30px 30px;
+  .price-number {
+    position: relative;
+    padding-top: 70px;
+    .price__value {
+      color: $theme-color;
+      font-size: 50px;
+      margin-bottom: 15px;
+      font-weight: $font-weight-semi-bold;
+      sup {
+        color: $theme-color-4;
+        font-size: $font-30;
+      }
+    }
+    .price__subtitle {
+      font-size: $font-15;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 50%;
+      @include transform(translateX(-50%) rotate(-45deg));
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      background-color: $theme-color-2;
+      @include transition(0.3s);
+    }
+  }
+}
+/*=== pricing-active ====*/
+.pricing-active {
+  .price-head,
+  .theme-btn,
+  .price-content .price-number:before {
+    background-color: $theme-color-5;
+  }
+  &:hover {
+    .price-head,
+    .price-number:before {
+      background-color: $theme-color-5;
+    }
+  }
+}
