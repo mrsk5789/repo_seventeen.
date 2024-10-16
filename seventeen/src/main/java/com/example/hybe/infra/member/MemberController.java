@@ -1,35 +1,24 @@
 package com.example.hybe.infra.member;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.hybe.common.util.UtilDateTime;
-import com.example.hybe.infra.codegroup.CodeGroupVo;
 
-
+import jakarta.servlet.http.HttpSession;
 @Controller
 public class MemberController {
 	
 	@Autowired
 	MemberService memberService;
-	
-	
-//	@RequestMapping(value="/xdm/v1/infra/member/memberXdmList")
-//	public String MemberXdmList(Model model, MemberVo membervo) {
-//		
-//	model.addAttribute("list", memberService.selectList(membervo));
-//		
-//		//System.out.println("members.size():"+members.size());		
-//		//for(MemberDto memberDto:members) {
-//			//System.out.println(memberDto.getSeq() +"|"+
-//			//				   memberDto.getRegdate() +"|");
-//	//	}
-//		
-//		return "/xdm/v1/infra/member/memberXdmList";
-//	}
+
 	@RequestMapping(value="/xdm/v1/infra/member/memberXdmForm")
 	public String MemberXdmForm() {
 		
@@ -66,7 +55,6 @@ public class MemberController {
 		
 		memberService.uelete(memberDto);
 		System.out.println("uelete");
-		
 		return "redirect:/xdm/v1/infra/member/memberXdmList";
 	}
 	
@@ -92,9 +80,30 @@ public class MemberController {
 		}
 		return "/xdm/v1/infra/member/memberXdmList";
   	}
+	//로그인 창
 	@RequestMapping(value="/xdm/v1/infra/member/signXdmForm")
-	public String signXdmForm() {
-		
+	public String signXdmForm(MemberDto memberDto) {
+		memberService.selectOneLogin(memberDto);
 		return "/xdm/v1/infra/member/signXdmForm";
 	}
-}
+	
+	@ResponseBody
+	@RequestMapping(value = "/xdm/v1/infra/member/signXdmMForm")
+	public Map<String, Object> signXdmMForm(MemberDto memberDto) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		MemberDto rtMember = memberService.selectOneLogin(memberDto);
+
+			if (rtMember != null) {
+				returnMap.put("rt", "success");
+				
+			} else {
+					
+				returnMap.put("rt", "fail");
+				
+			}
+		         return returnMap;
+	     }
+     }
+	
+	

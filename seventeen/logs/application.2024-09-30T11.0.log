@@ -1,0 +1,365 @@
+2024-09-30T11:14:06.562 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'sdf'
+			,1
+			,1
+			,''
+			,0
+			,now()
+			,now()
+			)
+ {executed in 113 msec} 
+2024-09-30T11:14:06.606 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT last_insert_id()
+ {executed in 5 msec} 
+2024-09-30T11:14:06.813 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 88 msec} 
+2024-09-30T11:14:06.829 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 12 msec} 
+2024-09-30T11:26:49.430 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'vbnm'
+			,1
+			,1
+			,''
+			,0
+			,now()
+			,now()
+			)
+ {executed in 82 msec} 
+2024-09-30T11:26:49.452 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT last_insert_id()
+ {executed in 6 msec} 
+2024-09-30T11:26:49.587 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 54 msec} 
+2024-09-30T11:26:49.612 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1064. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 16 msec} 
+2024-09-30T11:37:10.636 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			''
+			,1
+			,1
+			,'xcvbnm,.'
+			,0
+			,now()
+			,now()
+			)
+ {executed in 211 msec} 
+2024-09-30T11:37:10.654 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT last_insert_id()
+ {executed in 4 msec} 
+2024-09-30T11:37:10.927 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 27 msec} 
+2024-09-30T11:37:10.995 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 13 msec} 
+2024-09-30T11:37:15.519 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT
+	  	 	a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+        FROM 
+			codegroup a	
+		WHERE 1=1
+			AND	a.ifcgSeq = '106'
+ {executed in 2 msec} 
+2024-09-30T11:47:10.361 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'  '
+			,1
+			,1
+			,'ghjk'
+			,0
+			,now()
+			,now()
+			)
+ {executed in 75 msec} 
+2024-09-30T11:47:10.371 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT last_insert_id()
+ {executed in 4 msec} 
+2024-09-30T11:47:10.425 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 22 msec} 
+2024-09-30T11:47:10.436 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 8 msec} 
+2024-09-30T11:50:33.914 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'    '
+			,1
+			,1
+			,'dd'
+			,0
+			,now()
+			,now()
+			)
+ {executed in 70 msec} 
+2024-09-30T11:50:33.934 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT last_insert_id()
+ {executed in 9 msec} 
+2024-09-30T11:50:33.990 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 24 msec} 
+2024-09-30T11:50:34.001 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 9 msec} 
+2024-09-30T11:55:12.009 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			' '
+			,1
+			,1
+			,'d'
+			,0
+			,now()
+			,now()
+			)
+ {executed in 76 msec} 
+2024-09-30T11:55:12.022 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT last_insert_id()
+ {executed in 6 msec} 
+2024-09-30T11:55:12.073 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 21 msec} 
+2024-09-30T11:55:12.083 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 8 msec} 
+2024-09-30T11:56:02.127 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			' '
+			,1
+			,1
+			,'sd'
+			,0
+			,now()
+			,now()
+			)
+ {executed in 11 msec} 
+2024-09-30T11:56:02.129 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT last_insert_id()
+ {executed in 1 msec} 
+2024-09-30T11:56:02.182 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 17 msec} 
+2024-09-30T11:56:02.184 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1074. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 1 msec} 

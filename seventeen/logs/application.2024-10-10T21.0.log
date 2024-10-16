@@ -1,0 +1,58 @@
+2024-10-10T21:24:29.213 [HikariPool-5 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=3h53m53s935ms956µs500ns). 
+2024-10-10T21:28:26.873 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-10-10T21:28:26.874 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-10T21:28:27.204 [Thread-19] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown initiated... 
+2024-10-10T21:28:27.217 [Thread-19] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown completed. 
+2024-10-10T21:28:27.269 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 16324 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-10T21:28:27.269 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-10T21:28:27.436 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-10T21:28:27.437 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-10T21:28:27.438 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-10T21:28:27.438 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-10T21:28:27.450 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-10T21:28:27.450 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 178 ms 
+2024-10-10T21:28:27.507 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-6 - Starting... 
+2024-10-10T21:28:27.518 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-6 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@57cd1176 
+2024-10-10T21:28:27.518 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-6 - Start completed. 
+2024-10-10T21:28:27.519 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 1 msec} 
+2024-10-10T21:28:27.603 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-10T21:28:27.609 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-10T21:28:27.611 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-10T21:28:27.617 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.366 seconds (process running for 18344.353) 
+2024-10-10T21:28:27.619 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-10-10T21:53:13.287 [HikariPool-6 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=5m47s498ms837µs). 
+2024-10-10T21:54:05.374 [http-nio-8090-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-10T21:54:05.375 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-10T21:54:05.377 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-10-10T21:54:24.054 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 25 msec} 
+2024-10-10T21:54:31.282 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = 'fghjk'
+	   AND a.password = 'fghjk'
+ {executed in 3 msec} 

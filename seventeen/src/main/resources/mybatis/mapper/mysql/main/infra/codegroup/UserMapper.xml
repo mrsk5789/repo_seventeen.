@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.user.UserDao">
+	<!--mapper와 연결될 dao // ctrl+shift+c -->
+
+	<resultMap id="resultMapObj"
+		type="com.example.hybe.infra.user.UserDto"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+	 SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+	</select>
+	
+	<select id="SelectOneLogin" resultMap="resultMapObj">
+	  SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = #{id}
+	   AND a.password = #{password}  	
+	</select>
+	
+	 <select id="selectOne" resultMap="resultMapObj">
+	  SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = #{seq}
+	  </select>
+</mapper>

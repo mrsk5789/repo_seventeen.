@@ -1,0 +1,162 @@
+2024-10-14T11:14:04.606 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+ {executed in 59 msec} 
+2024-10-14T11:14:04.618 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 5 msec} 
+2024-10-14T11:32:17.818 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 64 msec} 
+2024-10-14T11:32:30.096 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 3 msec} 
+2024-10-14T11:33:56.448 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	   a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 5 msec} 
+2024-10-14T11:36:00.749 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 1 msec} 
+2024-10-14T11:39:55.113 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 1 msec} 
+2024-10-14T11:40:05.126 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 0 msec} 
+2024-10-14T11:43:06.008 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 0 msec} 
+2024-10-14T11:43:29.006 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 1 msec} 
+2024-10-14T11:43:36.354 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 1 msec} 
+2024-10-14T11:59:49.572 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-10-14T11:59:49.585 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-14T11:59:49.724 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-10-14T11:59:49.728 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-10-14T11:59:49.842 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 120204 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-14T11:59:49.842 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-14T11:59:50.118 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-14T11:59:50.119 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-14T11:59:50.120 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-14T11:59:50.120 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-14T11:59:50.139 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-14T11:59:50.140 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 295 ms 
+2024-10-14T11:59:50.217 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-10-14T11:59:50.227 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@29536f22 
+2024-10-14T11:59:50.228 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-10-14T11:59:50.233 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 3 msec} 
+2024-10-14T11:59:50.339 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-14T11:59:50.349 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-14T11:59:50.352 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-14T11:59:50.359 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.546 seconds (process running for 7689.849) 
+2024-10-14T11:59:50.367 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 

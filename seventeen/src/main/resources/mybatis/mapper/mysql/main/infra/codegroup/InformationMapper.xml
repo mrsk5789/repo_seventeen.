@@ -6,8 +6,9 @@
 	  
 	  <resultMap id="resultMapObj" type="com.example.hybe.infra.information.InformationDto"></resultMap>
 	  
-	  <select id="selectList" resultMap="resultMapObj">
-	  SELECT
+    <select id="selectList" resultMap="resultMapObj">
+	  SELECT aa.* FROM (
+	   SELECT
 		a.seq 
 	   ,a.name 
        ,a.opentime 
@@ -23,14 +24,21 @@
        ,a.specifics 
        ,a.adress 
        ,a.delny 
-       ,a.orders 
-       ,a.UseNy 
        ,a.ceoName
+     <include refid="selectCommon"/>
+		ORDER BY
+		   a.seq desc
+	   ) aa limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+		
+	<sql id="selectCommon">	
      FROM
-           information a
+          seventeen.information a
      WHERE 1=1
 			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>	
-			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>
+			<if test="shParkingNy !=null and !shParkingNy.equals('')">AND parkingNy = #{shParkingNy}</if>
+			<if test="shPtNy !=null and !shPtNy.equals('')">AND ptNy = #{shPtNy}</if>
+			<if test="shGroupNy !=null and !shGroupNy.equals('')">AND groupNy = #{shGroupNy}</if>
 			<choose>
 			    <when test="shOption==1">AND seq=#{shValue}</when>
 			    <when test="shOption==2">AND name=#{shValue}</when>
@@ -41,10 +49,9 @@
 				<when test="shOptionDate == 1">AND a.regdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 2">AND a.modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
-	ORDER BY
-		   a.seq desc
+	 </sql>
            
-	  </select>
+	  
 	  <insert id="insert">
 	  INSERT INTO information(
 	  	name 
@@ -61,8 +68,6 @@
        ,specifics 
        ,adress 
        ,delny 
-       ,orders 
-       ,UseNy 
        ,ceoName
 	  )VALUES(
 	  	#{name}
@@ -78,11 +83,12 @@
        ,now() 
        ,#{specifics} 
        ,#{adress} 
-       ,#{delny} 
-       ,#{orders} 
-       ,#{UseNy} 
+       ,0 
        ,#{ceoName}
 	  	)
+	  	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+	    </selectKey>
 	  </insert>
 	  
 	  <select id="selectOne" resultMap="resultMapObj">
@@ -102,8 +108,6 @@
 	       ,a.specifics 
 	       ,a.adress 
 	       ,a.delny 
-	       ,a.orders 
-	       ,a.UseNy 
 	       ,a.ceoName
         FROM 
 			information a	
@@ -126,8 +130,6 @@
 	       ,specifics = #{specifics}
 	       ,adress = #{adress}
 	       ,delny = #{delny}
-	       ,orders = #{orders}
-	       ,UseNy = #{UseNy}
 	       ,ceoName= #{ceoName}
 	    WHERE 1=1
 	    	AND a.seq = #{seq}  
@@ -145,4 +147,9 @@
 	  	WHERE 1=1
 	  		AND seq=#{seq}	
 	  </delete>
+	  
+	  <select id="selectOneCount">
+	  	SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
 </mapper>

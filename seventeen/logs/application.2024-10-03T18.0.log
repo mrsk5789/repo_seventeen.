@@ -1,0 +1,31 @@
+2024-10-03T18:01:15.736 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-03T18:01:15.737 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-03T18:01:15.739 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-10-03T18:01:23.771 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT COUNT(*)
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+ {executed in 28 msec} 
+2024-10-03T18:01:23.784 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT aa.* FROM (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			seventeen.codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			   a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 11 msec} 

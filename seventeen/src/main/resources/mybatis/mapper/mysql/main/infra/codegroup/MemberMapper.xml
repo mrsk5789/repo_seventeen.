@@ -23,7 +23,9 @@
 			a.regdate,
 			a.modDate,
 			a.delny
-			<include refid="selectCommon"/>
+		<include refid="selectCommon"/>
+			ORDER BY
+			   a.seq desc
 			 ) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 		</select>
@@ -32,8 +34,8 @@
 		FROM
 			seventeen.member a
 		WHERE 1=1
-			<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>
-			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>
+			<!--<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>
+			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>-->
 			<choose>
 				<when test="shOption==1">AND seq=#{shValue}</when>
 				<when test="shOption==2">AND name=#{shValue}</when>
@@ -73,6 +75,9 @@
 			now(),
 			0
 		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
 	</insert>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
@@ -107,6 +112,7 @@
 			email = #{email},
 			adress = #{adress},
 			desc = #{desc},
+			regdate = now(),
 			modDate = now(),
 			delny = #{delny}
 		WHERE 1=1
@@ -127,6 +133,17 @@
 		WHERE 1=1
 		AND seq=#{seq}
 	</delete>
+ 	<select id="selectOneLogin" resultMap="resultMapObj">
+	 SELECT
+	 	a.id,
+		a.password
+	 FROM
+		seventeen.member a	
+	 WHERE 
+	    1=1
+		AND a.id = #{id}
+		AND a.password = #{password}
+	</select>
 	
 	  <select id="selectOneCount" resultType="Integer">
 	  	SELECT COUNT(*)

@@ -40,7 +40,7 @@
 								<div class="col-lg-4 col-md-6 col-sm-12">
 									<div class="login-box">
 										<a href="#" class="login-logo">
-											<img src="img/logo.svg" alt="Low Price Admin Dashboards" />
+											<img src="/xdm/v1/template/qwer/assert/img/logo.svg" alt="Low Price Admin Dashboards" />
 										</a>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
@@ -70,16 +70,13 @@
 												aria-describedby="pwd">
 										</div>
 										<div class="actions clearfix">
-											<button type="submit" class="btn btn-primary">Signup</button>
+											<button type="submit" class="btn btn-primary">등록</button>
 										</div>
 										<div class="or"></div>
 										<div class="mt-4">
-											<a href="login.html" class="additional-link">Already have an Account? <span>Login Now</span></a>
+											<a href="login.html" class="additional-link">이미 계정이 있습니까? <span>로그인</span></a>
 										</div>
 									</div>
-								</div>
-								<div class="col-xl-8 col-lg-8 col-md-6 col-sm-12">
-									<div class="signup-slider"></div>
 								</div>
 							</div>
 						</div>
@@ -93,5 +90,39 @@
 			</div>
 		</footer>
 	</body>
+	
+	
+	<script>
+		const email = "emaiID"
+		const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
+
+		if(!regEmail.test(email)) {
+		    alert('이메일 형식에 따라 정확히 입력해주세요');
+		    return;
+		}
+		
+		// '-' 없는 버전
+		const phone = ""
+		const regPhone = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/;
+
+		if(!regPhone.test(phone)) {
+		    alert('정확한 핸드폰번호를 입력해주세요: - 제외');
+		    return;
+		}
+		//생일
+		const birth = ""
+		const regBirth = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+
+		if(!regBirth.test(birth)) {
+		    alert('정확한 생년월일 8자리를 입력해주세요');
+		    return;
+		}
+		const password = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
+
+		console.log(password.test("hello5hi")); //true
+		
+		
+		
+	</script>
 
 </html>

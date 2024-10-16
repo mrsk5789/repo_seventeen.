@@ -1,0 +1,84 @@
+2024-09-27T12:16:06.816 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-27T12:16:06.885 [Thread-116] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-09-27T12:16:07.063 [Thread-116] INFO c.z.h.HikariDataSource - HikariPool-30 - Shutdown initiated... 
+2024-09-27T12:16:07.099 [Thread-116] INFO c.z.h.HikariDataSource - HikariPool-30 - Shutdown completed. 
+2024-09-27T12:16:07.659 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 215048 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-09-27T12:16:07.660 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-27T12:16:07.966 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-09-27T12:16:07.967 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-09-27T12:16:07.968 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-27T12:16:07.968 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-27T12:16:07.982 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-27T12:16:07.982 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 319 ms 
+2024-09-27T12:16:08.056 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-31 - Starting... 
+2024-09-27T12:16:08.111 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-31 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@43597b9c 
+2024-09-27T12:16:08.111 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-31 - Start completed. 
+2024-09-27T12:16:08.129 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+464. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 18 msec} 
+2024-09-27T12:16:08.254 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-27T12:16:08.262 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-09-27T12:16:08.266 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-09-27T12:16:08.279 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.664 seconds (process running for 161122.6) 
+2024-09-27T12:16:08.282 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-27T12:22:44.533 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-27T12:22:44.533 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-27T12:22:44.534 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-27T12:24:33.496 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+464. INSERT INTO codegroup(
+			ifcgName
+			,ifcgUseNy
+			,ifcgOrder
+			,ifcgDesc
+			,ifcgDelNy
+			,ifcgRegDate
+			,ifcgRenDate
+	  	)VALUES(
+			'23456'
+			,1
+			,1
+			,''
+			,0
+			,now()
+			,now()
+			)
+ {executed in 34 msec} 
+2024-09-27T12:24:33.499 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+464. SELECT last_insert_id()
+ {executed in 2 msec} 
+2024-09-27T12:24:33.519 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+464. SELECT COUNT(*)
+
+        FROM 
+			codegroup a
+		WHERE 1=1
+ {executed in 11 msec} 
+2024-09-27T12:24:33.531 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+464. select aa.* from (
+	   SELECT
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgUseNy
+			,a.ifcgOrder
+			,a.ifcgDesc
+			,a.ifcgDelNy
+			,a.ifcgRegDate
+			,a.ifcgRenDate
+			,(select count(ab.ifcdSeq) from code ab where 1=1 and ab.codegroup_seq = a.ifcgSeq) as xcount
+
+        FROM 
+			codegroup a
+		WHERE 1=1
+
+			ORDER BY
+			a.ifcgSeq desc
+        ) aa limit 5 offset 0
+ {executed in 10 msec} 

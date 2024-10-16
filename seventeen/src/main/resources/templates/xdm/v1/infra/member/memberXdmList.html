@@ -365,13 +365,6 @@
 															 </select>
 														</td> 
 														<td>     
-															<select name="shUseNy" id="shUseNy">
-																<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
-																<option value="1" th:selected="${vo.shUseNy == 1}">Y</option>
-																<option value="0" th:selected="${vo.shUseNy == 0}">N</option>
-															</select>
-														</td> 
-														<td>     
 															<select id="shOptionDate" name="shOptionDate">
 																 <option value="" th:selected="${vo.shOptionDate == null}">검색구분</option>
 																 <option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
@@ -429,14 +422,21 @@
 												 <td th:text="' total : '+${vo.totalRows}"></td>
 												  <td style="width : 900px;"></td>
 												    <td>
-														<select id="rowNumToShow" name="rowNumToShow">
-															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
-															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
-															<option value="30" th:selected="${vo.rowNumToShow eq 30}">30</option>
-															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40</option>
-															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
-															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60</option>
-															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70</option>
+													    <select id="changeRowNum">
+															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5
+															</option>
+															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10
+															</option>
+															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20
+															</option>
+															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40
+															</option>
+															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50
+															</option>
+															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60
+															</option>
+															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70
+															</option>
 														</select>
 												   </td>	
 												</tr>

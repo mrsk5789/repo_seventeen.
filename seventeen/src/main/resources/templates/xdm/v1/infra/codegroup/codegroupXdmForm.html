@@ -26,7 +26,6 @@
 		<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/css/main.min.css" />
 
 	</head>
-
 	<body>
 
 		<!-- BEGIN .app-wrap -->
@@ -487,7 +486,7 @@
 							</div>
 						</div>
 					</header>
-					<form name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmInst">
+					<form name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmInst" class="needs-validation" novalidate>
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -513,7 +512,9 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgName">코드이름</label>
-													<input class="form-control form-control-lg" name="ifcgName" th:value="${item?.ifcgName}" type="text" id="ifcgName" placeholder="한글,영대소문자, 숫자">
+													<input class="form-control" name="ifcgName" th:value="${item?.ifcgName}" type="text" id="ifcgName" placeholder="한글,영대소문자, 숫자" required>
+													<!--<div  id="invalid-feedback" style="display:none; color:red">코드이름을 입력해 주세요</div>-->
+													<!--class="form-control is-invalid"-->
 												</div>
 											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
@@ -521,16 +522,19 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgUseNy">사용여부</label>
-														<select class="form-control form-control-lg" id="ifcgUseNy" name="ifcgUseNy">
+														<select class="form-control form-control-lg" id="ifcgUseNy" name="ifcgUseNy" required>
+															<option value="" th:selected="${item?.ifcgUseNy==null}">사용여부</option>
 															<option value="1" th:selected="${item?.ifcgUseNy==1}">N</option>
 															<option value="0" th:selected="${item?.ifcgUseNy==0}">Y</option>
-														</select>					
+														</select>	
+													<!--<div id="invalid-feedback2" style="display:none;">사용여부를 입력해 주세요</div>-->					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgOrder">순서</label>
-														<select class="form-control form-control-lg" id="ifcgOrder" name="ifcgOrder">
+														<select class="form-control form-control-lg" id="ifcgOrder" name="ifcgOrder" required>
+															<option value="" th:selected="${item?.ifcgOrder==null}">순서</option>
 															<option value="1" th:selected="${item?.ifcgOrder==1}">1</option>
 															<option value="2" th:selected="${item?.ifcgOrder==2}">2</option>
 															<option value="3" th:selected="${item?.ifcgOrder==3}">3</option>
@@ -538,6 +542,7 @@
 															<option value="5" th:selected="${item?.ifcgOrder==5}">5</option>
 															<option value="6" th:selected="${item?.ifcgOrder==6}">6</option>
 														</select>
+													<!--<div id="invalid-feedback3" style="display:none;">순서를 입력해 주세요</div>-->	
 												</div>
 											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
@@ -545,7 +550,8 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgDesc">설명</label>
-													<textarea class="form-control" rows="2" name="ifcgDesc" id="ifcgDesc" type="text" style="width: 570px; height: 80px;" th:value="${item?.ifcgDesc}"></textarea>
+													<textarea class="form-control" rows="2" name="ifcgDesc" id="ifcgDesc" type="text" style="width: 570px; height: 80px;" th:value="${item?.ifcgDesc}" ></textarea>
+													<!--<div class="invalid-feedback">This is required</div>-->
 												</div>
 											</div>
 										</div>
@@ -560,7 +566,7 @@
 							  <td style="width : 10px; "></td>
 								<td>	
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									   <button type="button" id="btnSubmit"   class="btn btn-primary">
+									   <button type="submit" class="btn btn-primary">
 											<span class="icon-times-outline"></span>
 									   </button>
 								   </div>
@@ -568,7 +574,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmInst" class="btn btn-primary">
+										<button type="submit"  id="btnSubmit" action="redirect:/xdm/v1/infra/codegroup/codegroupXdmInst" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -577,7 +583,7 @@
 						</table>
 					 </div>
 				  </div>
-					</form>
+				</form>
 			   </div>
 			 </div>
 		  </div>
@@ -587,19 +593,82 @@
 		</div>
 		<script type="text/javascript">
 			document.getElementById("btnSubmit").onclick = function (){
-
+			//코드이름	
 		    var ifcgName = document.getElementById("ifcgName");
 		    var ifcgNameValue = document.getElementById("ifcgName").value.trim();
+			var ifcgNameRegExp = /^[가-힣A-Za-z0-9]+$/;
+			var ifcgNameFeedback=document.getElementById("invalid-feedback");
+			var ifcgNameRegExpFeedback=document.getElementById("ifcgNameRegExpFeedback");
 			
-		    if (ifcgNameValue == "" || ifcgNameValue == null) {
-				alert("이름을 입력해 주세요");
+			ifcgName.classList.remove('is-vaild','is-invalid');
+			ifcgNameFeedback.style.display='none';
+		    ifcgNameRegExpFeedback.style.display='none';
+			/*			
+			if(!ifcgNameRegExp.test(ifcgName)){
+				alert("이름은 한국, 영대소문자, 숮자만 입력해 주세요");
 				ifcgName.focus();
 				return false;
-		      } else {
-		    }
-			  form.action = "/xdm/v1/infra/codegroup/codegroupXdmInst";
-			  form.submit();
+			} else {
+			   // pass
+			}*/
+		    if (ifcgNameValue == "" || ifcgNameValue == null) {
+				ifcgNameFeedback.style.display='block';
+				ifcgName.classList.add('is-invaild');
+				ifcgName.focus();
+				return false;
+		    } else {
 			}
+
+			if(!ifcgNameRegExp.test(ifcgNameValue)){
+				ifcgNameRegExpFeedback.style.display='block';
+				ifcgName.classList.add('is-invaild');
+				ifcgName.focus();
+				return false;
+			} else {
+				ifcgName.classList.add('is-vaild');
+			}
+			
+			//사용여부	
+		    var ifcgUseNy = document.getElementById("ifcgUseNy");
+		    var ifcgUseNyValue = document.getElementById("ifcgUseNy").value.trim();
+			
+		    if (ifcgUseNyValue == "" || ifcgUseNyValue == null) {
+				ifcgUseNy.classList.add('is-invaild');
+				ifcgUseNy.focus();
+				return false;
+			} else {
+				ifcgUseNy.classList.remove('is-invaild');
+			}
+			
+			//순서	
+		    var ifcgOrder = document.getElementById("ifcgOrder");
+		    var ifcgOrderValue = document.getElementById("ifcgOrder").value.trim();
+			
+		    if (ifcgOrderValue == "" || ifcgOrderValue == null) {
+				ifcgOrder.classList.add('is-invaild');
+				ifcgOrder.focus();
+				return false;
+			} else {
+				ifcgOrder.classList.remove('is-invaild');
+			}
+			form.action = "/xdm/v1/infra/codegroup/codegroupXdmInst";
+			form.submit();
+		}
+		//needsvalid
+		var needsValidation = document.querySelectorAll('.needs-validation')
+
+		Array.prototype.slice.call(needsValidation)
+		  .forEach(function (form) {
+		    form.addEventListener('submit', function (event) {
+		      if (!form.checkValidity()) {
+		        event.preventDefault()
+		        event.stopPropagation()
+		      }
+
+		      form.classList.add('was-validated')
+		    }, false)
+		})
+			
 		</script>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
@@ -607,5 +676,6 @@
 		<script src="/xdm/v1/template/qwer/assert/vendor/onoffcanvas/onoffcanvas.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/moment.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
+		
 	</body>
 </html>

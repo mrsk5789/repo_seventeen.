@@ -33,6 +33,8 @@
 			    #shOption{ width: 200px; height: 28px; border-radius: 5px; }
 				#rowNumToShow{ width: 200px; height: 28px; border-radius: 5px; }
 				#shOptionDate{ width: 200px; height: 28px; border-radius: 5px; }
+				#changeRowNum{ width: 200px; height: 28px; border-radius: 5px; }
+				#shValue{ width: 200px; height: 28px; border-radius: 5px; }
 	</style>
 </head>
 
@@ -487,15 +489,15 @@
 													<td>
 														<select  name="shDelNy" id="shDelNy">
 															<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
-															<option value="1" th:selected="${vo.shDelNy == 1}">N</option>
-														    <option value="0" th:selected="${vo.shDelNy == 0}">Y</option>            
+															<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
+														    <option value="0" th:selected="${vo.shDelNy == 0}">N</option>            
 														</select>
 													</td>
 													<td>
 														<select name="shUseNy" id="shUseNy">
 															<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
-															<option value="1" th:selected="${vo.shUseNy == 1}">N</option>
-															<option value="0" th:selected="${vo.shUseNy == 0}">Y</option>
+															<option value="1" th:selected="${vo.shUseNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shUseNy == 0}">N</option>
 														</select>
 													</td>
 													<td>
@@ -516,10 +518,14 @@
 											<tr>
 												<td>
 													<select id="shOption" name="shOption">
-														<option value="" selected disabled hidden>검색구분</option>
-														<option value="1">코드</option>
-														<option value="2">이름</option>
-														<option value="3">순서</option>
+														<option value="" th:selected="${vo.shOption == null}">검색구분
+														</option>
+														<option value="1" th:selected="${vo.shOption == 1}">코드
+														</option>
+														<option value="2" th:selected="${vo.shOption == 2}">이름
+														</option>
+														<option value="3" th:selected="${vo.shOption == 3}">순서
+														</option>
 													</select>
 												</td>
 												<td>
@@ -539,8 +545,8 @@
 												</td>
 											</tr>
 										</table>
-									
 									</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -557,14 +563,21 @@
 													<td th:text="'total : '+${vo.totalRows}"></td>
 													<td style="width : 900px;"></td>
 													<td>
-														<select id="rowNumToShow" name="rowNumToShow">
-															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
-															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
-															<option value="30" th:selected="${vo.rowNumToShow eq 30}">30</option>
-															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40</option>
-															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
-															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60</option>
-															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70</option>
+														<select id="changeRowNum">
+															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5
+															</option>
+															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10
+															</option>
+															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20
+															</option>
+															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40
+															</option>
+															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50
+															</option>
+															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60
+															</option>
+															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70
+															</option>
 														</select>
 													</td>
 												</tr>
@@ -578,9 +591,9 @@
 											<tr>
 												<th><input type="checkbox"></th>
 												<th>#</th>
+												<th>코드</th>
 												<th>코드그룹</th>
 												<th>그룹이름</th>
-												<th>코드</th>
 												<th>이름</th>
 												<th>순서</th>
 												<th>사용여부</th>
@@ -597,21 +610,19 @@
 												</td>
 											</tr>
 											<tr th:if="!${#lists.isEmpty(list)}"th:each="list:${list}">
-												<td>
-													<input type="checkbox" />
-												</td>													
-												<td></td>
+												<td><input type="checkbox" /></td>	
+												<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>												
+												<td><a th:href="@{/xdm/v1/infra/code/codeXdmMForm(ifcdSeq=${list.ifcdSeq})}" th:text="${list.ifcdSeq}"></a></td>
 												<td th:text="${list.codegroup_seq}"></td>
 												<td th:text="${list.ifcgName}"></td>
-												<td th:text="${list.ifcdSeq}"></td>
 												<td><a th:href="@{/xdm/v1/infra/code/codeXdmMForm(ifcdSeq=${list.ifcdSeq})}" th:text="${list.ifcdName}"></a></td>
 												<td th:text="${list.ifcdOrder}"></td>
 												<td th:if="${list.ifcdUseNy eq 0}">N</td>
 												<td th:unless="${list.ifcdUseNy eq 0}">Y</td>
 												<td th:if="${list.ifcdDelny eq 0}">N</td>
 												<td th:unless="${list.ifcdDelny eq 0}">Y</td>
-												<td th:text="${#dates.format(list.ifcdRegDate, 'yyyy-mm-dd HH:MM:ss')}"></td>
-												<td th:text="${#dates.format(list.ifcdmodDate, 'yyyy-mm-dd HH:MM:ss')}"></td>
+												<td th:text="${#dates.format(list.ifcdRegDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+												<td th:text="${#dates.format(list.ifcdmodDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 											</tr>
 										</tbody>
 									</table>
@@ -697,7 +708,7 @@
 			  }
 			  document.getElementById("changeRowNum").onchange = function () {
 								    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
-								    form.action = "/xdm/v1/infra/codegroup/codegroupXdmList";
+								    form.action = "/xdm/v1/infra/code/codeXdmList";
 								    form.submit();
 								}
 		 </script>

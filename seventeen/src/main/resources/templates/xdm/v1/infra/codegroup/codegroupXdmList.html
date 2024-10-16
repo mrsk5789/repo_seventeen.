@@ -28,13 +28,47 @@
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
 	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 	<style>
-		#shapee {width: 200px; height: 28px; border-radius: 5px; }
-		#shDelNy{width: 200px; height: 28px; border-radius: 5px; }
-		#shUseNy{ width: 200px; height: 28px; border-radius: 5px; }
-	    #shOption{ width: 200px; height: 28px; border-radius: 5px; }
-		#rowNumToShow{ width: 200px; height: 28px; border-radius: 5px; }
-		#shOptionDate{ width: 200px; height: 28px; border-radius: 5px; }
-		#shValue{ width: 200px; height: 28px; border-radius: 5px; }
+		#changeRowNum {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#shDelNy {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#shUseNy {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#shOption {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#rowNumToShow {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#shOptionDate {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
+
+		#shValue {
+			width: 200px;
+			height: 28px;
+			border-radius: 5px;
+		}
 	</style>
 </head>
 
@@ -125,7 +159,8 @@
 							<li class="dropdown">
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
 									aria-haspopup="true">
-									<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
+									<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png"
+										alt="Admin Dashboards" />
 									<i class="icon-chevron-small-down"></i>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
@@ -170,7 +205,8 @@
 				<div class="side-content ">
 					<!-- BEGIN .user-profile -->
 					<div class="user-profile">
-						<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb" alt="Admin Dashboards">
+						<img src="/xdm/v1/template/qwer/assert/img/user.png" class="profile-thumb"
+							alt="Admin Dashboards">
 						<ul class="profile-actions">
 							<li>
 								<a href="#">
@@ -468,7 +504,8 @@
 										</button>
 										<div class="collapse navbar-collapse" id="navbarTwo">
 											<ul class="navbar-nav">
-												<li class="nav-item active"><a class="nav-link" href="#">page1><span class="sr-only">(current)</span></a></li>
+												<li class="nav-item active"><a class="nav-link" href="#">page1><span
+															class="sr-only">(current)</span></a></li>
 												<li class="nav-item"><a class="nav-link" href="#">page2></a></li>
 												<li class="nav-item"><a class="nav-link" href="#">default</a></li>
 											</ul>
@@ -480,75 +517,85 @@
 										</div>
 									</div>
 									<form name="form" method="post" action="/xdm/v1/infra/codegroup/codegroupXdmList">
-										<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
-										<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
-									<div class="col-sm-4 col-12">
-										<table>
-											<th>
+										<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1" />
+										<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}" />
+										<div class="col-sm-4 col-12">
+											<table>
+												<th>
+													<tr>
+														<td>
+															<select name="shDelNy" id="shDelNy">
+																<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
+																<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
+																<option value="0" th:selected="${vo.shDelNy == 0}">N</option>
+															</select>
+														</td>
+														<td>
+															<select name="shUseNy" id="shUseNy">
+																<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
+																<option value="1" th:selected="${vo.shUseNy == 1}">Y</option>
+																<option value="0" th:selected="${vo.shUseNy == 0}">N</option>
+															</select>
+														</td>
+														<td>
+															<select id="shOptionDate" name="shOptionDate">
+																<option value="" th:selected="${vo.shOptionDate == null}">검색구분</option>
+																<option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
+																<option value="2" th:selected="${vo.shOptionDate == 2}">수정날짜</option>
+															</select>
+														</td>
+														<td>
+															<input type="text" id="shDateStart" name="shDateStart"
+																th:value="${#strings.substring(vo.shDateStart, 0, 10)}"
+																placeholder="시작일" autocomplete="off">
+														</td>
+														<td>
+															<input type="text" id="shDateEnd" name="shDateEnd"
+																th:value="${#strings.substring(vo.shDateEnd, 0, 10)}"
+																placeholder="종료일" autocomplete="off">
+														</td>
+													</tr>
+												</th>
 												<tr>
 													<td>
-														<select name="shDelNy" id="shDelNy">
-															<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
-															<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
-															<option value="0" th:selected="${vo.shDelNy == 0}">N</option>            
+														<select id="shOption" name="shOption">
+															<option value="" th:selected="${vo.shOption == null}">검색구분
+															</option>
+															<option value="1" th:selected="${vo.shOption == 1}">코드
+															</option>
+															<option value="2" th:selected="${vo.shOption == 2}">이름
+															</option>
+															<option value="3" th:selected="${vo.shOption == 3}">순서
+															</option>
 														</select>
 													</td>
 													<td>
-														<select name="shUseNy" id="shUseNy">
-															<option value="" th:selected="${vo.shUseNy == null}">사용여부</option>
-															<option value="1" th:selected="${vo.shUseNy == 1}">Y</option>
-															<option value="0" th:selected="${vo.shUseNy == 0}">N</option>
-														</select>
+														<input type="text" id="shValue" name="shValue" th:value="${vo.shValue}" onkeyup="enterkey()"placeholder="검색어">
+														<!--<div class="invalid-feedback" id="shValueFeedback"></div>-->
 													</td>
 													<td>
-														<select id="shOptionDate" name="shOptionDate">
-															<option value="" th:selected="${vo.shOptionDate == null}">검색구분</option>
-															<option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
-															<option value="2" th:selected="${vo.shOptionDate == 2}">수정날짜</option>
-														</select>
-													</td>
-													<td>
-														<input type="text" id="shDateStart" name="shDateStart" th:value="${#strings.substring(vo.shDateStart, 0, 10)}" placeholder="시작일" autocomplete="off">
-													</td>
-													<td>
-														<input type="text" id="shDateEnd" name="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" placeholder="종료일" autocomplete="off">
+														<div class="btn-group-vertical" role="group"
+															aria-label="Vertical button group">
+															<button type="submit" class="btn btn-primary">
+																<span class="icon-search"></span>
+															</button>
+														</div>
+														<div class="btn-group-vertical" role="group"
+															aria-label="Vertical button group">
+															<button type="button" class="btn btn-primary">
+																<span class="icon-spinner11"></span>
+															</button>
+														</div>
 													</td>
 												</tr>
-											</th>
-											<tr>
-												<td>
-													<select id="shOption" name="shOption">
-														<option value="" th:selected="${vo.shOption == null}">검색구분</option>
-														<option value="1" th:selected="${vo.shOption == 1}">작성날짜</option>
-														<option value="2" th:selected="${vo.shOption == 2}">이름</option>
-														<option value="3" th:selected="${vo.shOption == 3}">순서</option>
-													</select>
-												</td>
-												<td>
-													<input type="text" id="shValue" name="shValue" th:value="${vo.shValue}" onkeyup="enterkey()" placeholder="검색어" >
-												<!--	<div class="invalid-feedback" id="shValueFeedback"></div>-->
-												</td>
-												<td>
-													<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-														<button type="submit" class="btn btn-primary">
-															<span class="icon-search"></span>
-														</button>
-													</div>
-													<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-														<button type="button" class="btn btn-primary">
-															<span class="icon-spinner11"></span>
-														</button>
-													</div>
-												</td>
-											</tr>
-										</table>
-									</div>
+											</table>
+										</div>
 									</form>
 								</div>
 							</div>
 						</div>
-				   </header>
-				<div class="main-content" >
+				</header>
+				<div class="main-content">
 					<div class="row gutters">
 						<div class="col-sm-12">
 							<div class="card">
@@ -557,17 +604,24 @@
 										<table>
 											<th>
 												<tr>
-												  <td th:text="'   total : '+${vo.totalRows}"></td>
-												   <td style="width : 900px;"></td>
-												    <td>
-														<select id="shapee">
-															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
-															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
-															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
-															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40</option>
-															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
-															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60</option>
-															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70</option>
+													<td th:text="'   total : '+${vo.totalRows}"></td>
+													<td style="width : 900px;"></td>
+													<td>
+														<select id="changeRowNum">
+															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5
+															</option>
+															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10
+															</option>
+															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20
+															</option>
+															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40
+															</option>
+															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50
+															</option>
+															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60
+															</option>
+															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70
+															</option>
 														</select>
 													</td>
 												</tr>
@@ -592,19 +646,21 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:if="${#lists.isEmpty(list)}" >
+											<tr th:if="${#lists.isEmpty(list)}">
 												<td colspan="14">
 													<p style="width:100px;"></p>
 													<p style="padding-top: 12px;">There is no data!</p>
 												</td>
 											</tr>
-											<tr th:if="!${#lists.isEmpty(list)}"th:each="list:${list}">
+											<tr th:if="!${#lists.isEmpty(list)}" th:each="list:${list}">
 												<td>
 													<input type="checkbox" />
 												</td>
 												<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
-												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgSeq}"></a></td>
-												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgName}"></a></td>
+												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}"
+														th:text="${list.ifcgSeq}"></a></td>
+												<td><a th:href="@{/xdm/v1/infra/codegroup/codegroupXdmMForm(ifcgSeq=${list.ifcgSeq})}"
+														th:text="${list.ifcgName}"></a></td>
 												<td th:text="${list.ifcgOrder}"></td>
 												<td th:text="${list.xcount}"></td>
 												<td th:if="${list.ifcgUseNy eq 0}">N</td>
@@ -617,24 +673,32 @@
 										</tbody>
 									</table>
 									<table>
-										<!-- paging s  -->				
+										<!-- paging s  -->
 										<div class="container-fluid px-0 mt-2 mb-2">
 											<div class="row">
 												<div class="col">
 													<ul class="pagination justify-content-center">
-														<li class="page-item disabled" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
-															<a class="page-link" aria-label="Previous" href="javascript:goList(${vo.startPage - 1})" 
-																th:attr="onclick=|goList('${vo.startPage - 1}')|"> 
+														<li class="page-item disabled"
+															th:if="${vo.startPage gt vo.pageNumToShow}"
+															style="cursor: pointer;">
+															<a class="page-link" aria-label="Previous"
+																href="javascript:goList(${vo.startPage - 1})"
+																th:attr="onclick=|goList('${vo.startPage - 1}')|">
 																<span aria-hidden="true">&laquo;</span>
 															</a>
 														</li>
-														<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" 
-															th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
-															<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+														<li class="page-item"
+															th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}"
+															th:classappend="${num eq vo.thisPage} ? active : ''"
+															style="cursor: pointer;">
+															<a class="page-link" th:attr="onclick=|goList('${num}')|"
+																th:text="${num}"></a>
 														</li>
-														<li class="page-item" th:if="${vo.endPage ne vo.totalPages}" style="cursor: pointer;">
-															<a class="page-link" aria-label="Next" th:attr="onclick=|goList('${vo.endPage + 1}')|"> 
-															   <span aria-hidden="true">&raquo;</span>
+														<li class="page-item" th:if="${vo.endPage ne vo.totalPages}"
+															style="cursor: pointer;">
+															<a class="page-link" aria-label="Next"
+																th:attr="onclick=|goList('${vo.endPage + 1}')|">
+																<span aria-hidden="true">&raquo;</span>
 															</a>
 														</li>
 													</ul>
@@ -646,7 +710,6 @@
 							</div>
 						</div>
 					</div>
-					
 					<!-- Row ends -->
 					<table>
 						<tr>
@@ -657,32 +720,36 @@
 									</button>
 								</div>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+									<button type="button" class="btn btn-primary" data-toggle="modal"
+										data-target="#exampleModal">
 										<span class="icon-bin"></span>
 									</button>
 									<!--modal-->
-									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
 													<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
 														<span aria-hidden="true">&times;</span>
 													</button>
 												</div>
 												<div class="modal-body">
-												    목록을 삭제하시겠습니까
+													목록을 삭제하시겠습니까
 												</div>
 												<div class="modal-footer">
-												 	<button type="button" class="btn btn-secondary" data-dismiss="modal" id="delete">삭제</button>
+													<button type="button" class="btn btn-secondary" data-dismiss="modal"
+														id="delete">삭제</button>
 													<button type="button" class="btn btn-primary">취소</button>
 												</div>
 											</div>
 										</div>
-								    </div>
+									</div>
 								</div>
 							</td>
-						  <td style="width:1070px;"></td>
+							<td style="width:1070px;"></td>
 							<td>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
 									<button type="button" class="btn btn-primary">
@@ -690,11 +757,11 @@
 									</button>
 								</div>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-								  <a href="/xdm/v1/infra/codegroup/codegroupXdmForm">
-									<button type="submit"class="btn btn-primary">
-										<span class="icon-plus2"></span>
-									</button>
-								  </a>
+									<a href="/xdm/v1/infra/codegroup/codegroupXdmForm">
+										<button type="submit" class="btn btn-primary">
+											<span class="icon-plus2"></span>
+										</button>
+									</a>
 								</div>
 							</td>
 						</tr>
@@ -702,31 +769,32 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<script type="text/javascript">
-			window.addEventListener('load',function(){
+			window.addEventListener('load', function () {
 				$.datetimepicker.setLocale('ko');
-			   $("#shDateStart,#shDateEnd").datetimepicker({
-				 timepicker:false,
-				 format:'Y-m-d'
-			   });	
+				$("#shDateStart,#shDateEnd").datetimepicker({
+					timepicker: false,
+					format: 'Y-m-d'
+				});
 			});
 			
 			goList = function (thisPage) {
-				    document.querySelector("input[name=thisPage]").value = thisPage;
-				    document.querySelector("form[name=form]").action = "/xdm/v1/infra/codegroup/codegroupXdmList";
-				    document.querySelector("form[name=form]").submit();
-				}
+				document.querySelector("input[name=thisPage]").value = thisPage;
+				document.querySelector("form[name=form]").action = "/xdm/v1/infra/codegroup/codegroupXdmList";
+				document.querySelector("form[name=form]").submit();
+			}
+			
+			document.getElementById("changeRowNum").onchange = function () {
+				document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
 				
-				document.getElementById("changeRowNum").onchange = function () {
-					    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
-					    form.action = "/xdm/v1/infra/codegroup/codegroupXdmList";
-					    form.submit();
-					}
-						
-						
+				form.action = "/xdm/v1/infra/codegroup/codegroupXdmList";
+				form.submit();
+			}
+
+
 		</script>
-		
+
 		<footer class="main-footer fixed-btm">
 			© Bootstrap Gallery 2023
 		</footer>

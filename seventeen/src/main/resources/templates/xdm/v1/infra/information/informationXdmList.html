@@ -36,12 +36,20 @@
 	<!-- Data Tables -->
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4.css" />
 	<link rel="stylesheet" href="/xdm/v1/template/qwer/assert/vendor/datatables/dataTables.bs4-custom.css" />
+	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 	<style>
-		#shape {
-			width: 200px;
-			height: 28px;
-			border-radius: 5px;
-		}
+		#changeRowNum { width: 200px; height: 28px; border-radius: 5px; }
+		#shDelNy {width: 200px; height: 28px; border-radius: 5px; }
+        #shUseNy {width: 200px; height: 28px; border-radius: 5px; }
+        #shOption { width: 200px; height: 28px; border-radius: 5px; }
+        #rowNumToShow { width: 200px; height: 28px; border-radius: 5px; }
+        #shOptionDate { width: 200px; height: 28px; border-radius: 5px; }
+        #shValue { width: 200px; height: 28px; border-radius: 5px; }
+		#shParkingNy{ width: 200px; height: 28px; border-radius: 5px; }
+		#shPtNy{width: 200px; height: 28px; border-radius: 5px;}
+		#shGroupNy{width: 200px; height: 28px;border-radius: 5px; }
+		#shDateStart{width: 200px; height: 28px;border-radius: 5px; }
+		#shDateEnd{width: 200px; height: 28px;border-radius: 5px; }
 	</style>
 </head>
 
@@ -504,54 +512,75 @@
 											<h5>센터</h5>
 										</div>
 									</div>
+									<form name="form" method="post" action="/xdm/v1/infra/information/informationXdmList">
+										<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1" />
+										<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}" />
 									<div class="col-sm-4 col-12">
 										<table>
 											<th>
 												<tr>
 													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>Y</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
+														<select name="shDelNy" id="shDelNy">
+															<option value="" th:selected="${vo.shDelNy == null}">삭제여부</option>
+															<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shDelNy == 0}">N</option>
 														</select>
 													</td>
 													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>Y</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
+														<select name="shParkingNy" id="shParkingNy">
+															<option value="" th:selected="${vo.shParkingNy == null}">주차여부</option>
+															<option value="1" th:selected="${vo.shParkingNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shParkingNy == 0}">N</option>
 														</select>
 													</td>
 													<td>
-														<select id="shape">
-															<option value="" selected disabled hidden>수정일</option>
-															<option value="1">Y</option>
-															<option value="2">N</option>
+														<select name="shPtNy" id="shPtNy">
+															<option value="" th:selected="${vo.shPtNy == null}">pt여부</option>
+															<option value="1" th:selected="${vo.shPtNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shPtNy == 0}">N</option>
 														</select>
 													</td>
 													<td>
-														<input id="shape" input type="date">
+														<select name="shGroupNy" id="shGroupNy">
+															<option value="" th:selected="${vo.shGroupNy == null}">그룹레슨</option>
+															<option value="1" th:selected="${vo.shGroupNy == 1}">Y</option>
+															<option value="0" th:selected="${vo.shGroupNy == 0}">N</option>
+														</select>
 													</td>
 													<td>
-														<input id="shape" input type="date">
+														<select id="shOptionDate" name="shOptionDate">
+															<option value=""th:selected="${vo.shOptionDate == null}">검색구분</option>
+															<option value="1" th:selected="${vo.shOptionDate == 1}">작성날짜</option>
+															<option value="2" th:selected="${vo.shOptionDate == 2}">수정날짜</option>
+														</select>
 													</td>
 												</tr>
 											</th>
-											<tr>
+												<tr>
+													<td>
+														<input type="text" id="shDateStart" name="shDateStart" th:value="${#strings.substring(vo.shDateStart, 0, 10)}" placeholder="시작일" autocomplete="off">
+													</td>
+													<td>
+														<input type="text" id="shDateEnd" name="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}"placeholder="종료일" autocomplete="off">
+													</td>
 												<td>
-													<select id="shape">
-														<option value="" selected disabled hidden>검색구분</option>
-														<option value="1">Y</option>
-														<option value="2">N</option>
+													<select id="shOption" name="shOption">
+														<option value="" th:selected="${vo.shOption == null}">검색구분
+														</option>
+														<option value="1" th:selected="${vo.shOption == 1}">코드
+														</option>
+														<option value="2" th:selected="${vo.shOption == 2}">이름
+														</option>
 													</select>
 												</td>
 												<td>
-													<input id="shape" input value="검색어">
+													<input type="text" id="shValue" name="shValue"th:value="${vo.shValue}" onkeyup="enterkey()"placeholder="검색어">
+												    <!--<div class="invalid-feedback" id="shValueFeedback"></div>-->
 												</td>
 												<td>
 													<div class="btn-group-vertical" role="group"
 														aria-label="Vertical button group">
-														<button type="button" class="btn btn-primary">
+														<button type="submit" class="btn btn-primary">
 															<span class="icon-search"></span>
 														</button>
 													</div>
@@ -565,6 +594,7 @@
 											</tr>
 										</table>
 									</div>
+								   </form>
 								</div>
 							</div>
 						</div>
@@ -580,16 +610,24 @@
 										<table>
 											<th>
 												<tr>
-													<td>&nbsp;&nbsp;&nbsp; total : 171 </td>
+													<td th:text="'   total : '+${vo.totalRows}"></td>
 													<td style="width : 900px;"></td>
 													<td>
-														<select id="shape">
-															<!--<select id = "shape" select id="righ">-->
-															<option value="" selected disabled hidden>1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
+														<select id="changeRowNum">
+															<option value="5" th:selected="${vo.rowNumToShow eq 5}">5
+															</option>
+															<option value="10" th:selected="${vo.rowNumToShow eq 10}">10
+															</option>
+															<option value="20" th:selected="${vo.rowNumToShow eq 20}">20
+															</option>
+															<option value="40" th:selected="${vo.rowNumToShow eq 40}">40
+															</option>
+															<option value="50" th:selected="${vo.rowNumToShow eq 50}">50
+															</option>
+															<option value="60" th:selected="${vo.rowNumToShow eq 60}">60
+															</option>
+															<option value="70" th:selected="${vo.rowNumToShow eq 70}">70
+															</option>
 														</select>
 													</td>
 												</tr>
@@ -605,63 +643,82 @@
 												<th>#</th>
 												<th>종목</th>
 												<th>센터명</th>
+												<th>대표명</th>
 												<th>오픈시간</th>
 												<th>마감시간</th>
 												<th>전화번호</th>
 												<th>사이트</th>
+												<th>주소</th>
 												<th>주차가능</th>
-												<th>예약</th>
-												<th>설명</th>
+												<th>pt</th>
+												<th>그룹레슨</th>
 												<th>등록일</th>
 												<th>수정일</th>
 											</tr>
 										</thead>
 										<tbody>
-											<!--<tr th:if="${lists.isEmpty(list)}" class="hover-actions-trigger btn-reveal-trigger">
-												<td colspan="10">
-													<p style="padding-top: 12px;">no data!</p>
+											<tr th:if="${#lists.isEmpty(list)}">
+												<td colspan="14">
+													<p style="padding-top: 12px;">There is no data!</p>
 												</td>
-											</tr>-->
-											<tr th:each="list:${list}">
+											</tr>
+											<tr th:if="!${#lists.isEmpty(list)}" th:each="list:${list}">
 												<td>
 													<input type="checkbox" />
 												</td>
-												<td th:text="${list.seq}"></td>
-												<td></td>
+												<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
+												<td th:text="${list.specifics}"></td>
 												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(seq=${list.seq})}" th:text="${list.name}"></a></td>
-												<td></td>
-												<td  th:text="${list.opentime}"></td>
-												<td  th:text="${list.closetime}"></td>
-												<td  th:text="${list.telNumber}"></td>
-												<td  th:text="${list.eadress}"></td>
-												<td  th:text="${list.parkingNy}"></td>
-												<td  th:text="${list.reservation}">Y</td>
-												<td  th:text="${list.letter}"></td>
-												<td  th:text="${list.regDate}"></td>
-												<td  th:text="${list.modDate}"></td>
+												<td th:text="${list.ceoName}"></td>
+												<td th:text="${list.opentime}"></td>
+												<td th:text="${list.closetime}"></td>
+												<td th:text="${list.telNumber}"></td>
+												<td th:text="${list.eadress}"></td>
+												<td th:text="${list.adress}"></td>
+												<td th:if="${list.parkingNy eq 0}">N</td>
+												<td th:unless="${list.parkingNy eq 0}">Y</td>
+												<td th:if="${list.ptNy eq 0}">N</td>
+												<td th:unless="${list.ptNy eq 0}">Y</td>
+												<td th:if="${list.groupNy eq 0}">N</td>
+												<td th:unless="${list.groupNy eq 0}">Y</td>
+												<td th:text="${#dates.format(list.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+												<td th:text="${#dates.format(list.modDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 											</tr>
 										</tbody>
 									</table>
 									<table>
-										<th>
-										<td style="width : 300px;"></td>
-										<td>
-											<ul class="pagination justify-content-right">
-												<li class="page-item disabled">
-													<span class="page-link">Prev</span>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">1</a>
-												</li>
-												<li class="page-item active">
-													<a href="#" class="page-link">2</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">Next</a>
-												</li>
-											</ul>
-										 </td>
-									   </th>
+										<!-- paging s  -->
+										<div class="container-fluid px-0 mt-2 mb-2">
+											<div class="row">
+												<div class="col">
+													<ul class="pagination justify-content-center">
+														<li class="page-item disabled"
+															th:if="${vo.startPage gt vo.pageNumToShow}"
+															style="cursor: pointer;">
+															<a class="page-link" aria-label="Previous"
+																href="javascript:goList(${vo.startPage - 1})"
+																th:attr="onclick=|goList('${vo.startPage - 1}')|">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<li class="page-item"
+															th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}"
+															th:classappend="${num eq vo.thisPage} ? active : ''"
+															style="cursor: pointer;">
+															<a class="page-link" th:attr="onclick=|goList('${num}')|"
+																th:text="${num}"></a>
+														</li>
+														<li class="page-item" th:if="${vo.endPage ne vo.totalPages}"
+															style="cursor: pointer;">
+															<a class="page-link" aria-label="Next"
+																th:attr="onclick=|goList('${vo.endPage + 1}')|">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</table>
 								</div>
 							</div>
@@ -690,9 +747,11 @@
 									</button>
 								</div>
 								<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-									<button type="button" class="btn btn-primary">
+									<a href="/xdm/v1/infra/information/informationXdmForm">
+									<button type="submit" class="btn btn-primary">
 										<span class="icon-plus2"></span>
 									</button>
+									</a>
 								</div>
 							</td>
 						</tr>
@@ -705,9 +764,32 @@
 		<footer class="main-footer fixed-btm">
 			© Bootstrap Gallery 2023
 		</footer>
+		<script type="text/javascript">
+					window.addEventListener('load', function () {
+						$.datetimepicker.setLocale('ko');
+						$("#shDateStart,#shDateEnd").datetimepicker({
+							timepicker: false,
+							format: 'Y-m-d'
+						});
+					});
+					
+					goList = function (thisPage) {
+						document.querySelector("input[name=thisPage]").value = thisPage;
+						document.querySelector("form[name=form]").action = "/xdm/v1/infra/information/informationXdmList";
+						document.querySelector("form[name=form]").submit();
+					}
+					
+					document.getElementById("changeRowNum").onchange = function () {
+						document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+						
+						form.action = "/xdm/v1/infra/information/informationXdmList";
+						form.submit();
+					}
+			</script>
 		<!-- END: .main-footer -->
 	</div>
 	<!-- END: .app-wrap -->
+	
 	<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 	<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
 	<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>
@@ -724,6 +806,8 @@
 
 	<!-- Common JS -->
 	<script src="/xdm/v1/template/qwer/assert/js/common.js"></script>
+	<script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
+	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 </body>
 
 </html>

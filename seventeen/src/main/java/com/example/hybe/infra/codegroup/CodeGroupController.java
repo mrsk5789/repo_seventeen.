@@ -65,7 +65,8 @@ public class CodeGroupController {
 	@RequestMapping(value= "/xdm/v1/infra/codegroup/codegroupXdmList")
 	public String codegroupXdmList(@ModelAttribute("vo")CodeGroupVo codegroupvo, Model model){
 		codegroupvo.setParamsPaging(codegroupService.selectOneCount(codegroupvo));
-		System.out.println("start : "+codegroupvo.getStartRnumForMysql());
+		System.out.println("StartRnumForMysql : "+codegroupvo.getStartRnumForMysql());
+		System.out.println("RowNumToShow : "+codegroupvo.getRowNumToShow());
 //		/* 초기값 세팅이 없는 경우 사용 */
 		codegroupvo.setShDateStart(codegroupvo.getShDateStart() == null || codegroupvo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(codegroupvo.getShDateStart()));
 		codegroupvo.setShDateEnd(codegroupvo.getShDateEnd() == null || codegroupvo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(codegroupvo.getShDateEnd()));

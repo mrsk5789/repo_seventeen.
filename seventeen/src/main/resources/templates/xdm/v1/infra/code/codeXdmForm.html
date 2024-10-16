@@ -114,7 +114,7 @@
 								</li>
 								<li class="dropdown">
 									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-										<img class="avatar" src="img/user.png" alt="Admin Dashboards" />
+										<img class="avatar" src="/xdm/v1/template/qwer/assert/img/user.png" alt="Admin Dashboards" />
 										<i class="icon-chevron-small-down"></i>
 									</a>
 									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
@@ -500,7 +500,7 @@
 					</header>
 					<!-- END: .main-heading -->
 					<!-- BEGIN .main-content -->
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/code/codeXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form name="form" method="post" action="/xdm/v1/infra/code/codeXdmInst" autocomplete="off" enctype="multipart/form-data" class="needs-validation" novalidate>
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -544,7 +544,7 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcdName">코드이름</label>
-													<input class="form-control form-control-lg" name="ifcdName" th:value="${item?.ifcdName}" type="text" id="ifcdName" placeholder="한글,영대소문자, 숫자">
+													<input class="form-control form-control-lg" name="ifcdName" th:value="${item?.ifcdName}" type="text" id="ifcdName" placeholder="한글,영대소문자, 숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -560,16 +560,18 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcdUseNy">사용여부</label>
-														<select class="form-control form-control-lg" id="ifcdUseNy" name="ifcdUseNy">
-															<option value="1" th:selected="${item?.ifcdUseNy==1}">Y</option>
-															<option value="0" th:selected="${item?.ifcdUseNy==0}">N</option>
-														</select>					
+													   <select class="form-control form-control-lg" id="ifcdUseNy" name="ifcdUseNy" required>
+														  <option value="" th:selected="${item?.ifcdUseNy==null}">사용여부</option>
+														  <option value="1" th:selected="${item?.ifcdUseNy==1}">N</option>
+														  <option value="0" th:selected="${item?.ifcdUseNy==0}">Y</option>
+													   </select>					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcdOrder">순서</label>
-														<select class="form-control form-control-lg" id="ifcdOrder" name="ifcdOrder">
+														<select class="form-control form-control-lg" id="ifcdOrder" name="ifcdOrder" required>
+															<option value="" th:selected="${item?.ifcdOrder==null}">순서</option>
 															<option value="1" th:selected="${item?.ifcdOrder==1}">1</option>
 															<option value="2" th:selected="${item?.ifcdOrder==2}">2</option>
 															<option value="3" th:selected="${item?.ifcdOrder==3}">3</option>
@@ -595,14 +597,6 @@
 													<textarea class="form-control" rows="2" name="ifcdDesc" id="ifcdDesc" type="text" style="width: 570px; height: 80px;" th:value="${item?.ifcdDesc}"></textarea>
 												</div>
 											</div>
-										 	
-											<!-- <div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput">다국어8</label>
-													<input class="form-control is-valid"  placeholder="Valid state"type="text">
-													<div class="valid-feedback">Looks good!</div>
-												</div>
-											</div> -->
 										</div>
 								    </div>
 								</div>
@@ -623,23 +617,101 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/code/codeXdmList" class="btn btn-primary">
+										<button type="submit" id="btnSubmit" action="redirect:/xdm/v1/infra/code/codeXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 										</button>
 								   </div>
 								</td>
 						    </tr>
 						</table>
-					</div>
-				</div>
-			</div>
-			</div>
-				<!-- END: .app-main -->
+					  </div>
+				  </div>
+				 </form>
+			   </div>
+			 </div>
 			</div>
 			<footer class="main-footer fixed-btm">
 				© Bootstrap Gallery 2023
 			</footer>
 		</div>
+		<script type="text/javascript">
+					document.getElementById("btnSubmit").onclick = function (){
+					//코드이름	
+				    var ifcdName = document.getElementById("ifcdName");
+				    var ifcdNameValue = document.getElementById("ifcdName").value.trim();
+					var ifcdNameRegExp = /^[가-힣A-Za-z0-9]+$/;
+					var ifcdNameFeedback=document.getElementById("invalid-feedback");
+					var ifcdNameRegExpFeedback=document.getElementById("ifcdNameRegExpFeedback");
+					
+					ifcdName.classList.remove('is-vaild','is-invalid');
+					ifcdNameFeedback.style.display='none';
+				    ifcdNameRegExpFeedback.style.display='none';
+					/*			
+					if(!ifcgNameRegExp.test(ifcgName)){
+						alert("이름은 한국, 영대소문자, 숮자만 입력해 주세요");
+						ifcgName.focus();
+						return false;
+					} else {
+					   // pass
+					}*/
+				    if (ifcdNameValue == "" || ifcdNameValue == null) {
+						ifcdNameFeedback.style.display='block';
+						ifcdName.classList.add('is-invaild');
+						ifcdName.focus();
+						return false;
+				    } else {
+					}
+
+					if(!ifcdNameRegExp.test(ifcdNameValue)){
+						ifcdNameRegExpFeedback.style.display='block';
+						ifcdName.classList.add('is-invaild');
+						ifcdName.focus();
+						return false;
+					} else {
+						ifcdName.classList.add('is-vaild');
+					}
+					
+					//사용여부	
+				    var ifcdUseNy = document.getElementById("ifcdUseNy");
+				    var ifcdUseNyValue = document.getElementById("ifcdUseNy").value.trim();
+					
+				    if (ifcdUseNyValue == "" || ifcdUseNyValue == null) {
+						ifcdUseNy.classList.add('is-invaild');
+						ifcdUseNy.focus();
+						return false;
+					} else {
+						ifcdUseNy.classList.remove('is-invaild');
+					}
+					
+					//순서	
+				    var ifcdOrder = document.getElementById("ifcdOrder");
+				    var ifcdOrderValue = document.getElementById("ifcdOrder").value.trim();
+					
+				    if (ifcdOrderValue == "" || ifcdOrderValue == null) {
+						ifcdOrder.classList.add('is-invaild');
+						ifcdOrder.focus();
+						return false;
+					} else {
+						ifcdOrder.classList.remove('is-invaild');
+					}
+					form.action = "/xdm/v1/infra/code/codeXdmInst";
+					form.submit();
+				}
+				//needsvalid
+				var needsValidation = document.querySelectorAll('.needs-validation')
+
+				Array.prototype.slice.call(needsValidation)
+				  .forEach(function (form) {
+				    form.addEventListener('submit', function (event) {
+				      if (!form.checkValidity()) {
+				        event.preventDefault()
+				        event.stopPropagation()
+				      }
+
+				      form.classList.add('was-validated')
+				    }, false)
+				})
+				</script>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>

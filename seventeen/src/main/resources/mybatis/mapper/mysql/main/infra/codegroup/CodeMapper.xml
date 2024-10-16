@@ -31,7 +31,7 @@
            code as a
       JOIN codegroup as b ON b.ifcgSeq=a.codegroup_seq
       WHERE 1=1
-			<if test="shDelny !=null and !shDelny.equals('')">AND ifcdDelny = #{shDelny}</if>	
+			<if test="shDelNy !=null and !shDelNy.equals('')">AND ifcdDelny = #{shDelNy}</if>	
 			<if test="shUseNy !=null and !shUseNy.equals('')">AND ifcdUseNy = #{shUseNy}</if>
 			<choose>
 			    <when test="shOption==1">AND ifcdSeq=#{shValue}</when>
@@ -59,7 +59,7 @@
 			,#{ifcdUseNy}
 			,#{ifcdOrder}
 			,#{ifcdDesc}
-			,#{ifcdDelny}
+			,0
             ,now()
             ,now()
             ,#{codegroup_seq}
@@ -91,6 +91,7 @@
 			,ifcdOrder = #{ifcdOrder}
 			,ifcdDesc = #{ifcdDesc}
 			,ifcdDelny = #{ifcdDelny}
+			,codegroup_seq = #{codegroup_seq}
 		WHERE 1=1	
 		     AND ifcdSeq = #{ifcdSeq}
 	  </update>

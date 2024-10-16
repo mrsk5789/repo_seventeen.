@@ -19,7 +19,7 @@
 			,a.ifcgRegDate
 			,a.ifcgRenDate
 			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
-			<include refid="selectCommon"/>
+		<include refid="selectCommon"/>
 			ORDER BY
 			   a.ifcgSeq desc
         ) aa limit #{rowNumToShow} offset #{startRnumForMysql}

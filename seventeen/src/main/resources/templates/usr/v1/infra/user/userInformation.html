@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="TechyDevs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dirto - Directory & Listing HTML Template</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/user/v1/template/qwer/assert/images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/select2.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/summernote-lite.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/style.css" />
+  </head>
+<body>
+    <!-- start per-loader -->
+    <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- end per-loader -->
+    <header class="header-area border-bottom border-bottom-gray">
+      <div class="main-header py-3">
+        <div class="container">
+          <div class="main-header-action-wrap">
+            <div class="logo">
+              <a href="0_index.html"><img src="/user/v1/template/qwer/assert/images/logo.png" alt="logo" /></a>
+            </div>
+            <!-- end logo -->
+            <nav class="main-menu me-4 ms-auto">
+              <ul>
+                <li>
+                  <a href="0_index.html">Home</a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Categories <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="all-categories.html">all categories</a></li>
+                    <li><a href="all-locations.html">all locations</a></li>
+                    <li><a href="top-place.html">top places </a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"
+                    >Listings <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="list-with-map.html">list with map</a></li>
+                    <li><a href="listing-list.html">listing list </a></li>
+                    <li><a href="0_list-left-sidebar.html">left sidebar </a></li>
+                    <li><a href="0_listing-details.html">listing details</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Pages <span class="fal fa-angle-down"></span></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="0_user-profile.html">user profile</a></li>
+                    <li><a href="top-author.html">top authors </a></li>
+                    <li><a href="dashboard.html">dashboard</a></li>
+                    <li><a href="booking.html">booking </a></li>
+                    <li>
+                      <a href="booking-confirmation.html"
+                        >booking confirmation
+                      </a>
+                    </li>
+                    <li><a href="pricing.html">pricing</a></li>
+                    <li><a href="faq.html">faq</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="recover.html">recover pass</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blog-right-sidebar.html">Blog</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="nav-right-content d-flex align-items-center">
+              <div class="author-access-list me-3">
+                <a href="0_login.html">Login</a>
+                <span class="or-text" color="bg-white">&nbsp;&nbsp;</span>
+                <a href="0_sign-up.html">Sign Up</a>
+              </div>
+              <!-- end side-menu-open -->
+            </div>
+            <!-- end nav-right-content -->
+          </div>
+          <!-- end main-header-action-wrap -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end main-header -->
+      <div class="off-canvas">
+        <div
+          class="off-canvas-close icon-element icon-element-sm bg-white shadow-sm"
+        >
+          <i class="fal fa-times"></i>
+        </div>
+        <!-- end off-canvas-close -->
+        <ul class="off-canvas-menu padding-top-60px">
+          <li>
+            <a href="0_index.html">Home</a>
+          </li>
+          <li>
+            <a href="#"
+              >Categories
+              <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="all-categories.html">All categories</a></li>
+              <li><a href="all-locations.html">All locations</a></li>
+              <li><a href="top-place.html">Top places </a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              >Listings <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="list-with-map.html">list with map</a></li>
+              <li><a href="listing-list.html">Listing list </a></li>
+              <li><a href="0_list-left-sidebar.html">Left sidebar </a></li>
+              <li><a href="listing-details.html">Listing details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              >Pages <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="0_user-profile.html">user profile</a></li>
+              <li><a href="top-author.html">top authors </a></li>
+              <li><a href="dashboard.html">dashboard</a></li>
+              <li><a href="0_booking.html">booking </a></li>
+              <li>
+                <a href="booking-confirmation.html">booking confirmation </a>
+              </li>
+              <li><a href="pricing.html">pricing</a></li>
+              <li><a href="faq.html">faq</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li><a href="recover.html">recover pass</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="blog-right-sidebar.html">blog</a>
+          </li>
+        </ul>
+        <div class="mt-4 text-center">
+          <a href="0_login.html" class="theme-btn me-2">Login</a>
+          <a href="0_sign-up.html" class="theme-btn">Sign up</a>
+        </div>
+      </div>
+      <!-- end off-canvas -->
+    </header>
+    <section class="add-listing-area padding-top-60px padding-bottom-90px">
+      <div class="container">
+        <form method="post">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-3">기본정보 변경</h4>
+              <hr class="border-top-gray my-0" />
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="label-text">Email</label>
+                    <input
+                      class="form-control form--control ps-3"
+                      type="email"
+                      name="email"
+                      placeholder="you@email.com"
+                    />
+                  </div>
+                </div>
+                <!-- end col-lg-6 -->
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="label-text">비밀번호</label>
+                    <div class="position-relative">
+                      <input
+                        class="form-control form--control ps-3 password-field"
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
+                      <a
+                        href="javascript:void(0)"
+                        class="position-absolute top-0 right-0 h-100 toggle-password"
+                        title="toggle show/hide password"
+                      >
+                        <i class="far fa-eye eye-on"></i>
+                        <i class="far fa-eye-slash eye-off"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-lg-12 -->
+                <div class="col-lg-6">
+                  <div class="form-group select2-container-wrapper">
+                    <label class="label-text">카테고리</label>
+                    <select
+                      class="select-picker"
+                      data-width="100%"
+                      data-size="5"
+                    >
+                      <option value="0">선택해 주세요</option>
+                      <option value="1">Pilates</option>
+                      <option value="2">Yoga</option>
+                      <option value="3">Health</option>
+                      <option value="4">Flying Yoga</option>
+                      <option value="5">Climing</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- end col-lg-12 -->
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="label-text">주소</label>
+                    <input
+                      class="form-control form--control ps-3"
+                      type="text"
+                      name="text"
+                      placeholder="주소"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="label-text">휴대폰 번호 <span class="text-gray">Optional</span></label>
+                    <input
+                      class="form-control form--control ps-3"
+                      type="text"
+                      name="text"
+                      placeholder="010-0000-0000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end card-body -->
+          </div>
+          <!-- end card -->
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-3">사진</h4>
+              <hr class="border-top-gray my-0" />
+              <label class="label-text">이미지</label>
+              <div class="file-upload-wrap">
+                <input
+                  type="file"
+                  name="files[]"
+                  class="multi file-upload-input with-preview"
+                  multiple
+                />
+                <span class="file-upload-text"
+                  ><i class="fal fa-upload me-2"></i>사진을 드래그해서 업로드 하세요.</span
+                >
+              </div>
+            </div>
+           </div>
+          <div style="width: 900px; background-color: blue;"></div> 
+         <a href="#" class="theme-btn theme-btn-yellow" data-bs-toggle="modal" data-bs-target="#userMessageModal" >내 정보 수정하기</a >
+        </form>
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end add-listing-area -->
+    <section class="footer-area bg-gray padding-top-130px pattern-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6" style="width: 100px;"></div>
+          <div class="col-lg-3 col-md-6" >
+            <div class="footer-item">
+              <a href="0_index.html" class="footer-logo mb-4 d-inline-block"><img src="/user/v1/template/qwer/assert/images/logo2.png" alt="logo"/></a>
+              <ul class="info-list">
+                <li>
+                  <span class="fal fa-home icon me-2"></span> 서울 강남구 태해란로 
+                </li>
+                <li>
+                  <span class="fal fa-headphones icon me-2"></span>
+                  <a href="#">02-382-4335</a>
+                </li>
+                <li>
+                  <span class="fal fa-envelope icon me-2"></span>
+                  <a href="#">dirto@gmail.com</a>
+                </li>
+                <li>
+                  <span class="fal fa"></span>
+                  <a href="#"></a>
+                </li>
+              </ul>
+              <p></p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- end col-lg-3 -->
+           <div class="col-lg-3 col-md-6" style="width: 120px;" > 
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">모든 카테고리</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="#">필라테스</a></li>
+                <li><a href="#">요가</a></li>
+                <li><a href="#">헬스</a></li>
+                <li><a href="#">플라잉요가</a></li>
+                <li><a href="#">클라이밍</a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">바로가기</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="0_sign-up.html">가입하기</a></li>
+                <li><a href="0_login.html">로그인</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+        <hr class="border-top-gray" />
+        <div
+          class="copy-right d-flex flex-wrap align-items-center justify-content-between pb-4"
+        >
+          <p class="copy__desc py-2">
+            &copy; Copyright Dirto <span id="copyright-year"></span>. Made with
+            <span class="fas fa-heart bounce-anim"></span> by
+            <a href="https://techydevs.com">TechyDevs</a>
+          </p>
+        </div>
+        <!-- end copy-right -->
+      </div>
+      <!-- end container -->
+    </section>
+    <div id="back-to-top">
+      <i class="fal fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end back-to-top -->
+    <div
+    class="modal fade modal-container"
+    id="userMessageModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="userMessageModalTitle"
+    aria-hidden="true"
+  >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <h5 class="modal-title" id="userMessageModalTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수정되었습니다.&nbsp;&nbsp;</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" class="fal fa-times"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <!-- Template JS Files -->
+    <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/bootstrap-tagsinput.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/summernote-lite.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/owl.carousel.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/jquery.lazy.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/jquery.MultiFile.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/rating-script.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/main.js"></script>
+  </body>
+</html>

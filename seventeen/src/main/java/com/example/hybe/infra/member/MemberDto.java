@@ -16,12 +16,34 @@ public class MemberDto {
 	private Date regdate;
 	private Date modDate;
 	private Integer delny;
+//	private Integer SocialLoginCd;
+//	private Integer ResultNy;
+//	private Boolean autoLogin;
 	
 //	----- getter/setter -----
 	
+	
+//	public Boolean getAutoLogin() {
+//		return autoLogin;
+//	}
+//	public void setAutoLogin(Boolean autoLogin) {
+//		this.autoLogin = autoLogin;
+//	}
+//	public Integer getResultNy() {
+//		return ResultNy;
+//	}
+//	public void setResultNy(Integer resultNy) {
+//		ResultNy = resultNy;
+//	}
 	public String getSeq() {
 		return seq;
 	}
+//	public Integer getSocialLoginCd() {
+//		return SocialLoginCd;
+//	}
+//	public void setSocialLoginCd(Integer socialLoginCd) {
+//		SocialLoginCd = socialLoginCd;
+//	}
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
@@ -97,5 +119,7 @@ public class MemberDto {
 	public void setDelny(Integer delny) {
 		this.delny = delny;
 	}
+	
+	
 	
 }

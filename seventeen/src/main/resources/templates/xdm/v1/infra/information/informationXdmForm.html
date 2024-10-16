@@ -119,34 +119,11 @@
 									</a>
 									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="userSettings">
 										<ul class="user-settings-list">
-											<li>
-												<a href="profile.html">
-													<div class="icon">
-														<i class="icon-account_circle"></i>
-													</div>
-													<p>Profile</p>
-												</a>
-											</li>
-											<li>
-												<a href="profile.html">
-													<div class="icon red">
-														<i class="icon-cog3"></i>
-													</div>
-													<p>Settings</p>
-												</a>
-											</li>
-											<li>
-												<a href="filters.html">
-													<div class="icon yellow">
-														<i class="icon-schedule"></i>
-													</div>
-													<p>Activity</p>
-												</a>
-											</li>
+											<li><a href="profile.html"><div class="icon"><i class="icon-account_circle"></i></div><p>Profile</p></a></li>
+											<li><a href="profile.html"><div class="icon red"><i class="icon-cog3"></i></div><p>Settings</p></a></li>
+											<li><a href="filters.html"><div class="icon yellow"><i class="icon-schedule"></i></div><p>Activity</p></a></li>
 										</ul>
-										<div class="logout-btn">
-											<a href="login.html" class="btn btn-primary">Logout</a>
-										</div>
+										<div class="logout-btn"><a href="login.html" class="btn btn-primary">Logout</a></div>
 									</div>
 								</li>
 							</ul>
@@ -495,7 +472,7 @@
 							</div>
 						</div>
 					</header>
-					<form id="form" name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst"autocomplete="off" enctype="multipart/form-data" class="row">
+					<form name="form" method="post" action="/xdm/v1/infra/information/informationXdmInst" autocomplete="off" enctype="multipart/form-data" class="needs-validation" novalidate>
 						
 					<div class="main-content">
 						<div class="row gutters">
@@ -517,21 +494,9 @@
 														</select>			
 													</div>
 												</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="seq">번호</label>
@@ -541,19 +506,19 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="name">센터명</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자">
+													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ceoName">대표명</label>
-													<input class="form-control form-control-lg" name="ceoName" type="text" id="ceoName" th:value="${item?.ceoName}" placeholder="한글, 영대소문자">
+													<input class="form-control form-control-lg" name="ceoName" type="text" id="ceoName" th:value="${item?.ceoName}" placeholder="한글, 영대소문자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 												    <label for="telNumber">전화번호</label>
-													<input class="form-control form-control-lg" name="telNumber" type="text" id="telNumber" th:value="${item?.telNumber}" placeholder="숫자">
+													<input class="form-control form-control-lg" name="telNumber" type="text" id="telNumber" th:value="${item?.telNumber}" placeholder="숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
@@ -574,7 +539,7 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ptNy">PT</label>
-													  <select class="form-control form-control-lg" id="ptNy" name="ptNy">
+													  <select class="form-control form-control-lg" id="ptNy" name="ptNy" required>
 														 <option value="1" th:selected="${item?.ptNy==1}">N</option>
 														 <option value="0" th:selected="${item?.ptNy==0}">Y</option>
 													  </select>	
@@ -583,7 +548,7 @@
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 												  <label for="groupNy">그룹레슨</label>
-												   <select class="form-control form-control-lg" id="groupNy" name="groupNy">
+												   <select class="form-control form-control-lg" id="groupNy" name="groupNy" required>
 													  <option value="1" th:selected="${item?.groupNy==1}">N</option>
 													  <option value="0" th:selected="${item?.groupNy==0}">Y</option>
 											   	   </select>	
@@ -591,46 +556,41 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">주소</label>
-													<input class="form-control form-control-lg" type="text" style="width: 570px;">
+													<label for="adress">주소</label>
+													<input class="form-control form-control-lg" id="adress" name="adress" th:value="${item?.adress}" type="text" style="width: 570px;">
+												</div>
+											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="opentime">오픈시간</label>
+													<input class="form-control form-control-lg" name="opentime" type="text" id="opentime" th:value="${item?.opentime}" placeholder="숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
-																							<div class="form-group">
-																								<label for="disabledInput"></label>
-																							</div>
-																						</div>
-																						<div class="col-sm-4 col-12">
-																							<div class="form-group">
-																								<label for="disabledInput"></label>
-																							</div>
-																						</div>
-																						<div class="col-sm-4 col-12">
-																							<div class="form-group">
-																								<label for="disabledInput"></label>
-																							</div>
-																						</div>
+												<div class="form-group">
+													<label for="closetime">마감시간</label>
+													<input class="form-control form-control-lg" name="closetime" type="text" id="closetime" th:value="${item?.closetime}" placeholder="숫자" required>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="eadress">사이트</label>
+													<input class="form-control form-control-lg" id="eadress" name="eadress" th:value="${item?.eadress}" type="text" style="width: 570px;" required>
+												</div>
+											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="letter">설명</label>
 													<textarea class="form-control" rows="2" name="letter" id="letter" type="text" style="width: 570px; height: 80px;" th:value="${item?.letter}"></textarea>
 												</div>
 											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
-											<div class="col-sm-4 col-12">
-												<div class="form-group">
-													<label for="disabledInput"></label>
-												</div>
-											</div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 										</div>
 								    </div>
 								</div>
@@ -651,7 +611,7 @@
 								<td style="width : 1160px; "></td>
 								<td>
 								   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-										<button type="submit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
+										<button type="submit" id="btnSubmit" action="redirect:/xdm/v1/infra/information/informationXdmList" class="btn btn-primary">
 											 <span class="icon-plus2"></span>
 									    </button>
 								   </div>
@@ -661,12 +621,197 @@
 					</div>
 				</div>
 			</div>
-			</div>
-			</div>
+		 </div>
+		</div>
 			<footer class="main-footer fixed-btm">
 				© Bootstrap Gallery 2023
 			</footer>
 		</div>
+		<script type="text/javascript">
+					document.getElementById("btnSubmit").onclick = function (){
+					//코드이름	
+				    var name = document.getElementById("name");
+				    var nameValue = document.getElementById("name").value.trim();
+					var nameRegExp = /^[가-힣A-Za-z0-9]+$/;
+					var nameFeedback=document.getElementById("invalid-feedback");
+					var nameRegExpFeedback=document.getElementById("nameRegExpFeedback");
+					
+					name.classList.remove('is-vaild','is-invalid');
+					nameFeedback.style.display='none';
+				    nameRegExpFeedback.style.display='none';
+					/*			
+					if(!ifcgNameRegExp.test(ifcgName)){
+						alert("이름은 한국, 영대소문자, 숮자만 입력해 주세요");
+						ifcgName.focus();
+						return false;
+					} else {
+					   // pass
+					}*/
+				    if (nameValue == "" || nameValue == null) {
+						nameFeedback.style.display='block';
+						name.classList.add('is-invaild');
+						name.focus();
+						return false;
+				    } else {
+					}
+
+					if(!nameRegExp.test(nameValue)){
+						nameRegExpFeedback.style.display='block';
+						name.classList.add('is-invaild');
+						name.focus();
+						return false;
+					} else {
+						name.classList.add('is-vaild');
+					}
+					//주소
+					var adress = document.getElementById("adress");
+				    var adressValue = document.getElementById("adress").value.trim();
+					var adressRegExp = /^[가-힣A-Za-z0-9]+$/;
+					var adressFeedback=document.getElementById("invalid-feedback");
+					var adressRegExpFeedback=document.getElementById("nameRegExpFeedback");
+					
+					adress.classList.remove('is-vaild','is-invalid');
+					adressFeedback.style.display='none';
+				    adressRegExpFeedback.style.display='none';
+					
+				    if (adressValue == "" || adressValue == null) {
+						adressFeedback.style.display='block';
+						adress.classList.add('is-invaild');
+						adress.focus();
+						return false;
+				    } else {
+					}
+
+					if(!adressRegExp.test(adressValue)){
+						adressRegExpFeedback.style.display='block';
+						adress.classList.add('is-invaild');
+						adress.focus();
+						return false;
+					} else {
+						adress.classList.add('is-vaild');
+					}
+					
+					//e주소
+					var eadress = document.getElementById("eadress");
+				    var eadressValue = document.getElementById("eadress").value.trim();
+					var eadressRegExp = /^[가-힣A-Za-z0-9]+$/;
+					var eadressFeedback=document.getElementById("invalid-feedback");
+					var eadressRegExpFeedback=document.getElementById("nameRegExpFeedback");
+					
+					eadress.classList.remove('is-vaild','is-invalid');
+					eadressFeedback.style.display='none';
+				    eadressRegExpFeedback.style.display='none';
+					
+				    if (eadressValue == "" || eadressValue == null) {
+						eadressFeedback.style.display='block';
+						eadress.classList.add('is-invaild');
+						eadress.focus();
+						return false;
+				    } else {
+					}
+
+					if(!eadressRegExp.test(eadressValue)){
+						eadressRegExpFeedback.style.display='block';
+						eadress.classList.add('is-invaild');
+						eadress.focus();
+						return false;
+					} else {
+						eadress.classList.add('is-vaild');
+					}
+					
+					//대표명
+					var ceoName = document.getElementById("ceoName");
+				    var ceoNameValue = document.getElementById("ceoName").value.trim();
+					var ceoNameRegExp = /^[가-힣A-Za-z0-9]+$/;
+					var ceoNameFeedback=document.getElementById("invalid-feedback");
+					var ceoNameRegExpFeedback=document.getElementById("nameRegExpFeedback");
+					
+					ceoName.classList.remove('is-vaild','is-invalid');
+					ceoNameFeedback.style.display='none';
+				    ceoNameRegExpFeedback.style.display='none';
+					
+				    if (ceoNameValue == "" || ceoNameValue == null) {
+						ceoNameFeedback.style.display='block';
+						ceoName.classList.add('is-invaild');
+						ceoName.focus();
+						return false;
+				    } else {
+					}
+
+					if(!ceoNameRegExp.test(ceoNameValue)){
+						ceoNameRegExpFeedback.style.display='block';
+						ceoName.classList.add('is-invaild');
+						ceoName.focus();
+						return false;
+					} else {
+						ceoName.classList.add('is-vaild');
+					}
+					
+					//종류	
+				    var specifics = document.getElementById("specifics");
+				    var specifics = document.getElementById("specifics").value.trim();
+					
+				    if (specificsValue == "" ||specificsValue == null) {
+						specifics.classList.add('is-invaild');
+						specifics.focus();
+						return false;
+					} else {
+						specifics.classList.remove('is-invaild');
+					}
+					//주차여부
+					var parkingNy = document.getElementById("parkingNy");
+				    var parkingNy = document.getElementById("parkingNy").value.trim();
+					
+				    if (parkingNyValue == "" ||parkingNyValue == null) {
+						parkingNy.classList.add('is-invaild');
+						parkingNy.focus();
+						return false;
+					} else {
+						parkingNy.classList.remove('is-invaild');
+					}
+					
+					//pt여부
+					var ptNy = document.getElementById("ptNy");
+				    var ptNy = document.getElementById("ptNy").value.trim();
+					
+				    if (ptNyValue == "" ||ptNyValue == null) {
+						ptNy.classList.add('is-invaild');
+						ptNy.focus();
+						return false;
+					} else {
+						ptNy.classList.remove('is-invaild');
+					}
+					
+					//group레슨여부
+					var groupNy = document.getElementById("groupNy");
+					var groupNy = document.getElementById("groupNy").value.trim();
+
+					if (groupNyValue == "" ||groupNyValue == null) {
+						groupNy.classList.add('is-invaild');
+						groupNy.focus();
+						return false;
+					} else {
+						groupNy.classList.remove('is-invaild');
+					}
+					
+					form.action = "/xdm/v1/infra/information/informationXdmInst";
+					form.submit();
+				}
+				//needsvalid
+				var needsValidation = document.querySelectorAll('.needs-validation')
+
+				Array.prototype.slice.call(needsValidation)
+				  .forEach(function (form) {
+				    form.addEventListener('submit', function (event) {
+				      if (!form.checkValidity()) {
+				        event.preventDefault()
+				        event.stopPropagation()
+				      }
+
+				      form.classList.add('was-validated')
+				    }, false)
+				})
+		</script>
 		<script src="/xdm/v1/template/qwer/assert/js/jquery.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
 		<script src="/xdm/v1/template/qwer/assert/vendor/unifyMenu/unifyMenu.js"></script>

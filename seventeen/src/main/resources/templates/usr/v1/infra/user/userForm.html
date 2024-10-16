@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="TechyDevs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dirto - Directory & Listing HTML Template</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/user/v1/template/qwer/assert/images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/select2.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/animated-headline.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/style.css" />
+  </head>
+  <body>
+    <!-- start per-loader -->
+    <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- end per-loader -->
+    <header class="header-area border-bottom border-bottom-gray">
+      <div class="main-header py-3">
+        <div class="container">
+          <div class="main-header-action-wrap">
+            <div class="logo">
+              <a href="0_index.html"><img src="/user/v1/template/qwer/assert/images/logo.png" alt="logo" /></a>
+            </div>
+            <!-- end logo -->
+            <nav class="main-menu me-4 ms-auto">
+              <ul>
+                <li>
+                  <a href="0_index.html">Home</a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Categories <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="all-locations.html">all locations</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"
+                    >Listings <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="list-with-map.html">list with map</a></li>
+                    <li><a href="listing-list.html">listing list </a></li>
+                    <li><a href="0_list-left-sidebar.html">left sidebar </a></li>
+                    <li><a href="0_listing-details.html">listing details</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Pages <span class="fal fa-angle-down"></span></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="0_user-profile.html">user profile</a></li>
+                    <li><a href="top-author.html">top authors </a></li>
+                    <li><a href="0_dashboard.html">dashboard</a></li>
+                    <li><a href="0_booking.html">booking </a></li>
+                    <li>
+                      <a href="booking-confirmation.html"
+                        >booking confirmation
+                      </a>
+                    </li>
+                    <li><a href="pricing.html">pricing</a></li>
+                    <li><a href="faq.html">faq</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blog-right-sidebar.html">Blog</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="nav-right-content d-flex align-items-center">
+              <div class="author-access-list me-3">
+                <a href="/usr/v1/infra/user/userlogin">Login</a>
+                <span class="or-text">&nbsp;&nbsp;</span>
+                <a href="0_sign-up.html">Sign Up</a>
+              </div>
+              <div class="side-menu-open ms-2">
+                <i class="fal fa-bars"></i>
+              </div>
+              <!-- end side-menu-open -->
+            </div>
+            <!-- end nav-right-content -->
+          </div>
+          <!-- end main-header-action-wrap -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end main-header -->
+      <div class="off-canvas">
+        <div
+          class="off-canvas-close icon-element icon-element-sm bg-white shadow-sm"
+        >
+          <i class="fal fa-times"></i>
+        </div>
+        <!-- end off-canvas-close -->
+        <ul class="off-canvas-menu padding-top-60px">
+          <li>
+            <a href="0_index.html">Home</a>
+          </li>
+          <li>
+            <a href="#"
+              >Categories
+              <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="all-locations.html">All locations</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              >Listings <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="list-with-map.html">list with map</a></li>
+              <li><a href="listing-list.html">Listing list </a></li>
+              <li><a href="0_list-left-sidebar.html">Left sidebar </a></li>
+              <li><a href="0_listing-details.html">Listing details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              >Pages <span class="fal fa-angle-down sub-menu-toggler"></span
+            ></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="0_user-profile.html">user profile</a></li>
+              <li><a href="top-author.html">top authors </a></li>
+              <li><a href="dashboard.html">dashboard</a></li>
+              <li><a href="0_booking.html">booking </a></li>
+              <li>
+                <a href="booking-confirmation.html">booking confirmation </a>
+              </li>
+              <li><a href="pricing.html">pricing</a></li>
+              <li><a href="faq.html">faq</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="blog-right-sidebar.html">blog </a>
+          </li>
+        </ul>
+        <div class="mt-4 text-center">
+          <a href="0_login.html" class="theme-btn me-2">Login</a>
+          <a href="0_sign-up.html" class="theme-btn">Sign up</a>
+        </div>
+      </div>
+      <!-- end off-canvas -->
+    </header>
+    <section class="hero-wrapper hero-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div class="hero-heading text-center">
+          <h2 class="sec__title text-white cd-headline zoom">
+            What are you interested in
+            <span class="cd-words-wrapper">
+              <b class="is-visible">Pilates</b>
+              <b>Yoga</b>
+              <b>Health</b>
+              <b>Flying Yoga</b>
+              <b>Climing</b>
+            </span>
+          </h2>
+        </div>
+        <!-- end hero-heading -->
+        <div class="card mt-5">
+          <div class="card-body row pb-0">
+            <div class="col-lg-3 pe-lg-0">
+              <div class="form-group">
+                <span class="fal fa-search form-icon"></span>
+                <input
+                  class="form-control form--control"
+                  type="text"
+                  placeholder="검색"
+                />
+              </div>
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3 pe-lg-0">
+              <div class="form-group">
+                <span class="fal fa-map-marker-alt form-icon"></span>
+                <input
+                  class="form-control form--control"
+                  type="text"
+                  placeholder="지역"
+                />
+              </div>
+              <!-- end form-group -->
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3 pe-lg-0">
+              <div class="form-group select2-container-wrapper">
+                <select class="select-picker" data-width="100%" data-size="5">
+                  <option value>선택하세요</option>
+                  <option value="1">필라테스</option>
+                  <option value="2">요가</option>
+                  <option value="3">헬스</option>
+                  <option value="4">플라잉 요가</option>
+                  <option value="5">클라이밍</option>
+                </select>
+              </div>
+              <!-- end form-group -->
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3">
+              <div class="form-group">
+                <button class="theme-btn border-0 w-100" type="submit">
+                  검색
+                </button>
+              </div>
+              <!-- end form-group -->
+            </div>
+            <!-- end col-lg-3 -->
+          </div>
+          <!-- end card-body -->
+        </div>
+        <!-- end card -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-wrapper -->
+    <section class="cat-area section--padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="sec__title mb-3">회원님을 위한 추천</h2>
+          <p class="sec__desc">
+            요즘 핫한 피트니스 센터에서 나만의 pt예약을 해 보세요! <br />
+          </p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-3 col-md-6" style="margin-left: 150px;">
+            <a href="#" class="category-item d-block hover-y">
+              <div class="overlay"></div>
+              <img
+                src="/user/v1/template/qwer/assert/images/img-loading.jpg"
+                data-src="/user/v1/template/qwer/assert/images/img1.jpg"
+                alt="category-image"
+                class="category-img lazy"
+              />
+              <div class="category-content d-flex align-items-center justify-content-center">
+                <div>
+                  <h4 class="cat-title my-3">필라테스</h4>
+                  <span class="badge badge-pill">12 Listings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="category-item d-block hover-y">
+              <div class="overlay"></div>
+              <img
+                src="/user/v1/template/qwer/assert/images/img-loading.jpg"
+                data-src="/user/v1/template/qwer/assert/images/img2.jpg"
+                alt="category-image"
+                class="category-img lazy"
+              />
+              <div class="category-content d-flex align-items-center justify-content-center">
+                <div>
+                  <h4 class="cat-title my-3">요가</h4>
+                  <span class="badge badge-pill">12 Listings</span>
+                </div>
+              </div>
+             </a>
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="category-item d-block hover-y">
+              <div class="overlay"></div>
+              <img
+                src="/user/v1/template/qwer/assert/images/img-loading.jpg"
+                data-src="/user/v1/template/qwer/assert/images/img3.jpg"
+                alt="category-image"
+                class="category-img lazy"
+              />
+              <div class="category-content d-flex align-items-center justify-content-center">
+                <div>
+                  <h4 class="cat-title my-3">헬스</h4>
+                  <span class="badge badge-pill">12 Listings</span>
+                </div>
+              </div>
+             </a>
+          </div>
+          <!-- end col-lg-3 -->
+           <div class="col-lg-3 col-md-6">
+          </div> 
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="category-item d-block hover-y">
+              <div class="overlay"></div>
+              <img
+                src="/user/v1/template/qwer/assert/images/img-loading.jpg"
+                data-src="/user/v1/template/qwer/assert/images/img4.jpg"
+                alt="category-image"
+                class="category-img lazy"
+              />
+              <div class="category-content d-flex align-items-center justify-content-center">
+                <div>
+                  <h2 class="cat-title my-3">플라잉요가</h2>
+                  <span class="badge badge-pill">12 Listings</span>
+                </div>
+              </div>
+            </a>
+          </div> 
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="category-item d-block hover-y">
+              <div class="overlay"></div>
+              <img
+                src="/user/v1/template/qwer/assert/images/img-loading.jpg"
+                data-src="/user/v1/template/qwer/assert/images/climing....jpg"
+                alt="category-image"
+                class="category-img lazy"
+              />
+              <div class="category-content d-flex align-items-center justify-content-center">
+                <div>
+                  <h2 class="cat-title my-3">클라이밍</h2>
+                  <span class="badge badge-pill">12 Listings</span>
+                </div>
+              </div>
+            </a>
+          </div> 
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end cat-area -->
+    <section class="hiw-area bg-gray section--padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="sec__title mb-3">당신의 운동 계획을 도와 드릴게요!</h2>
+        </div>
+        <!-- end section-heading -->
+        <div class="row mt-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y text-center card-pattern">
+              <div class="card-body">
+                <div class="icon-element icon-element-lg">
+                  <span class="fal fa-map-marker-alt"></span>
+                  <span class="info-number">1</span>
+                </div>
+                <!-- end icon-element-->
+                <h4 class="card-title mt-4 mb-3">장소찾기</h4>
+                <p class="card-text">
+                  <a href="list-with-map.html">
+                  가까운 장소를 찾으시나요? 원하는 지역을 선택하시면 그 지역의 센터를 소개해 드려요!
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y text-center card-pattern">
+              <div class="card-body">
+                <div class="icon-element icon-element-lg">
+                  <span class="fal fa-envelope"></span>
+                  <span class="info-number">2</span>
+                </div>
+                <!-- end icon-element-->
+                <h4 class="card-title mt-4 mb-3">소통</h4>
+                <p class="card-text">
+                  <a href="contact.html">
+                  궁금한 점이 있다면 센터와의 소통을 도와드릴게요!
+                  </a>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y text-center card-pattern">
+              <div class="card-body">
+                <div class="icon-element icon-element-lg">
+                  <span class="fal fa-user"></span>
+                  <span class="info-number">3</span>
+                </div>
+                <!-- end icon-element-->
+                <h4 class="card-title mt-4 mb-3">할인받기</h4>
+                <p class="card-text">
+                  지금 회원권을 할인중인 센터를 알려 드릴게요!
+                </p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hiw-area -->
+    <section class="card-area section-padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="sec__title mb-3">예약하기</h2>
+          <p class="sec__desc">
+            Morbi convallis bibendum urna ut viverra. Maecenas quis consequat
+            libero, <br />
+            a feugiat eros.
+          </p>
+        </div>
+        <div class="card-carousel owl-carousel owl-theme mt-5">
+          <div class="card mb-0 hover-y">
+            <a href="/usr/v1/infra/user/userside" class="card-image">
+              <img
+                src="/user/v1/template/qwer/assert/images/img1.jpg"
+                class="card-img-top"
+                alt="card image"
+              />
+            </a>
+            <div class="card-body position-relative">
+              <div class="d-flex align-items-center mb-1">
+                <h4 class="card-title mb-0">
+                  <a href="/usr/v1/infra/user/userside">필라테스</a>
+                </h4>
+              </div>
+            </div>
+            <!-- end card-body -->
+          </div>
+          <!-- end card -->
+          <div class="card mb-0 hover-y">
+            <a href="0_list-left-sidebar.html" class="card-image">
+              <img
+                src="/user/v1/template/qwer/assert/images/img2.jpg"
+                class="card-img-top"
+                alt="card image"
+              />
+            </a>
+            <div class="card-body position-relative">
+              <div class="d-flex align-items-center mb-1">
+                <h4 class="card-title mb-0">
+                  <a href="0_list-left-sidebar.html">요가</a>
+                </h4>
+              </div>
+            </div>
+            <!-- end card-footer -->
+          </div>
+          <!-- end card -->
+          <div class="card mb-0 hover-y">
+            <a href="0_list-left-sidebar.html" class="card-image">
+              <img
+                src="/user/v1/template/qwer/assert/images/img3.jpg"
+                class="card-img-top"
+                alt="card image"
+              />
+            </a>
+            <div class="card-body position-relative">
+              <div class="d-flex align-items-center mb-1">
+                <h4 class="card-title mb-0">
+                  <a href="0_list-left-sidebar.html">헬스</a>
+                </h4>
+              </div>
+            </div>
+            <!-- end card-footer -->
+          </div>
+          <!-- end card -->
+          <div class="card mb-0 hover-y">
+            <a href="0_list-left-sidebar.html" class="card-image">
+              <img
+                src="/user/v1/template/qwer/assert/images/img4.jpg"
+                class="card-img-top"
+                alt="card image"
+              />
+            </a>
+            <div class="card-body position-relative">
+              <div class="d-flex align-items-center mb-1">
+                <h4 class="card-title mb-0">
+                  <a href="0_list-left-sidebar.html">플라잉요가</a>
+                </h4>
+              </div>
+            </div>
+          </div> 
+          <div class="card mb-0 hover-y">
+            <a href="0_list-left-sidebar.html" class="card-image">
+              <img
+                src="/user/v1/template/qwer/assert/images/climing....jpg"
+                class="card-img-top"
+                alt="card image"
+              />
+            </a>
+            <div class="card-body position-relative">
+              <div class="d-flex align-items-center mb-1">
+                <h4 class="card-title mb-0">
+                  <a href="0_list-left-sidebar.html">클라이밍</a>
+                </h4>
+              </div>
+            </div>
+            <!-- end card-body -->
+          </div>
+          <!-- end card -->
+        </div>
+        <!-- end card-carousel -->
+      </div>
+      <!-- end container -->
+    </section>
+    <section class="footer-area bg-gray padding-top-130px pattern-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6" style="width: 100px;"></div>
+          <div class="col-lg-3 col-md-6" >
+            <div class="footer-item">
+              <a href="0_index.html" class="footer-logo mb-4 d-inline-block"
+                ><img src="/user/v1/template/qwer/assert/images/logo2.png" alt="logo"
+              /></a>
+              <ul class="info-list">
+                <li>
+                  <span class="fal fa-home icon me-2"></span> 서울 강남구 태해란로 
+                </li>
+                <li>
+                  <span class="fal fa-headphones icon me-2"></span>
+                  <a href="#">02-382-4335</a>
+                </li>
+                <li>
+                  <span class="fal fa-envelope icon me-2"></span>
+                  <a href="#">dirto@gmail.com</a>
+                </li>
+                <li>
+                  <span class="fal fa"></span>
+                  <a href="#"></a>
+                </li>
+              </ul>
+              <p></p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- end col-lg-3 -->
+           <div class="col-lg-3 col-md-6" style="width: 120px;" > 
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">모든 카테고리</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="#">필라테스</a></li>
+                <li><a href="#">요가</a></li>
+                <li><a href="#">헬스</a></li>
+                <li><a href="#">플라잉요가</a></li>
+                <li><a href="#">클라이밍</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">바로가기</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="0_sign-up.html">가입하기</a></li>
+                <li><a href="/usr/v1/infra/user/userlogin">로그인</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+        <hr class="border-top-gray" />
+        <div
+          class="copy-right d-flex flex-wrap align-items-center justify-content-between pb-4"
+        >
+          <p class="copy__desc py-2">
+            &copy; Copyright Dirto <span id="copyright-year"></span>. Made with
+            <span class="fas fa-heart bounce-anim"></span> by
+            <a href="https://techydevs.com">TechyDevs</a>
+          </p>
+        </div>
+        <!-- end copy-right -->
+      </div>
+      <!-- end container -->
+    </section>
+    <div id="back-to-top">
+      <i class="far fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- Template JS Files -->
+    <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/jquery.fancybox.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/animated-headline.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/owl.carousel.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/waypoints.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/jquery.counterup.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/rating-script.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/jquery.lazy.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/main.js"></script>
+  </body>
+</html>

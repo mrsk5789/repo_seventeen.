@@ -1,0 +1,188 @@
+2024-10-14T14:00:07.869 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 3 msec} 
+2024-10-14T14:08:47.326 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+ {executed in 11 msec} 
+2024-10-14T14:08:47.331 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 1 msec} 
+2024-10-14T14:10:49.725 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+ {executed in 2 msec} 
+2024-10-14T14:10:49.728 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 1 msec} 
+2024-10-14T14:13:10.605 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+ {executed in 1 msec} 
+2024-10-14T14:13:10.607 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 1 msec} 
+2024-10-14T14:13:59.034 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+ {executed in 1 msec} 
+2024-10-14T14:13:59.037 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 1 msec} 
+2024-10-14T14:14:39.839 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT COUNT(*)
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+			 AND delny = 1
+ {executed in 1 msec} 
+2024-10-14T14:14:39.843 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. SELECT aa.* FROM (
+	   SELECT
+		a.seq 
+	   ,a.name 
+       ,a.opentime 
+       ,a.closetime 
+       ,a.telNumber 
+       ,a.eadress 
+       ,a.parkingNy 
+       ,a.ptNy 
+       ,a.groupNy 
+       ,a.letter 
+       ,a.regDate 
+       ,a.modDate 
+       ,a.specifics 
+       ,a.adress 
+       ,a.delny 
+       ,a.ceoName
+
+     FROM
+          seventeen.information a
+     WHERE 1=1
+			 AND delny = 1 	
+
+		ORDER BY
+		   a.seq desc
+	   ) aa limit 5 offset 0
+ {executed in 2 msec} 

@@ -16,7 +16,7 @@
 		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
 		<meta property="og:type" content="Website">
 		<meta property="og:site_name" content="Bootstrap Gallery">
-		<link rel="shortcut icon" href="img/favicon.svg" />
+		<link rel="shortcut icon" href="/xdm/v1/template/qwer/assert/css/img/favicon.svg" />
 		<title>Modern Admin Dashboards - Login</title>
 
 		<!-- Common CSS -->
@@ -34,7 +34,7 @@
 		<div class="container">
 			<div class="login-screen row align-items-center">
 				<div class="col-sm-12">
-					<form action="index.html">
+					<form id="form" name="form" action="index.html" class="needs-validation" novalidate>
 						<div class="login-container">
 							<div class="row no-gutters">
 								<div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -44,12 +44,11 @@
 										</a>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
-												<span class="input-group-text" id="username">
+												<span class="input-group-text" id="id">
 													<i class="icon-account_circle"></i>
 												</span>
 											</div>
-											<input type="text" class="form-control" placeholder="Id" aria-label="username"
-												aria-describedby="username">
+											<input type="text" class="form-control" placeholder="Id" aria-label="username" id="id" name="id" aria-describedby="username" required>
 										</div>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
@@ -57,12 +56,11 @@
 													<i class="icon-verified_user"></i>
 												</span>
 											</div>
-											<input type="password" class="form-control" placeholder="Password" aria-label="Password"
-												aria-describedby="Password">
+											<input type="password" class="form-control" placeholder="Password" aria-label="Password" id="password" name="password" aria-describedby="Password" required>
 										</div>
 										<div class="actions clearfix">
 											<a href="forgot-pwd.html">비밀번호를 잊으셨나요?</a>
-											<button type="submit" class="btn btn-primary">로그인</button>
+											<button type="button" id="btnsubmit" class="btn btn-primary">로그인</button>
 										</div>
 										<div class="or"></div>
 										<div class="mt-4">
@@ -82,5 +80,29 @@
 			</div>
 		</footer>
 	</body>
+	<script>
+		document.getElementById("btnsubmit").onclick=function(){
+		$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					/* ,dataType:"json" */
+					,url: "/xdm/v1/infra/member/signXdmForm"
+					/* ,data : $("#formLogin").serialize() */
+					,data : { "id" : $("#id").val(), "password" : $("#password").val()}
+					,success: function(response) {
+						if(response.rt == "success") {
+							alert(response.rt);
+								location.href = "/xdm/v1/infra/member/memberXdmList";
+							} else {
+								alert("fail");
+							}
+						
+					    	}
+				      });
+		         }
+				
+	</script>
+	<script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
 
 </html>

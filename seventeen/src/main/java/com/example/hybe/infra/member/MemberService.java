@@ -44,5 +44,8 @@ public class MemberService {
 	public int selectOneCount(MemberVo membervo) { 
     	return memberDao.selectOneCount(membervo); 
     }
+	public MemberDto selectOneLogin(MemberDto memberDto) {
+    	return memberDao.selectOneLogin(memberDto); 
+    }
 
 }

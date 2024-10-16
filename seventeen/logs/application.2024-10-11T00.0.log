@@ -1,0 +1,122 @@
+2024-10-11T00:37:31.777 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 9 msec} 
+2024-10-11T00:37:45.465 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = 'XPTMXM'
+ {executed in 1 msec} 
+2024-10-11T00:37:50.033 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = 'XPTMXM'
+ {executed in 1 msec} 
+2024-10-11T00:38:21.230 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 1 msec} 
+2024-10-11T00:42:56.528 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 5 msec} 
+2024-10-11T00:43:04.266 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 0 msec} 
+2024-10-11T00:45:08.553 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 1 msec} 
+2024-10-11T00:45:16.163 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = '테스트'
+	   AND a.password = '테스트'
+ {executed in 0 msec} 
+2024-10-11T00:46:26.875 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 1 msec} 
+2024-10-11T00:46:37.737 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	  	 a.id
+	  	,a.password
+	  FROM
+		seventeen.member a
+	 WHERE
+	   1=1
+	   AND a.id = NULL
+	   AND a.password = NULL
+ {executed in 3 msec} 
+2024-10-11T00:47:29.238 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+151. SELECT
+	   a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 38 msec} 
+2024-10-11T00:50:30.742 [RMI TCP Connection(301)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-10-11T00:50:30.746 [RMI TCP Connection(301)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-11T00:50:30.943 [RMI TCP Connection(301)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-7 - Shutdown initiated... 
+2024-10-11T00:50:30.948 [RMI TCP Connection(301)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-7 - Shutdown completed. 

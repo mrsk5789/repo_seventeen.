@@ -5,12 +5,10 @@ import java.util.Date;
 
 public class InformationDto {
 	
-	private Integer seq;
+	private String seq;
 	private Integer specifics;
 	private Integer ptNy;
 	private Integer groupNy;
-	private Integer UseNy;
-	private Integer orders;
 	private Integer delny;
 	private String name;
 	private String ceoName;
@@ -23,12 +21,10 @@ public class InformationDto {
 	private String letter;
 	private Date regDate;
 	private Date modDate;
-	
-	
-	public Integer getSeq() {
+	public String getSeq() {
 		return seq;
 	}
-	public void setSeq(Integer seq) {
+	public void setSeq(String seq) {
 		this.seq = seq;
 	}
 	public Integer getSpecifics() {
@@ -48,18 +44,6 @@ public class InformationDto {
 	}
 	public void setGroupNy(Integer groupNy) {
 		this.groupNy = groupNy;
-	}
-	public Integer getUseNy() {
-		return UseNy;
-	}
-	public void setUseNy(Integer useNy) {
-		UseNy = useNy;
-	}
-	public Integer getOrders() {
-		return orders;
-	}
-	public void setOrders(Integer orders) {
-		this.orders = orders;
 	}
 	public Integer getDelny() {
 		return delny;
@@ -133,6 +117,7 @@ public class InformationDto {
 	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
+	
 	
 	
 }
