@@ -444,7 +444,7 @@
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ifcgName">코드이름</label>
+													<label for="ifcgName">코드그룹 이름</label>
 													<input class="form-control form-control-lg" name="ifcgName" type="text" id="ifcgName" th:value="${item?.ifcgName}"placeholder="한글,영대소문자, 숫자">
 												</div>
 											</div>
@@ -496,13 +496,13 @@
 										   <div class="col-sm-4 col-12">
 											    <div class="form-group">
 												    <label for="ifcgRegDate">등록날짜</label>
-											        <input class="form-control form-control-lg" id="ifcgRegDate" name="ifcgRegDate" type="datetime" th:value="${ #dates.format(item.ifcgRegDate, 'yyyy-MM-dd HH:mm:ss')}"disabled>
+											        <input class="form-control form-control-lg" id="ifcgRegDate" name="ifcgRegDate" type="datetime" th:value="${ #dates.format(item?.ifcgRegDate, 'yyyy-MM-dd HH:mm:ss')}"disabled>
 											    </div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
 													<label for="ifcgRenDate">수정날짜</label>
-													<input class="form-control form-control-lg" id="ifcgRenDate" name="ifcgRenDate" type="datetime" th:value="${ #dates.format(item.ifcgRenDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
+													<input class="form-control form-control-lg" id="ifcgRenDate" name="ifcgRenDate" type="datetime" th:value="${ #dates.format(item?.ifcgRenDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
 												</div>
 							   				</div>
 										</div>

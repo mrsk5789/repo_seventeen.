@@ -16,7 +16,7 @@ public class CodeDto {
 	private Date ifcdmodDate;
 	private String ifcgSeq;
 	private String ifcgName;
-	private Integer codegroup_seq;
+	private String codegroup_seq;
 //	for cache
 	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
 	
@@ -26,10 +26,10 @@ public class CodeDto {
 	public static void setCachedCodeArrayList(List<CodeDto> cachedCodeArrayList) {
 		CodeDto.cachedCodeArrayList = cachedCodeArrayList;
 	}
-	public Integer getCodegroup_seq() {
+	public String getCodegroup_seq() {
 		return codegroup_seq;
 	}
-	public void setCodegroup_seq(Integer codegroup_seq) {
+	public void setCodegroup_seq(String codegroup_seq) {
 		this.codegroup_seq = codegroup_seq;
 	}
 	public String getIfcgSeq() {

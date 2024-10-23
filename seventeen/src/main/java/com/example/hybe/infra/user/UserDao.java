@@ -7,10 +7,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 	
-	public List<UserDto>selectList();
+	public List<UserDto>selectList(UserVo uservo);
 
 	public UserDto SelectOneLogin(UserDto userDto);
 	
 	public UserDto selectOne(UserDto userDto);
+	
+	public int selectOneCount(UserVo uservo);
 
 }

@@ -89,7 +89,7 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="blog-right-sidebar.html">Blog</a>
+                  <a href="blog-right-sidebar.html"></a>
                 </li>
               </ul>
             </nav>
@@ -160,7 +160,7 @@
             </ul>
           </li>
           <li>
-            <a href="blog-right-sidebar.html">blog</a>
+            <a href="blog-right-sidebar.html"></a>
           </li>
         </ul>
         <div class="mt-4 text-center">
@@ -174,9 +174,10 @@
       <div class="overlay opacity-8"></div>
       <!-- end overlay -->
       <div class="container">
-          <h2 class="sec__title text-white mb-2" type="text" id="name" name="name" th:value="${item?.name}"></h2>
+		<form name="form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">
+          <h2 class="sec__title text-white mb-2" id="name" name="name" th:value="${item?.name}" readonly>ffghhjhjj</h2>
           <p class="sec__desc text-white">
-            <i class="fal fa-map-marker-alt me-1"></i> 
+          <i class="fal fa-map-marker-alt me-1">qqqqq</i> 
           </p>
           <ul class="listing-info my-3">
             <li>
@@ -205,6 +206,7 @@
             </div>
         </div>
         <!-- end breadcrumb-content -->
+		</form>
       </div>
     </section>
     <!-- end breadcrumb-area -->
@@ -278,9 +280,7 @@
               </div>
               <!-- end listing-single-panel -->
               <div class="listing-single-panel mb-5">
-                <h4 class="font-size-20 font-weight-semi-bold mb-3">
-                  찾아오시는 길
-                </h4>
+                <h4 class="font-size-20 font-weight-semi-bold mb-3">찾아오시는 길</h4>
                 <div
                   id="map-single"
                   data-latitude="40.728157"
@@ -343,9 +343,7 @@
                           <div class="star-rating" data-rating="4"></div>
                         </div>
                         <p class="comment-desc mt-2">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout.
+                          It is a long established 
                         </p>
                         <div class="review-photos d-flex flex-wrap align-items-center mt-3">
                           <a
@@ -357,18 +355,6 @@
                               class="lazy"
                               src="/user/v1/template/qwer/assert/images/img-loading.jpg"
                               data-src="/user/v1/template/qwer/assert/images/img1.jpg"
-                              alt="review image"
-                            />
-                          </a>
-                          <a
-                            href="/user/v1/template/qwer/assert/images/img2.jpg"
-                            class="d-inline-block"
-                            data-fancybox="review-gallery"
-                          >
-                            <img
-                              class="lazy"
-                              src="/user/v1/template/qwer/assert/images/img-loading.jpg"
-                              data-src="/user/v1/template/qwer/assert/images/img2.jpg"
                               alt="review image"
                             />
                           </a>
@@ -405,75 +391,8 @@
                         <h4 class="comment-title">Kamran Adi</h4>
                         <span class="comment-meta">Business owner</span>
                         <p class="comment-desc mt-2">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of 
+                          It is a long established fact that 
                         </p>
-                      </div>
-                      <!-- end comment-body -->
-                    </div>
-                    <!-- end comment -->
-                    <div class="comment media mb-5">
-                      <a
-                        href="0_user-profile.html"
-                        class="user-avatar flex-shrink-0 d-block me-3"
-                      >
-                        <img src="/user/v1/template/qwer/assert/images/small-team1.jpg" alt="author-img" />
-                      </a>
-                      <div class="comment-body media-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="pe-2">
-                            <h4 class="comment-title">
-                              <a href="0_user-profile.html">Adam Smith</a>
-                            </h4>
-                            <span class="comment-meta">San Francisco, CA</span>
-                          </div>
-                          <div class="star-rating" data-rating="4"></div>
-                        </div>
-                        <p class="comment-desc mt-2">
-                          It is a long established fact that a reader will be
-                          distracted by the readable
-                        </p>
-                        <div
-                          class="review-photos d-flex flex-wrap align-items-center mt-3"
-                        >
-                          <a
-                            href="/user/v1/template/qwer/assert/images/img3.jpg"
-                            class="d-inline-block"
-                            data-fancybox="review-gallery-two"
-                          >
-                            <img
-                              class="lazy"
-                              src="/user/v1/template/qwer/assert/images/img-loading.jpg"
-                              data-src="/user/v1/template/qwer/assert/images/img3.jpg"
-                              alt="review image"
-                            />
-                          </a>
-                        </div>
-                        <!-- end review-photos -->
-                        <div
-                          class="comment-actions d-flex align-items-center justify-content-between mt-3"
-                        >
-                          <a class="btn-link" href="#">
-                            <i class="fas fa-reply me-1"></i> Reply
-                          </a>
-                          <div class="feedback-box">
-                            <button
-                              type="button"
-                              class="theme-btn theme-btn-sm"
-                            >
-                              <i class="fal fa-thumbs-up me-1"></i> Helpful
-                            </button>
-                            <button
-                              type="button"
-                              class="theme-btn theme-btn-sm"
-                            >
-                              <i class="fal fa-smile me-1"></i> Funny
-                            </button>
-                          </div>
-                        </div>
-                        <!-- end comment-actions -->
                       </div>
                       <!-- end comment-body -->
                     </div>

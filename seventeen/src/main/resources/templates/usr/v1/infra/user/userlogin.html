@@ -180,7 +180,7 @@
     <section class="contact-area padding-top-60px padding-bottom-90px">
       <div class="container">
         <div class="col-lg-7 mx-auto">
-          <form action="#" class="card needs-validation" id="form" name="form" novalidate>
+          <form action="#" class="needs-validation" id="form" name="form" novalidate>
             <div class="card-body">
               <div class="text-center">
                 <h4 class="font-size-28 font-weight-semi-bold mb-1">
@@ -214,6 +214,7 @@
                   name="id" id="id"
                   placeholder="Username, or email" required
                 />
+				<div class="invalid-feedback">아이디 입력해주세요. </div>
               </div>
               <!-- end form-group -->
               <div class="form-group">
@@ -235,6 +236,7 @@
                   </a>
                 </div>
               </div>
+			  <div class="invalid-feedback">비밀번호를 입력해주세요. </div>
               <!-- end form-group -->
               <div
                 class="form-group d-flex align-items-center justify-content-between"
@@ -252,7 +254,7 @@
                 <a href="recover.html" class="btn-link font-weight-semi-bold mb-1">비밀번호를 잃어버리셨나요?</a>
               </div>
               <!-- end form-group -->
-              <button class="theme-btn border-0" type="button" id="btnsubmit">
+              <button class="theme-btn border-0" type="submit" id="btnSubmit" action="/usr/v1/infra/user/userrForm">
                 로그인
               </button>
               <p class="mt-3 font-weight-semi-bold mb-1">
@@ -371,6 +373,79 @@
 		    });
 		}
     </script>
+	<script type="text/javascript">
+				document.getElementById("btnSubmit").onclick = function (){
+				//ID
+			    var id = document.getElementById("id");
+			    var idValue = document.getElementById("id").value.trim();
+				var idRegExp = /^[가-힣A-Za-z0-9]+$/;
+				var idFeedback=document.getElementById("invalid-feedback");
+				var idRegExpFeedback=document.getElementById("idRegExpFeedback");
+				
+				id.classList.remove('is-vaild','is-invalid');
+				idFeedback.style.display='none';
+			    idRegExpFeedback.style.display='none';
+				
+			    if (idValue == "" || idValue == null) {
+					idFeedback.style.display='block';
+					id.classList.add('is-invaild');
+					id.focus();
+					return false;
+			    } else {
+				}
+
+				if(!idRegExp.test(idValue)){
+					idRegExpFeedback.style.display='block';
+					id.classList.add('is-invaild');
+					id.focus();
+					return false;
+				} else {
+					id.classList.add('is-vaild');
+				}
+				//password
+			    var password = document.getElementById("password");
+			    var passwordValue = document.getElementById("password").value.trim();
+				var passwordRegExp = /^[가-힣A-Za-z0-9]+$/;
+				var passwordFeedback=document.getElementById("invalid-feedback");
+				var passwordRegExpFeedback=document.getElementById("idRegExpFeedback");
+				
+				password.classList.remove('is-vaild','is-invalid');
+				passwordFeedback.style.display='none';
+			    passwordRegExpFeedback.style.display='none';
+				
+			    if (passwordValue == "" || passwordValue == null) {
+					passwordFeedback.style.display='block';
+					password.classList.add('is-invaild');
+					password.focus();
+					return false;
+			    } else {
+				}
+
+				if(!passwordRegExp.test(passwordValue)){
+					passwordRegExpFeedback.style.display='block';
+					password.classList.add('is-invaild');
+					password.focus();
+					return false;
+				} else {
+					password.classList.add('is-vaild');
+				}
+				form.action = "/usr/v1/infra/user/userrForm";
+				form.submit();
+			}
+			//needsvalid
+			var needsValidation = document.querySelectorAll('.needs-validation')
+			Array.prototype.slice.call(needsValidation)
+			  .forEach(function (form) {
+			    form.addEventListener('submit', function (event) {
+			      if (!form.checkValidity()) {
+			        event.preventDefault()
+			        event.stopPropagation()
+			      }
+			      form.classList.add('was-validated')
+			    }, false)
+			})
+				
+			</script>
     <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>

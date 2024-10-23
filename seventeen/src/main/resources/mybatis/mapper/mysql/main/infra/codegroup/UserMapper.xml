@@ -8,14 +8,27 @@
 		type="com.example.hybe.infra.user.UserDto"></resultMap>
 
 	<select id="selectList" resultMap="resultMapObj">
-	 SELECT
+	 SELECT aa.* FROM (
+	   SELECT
 	   a.seq 
 	   ,a.name
 	   ,a.adress
 	   ,a.telNumber
-	FROM
-		seventeen.information a
-	</select>
+	 <include refid="selectCommon"/>
+			ORDER BY
+			 a.seq desc
+        ) aa limit #{rowNumToShow} offset #{startRnumForMysql}  
+	 </select>  
+	
+	<sql id="selectCommon">
+        FROM 
+			seventeen.information a
+		WHERE 1=1
+		<choose>
+			    <when test="shOption==1">AND seq=#{shValue}</when>
+			</choose>	
+		</sql>	
+	   
 	
 	<select id="SelectOneLogin" resultMap="resultMapObj">
 	  SELECT
@@ -40,4 +53,9 @@
 	  WHERE 1=1
 			AND	a.seq = #{seq}
 	  </select>
+	  <select id="selectOneCount">
+	  SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
+	  
 </mapper>

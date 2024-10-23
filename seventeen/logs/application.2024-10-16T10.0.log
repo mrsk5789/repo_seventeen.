@@ -1,0 +1,451 @@
+2024-10-16T10:04:36.979 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 144860 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-16T10:04:36.981 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-16T10:04:37.261 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-16T10:04:37.265 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:04:37.266 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-16T10:04:37.266 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-16T10:04:37.289 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-16T10:04:37.289 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 304 ms 
+2024-10-16T10:04:37.529 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory' 
+2024-10-16T10:04:37.530 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-10-16T10:04:37.539 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-10-16T10:04:37.543 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupController': Unsatisfied dependency expressed through field 'codegroupService': Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.example.hybe.SeventeenApplication.main(SeventeenApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'codeGroupService': Unsatisfied dependency expressed through field 'codeGroupDao': Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'codeGroupDao' defined in file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\com\example\hybe\infra\codegroup\CodeGroupDao.class]: Cannot resolve reference to bean 'sqlSessionFactoryMysqlMain' while setting bean property 'sqlSessionFactory'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 39 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryMysqlMain' defined in class path resource [com/example/hybe/common/config/DbconfigMysqlMain.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\mybatis\mapper\mysql\main\infra\codegroup\ClassesMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 52 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\mybatis\mapper\mysql\main\infra\codegroup\ClassesMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 62 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\mybatis\mapper\mysql\main\infra\codegroup\ClassesMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:700)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:577)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:720)
+	at com.example.hybe.common.config.DbconfigMysqlMain.sqlSessionFactory(DbconfigMysqlMain.java:43)
+	at com.example.hybe.common.config.DbconfigMysqlMain$$SpringCGLIB$$0.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.example.hybe.common.config.DbconfigMysqlMain$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.example.hybe.common.config.DbconfigMysqlMain$$SpringCGLIB$$0.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main\mybatis\mapper\mysql\main\infra\codegroup\ClassesMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.hybe.infra.classes.ClassesDto'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.hybe.infra.classes.ClassesDto
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:127)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:698)
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.hybe.infra.classes.ClassesDto'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.hybe.infra.classes.ClassesDto
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:269)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:261)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:253)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.hybe.infra.classes.ClassesDto'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.hybe.infra.classes.ClassesDto
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.example.hybe.infra.classes.ClassesDto
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 84 common frames omitted
+2024-10-16T10:05:33.406 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 144860 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-16T10:05:33.407 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-16T10:05:33.576 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-16T10:05:33.577 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:05:33.577 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-16T10:05:33.577 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-16T10:05:33.590 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-16T10:05:33.590 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 181 ms 
+2024-10-16T10:05:33.647 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-18 - Starting... 
+2024-10-16T10:05:33.681 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-18 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@225457be 
+2024-10-16T10:05:33.682 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-18 - Start completed. 
+2024-10-16T10:05:33.718 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 34 msec} 
+2024-10-16T10:05:33.826 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-16T10:05:33.834 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:05:33.840 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-16T10:05:33.845 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.46 seconds (process running for 89370.082) 
+2024-10-16T10:05:33.847 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-10-16T10:05:59.396 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-16T10:05:59.396 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-16T10:05:59.397 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-10-16T10:05:59.407 [http-nio-8090-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = NULL
+ {executed in 7 msec} 
+2024-10-16T10:06:17.665 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = NULL
+ {executed in 1 msec} 
+2024-10-16T10:07:22.479 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 2 msec} 
+2024-10-16T10:07:27.106 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+ {executed in 5 msec} 
+2024-10-16T10:08:27.615 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+ {executed in 2 msec} 
+2024-10-16T10:09:44.856 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-10-16T10:09:44.858 [Thread-71] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:09:44.970 [Thread-71] INFO c.z.h.HikariDataSource - HikariPool-18 - Shutdown initiated... 
+2024-10-16T10:09:44.976 [Thread-71] INFO c.z.h.HikariDataSource - HikariPool-18 - Shutdown completed. 
+2024-10-16T10:09:45.046 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 144860 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-16T10:09:45.046 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-16T10:09:45.334 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-16T10:09:45.335 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:09:45.335 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-16T10:09:45.335 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-16T10:09:45.358 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-16T10:09:45.358 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 310 ms 
+2024-10-16T10:09:45.653 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-19 - Starting... 
+2024-10-16T10:09:45.671 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-19 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3d7ba1a3 
+2024-10-16T10:09:45.671 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-19 - Start completed. 
+2024-10-16T10:09:45.675 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 4 msec} 
+2024-10-16T10:09:45.862 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-16T10:09:45.875 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-16T10:09:45.878 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-16T10:09:45.896 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.869 seconds (process running for 89622.122) 
+2024-10-16T10:09:45.899 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-10-16T10:10:13.333 [http-nio-8090-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-16T10:10:13.333 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-16T10:10:13.334 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-10-16T10:10:16.019 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 3 msec} 
+2024-10-16T10:10:19.177 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:11:19.098 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 0 msec} 
+2024-10-16T10:11:22.212 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 4 msec} 
+2024-10-16T10:13:02.423 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 1 msec} 
+2024-10-16T10:13:05.415 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 0 msec} 
+2024-10-16T10:18:43.273 [http-nio-8090-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:18:48.142 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 1 msec} 
+2024-10-16T10:18:51.160 [http-nio-8090-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:29:31.698 [http-nio-8090-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 2 msec} 
+2024-10-16T10:29:34.781 [http-nio-8090-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:33:39.658 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 0 msec} 
+2024-10-16T10:33:42.768 [http-nio-8090-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:34:15.158 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 1 msec} 
+2024-10-16T10:34:18.271 [http-nio-8090-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 2 msec} 
+2024-10-16T10:35:06.905 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	   a.seq 
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	FROM
+		seventeen.information a
+ {executed in 1 msec} 
+2024-10-16T10:35:10.037 [http-nio-8090-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+361. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 
+2024-10-16T10:47:00.735 [http-nio-8090-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+371. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 10 msec} 
+2024-10-16T10:49:31.962 [http-nio-8090-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+371. SELECT
+	  	a.seq
+	   ,a.name
+	   ,a.adress
+	   ,a.telNumber
+	  FROM
+		seventeen.information a
+	  WHERE 1=1
+			AND	a.seq = '1'
+			AND	a.name = NULL
+ {executed in 1 msec} 

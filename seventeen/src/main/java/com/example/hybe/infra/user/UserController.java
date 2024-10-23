@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.hybe.common.util.UtilDateTime;
+import com.example.hybe.infra.codegroup.CodeGroupVo;
 import com.example.hybe.infra.member.MemberDto;
 
 
@@ -26,10 +29,16 @@ public class UserController {
     }
 	
 	@RequestMapping(value="/usr/v1/infra/user/userside")
-	public String userside(Model model) {
+	public String userside(@ModelAttribute("vo")UserVo uservo,Model model) {
+		uservo.setParamsPaging(userService.selectOneCount(uservo));
+		System.out.println("StartRnumForMysql : "+uservo.getStartRnumForMysql());
+		System.out.println("RowNumToShow : "+uservo.getRowNumToShow());
 		//List<UserDto> users=userService.selectList();
-		model.addAttribute("list", userService.selectList());
 		
+		if (uservo.getTotalRows() > 0) {
+			model.addAttribute("list", userService.selectList(uservo));
+			//model.addAttribute("vo", uservo);
+		}
 	    return "/usr/v1/infra/user/userside";
     }
 	//login
@@ -47,9 +56,7 @@ public class UserController {
 
 			if (rtUser != null) {
 				returnMap.put("rt", "success");
-				
 			} else {
-					
 				returnMap.put("rt", "fail");
 			}
 		      return returnMap;
@@ -72,7 +79,15 @@ public class UserController {
 	@RequestMapping(value="/usr/v1/infra/user/usersideDetail")
 	public String usersideDetail(UserDto userDto, Model model) {
 		model.addAttribute("item", userService.selectOne(userDto));
+		
+		
 		System.out.println("dd ");
 	    return "/usr/v1/infra/user/usersideDetail";
     }
-}
+	
+	@RequestMapping(value="/usr/v1/infra/user/addcenter")
+	public String addcenter() {
+	   return "/usr/v1/infra/user/addcenter";
+    }
+	
+}	

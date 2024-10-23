@@ -1,0 +1,141 @@
+2024-10-22T12:03:44.440 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 15972 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-22T12:03:44.442 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-22T12:03:44.510 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-10-22T12:03:44.510 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-10-22T12:03:46.070 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-22T12:03:46.083 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:03:46.091 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-22T12:03:46.091 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-22T12:03:46.167 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-22T12:03:46.169 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1657 ms 
+2024-10-22T12:03:46.454 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-10-22T12:03:46.819 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@41b59aa6 
+2024-10-22T12:03:46.822 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-10-22T12:03:46.886 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 42 msec} 
+2024-10-22T12:03:47.527 [restartedMain] WARN o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server 
+2024-10-22T12:03:47.542 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:03:47.562 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-22T12:03:47.571 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 3.622 seconds (process running for 4.521) 
+2024-10-22T12:05:24.883 [http-nio-8090-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-22T12:05:24.884 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-22T12:05:24.887 [http-nio-8090-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-10-22T12:07:19.527 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 29 class path changes (0 additions, 0 deletions, 29 modifications) 
+2024-10-22T12:07:19.545 [Thread-1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:21.252 [Thread-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-10-22T12:07:21.265 [Thread-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-10-22T12:07:21.396 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 15972 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-22T12:07:21.398 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-22T12:07:21.690 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-22T12:07:21.691 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:21.692 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-22T12:07:21.692 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-22T12:07:21.710 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-22T12:07:21.710 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 308 ms 
+2024-10-22T12:07:21.786 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-10-22T12:07:21.801 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2d372486 
+2024-10-22T12:07:21.802 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-10-22T12:07:21.805 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 3 msec} 
+2024-10-22T12:07:21.967 [restartedMain] WARN o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server 
+2024-10-22T12:07:21.992 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:21.997 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-22T12:07:22.010 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 0.683 seconds (process running for 218.961) 
+2024-10-22T12:07:22.017 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-10-22T12:07:27.616 [RMI TCP Connection(15)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-10-22T12:07:27.618 [RMI TCP Connection(15)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:28.018 [RMI TCP Connection(15)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-10-22T12:07:28.023 [RMI TCP Connection(15)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-10-22T12:07:38.466 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 42760 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-22T12:07:38.472 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-22T12:07:38.533 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-10-22T12:07:38.533 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-10-22T12:07:39.724 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-22T12:07:39.741 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:39.746 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-22T12:07:39.747 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-22T12:07:39.819 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-22T12:07:39.819 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1284 ms 
+2024-10-22T12:07:40.096 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-10-22T12:07:40.431 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@208686c1 
+2024-10-22T12:07:40.435 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-10-22T12:07:40.458 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 7 msec} 
+2024-10-22T12:07:40.870 [restartedMain] WARN o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3ef6a3e0-9307-45db-8b32-5a314afcdb66
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+ 
+2024-10-22T12:07:40.925 [restartedMain] INFO o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager 
+2024-10-22T12:07:41.167 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-22T12:07:41.185 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:07:41.208 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-22T12:07:41.219 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 3.096 seconds (process running for 4.112) 
+2024-10-22T12:07:46.039 [http-nio-8090-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-10-22T12:07:46.040 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-10-22T12:07:46.041 [http-nio-8090-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-10-22T12:07:46.179 [http-nio-8090-exec-2] WARN o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [106] milliseconds. 
+2024-10-22T12:13:08.931 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-10-22T12:13:08.935 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:13:09.369 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-10-22T12:13:09.387 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-10-22T12:13:55.264 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 25676 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-22T12:13:55.267 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-22T12:13:55.409 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-10-22T12:13:55.410 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-10-22T12:13:58.017 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-22T12:13:58.034 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:13:58.040 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-22T12:13:58.041 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-22T12:13:58.136 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-22T12:13:58.138 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2728 ms 
+2024-10-22T12:13:58.562 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-10-22T12:13:59.031 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@116833ca 
+2024-10-22T12:13:59.034 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-10-22T12:13:59.078 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 14 msec} 
+2024-10-22T12:13:59.724 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-10-22T12:13:59.739 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:13:59.760 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-22T12:13:59.768 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 5.208 seconds (process running for 6.595) 
+2024-10-22T12:25:24.842 [RMI TCP Connection(21)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-10-22T12:25:24.846 [RMI TCP Connection(21)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-22T12:25:25.207 [RMI TCP Connection(21)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-10-22T12:25:25.217 [RMI TCP Connection(21)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 

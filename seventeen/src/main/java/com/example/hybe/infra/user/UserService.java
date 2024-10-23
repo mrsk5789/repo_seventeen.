@@ -12,9 +12,9 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 	
-	public List<UserDto>selectList(){
-	//List<UserDto>users =userDao.selectList();
-    return userDao.selectList();
+	public List<UserDto> selectList(UserVo uservo){
+	//List<UserDto>users =userDao.selectList(uservo);
+    return userDao.selectList(uservo);
 	}
 
 	public UserDto SelectOneLogin(UserDto userDto) {
@@ -25,5 +25,8 @@ public class UserService {
 	public UserDto selectOne(UserDto userDto) {
 		return userDao.selectOne(userDto);
 	}
-
+	
+	public int selectOneCount(UserVo uservo) {
+		return userDao.selectOneCount(uservo);
+	}
 }

@@ -1,0 +1,31 @@
+2024-10-21T17:51:04.642 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications) 
+2024-10-21T17:51:05.448 [Thread-53] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8090"] 
+2024-10-21T17:51:06.467 [Thread-53] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown initiated... 
+2024-10-21T17:51:06.536 [Thread-53] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown completed. 
+2024-10-21T17:51:08.293 [restartedMain] INFO c.e.h.SeventeenApplication - Starting SeventeenApplication using Java 17.0.11 with PID 358296 (C:\factory\ws_sts4_4240\repo_seventeen\seventeen\bin\main started by User in C:\factory\ws_sts4_4240\repo_seventeen\seventeen) 
+2024-10-21T17:51:08.294 [restartedMain] INFO c.e.h.SeventeenApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-10-21T17:51:09.661 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+2024-10-21T17:51:09.666 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+2024-10-21T17:51:09.667 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-10-21T17:51:09.667 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-10-21T17:51:09.734 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-10-21T17:51:09.737 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1436 ms 
+2024-10-21T17:51:12.068 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-12 - Starting... 
+2024-10-21T17:51:12.092 [restartedMain] INFO c.z.h.p.HikariPool - HikariPool-12 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@b5b9f57 
+2024-10-21T17:51:12.092 [restartedMain] INFO c.z.h.HikariDataSource - HikariPool-12 - Start completed. 
+2024-10-21T17:51:12.127 [restartedMain] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+653. SELECT 
+			ifcdSeq
+			, ifcdName
+			, codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND ifcdDelny = 0
+		    AND ifcdUseNy = 1
+ {executed in 32 msec} 
+2024-10-21T17:51:12.335 [restartedMain] WARN o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server 
+2024-10-21T17:51:12.350 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+2024-10-21T17:51:12.366 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8090 (http) with context path '/' 
+2024-10-21T17:51:12.381 [restartedMain] INFO c.e.h.SeventeenApplication - Started SeventeenApplication in 4.389 seconds (process running for 286077.103) 
+2024-10-21T17:51:12.395 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
