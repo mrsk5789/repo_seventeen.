@@ -3,122 +3,99 @@ package com.example.hybe.infra.member;
 import java.util.Date;
 
 public class MemberDto {
-	private String seq;
-	private String name;
-	private String id;
-	private String password;
-	private Integer gender;
-	private String nickname;
-	private String phonenumber;
-	private String email;
-	private String adress;
-	private String desc;
-	private Date regdate;
-	private Date modDate;
-	private Integer delny;
-//	private Integer SocialLoginCd;
-//	private Integer ResultNy;
-//	private Boolean autoLogin;
+	private String mSeq;
+	private String mName;
+	private String mId;
+	private String mPassword;
+	private Integer mGender;
+	private String mPhone;
+	private String mEmail;
+	private String mAdress;
+	private String mDesc;
+	private String mZipcode;
+	private Date mRegdate;
+	private Date mModDate;
+	private Integer mDelNy;
+	public String getmSeq() {
+		return mSeq;
+	}
+	public void setmSeq(String mSeq) {
+		this.mSeq = mSeq;
+	}
+	public String getmName() {
+		return mName;
+	}
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+	public String getmId() {
+		return mId;
+	}
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+	public String getmPassword() {
+		return mPassword;
+	}
+	public void setmPassword(String mPassword) {
+		this.mPassword = mPassword;
+	}
+	public Integer getmGender() {
+		return mGender;
+	}
+	public void setmGender(Integer mGender) {
+		this.mGender = mGender;
+	}
+	public String getmPhone() {
+		return mPhone;
+	}
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
+	}
+	public String getmEmail() {
+		return mEmail;
+	}
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
+	}
+	public String getmAdress() {
+		return mAdress;
+	}
+	public void setmAdress(String mAdress) {
+		this.mAdress = mAdress;
+	}
+	public String getmDesc() {
+		return mDesc;
+	}
+	public void setmDesc(String mDesc) {
+		this.mDesc = mDesc;
+	}
+	public String getmZipcode() {
+		return mZipcode;
+	}
+	public void setmZipcode(String mZipcode) {
+		this.mZipcode = mZipcode;
+	}
+	public Date getmRegdate() {
+		return mRegdate;
+	}
+	public void setmRegdate(Date mRegdate) {
+		this.mRegdate = mRegdate;
+	}
+	public Date getmModDate() {
+		return mModDate;
+	}
+	public void setmModDate(Date mModDate) {
+		this.mModDate = mModDate;
+	}
+	public Integer getmDelNy() {
+		return mDelNy;
+	}
+	public void setmDelNy(Integer mDelNy) {
+		this.mDelNy = mDelNy;
+	}
 	
-//	----- getter/setter -----
-	
-	
-//	public Boolean getAutoLogin() {
-//		return autoLogin;
-//	}
-//	public void setAutoLogin(Boolean autoLogin) {
-//		this.autoLogin = autoLogin;
-//	}
-//	public Integer getResultNy() {
-//		return ResultNy;
-//	}
-//	public void setResultNy(Integer resultNy) {
-//		ResultNy = resultNy;
-//	}
-	public String getSeq() {
-		return seq;
-	}
-//	public Integer getSocialLoginCd() {
-//		return SocialLoginCd;
-//	}
-//	public void setSocialLoginCd(Integer socialLoginCd) {
-//		SocialLoginCd = socialLoginCd;
-//	}
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Integer getGender() {
-		return gender;
-	}
-	public void setGender(Integer gender) {
-		this.gender = gender;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getAdress() {
-		return adress;
-	}
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
-	public String getDesc() {
-		return desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-	public Date getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
-	public Date getModDate() {
-		return modDate;
-	}
-	public void setModDate(Date modDate) {
-		this.modDate = modDate;
-	}
-	public Integer getDelny() {
-		return delny;
-	}
-	public void setDelny(Integer delny) {
-		this.delny = delny;
-	}
+	//------getter setter-------
 	
 	
 	

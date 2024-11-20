@@ -21,6 +21,5 @@ public interface InformationDao {
 	
 	public int selectOneCount(InformationVo informationvo);
 
-
 }
 

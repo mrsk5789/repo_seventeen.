@@ -1,11 +1,11 @@
 package com.example.hybe.infra.user;
 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.hybe.common.util.UtilDateTime;
-import com.example.hybe.infra.codegroup.CodeGroupVo;
-import com.example.hybe.infra.member.MemberDto;
 
 
 @Controller
@@ -79,8 +77,7 @@ public class UserController {
 	@RequestMapping(value="/usr/v1/infra/user/usersideDetail")
 	public String usersideDetail(UserDto userDto, Model model) {
 		model.addAttribute("item", userService.selectOne(userDto));
-		
-		
+		model.addAttribute("relist", userService.reselectList());
 		System.out.println("dd ");
 	    return "/usr/v1/infra/user/usersideDetail";
     }
@@ -89,5 +86,37 @@ public class UserController {
 	public String addcenter() {
 	   return "/usr/v1/infra/user/addcenter";
     }
-	
+	// review
+	@RequestMapping(value = "/usr/v1/infra/user/userXdmInst")
+	public String userXdmUpdt(UserDto userDto) {
+		userService.insertreview(userDto);
+		System.out.println("userDto");
+		return "redirect:/usr/v1/infra/user/usersideDetail";
+	}
+	@RequestMapping(value="/usr/v1/infra/user/userPrice")
+	public String userPrice(Model model) {
+		model.addAttribute("classlist", userService.classSelectList());
+	   return "/usr/v1/infra/user/userPrice";
+    }
+	@RequestMapping(value="/usr/v1/infra/user/userBook")
+	public String userBook(UserDto userDto, Model model) {
+		model.addAttribute("classitem", userService.classSelectOne(userDto));
+	   return "/usr/v1/infra/user/userBook";
+    }
+	@RequestMapping(value="/usr/v1/infra/user/userBookCon")
+	public String userBookCon() {
+	   return "/usr/v1/infra/user/userBookCon";
+    }
+	//예약창
+	@RequestMapping(value="/usr/v1/infra/user/userReserv")
+	public String userReserva(Model model) {
+		model.addAttribute("teachlist", userService.teachSelect());
+	   return "/usr/v1/infra/user/userReserv";
+    }
+	@RequestMapping(value = "/usr/v1/infra/user/reserveXdmInst")
+	public String reserveXdmInst(UserDto userDto) {
+		userService.insertReserve(userDto);
+		System.out.println("reserve");
+		return "redirect:/usr/v1/infra/user/userProfile";
+	}
 }	

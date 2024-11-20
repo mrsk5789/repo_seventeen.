@@ -499,93 +499,99 @@
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="seq">번호</label>
-													<input type="text" id="seq" name="seq" th:value="${item?.seq}" class="form-control" placeholder="자동생성"disabled >
+													<label for="iSeq">번호</label>
+													<input type="text" id="iSeq" name="iSeq"  class="form-control" placeholder="자동생성"disabled >
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="name">센터명</label>
-													<input class="form-control form-control-lg" name="name" type="text" id="name" th:value="${item?.name}" placeholder="한글, 영대소문자, 숫자" required>
+													<label for="iName">센터명</label>
+													<input class="form-control form-control-lg" name="iName" type="text" id="iName"  placeholder="한글, 영대소문자, 숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ceoName">대표명</label>
-													<input class="form-control form-control-lg" name="ceoName" type="text" id="ceoName" th:value="${item?.ceoName}" placeholder="한글, 영대소문자" required>
+													<label for="iCeoName">대표명</label>
+													<input class="form-control form-control-lg" name="iCeoName" type="text" id="iCeoName"  placeholder="한글, 영대소문자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-												    <label for="telNumber">전화번호</label>
-													<input class="form-control form-control-lg" name="telNumber" type="text" id="telNumber" th:value="${item?.telNumber}" placeholder="숫자" required>
+												    <label for="iTelNumber">전화번호</label>
+													<input class="form-control form-control-lg" name="iTelNumber" type="text" id="iTelNumber" placeholder="숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="parkingNy">주차여부</label>
-													 <select class="form-control form-control-lg" id="parkingNy" name="parkingNy">
-														<option value="1" th:selected="${item?.parkingNy==1}">N</option>
-														<option value="0" th:selected="${item?.parkingNy==0}">Y</option>
+													<label for="iParkingNy">주차여부</label>
+													 <select class="form-control form-control-lg" id="iParkingNy" name="iParkingNy">
+														<option value="1" th:selected="${item?.iParkingNy==1}">N</option>
+														<option value="0" th:selected="${item?.iParkingNy==0}">Y</option>
 													 </select>					
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="disabledInput">순서</label>
-													<input class="form-control form-control-lg" type="text" >
+													<label for="iEmail">Email</label>
+													<input class="form-control form-control-lg" name="iEmail" type="text" id="iEmail" placeholder="영문" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="ptNy">PT</label>
-													  <select class="form-control form-control-lg" id="ptNy" name="ptNy" required>
-														 <option value="1" th:selected="${item?.ptNy==1}">N</option>
-														 <option value="0" th:selected="${item?.ptNy==0}">Y</option>
+													<label for="iPtNy">PT</label>
+													  <select class="form-control form-control-lg" id="iPtNy" name="iPtNy" required>
+														 <option value="1" th:selected="${item?.iPtNy==1}">N</option>
+														 <option value="0" th:selected="${item?.iPtNy==0}">Y</option>
 													  </select>	
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-												  <label for="groupNy">그룹레슨</label>
-												   <select class="form-control form-control-lg" id="groupNy" name="groupNy" required>
-													  <option value="1" th:selected="${item?.groupNy==1}">N</option>
-													  <option value="0" th:selected="${item?.groupNy==0}">Y</option>
+												  <label for="iGroupNy">그룹레슨</label>
+												   <select class="form-control form-control-lg" id="iGroupNy" name="iGroupNy" required>
+													  <option value="1" th:selected="${item?.iGroupNy==1}">N</option>
+													  <option value="0" th:selected="${item?.iGroupNy==0}">Y</option>
 											   	   </select>	
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="adress">주소</label>
-													<input class="form-control form-control-lg" id="adress" name="adress" th:value="${item?.adress}" type="text" style="width: 570px;">
+													<label for="iAdress">주소</label>
+													<input class="form-control form-control-lg" id="iAdress" name="iAdress" type="text" style="width: 570px;">
 												</div>
 											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="opentime">오픈시간</label>
-													<input class="form-control form-control-lg" name="opentime" type="text" id="opentime" th:value="${item?.opentime}" placeholder="숫자" required>
+													<label for="iOpentime">오픈시간</label>
+													<input class="form-control form-control-lg" name="iOpentime" type="text" id="iOpentime" placeholder="숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="closetime">마감시간</label>
-													<input class="form-control form-control-lg" name="closetime" type="text" id="closetime" th:value="${item?.closetime}" placeholder="숫자" required>
+													<label for="iClosetime">마감시간</label>
+													<input class="form-control form-control-lg" name="iClosetime" type="text" id="iClosetime" placeholder="숫자" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="eadress">사이트</label>
-													<input class="form-control form-control-lg" id="eadress" name="eadress" th:value="${item?.eadress}" type="text" style="width: 570px;" required>
+													<label for="iEadress">사이트</label>
+													<input class="form-control form-control-lg" id="iEadress" name="iEadress" type="text" style="width: 570px;" required>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
-											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
+
+											<div class="col-sm-4 col-12">
+												<div class="form-group">
+													<label for="uploadFiles" >file</label>
+													<input type="file" id="uploadFiles" name="uploadFiles" multiple class="form-control"/>
+												</div>
+											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 											<div class="col-sm-4 col-12">
 												<div class="form-group">
-													<label for="letter">설명</label>
-													<textarea class="form-control" rows="2" name="letter" id="letter" type="text" style="width: 570px; height: 80px;" th:value="${item?.letter}"></textarea>
+													<label for="iLetter">설명</label>
+													<textarea class="form-control" rows="2" name="iLetter" id="iLetter" type="text" style="width: 570px; height: 80px;"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>

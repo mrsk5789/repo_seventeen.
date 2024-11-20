@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.user.UserDao">
+	<!--mapper와 연결될 dao // ctrl+shift+c -->
+
+	<resultMap id="resultMapObj" type="com.example.hybe.infra.user.UserDto"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+	 SELECT aa.* FROM (
+	   SELECT
+	   c.iSeq 
+	   ,c.iName
+	   ,c.iAdress
+	   ,c.iTel
+	   ,c.iCeoName
+	   ,c.iEadress
+	 <include refid="selectCommon"/>
+			ORDER BY
+			 c.iSeq desc
+        ) aa limit #{rowNumToShow} offset #{startRnumForMysql}  
+	 </select>  
+	
+	<sql id="selectCommon">
+        FROM 
+			seventeen.information c
+		WHERE 1=1
+		<choose>
+		    <when test="shOption==1">AND iSeq=#{shValue}</when>
+		</choose>	
+	</sql>	
+	   
+	
+	<select id="SelectOneLogin" resultMap="resultMapObj">
+	  SELECT
+	  	 d.mId
+	  	,d.mPassword
+	  FROM
+		seventeen.member d
+	 WHERE
+	   1=1
+	   AND d.mId = #{mId}
+	   AND d.mPassword = #{mPassword}  	
+	</select>
+	
+	 <select id="selectOne" resultMap="resultMapObj">
+	  SELECT
+	  	c.iSeq
+	   ,c.iName
+	   ,c.iAdress
+	   ,c.iTel
+	   ,c.iCeoName
+	   ,c.iEadress
+	  FROM
+		seventeen.information c
+	  WHERE 1=1
+			AND	c.iSeq = #{iSeq}
+	  </select>
+	  
+	  <select id="selectOneCount">
+	  SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
+	  
+	  <insert id="insertreview">
+	  	INSERT INTO review(
+			reRate,
+			reDesc,
+			reRegDate,
+			member_mSeq
+	  	)VALUES(
+			ifNull(#{reRate},0),
+			#{reDesc},
+			now(),
+			#{member_mSeq}
+			)
+	  </insert>
+	  
+	   <select id="reselectList" resultMap="resultMapObj">
+	  SELECT
+	  	r.reSeq
+	   ,r.reDesc
+	   ,r.reRate
+	   ,r.reRegDate
+	  FROM
+		seventeen.review r
+	  WHERE 1=1
+		ORDER BY
+		r.reSeq desc
+	  </select>
+	  <select id="classSelectList" resultMap="resultMapObj">
+	  SELECT
+	  	e.cSeq
+	   ,e.cName
+	   ,e.cDesc
+	   ,e.cPrice
+	  FROM
+		seventeen.class e
+	  WHERE 1=1
+		ORDER BY
+	   e.cSeq desc
+	  </select>
+	  <select id="classSelectOne" resultMap="resultMapObj">
+		  SELECT
+			  	e.cSeq
+			   ,e.cName
+			   ,e.cPrice
+			   ,c.iSeq
+			   ,c.iName
+			   ,c.iAdress
+		  FROM
+				seventeen.class e
+		  LEFT JOIN information c
+				ON e.information_iSeq= c.iSeq
+		  WHERE 1=1
+				AND	e.cSeq = #{cSeq}
+	  </select>
+	   <select id="teachSelect" resultMap="resultMapObj">
+		  SELECT
+			t.tSeq
+			,t.tName
+			,t.tInsta
+		  FROM
+			 seventeen.teacher t
+		  WHERE 1=1
+			 ORDER BY
+		   t.tSeq desc
+	  </select>
+	  
+	  <insert id="insertReserve">
+	  	INSERT INTO reservInform(
+			resDate,
+			resTime,
+			member_mSeq,
+			information_iSeq,
+			class_cSeq
+	  	)VALUES(
+			#{resDate},
+			0,0,0,0,0
+			)
+	  </insert>
+	 
+</mapper>

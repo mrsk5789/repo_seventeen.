@@ -18,7 +18,6 @@ public class UserService {
 	}
 
 	public UserDto SelectOneLogin(UserDto userDto) {
-		
 		return userDao.SelectOneLogin(userDto);	
 	}
 
@@ -28,5 +27,28 @@ public class UserService {
 	
 	public int selectOneCount(UserVo uservo) {
 		return userDao.selectOneCount(uservo);
+	}
+	public int insertreview(UserDto userDto) {
+		return userDao.insertreview(userDto);
+	}
+	public List<UserDto> reselectList(){
+	//List<UserDto>users =userDao.selectList(uservo);
+	    return userDao.reselectList();
+	}
+	
+	public List<UserDto> classSelectList(){
+	    return userDao.classSelectList();
+    }
+	
+	public UserDto classSelectOne(UserDto userDto) {
+		return userDao.classSelectOne(userDto);
+	}
+	
+	public List<UserDto> teachSelect(){
+		return userDao.teachSelect();
+	}
+	
+	public int insertReserve(UserDto userDto) {
+		return userDao.insertReserve(userDto);
 	}
 }

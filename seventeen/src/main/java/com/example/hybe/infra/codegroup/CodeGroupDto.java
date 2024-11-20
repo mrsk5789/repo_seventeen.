@@ -2,6 +2,8 @@ package com.example.hybe.infra.codegroup;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class CodeGroupDto {
 	
 	private String ifcgSeq;
@@ -13,6 +15,9 @@ public class CodeGroupDto {
 	private Date ifcgRegDate;
 	private Date ifcgRenDate;
 	private Integer xcount;
+	
+	private MultipartFile uploadFile;
+	private MultipartFile[] uploadFiles;
 	
 	public Integer getXcount() {
 		return xcount;

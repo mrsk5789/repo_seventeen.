@@ -14,18 +14,13 @@ public class CodeDto {
 	private Integer ifcdDelny;
 	private Date ifcdRegDate;
 	private Date ifcdmodDate;
-	private String ifcgSeq;
+	private String ifcgSeq="1";
 	private String ifcgName;
 	private String codegroup_seq;
 //	for cache
 	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
 	
-	public static List<CodeDto> getCachedCodeArrayList() {
-		return cachedCodeArrayList;
-	}
-	public static void setCachedCodeArrayList(List<CodeDto> cachedCodeArrayList) {
-		CodeDto.cachedCodeArrayList = cachedCodeArrayList;
-	}
+	
 	public String getCodegroup_seq() {
 		return codegroup_seq;
 	}

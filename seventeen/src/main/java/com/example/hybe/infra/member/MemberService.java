@@ -27,17 +27,17 @@ public class MemberService {
 	}
 	
 	public int update(MemberDto memberDto) {
-		System.out.println(memberDto.getSeq());
+		System.out.println(memberDto.getmSeq());
 		return memberDao.update(memberDto);
 	}
 	
 	public int uelete(MemberDto memberDto) {
-		System.out.println(memberDto.getSeq());
+		System.out.println(memberDto.getmSeq());
 		return memberDao.uelete(memberDto);
 	}
 	
 	public int delete(MemberDto memberDto) {
-		System.out.println(memberDto.getSeq());
+		System.out.println(memberDto.getmSeq());
 		return memberDao.delete(memberDto);
 	}
 

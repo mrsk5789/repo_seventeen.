@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dirto - Directory & Listing HTML Template</title>
     <!-- Favicon -->
-    <link rel="icon" href="/user/v1/template/qwer/assert/images/favicon.png" />
+    <link rel="icon" href="images/favicon.png" />
 
     <!-- Google Fonts -->
     <link
@@ -24,11 +24,8 @@
     <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/select2.min.css" />
     <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/style.css" />
-    <style>
-      .card-body{
-        background-color: #F6F6F6;
-      }
-    </style>
+	<!-- 토스연동 스크랩트 파일 참조-->
+	<script src = "https://js.tosspayments.com/v1"></script>
   </head>
   <body>
     <!-- start per-loader -->
@@ -68,9 +65,9 @@
                   ></a>
                   <ul class="dropdown-menu-item">
                     <li><a href="list-with-map.html">list with map</a></li>
-                    <li><a href="grid-with-map.html">grid with map</a></li>
-                    <li><a href="list-left-sidebar.html">left sidebar </a></li>
-                    <li><a href="listing-details.html">listing details</a></li>
+                    <li><a href="listing-list.html">listing list </a></li>
+                    <li><a href="0_list-left-sidebar.html">left sidebar </a></li>
+                    <li><a href="0_listing-details.html">listing details</a></li>
                   </ul>
                 </li>
                 <li>
@@ -79,7 +76,7 @@
                     <li><a href="user-profile.html">user profile</a></li>
                     <li><a href="top-author.html">top authors </a></li>
                     <li><a href="dashboard.html">dashboard</a></li>
-                    <li><a href="booking.html">booking </a></li>
+                    <li><a href="0_booking.html">booking </a></li>
                     <li>
                       <a href="booking-confirmation.html"
                         >booking confirmation
@@ -102,22 +99,13 @@
                 <span class="or-text">&nbsp;&nbsp;</span>
                 <a href="0_sign-up.html">Sign Up</a>
               </div>
-              <div class="side-menu-open ms-2">
-                <i class="fal fa-bars"></i>
-              </div>
-              <!-- end side-menu-open -->
             </div>
-            <!-- end nav-right-content -->
           </div>
-          <!-- end main-header-action-wrap -->
         </div>
-        <!-- end container-fluid -->
       </div>
       <!-- end main-header -->
       <div class="off-canvas">
-        <div
-          class="off-canvas-close icon-element icon-element-sm bg-white shadow-sm"
-        >
+        <div class="off-canvas-close icon-element icon-element-sm bg-white shadow-sm">
           <i class="fal fa-times"></i>
         </div>
         <!-- end off-canvas-close -->
@@ -144,7 +132,7 @@
               <li><a href="list-with-map.html">list with map</a></li>
               <li><a href="listing-list.html">Listing list </a></li>
               <li><a href="list-left-sidebar.html">Left sidebar </a></li>
-              <li><a href="listing-details.html">Listing details</a></li>
+              <li><a href="0_listing-details.html">Listing details</a></li>
             </ul>
           </li>
           <li>
@@ -155,7 +143,7 @@
               <li><a href="0_user-profile.html">user profile</a></li>
               <li><a href="top-author.html">top authors </a></li>
               <li><a href="dashboard.html">dashboard</a></li>
-              <li><a href="booking.html">booking </a></li>
+              <li><a href="0_booking.html">booking </a></li>
               <li>
                 <a href="booking-confirmation.html">booking confirmation </a>
               </li>
@@ -176,107 +164,141 @@
       </div>
       <!-- end off-canvas -->
     </header>
+    <section class="breadcrumb-area bread-bg">
+    </section>
     <!-- end breadcrumb-area -->
-    <section class="contact-area padding-top-60px padding-bottom-90px">
+    <section class="booking-area padding-top-60px padding-bottom-90px">
       <div class="container">
-        <div class="col-lg-7 mx-auto">
-          <form action="#" class="needs-validation" id="form" name="form" novalidate>
-            <div class="card-body">
-              <div class="text-center">
-                <h4 class="font-size-28 font-weight-semi-bold mb-1">
-                  로그인 하세요
-                </h4>
-                <p class="card-text">with your social network</p>
-                <div
-                  class="d-flex flex-wrap align-items-center justify-content-between my-4"
-                >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1"
-                    ><i class="fab fa-google me-2"></i>Google</a
-                  >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1 bg-5"
-                    ><i class="fab fa-facebook-f me-2"></i>Facebook</a
-                  >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1 bg-6"
-                    ><i class="fab fa-twitter me-2"></i>Twitter</a
-                  >
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+				<form name="form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">
+                <h4 class="card-title">수강하실 내역</h4>
+                <hr class="border-top-gray my-3" />
+                <div class="row">
+                  <div class="form-group col-lg-6 pr-lg-0">
+                    <label class="label-text">수강권</label>
+                    <input class="form-control form--control ps-3" id="cName" th:value="${classitem?.cName}" type="text" name="cName" />
+                  </div>
+                  <!-- end form-group -->
+                  <div class="form-group col-lg-6 pr-lg-0">
+                    <label class="label-text">가격</label>
+                    <input class="form-control form--control ps-3" id="cPrice" th:value="${classitem?.cPrice}" />
+                  </div>
+                  <!--<div class="form-group col-lg-6">
+                    <label class="label-text">기간</label>
+                    <input class="form-control form--control ps-3" type="text" name="text" placeholder="번호"/>
+                  </div>-->
                 </div>
+				</form>
               </div>
-              <div class="d-flex align-items-center">
-                <hr class="border-top-gray flex-grow-1" />
-                <span class="mx-1 text-uppercase">or</span>
-                <hr class="border-top-gray flex-grow-1" />
-              </div>
-              <div class="form-group">
-                <label class="label-text">Username, or email</label>
-                <input
-                  class="form-control form--control ps-3"
-                  type="text"
-                  name="mId" id="mId"
-                  placeholder="Username, or email" required
-                />
-				<div class="invalid-feedback">아이디 입력해주세요. </div>
-              </div>
-              <!-- end form-group -->
-              <div class="form-group">
-                <label class="label-text">비밀번호</label>
-                <div class="position-relative">
-                  <input
-                    class="form-control form--control ps-3 password-field"
-                    type="password"
-                    name="mPassword" id="mPassword"
-                    placeholder="비밀번호" required
-                  />
-                  <a
-                    href="javascript:void(0)"
-                    class="position-absolute top-0 right-0 h-100 toggle-password"
-                    title="toggle show/hide password"
-                  >
-                    <i class="far fa-eye eye-on"></i>
-                    <i class="far fa-eye-slash eye-off"></i>
-                  </a>
-                </div>
-              </div>
-			  <div class="invalid-feedback">비밀번호를 입력해주세요. </div>
-              <!-- end form-group -->
-              <div
-                class="form-group d-flex align-items-center justify-content-between"
-              >
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="RememberMe"
-                  />
-                  <label class="custom-control-label" for="RememberMe"
-                    >Remember Me</label
-                  >
-                </div>
-                <a href="recover.html" class="btn-link font-weight-semi-bold mb-1">비밀번호를 잃어버리셨나요?</a>
-              </div>
-              <!-- end form-group -->
-              <button class="theme-btn border-0" type="submit" id="btnSubmit" action="/usr/v1/infra/user/userrForm">
-                로그인
-              </button>
-              <p class="mt-3 font-weight-semi-bold mb-1">
-                아직 회원이 아니신가요?
-                <a href="0_sign-up.html" class="btn-link">가입하기</a>
-              </p>
+              <!-- end card-body -->
             </div>
-          </form>
+            <!-- end card -->
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">결제방식</h4>
+                <hr class="border-top-gray mt-3 mb-4" />
+                <ul class="payment-method">
+                  <!--<li class="active">
+                    <label class="payment-method-label">
+                      <input name="payment_method" type="radio" value="계좌이체" checked />계좌이체</label>
+                    <div class="expanded-payment-method"><p>저희 센터의 계좌로 입금을 해 주실때 회원님의 id를 반드시 입력해 주세요</p></div>
+                  </li>-->
+                  <li>
+					<a class="theme-btn" onclick="pay('카드',jsons.card);">계좌이체</a>
+					<a class="theme-btn" onclick="pay('카드',jsons.card);">카드</a>
+
+                    <!--<label class="payment-method-label">
+                      <input name="payment_method" type="radio" value="카드" />
+                      일반결제
+                      <img
+                        src="/user/v1/template/qwer/assert/images/payment-img.png"
+                        alt="Payment logos"
+                        class="position-absolute top-0 right-0 mt-3 img-fluid"
+                      />
+                    </label>
+                    <div class="expanded-payment-method">
+						<p>신용카드/체크카드</p>	
+                    </div>-->
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card -->
+            <!--<a href="/usr/v1/infra/user/userBookCon" class="theme-btn">결제하기</a> -->
+			<a class="theme-btn" href="/usr/v1/infra/user/userProfile">결제완료</a>
+		  </div>
+          <!-- end col-lg-8 -->
+          <div class="col-lg-4">
+            <div class="card">
+			<form name="form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">	
+              <a href="0_listing-details.html" class="card-image">
+                <img src="/user/v1/template/qwer/assert/images/img-loading.jpg" data-src="images/img1.jpg" class="card-img-top lazy" alt="card image"/>
+              </a>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-1">
+                  <h4 class="card-title mb-0"><a href="0_listing-details.html" id="iName" th:text="${classitem?.iName}"></a></h4>
+                  <i class="fa fa-check-circle ms-1 text-success" data-bs-toggle="tooltip" data-placement="top" title="Claimed"></i>
+                </div>
+                <p class="card-text"  id="iAdress" th:text="${classitem?.iAdress}"></p>
+              </div>
+              <!-- end card-body -->
+              <div class="card-footer bg-transparent border-top-gray d-flex align-items-center justify-content-between">
+                <div class="star-rating" data-rating="5">
+                  <div class="rating-counter">5 reviews</div>
+                </div>
+                <a href="#"
+                  class="bookmark-btn icon-element icon-element-sm bg-white shadow-sm text-black"
+                  data-bs-toggle="tooltip"
+                  data-placement="top"
+                  title="Bookmark">
+                  <i class="fal fa-bookmark"></i>
+                </a>
+              </div>
+              <!-- end card-footer -->
+			</form>
+            </div>
+            <!-- end card -->
+            <div class="card">
+              <div class="card-body">
+				<form name="form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">
+                <h4 class="card-title mb-3">수강하실 내역</h4>
+                <hr class="border-top-gray my-0" />
+                <ul class="list-items mt-3">
+                  <li class="d-flex align-items-center justify-content-between">
+                    <span class="text-black">수강권</span>
+					<span class="text-success"><a id="cName" th:text="${classitem?.cName}"></a></span>
+                  </li>
+                  <li><hr class="border-top-gray" /></li>
+                  <li class="d-flex align-items-center justify-content-between">
+                    <span class="text-black">가격</span>
+                    <span class="text-success"><a id="cPrice" th:text="${classitem?.cPrice}"></a></span>
+                  </li>
+                  <hr class="border-top-gray my-0" />
+                </ul>
+                <ul class="list-items mt-3">
+                  <li class="d-flex align-items-center justify-content-between">
+                    <span class="text-black">기간</span>2024/08/01-</br>2024/10/01</br>(총 3개월)
+                  </li>
+                </ul>
+				</form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- end container -->
     </section>
-    <!-- end contact-area -->
+    <!-- end booking-area -->
     <section class="footer-area bg-gray padding-top-130px pattern-bg">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6" style="width: 100px;"></div>
           <div class="col-lg-3 col-md-6" >
             <div class="footer-item">
-              <a href="0_index.html" class="footer-logo mb-4 d-inline-block"
-                ><img src="/user/v1/template/qwer/assert/images/logo2.png" alt="logo"
-              /></a>
+              <a href="0_index.html" class="footer-logo mb-4 d-inline-block"><img src="images/logo2.png" alt="logo"/></a>
               <ul class="info-list">
                 <li>
                   <span class="fal fa-home icon me-2"></span> 서울 강남구 태해란로 
@@ -332,9 +354,7 @@
                 <li><a href="#">Privacy Policy</a></li>
               </ul>
             </div>
-            <!-- end footer-item -->
           </div>
-          <!-- end col-lg-3 -->
         </div>
         <!-- end row -->
         <hr class="border-top-gray" />
@@ -345,111 +365,70 @@
             <a href="https://techydevs.com">TechyDevs</a>
           </p>
         </div>
+        <!-- end copy-right -->
       </div>
+      <!-- end container -->
     </section>
     <!-- end footer-area -->
-    <div id="back-to-top">
-      <i class="fal fa-angle-up" title="Go top"></i>
-    </div>
-    <!-- end back-to-top -->
-    <script>
-    document.getElementById("btnsubmit").onclick=function(){
-       $.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			,url: "/usr/v1/infra/user/userrlogin"
-			
-			,data : { "mId" : $("#mId").val(), "mPassword" : $("#mPassword").val()}
-			,success: function(response) {
-				if(response.rt == "success") {
-					alert(response.rt);
-						location.href = "/usr/v1/infra/user/userrForm";
-					} else {
-					alert("fail");  
-					}
-		    	}
-			
-		    });
-		}
-    </script>
-	<script type="text/javascript">
-				document.getElementById("btnSubmit").onclick = function (){
-				//ID
-			    var id = document.getElementById("mId");
-			    var idValue = document.getElementById("mId").value.trim();
-				var idRegExp = /^[가-힣A-Za-z0-9]+$/;
-				var idFeedback=document.getElementById("invalid-feedback");
-				var idRegExpFeedback=document.getElementById("idRegExpFeedback");
-				
-				id.classList.remove('is-vaild','is-invalid');
-				idFeedback.style.display='none';
-			    idRegExpFeedback.style.display='none';
-				
-			    if (idValue == "" || idValue == null) {
-					idFeedback.style.display='block';
-					id.classList.add('is-invaild');
-					id.focus();
-					return false;
-			    } else {
-				}
-
-				if(!idRegExp.test(idValue)){
-					idRegExpFeedback.style.display='block';
-					id.classList.add('is-invaild');
-					id.focus();
-					return false;
-				} else {
-					id.classList.add('is-vaild');
-				}
-				//password
-			    var password = document.getElementById("mPassword");
-			    var passwordValue = document.getElementById("mPassword").value.trim();
-				var passwordRegExp = /^[가-힣A-Za-z0-9]+$/;
-				var passwordFeedback=document.getElementById("invalid-feedback");
-				var passwordRegExpFeedback=document.getElementById("idRegExpFeedback");
-				
-				password.classList.remove('is-vaild','is-invalid');
-				passwordFeedback.style.display='none';
-			    passwordRegExpFeedback.style.display='none';
-				
-			    if (passwordValue == "" || passwordValue == null) {
-					passwordFeedback.style.display='block';
-					password.classList.add('is-invaild');
-					password.focus();
-					return false;
-			    } else {
-				}
-
-				if(!passwordRegExp.test(passwordValue)){
-					passwordRegExpFeedback.style.display='block';
-					password.classList.add('is-invaild');
-					password.focus();
-					return false;
-				} else {
-					password.classList.add('is-vaild');
-				}
-				form.action = "/usr/v1/infra/user/userrForm";
-				form.submit();
-			}
-			//needsvalid
-			var needsValidation = document.querySelectorAll('.needs-validation')
-			Array.prototype.slice.call(needsValidation)
-			  .forEach(function (form) {
-			    form.addEventListener('submit', function (event) {
-			      if (!form.checkValidity()) {
-			        event.preventDefault()
-			        event.stopPropagation()
-			      }
-			      form.classList.add('was-validated')
-			    }, false)
-			})
-				
-			</script>
     <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/jquery.lazy.min.js"></script>
+    <script src="/user/v1/template/qwer/assert/js/rating-script.js"></script>
     <script src="/user/v1/template/qwer/assert/js/main.js"></script>
   </body>
+  <script>
+	let amount = 100;
+	//let amount = document.getElementById("price").value;
+	let tossPayments = TossPayments("test_ck_AQ92ymxN341MBOOvo7njVajRKXvd");
+	let method = $('input:radio[name="payment_method"]:checked').val();
+	let requestJson;
+	
+	switch(method) {
+	  case '계좌이체':  
+		  requestJson = 'jsons.transfer';
+		  break;
+	  case '카드':  
+	  	  requestJson = 'jsons.card';
+	  	  break;
+	  case '휴대폰':  
+		  requestJson = 'jsons.phone';
+		  break;		  
+	  default:
+	      break;
+	}
+	
+	function pay(method, requestJson){
+		console.log(method);
+		console.log(requestJson);
+		tossPayments.requestPayment(method, requestJson).catch(function(error){
+			if(error.code === "USER_CANCEL"){
+				alert('유저가 취소했습니다.');
+			}else{
+				alert(error.message);
+			}	
+		});
+	}
+	
+	let path ="/";
+	let successUrl=window.location.origin+path+"toss/success";
+	let failUrl = window.location.origin+path+"toss/fail";
+	let callbackUrl = window.location.origin+path+"toss/va_callback";
+	let orderId = new Date().getTime();
+	
+	let jsons = {
+		"card":{
+			"amount":amount,
+			"orderId":"sample",
+			"orderName":
+			"successUrl"
+		},
+		"transfer":{
+			"amount":amount,
+			"orderId":"sample",
+			"orderName":
+			"successUrl"
+		}
+	}
+  </script>
 </html>

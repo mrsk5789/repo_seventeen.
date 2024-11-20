@@ -456,9 +456,6 @@
             <!-- end sidebar -->
           </div>
           <!-- end col-lg-4 -->
-		<!--  <form name="form" method="post" action="/usr/v1/infra/user/userside">
-			<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1" /> 
-			<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}" />-->
           <div class="col-lg-8">
 			<form name="form" method="post" action="/usr/v1/infra/user/userside">
 					<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1" /> 
@@ -477,15 +474,15 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center justify-content-between mb-2"></div>
                   <div class="d-flex align-items-center mb-1">
-                    <h4 class="card-title mb-0"><a th:href="@{/usr/v1/infra/user/usersideDetail(seq=${list.seq})}" th:text="${list.name}"></a></h4>
-                    <i class="fa fa-check-circle ms-1 text-success" data-bs-toggle="tooltip" data-placement="top"title="Claimed"></i>
+                    <h4 class="card-title mb-0"><a th:href="@{/usr/v1/infra/user/usersideDetail(iSeq=${list.iSeq})}" th:text="${list.iName}"></a></h4>
+                    <i class="fa fa-check-circle ms-1 text-success" data-bs-toggle="tooltip" data-placement="top" title="Claimed"></i>
                   </div>
-                  <p class="card-text" th:text="${list.adress}"></p>
+                  <p class="card-text" th:text="${list.iAdress}"></p>
                   <div class="star-rating mt-1" data-rating="4.5"></div>
                   <div class="rating-counter">4개</div>
                   <ul class="info-list mt-3">
                     <li>
-                      <span class="fal fa-phone icon"></span><a th:text="${list.telNumber}"></a>
+                      <span class="fal fa-phone icon"></span><a th:text="${list.iTel}"></a>
                     </li>
                   </ul>
                 </div>

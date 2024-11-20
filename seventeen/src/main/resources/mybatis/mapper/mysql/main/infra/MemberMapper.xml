@@ -10,139 +10,137 @@
 	<select id="selectList" resultMap="resultMapObj">
 	select aa.* from (
 		SELECT
-			a.seq,
-			a.name,
-			a.id,
-			a.password,
-			a.gender,
-			a.nickname,
-			a.phonenumber,
-			a.email,
-			a.adress,
-			a.desc,
-			a.regdate,
-			a.modDate,
-			a.delny
+			d.mSeq,
+			d.mName,
+			d.mId,
+			d.mPassword,
+			d.mGender,
+			d.mPhone,
+			d.mEmail,
+			d.mAdress,
+			d.mDesc,
+			d.mRegdate,
+			d.mModDate,
+			d.mDelNy,
+			d.mZipcode
 		<include refid="selectCommon"/>
 			ORDER BY
-			   a.seq desc
+			   d.mSeq desc
 			 ) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 		</select>
 		
 		<sql id="selectCommon">
 		FROM
-			seventeen.member a
+			seventeen.member d
 		WHERE 1=1
 			<!--<if test="shDelNy !=null and !shDelNy.equals('')">AND delny = #{shDelNy}</if>
 			<if test="shUseNy !=null and !shUseNy.equals('')">AND UseNy = #{shUseNy}</if>-->
 			<choose>
-				<when test="shOption==1">AND seq=#{shValue}</when>
-				<when test="shOption==2">AND name=#{shValue}</when>
+				<when test="shOption==1">AND mSeq=#{shValue}</when>
+				<when test="shOption==2">AND mName=#{shValue}</when>
 			</choose>
 	
 			<choose>
-				<when test="shOptionDate == 1">AND a.regdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<when test="shOptionDate == 2">AND a.modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 1">AND d.mRegdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND d.mModDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
 	</sql>
 
 	<insert id="insert">
 		INSERT INTO member(
-			name,
-			id,
-			password,
-			gender,
-			nickname,
-			phonenumber,
-			email,
-			adress,
-			desc,
-			regdate,
-			modDate,
-			delny
+			mName,
+			mId,
+			mPassword,
+			mGender,
+			mPhone,
+			mEmail,
+			mAdress,
+			mDesc,
+			mRegdate,
+			mModDate,
+			mDelNy
 		)VALUES(
-			#{name},
-			#{id},
-			#{password},
-			#{gender},
-			#{nickname},
-			#{phonenumber},
-			#{email},
-			#{adress},
-			#{desc},
+			#{mName},
+			#{mId},
+			#{mPassword},
+			#{mGender},
+			#{mPhone},
+			#{mEmail},
+			#{mAdress},
+			#{mDesc},
 			now(),
 			now(),
 			0
 		)
-		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+		<selectKey resultType="String" keyProperty="mSeq" order="AFTER">
 				SELECT last_insert_id()
 		</selectKey>
 	</insert>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			a.seq,
-			a.name,
-			a.id,
-			a.password,
-			a.gender,
-			a.nickname,
-			a.phonenumber,
-			a.email,
-			a.adress,
-			a.desc,
-			a.regdate,
-			a.modDate,
-			a.delny
+			d.mSeq,
+			d.mName,
+			d.mId,
+			d.mPassword,
+			d.mGender,
+			d.mPhone,
+			d.mEmail,
+			d.mAdress,
+			d.mDesc,
+			d.mRegdate,
+			d.mModDate,
+			d.mDelNy,
+			d.mZipcode
 		FROM
-			member a
+			member d
 		WHERE 1=1
-			AND a.seq = #{seq}
+			AND d.mSeq = #{mSeq}
 	</select>
 	
 	<update id="update">
 		UPDATE member
 		SET
-			name = #{name},
-			id = #{id},
-			password = #{password},
-			gender = #{gender},
-			nickname = #{nickname},
-			phonenumber = #{phonenumber},
-			email = #{email},
-			adress = #{adress},
-			desc = #{desc},
-			regdate = now(),
-			modDate = now(),
-			delny = #{delny}
+			mName = #{mName},
+			mId = #{mId},
+			mPassword = #{mPassword},
+			mGender = #{mGender},
+			mPhone = #{mPhone},
+			mEmail = #{mEmail},
+			mAdress = #{mAdress},
+			mDesc = #{mDesc},
+			mRegdate = now(),
+			mModDate = now(),
+			mDelNy = #{mDelNy}
 		WHERE 1=1
-			AND seq = #{seq}
+			AND mSeq = #{mSeq}
 
 	</update>
 
 	<update id="uelete">
 		UPDATE member
 		SET
-			delny=1
+			mDelNy=1
 		WHERE 1=1
-			AND seq=#{seq}
+			AND mSeq=#{mSeq}
 	</update>
 
 	<delete id="delete">
 		DELETE FROM member
 		WHERE 1=1
-		AND seq=#{seq}
+		AND mSeq=#{mSeq}
 	</delete>
  	<select id="selectOneLogin" resultMap="resultMapObj">
 	 SELECT
-	 	a.id,
-		a.password
+	    d.mSeq,
+	 	d.mId,
+		d.mPassword
 	 FROM
-		seventeen.member a	
+		seventeen.member d	
 	 WHERE 
 	    1=1
-		AND a.id = #{id}
-		AND a.password = #{password}
+		AND d.mId = #{mId}
+		AND d.mPassword = #{mPassword}
 	</select>
 	
 	  <select id="selectOneCount" resultType="Integer">

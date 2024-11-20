@@ -44,23 +44,23 @@
 										</a>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
-												<span class="input-group-text" id="id">
+												<span class="input-group-text">
 													<i class="icon-account_circle"></i>
 												</span>
 											</div>
-											<input type="text" class="form-control" placeholder="Id" aria-label="username" id="id" name="id" aria-describedby="username" required>
+											<input type="text" class="form-control" placeholder="Id" aria-label="username" id="mId" name="mId" aria-describedby="username">
 										</div>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
-												<span class="input-group-text" id="password">
+												<span class="input-group-text" >
 													<i class="icon-verified_user"></i>
 												</span>
 											</div>
-											<input type="password" class="form-control" placeholder="Password" aria-label="Password" id="password" name="password" aria-describedby="Password" required>
+											<input type="password" class="form-control" placeholder="mPassword" aria-label="Password" id="mPassword" name="mPassword" aria-describedby="Password">
 										</div>
 										<div class="actions clearfix">
 											<a href="forgot-pwd.html">비밀번호를 잊으셨나요?</a>
-											<button type="button" id="btnsubmit" class="btn btn-primary">로그인</button>
+											<button type="button" id="btnSubmit" class="btn btn-primary">로그인</button>
 										</div>
 										<div class="or"></div>
 										<div class="mt-4">
@@ -80,19 +80,84 @@
 			</div>
 		</footer>
 	</body>
+	<!--<script type="text/javascript">
+
+			document.getElementById("btnSubmit").onclick = function() {
+				// validation
+
+				// stId
+		         var mId = document.getElementById("mId");
+		         var mIdValue = document.getElementById("mId").value.trim();
+		         
+		         if(mIdValue == "" || mIdValue == null){
+		            mId.classList.add('is-invalid');
+		            mId.focus();
+		            return false;
+		         } else {
+	//	             by pass
+		            mId.classList.remove('is-invalid');
+		            mId.classList.add('is-valid');
+		         }
+		         
+		         
+		      // stpw
+		         var mPassword = document.getElementById("mPassword");
+		         var mPasswordValue = document.getElementById("mPassword").value.trim();
+		         
+		         if(mPasswordValue == "" || mPasswordValue == null){
+		            mPassword.classList.add('is-invalid');
+		            mPassword.focus();
+		            return false;
+		         } else {
+	//	             by pass
+		            mPassword.classList.remove('is-invalid');
+		            mPassword.classList.add('is-valid');
+		         }
+
+
+				// Login Ajax
+				$.ajax({ // AJAX 요청을 시작하는 jQuery 메서드
+					async : true // 요청을 비동기로 처리 (기본값이 true라 생략 가능)
+					, cache : false // 요청 결과를 캐시하지 않도록 설정
+					, type : "post" // HTTP 메서드를 POST로 설정
+					/* ,dataType:"json" */
+					, url : "/xdm/v1/infra/member/signXdmForm" // 요청을 보낼 URL
+					/* ,data : $("#formLogin").serialize() */
+					, data : {
+						"mId" : $("#mId").val(), // 사용자 ID를 가져와서 전송
+						"mPassword" : $("#mPassword").val()
+					// 비밀번호를 가져와서 전송
+					//, "autoLogin": $("#autoLogin").is(":checked")
+					},
+					success : function(response) { // 요청이 성공적으로 완료되면 실행될 함수
+						if (response.rt == "success") { // 응답의 rt 속성이 "success"일 경우
+							mPassword.classList.add('is-valid');
+							location.href = "/xdm/v1/infra/member/memberXdmList"; // 메인 페이지로 리다이렉션
+						} else { // 로그인 실패 시 모달 창을 띄움
+							$("#verticalycentered").modal("show");  // 모달을 표시
+							mPassword.classList.add('is-invalid');
+						}
+					}
+				});
+			}
+		</script>-->
 	<script>
-		document.getElementById("btnsubmit").onclick=function(){
+		document.getElementById("btnSubmit").onclick=function(){
+			
+			alert($("#mId").val());
+			alert($("#mPassword").val());
+			
 		$.ajax({
 					async: true 
 					,cache: false
 					,type: "post"
 					/* ,dataType:"json" */
-					,url: "/xdm/v1/infra/member/signXdmForm"
+					,url: "/xdm/v1/infra/member/signXdmMForm"
 					/* ,data : $("#formLogin").serialize() */
-					,data : { "id" : $("#id").val(), "password" : $("#password").val()}
+					,data : { "mId" : $("#mId").val(), "mPassword" : $("#mPassword").val()}
 					,success: function(response) {
 						if(response.rt == "success") {
-							alert(response.rt);
+							alert("response.rt");
 								location.href = "/xdm/v1/infra/member/memberXdmList";
 							} else {
 								alert("fail");

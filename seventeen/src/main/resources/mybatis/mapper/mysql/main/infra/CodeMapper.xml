@@ -9,27 +9,27 @@
 	  <select id="selectList" resultMap="resultMapObj">
 	  select aa.* from (
 	   SELECT
-			a.ifcdSeq
-			,a.ifcdName
-			,a.ifcdUseNy
-			,a.ifcdOrder
-			,a.ifcdDesc
-			,a.ifcdDelny
-            ,a.ifcdRegDate
-            ,a.ifcdmodDate
-            ,a.codegroup_seq
-            ,b.ifcgName
+			b.ifcdSeq
+			,b.ifcdName
+			,b.ifcdUseNy
+			,b.ifcdOrder
+			,b.ifcdDesc
+			,b.ifcdDelny
+            ,b.ifcdRegDate
+            ,b.ifcdmodDate
+            ,b.codegroup_seq
+            ,a.ifcgName
             <include refid="selectCommon"/>
 			ORDER BY
-			a.ifcdSeq desc
+			b.ifcdSeq desc
         ) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 		</select>
             
      <sql id="selectCommon">       
        FROM
-           code as a
-      JOIN codegroup as b ON b.ifcgSeq=a.codegroup_seq
+           code as b
+      JOIN codegroup as a ON a.ifcgSeq=b.codegroup_seq
       WHERE 1=1
 			<if test="shDelNy !=null and !shDelNy.equals('')">AND ifcdDelny = #{shDelNy}</if>	
 			<if test="shUseNy !=null and !shUseNy.equals('')">AND ifcdUseNy = #{shUseNy}</if>
@@ -39,8 +39,8 @@
 			    <when test="shOption==3">AND ifcdOrder=#{shValue}</when>
 			</choose>
 			 <choose>
-				<when test="shOptionDate == 1">AND a.ifcdRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<when test="shOptionDate == 2">AND a.ifcdmodDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 1">AND b.ifcdRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND b.ifcdmodDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
 	  </sql>
 	  
@@ -68,19 +68,19 @@
 	  
 	  <select id="selectOne" resultMap="resultMapObj">
 	  	 SELECT
-	  	 	a.ifcdSeq
-			,a.ifcdName
-			,a.ifcdUseNy
-			,a.ifcdOrder
-			,a.ifcdDesc
-			,a.ifcdDelny
-            ,a.ifcdRegDate
-            ,a.ifcdmodDate
-            ,a.codegroup_seq
+	  	 	b.ifcdSeq
+			,b.ifcdName
+			,b.ifcdUseNy
+			,b.ifcdOrder
+			,b.ifcdDesc
+			,b.ifcdDelny
+            ,b.ifcdRegDate
+            ,b.ifcdmodDate
+            ,b.codegroup_seq
         FROM 
-			code a	
+			code b	
 		WHERE 1=1
-			AND	a.ifcdSeq = #{ifcdSeq}
+			AND	b.ifcdSeq = #{ifcdSeq}
 	  </select>
 	  
 	  <update id="update">

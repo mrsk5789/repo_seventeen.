@@ -667,22 +667,22 @@
 													<input type="checkbox" />
 												</td>
 												<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
-												<td th:text="${list.specifics}"></td>
-												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(seq=${list.seq})}" th:text="${list.name}"></a></td>
-												<td th:text="${list.ceoName}"></td>
-												<td th:text="${list.opentime}"></td>
-												<td th:text="${list.closetime}"></td>
-												<td th:text="${list.telNumber}"></td>
-												<td th:text="${list.eadress}"></td>
-												<td th:text="${list.adress}"></td>
-												<td th:if="${list.parkingNy eq 0}">N</td>
-												<td th:unless="${list.parkingNy eq 0}">Y</td>
-												<td th:if="${list.ptNy eq 0}">N</td>
-												<td th:unless="${list.ptNy eq 0}">Y</td>
-												<td th:if="${list.groupNy eq 0}">N</td>
-												<td th:unless="${list.groupNy eq 0}">Y</td>
-												<td th:text="${#dates.format(list.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-												<td th:text="${#dates.format(list.modDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+												<td th:text="${list.iSpecifics}"></td>
+												<td><a th:href="@{/xdm/v1/infra/information/informationXdmMForm(iSeq=${list.iSeq})}" th:text="${list.iName}"></a></td>
+												<td th:text="${list.iCeoName}"></td>
+												<td th:text="${list.iOpentime}"></td>
+												<td th:text="${list.iClosetime}"></td>
+												<td th:text="${list.iTelNumber}"></td>
+												<td th:text="${list.iEadress}"></td>
+												<td th:text="${list.iAdress}"></td>
+												<td th:if="${list.iParkingNy eq 0}">N</td>
+												<td th:unless="${list.iParkingNy eq 0}">Y</td>
+												<td th:if="${list.iPtNy eq 0}">N</td>
+												<td th:unless="${list.iPtNy eq 0}">Y</td>
+												<td th:if="${list.iGroupNy eq 0}">N</td>
+												<td th:unless="${list.iGroupNy eq 0}">Y</td>
+												<td th:text="${#dates.format(list.iRegDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+												<td th:text="${#dates.format(list.iModDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 											</tr>
 										</tbody>
 									</table>

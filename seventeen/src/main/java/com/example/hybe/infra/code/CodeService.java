@@ -76,11 +76,10 @@ public class CodeService {
 		return rt;
 	}
 	
-	public static String selectOneCachedCode(int code) {
-		System.out.println("code: " + code);
+	public static String selectOneCachedCode(int ifcdSeq) {
 		String rt = "";
 		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
-			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {
+			if (codeRow.getIfcdSeq().equals(Integer.toString(ifcdSeq))) {
 				rt = codeRow.getIfcdName();
 			} else {
 				// by pass

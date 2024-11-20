@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dirto - Directory & Listing HTML Template</title>
     <!-- Favicon -->
-    <link rel="icon" href="/user/v1/template/qwer/assert/images/favicon.png" />
+    <link rel="icon" href="images/favicon.png" />
 
     <!-- Google Fonts -->
     <link
@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/style.css" />
     <style>
-      .card-body{
-        background-color: #F6F6F6;
+      .price-item{
+        background-color: #FFEAEA;
       }
     </style>
   </head>
@@ -44,7 +44,7 @@
         <div class="container">
           <div class="main-header-action-wrap">
             <div class="logo">
-              <a href="0_index.html"><img src="/user/v1/template/qwer/assert/images/logo.png" alt="logo" /></a>
+              <a href="0_index.html"><img src="images/logo.png" alt="logo" /></a>
             </div>
             <!-- end logo -->
             <nav class="main-menu me-4 ms-auto">
@@ -67,8 +67,9 @@
                     >Listings <span class="fal fa-angle-down"></span
                   ></a>
                   <ul class="dropdown-menu-item">
+                    <li><a href="listing-grid.html">listing grid</a></li>
                     <li><a href="list-with-map.html">list with map</a></li>
-                    <li><a href="grid-with-map.html">grid with map</a></li>
+                    <li><a href="listing-list.html">listing list </a></li>
                     <li><a href="list-left-sidebar.html">left sidebar </a></li>
                     <li><a href="listing-details.html">listing details</a></li>
                   </ul>
@@ -76,10 +77,10 @@
                 <li>
                   <a href="#">Pages <span class="fal fa-angle-down"></span></a>
                   <ul class="dropdown-menu-item">
-                    <li><a href="user-profile.html">user profile</a></li>
+                    <li><a href="0_user-profile.html">user profile</a></li>
                     <li><a href="top-author.html">top authors </a></li>
                     <li><a href="dashboard.html">dashboard</a></li>
-                    <li><a href="booking.html">booking </a></li>
+                    <li><a href="0_booking.html">booking </a></li>
                     <li>
                       <a href="booking-confirmation.html"
                         >booking confirmation
@@ -98,9 +99,9 @@
             </nav>
             <div class="nav-right-content d-flex align-items-center">
               <div class="author-access-list me-3">
-                <a href="0_login.html">Login</a>
+                <a href="login.html">Login</a>
                 <span class="or-text">&nbsp;&nbsp;</span>
-                <a href="0_sign-up.html">Sign Up</a>
+                <a href="sign-up.html">Sign Up</a>
               </div>
               <div class="side-menu-open ms-2">
                 <i class="fal fa-bars"></i>
@@ -141,6 +142,7 @@
               >Listings <span class="fal fa-angle-down sub-menu-toggler"></span
             ></a>
             <ul class="off-canvas-sub-menu">
+              <li><a href="listing-grid.html">Listing grid</a></li>
               <li><a href="list-with-map.html">list with map</a></li>
               <li><a href="listing-list.html">Listing list </a></li>
               <li><a href="list-left-sidebar.html">Left sidebar </a></li>
@@ -155,7 +157,7 @@
               <li><a href="0_user-profile.html">user profile</a></li>
               <li><a href="top-author.html">top authors </a></li>
               <li><a href="dashboard.html">dashboard</a></li>
-              <li><a href="booking.html">booking </a></li>
+              <li><a href="0_booking.html">booking </a></li>
               <li>
                 <a href="booking-confirmation.html">booking confirmation </a>
               </li>
@@ -166,108 +168,69 @@
             </ul>
           </li>
           <li>
-            <a href="blog-right-sidebar.html">blog</a>
+            <a href="blog-right-sidebar.html">blog </a>
           </li>
         </ul>
         <div class="mt-4 text-center">
-          <a href="0_login.html" class="theme-btn me-2">Login</a>
-          <a href="0_sign-up.html" class="theme-btn">Sign up</a>
+          <a href="login.html" class="theme-btn me-2">Login</a>
+          <a href="sign-up.html" class="theme-btn">Sign up</a>
         </div>
       </div>
       <!-- end off-canvas -->
     </header>
-    <!-- end breadcrumb-area -->
-    <section class="contact-area padding-top-60px padding-bottom-90px">
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay opacity-8"></div>
+        <div class="container">
+          <h2 class="sec__title text-white mb-2">&nbsp;</h2>
+          <h2 class="sec__title text-white mb-2">수강권 구매하기</h2>
+        </div>  
+    </section>
+    <section class="pricing-area padding-top-60px padding-bottom-70px">
       <div class="container">
-        <div class="col-lg-7 mx-auto">
-          <form action="#" class="needs-validation" id="form" name="form" novalidate>
-            <div class="card-body">
-              <div class="text-center">
-                <h4 class="font-size-28 font-weight-semi-bold mb-1">
-                  로그인 하세요
-                </h4>
-                <p class="card-text">with your social network</p>
-                <div
-                  class="d-flex flex-wrap align-items-center justify-content-between my-4"
-                >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1"
-                    ><i class="fab fa-google me-2"></i>Google</a
-                  >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1 bg-5"
-                    ><i class="fab fa-facebook-f me-2"></i>Facebook</a
-                  >
-                  <a href="#" class="theme-btn flex-grow-1 mx-1 my-1 bg-6"
-                    ><i class="fab fa-twitter me-2"></i>Twitter</a
-                  >
-                </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+			<form name="form" method="post" action="/usr/v1/infra/user/userprice">
+            <div class="price-item" th:each="classlist:${classlist}">
+                <hr class="border-top-gray my-4" />
+                <h2 class="price__title mt-3" th:text="${classlist.cName}"></h2>
+                <hr class="border-top-gray my-4" />
+              <div class="price-content" >
+                  <h4 class="price__title" th:text="${classlist.cPrice}"></h4>
+					<!--<s>300,000원</s>->250,000원</h4>-->
+                <hr class="border-top-gray my-4" />
+                <ul class="list-items text-start mb-4">
+                  <li>
+                    <i class="fal fa-check text-success me-2"></i> One Listing
+                  </li>
+                  <li>
+                    <i class="fal fa-check text-success me-2"></i> 90 Days
+                    Availability
+                  </li>
+                  <li>
+                    <i class="fal fa-check text-success me-2"></i> Limited
+                    Support
+                  </li>
+                  <li>
+                    <i class="fal fa-times text-danger me-2"></i> Average Price
+                    Range
+                  </li>
+                </ul>
+                    <a th:href="@{/usr/v1/infra/user/userBook(cSeq=${classlist.cSeq})}" class="theme-btn">확인</a>
               </div>
-              <div class="d-flex align-items-center">
-                <hr class="border-top-gray flex-grow-1" />
-                <span class="mx-1 text-uppercase">or</span>
-                <hr class="border-top-gray flex-grow-1" />
-              </div>
-              <div class="form-group">
-                <label class="label-text">Username, or email</label>
-                <input
-                  class="form-control form--control ps-3"
-                  type="text"
-                  name="mId" id="mId"
-                  placeholder="Username, or email" required
-                />
-				<div class="invalid-feedback">아이디 입력해주세요. </div>
-              </div>
-              <!-- end form-group -->
-              <div class="form-group">
-                <label class="label-text">비밀번호</label>
-                <div class="position-relative">
-                  <input
-                    class="form-control form--control ps-3 password-field"
-                    type="password"
-                    name="mPassword" id="mPassword"
-                    placeholder="비밀번호" required
-                  />
-                  <a
-                    href="javascript:void(0)"
-                    class="position-absolute top-0 right-0 h-100 toggle-password"
-                    title="toggle show/hide password"
-                  >
-                    <i class="far fa-eye eye-on"></i>
-                    <i class="far fa-eye-slash eye-off"></i>
-                  </a>
-                </div>
-              </div>
-			  <div class="invalid-feedback">비밀번호를 입력해주세요. </div>
-              <!-- end form-group -->
-              <div
-                class="form-group d-flex align-items-center justify-content-between"
-              >
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="RememberMe"
-                  />
-                  <label class="custom-control-label" for="RememberMe"
-                    >Remember Me</label
-                  >
-                </div>
-                <a href="recover.html" class="btn-link font-weight-semi-bold mb-1">비밀번호를 잃어버리셨나요?</a>
-              </div>
-              <!-- end form-group -->
-              <button class="theme-btn border-0" type="submit" id="btnSubmit" action="/usr/v1/infra/user/userrForm">
-                로그인
-              </button>
-              <p class="mt-3 font-weight-semi-bold mb-1">
-                아직 회원이 아니신가요?
-                <a href="0_sign-up.html" class="btn-link">가입하기</a>
-              </p>
+              <!-- end price-content -->
             </div>
-          </form>
+			</form>
+            <!-- end price-item -->
+          </div>
+          <!-- end col-lg-4 -->
         </div>
+        <!-- end row -->
       </div>
       <!-- end container -->
     </section>
-    <!-- end contact-area -->
+    <section class="pricing-area padding-top-60px padding-bottom-70px">
+    </section>
+    <!-- end pricing-area -->
     <section class="footer-area bg-gray padding-top-130px pattern-bg">
       <div class="container">
         <div class="row">
@@ -275,7 +238,7 @@
           <div class="col-lg-3 col-md-6" >
             <div class="footer-item">
               <a href="0_index.html" class="footer-logo mb-4 d-inline-block"
-                ><img src="/user/v1/template/qwer/assert/images/logo2.png" alt="logo"
+                ><img src="images/logo2.png" alt="logo"
               /></a>
               <ul class="info-list">
                 <li>
@@ -302,6 +265,7 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
               </div>
             </div>
+            <!-- end footer-item -->
           </div>
           <!-- end col-lg-3 -->
            <div class="col-lg-3 col-md-6" style="width: 120px;" > 
@@ -319,6 +283,7 @@
                 <li><a href="#">클라이밍</a></li>
               </ul>
             </div>
+            <!-- end footer-item -->
           </div>
           <!-- end col-lg-3 -->
           <div class="col-lg-3 col-md-6">
@@ -345,107 +310,15 @@
             <a href="https://techydevs.com">TechyDevs</a>
           </p>
         </div>
+        <!-- end copy-right -->
       </div>
+      <!-- end container -->
     </section>
     <!-- end footer-area -->
     <div id="back-to-top">
       <i class="fal fa-angle-up" title="Go top"></i>
     </div>
     <!-- end back-to-top -->
-    <script>
-    document.getElementById("btnsubmit").onclick=function(){
-       $.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			,url: "/usr/v1/infra/user/userrlogin"
-			
-			,data : { "mId" : $("#mId").val(), "mPassword" : $("#mPassword").val()}
-			,success: function(response) {
-				if(response.rt == "success") {
-					alert(response.rt);
-						location.href = "/usr/v1/infra/user/userrForm";
-					} else {
-					alert("fail");  
-					}
-		    	}
-			
-		    });
-		}
-    </script>
-	<script type="text/javascript">
-				document.getElementById("btnSubmit").onclick = function (){
-				//ID
-			    var id = document.getElementById("mId");
-			    var idValue = document.getElementById("mId").value.trim();
-				var idRegExp = /^[가-힣A-Za-z0-9]+$/;
-				var idFeedback=document.getElementById("invalid-feedback");
-				var idRegExpFeedback=document.getElementById("idRegExpFeedback");
-				
-				id.classList.remove('is-vaild','is-invalid');
-				idFeedback.style.display='none';
-			    idRegExpFeedback.style.display='none';
-				
-			    if (idValue == "" || idValue == null) {
-					idFeedback.style.display='block';
-					id.classList.add('is-invaild');
-					id.focus();
-					return false;
-			    } else {
-				}
-
-				if(!idRegExp.test(idValue)){
-					idRegExpFeedback.style.display='block';
-					id.classList.add('is-invaild');
-					id.focus();
-					return false;
-				} else {
-					id.classList.add('is-vaild');
-				}
-				//password
-			    var password = document.getElementById("mPassword");
-			    var passwordValue = document.getElementById("mPassword").value.trim();
-				var passwordRegExp = /^[가-힣A-Za-z0-9]+$/;
-				var passwordFeedback=document.getElementById("invalid-feedback");
-				var passwordRegExpFeedback=document.getElementById("idRegExpFeedback");
-				
-				password.classList.remove('is-vaild','is-invalid');
-				passwordFeedback.style.display='none';
-			    passwordRegExpFeedback.style.display='none';
-				
-			    if (passwordValue == "" || passwordValue == null) {
-					passwordFeedback.style.display='block';
-					password.classList.add('is-invaild');
-					password.focus();
-					return false;
-			    } else {
-				}
-
-				if(!passwordRegExp.test(passwordValue)){
-					passwordRegExpFeedback.style.display='block';
-					password.classList.add('is-invaild');
-					password.focus();
-					return false;
-				} else {
-					password.classList.add('is-vaild');
-				}
-				form.action = "/usr/v1/infra/user/userrForm";
-				form.submit();
-			}
-			//needsvalid
-			var needsValidation = document.querySelectorAll('.needs-validation')
-			Array.prototype.slice.call(needsValidation)
-			  .forEach(function (form) {
-			    form.addEventListener('submit', function (event) {
-			      if (!form.checkValidity()) {
-			        event.preventDefault()
-			        event.stopPropagation()
-			      }
-			      form.classList.add('was-validated')
-			    }, false)
-			})
-				
-			</script>
     <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>

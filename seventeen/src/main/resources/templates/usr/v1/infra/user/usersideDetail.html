@@ -95,7 +95,7 @@
             </nav>
             <div class="nav-right-content d-flex align-items-center">
               <div class="author-access-list me-3">
-                <a href="0_login.html">Login</a>
+                <a href="/usr/v1/infra/user/userlogin">Login</a>
                 <span class="or-text">&nbsp;&nbsp;</span>
                 <a href="0_sign-up.html">Sign Up</a>
               </div>
@@ -175,9 +175,9 @@
       <!-- end overlay -->
       <div class="container">
 		<form name="form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">
-          <h2 class="sec__title text-white mb-2" id="name" name="name" th:value="${item?.name}" readonly>ffghhjhjj</h2>
-          <p class="sec__desc text-white">
-          <i class="fal fa-map-marker-alt me-1">qqqqq</i> 
+          <h2 class="sec__title text-white mb-2"><a id="iName" th:text="${item?.iName}" ></a></h2>
+          <p class="sec__desc text-white" id="iAdress" th:text="${item?.iAdress}">
+          <i class="fal fa-map-marker-alt me-1"></i> 
           </p>
           <ul class="listing-info my-3">
             <li>
@@ -190,8 +190,7 @@
           <div class="d-flex flex-wrap align-items-center justify-content-between">
             <div class="bread-btns my-1">
               <a href="#" class="theme-btn theme-btn-sm me-1"><i class="far fa-bookmark me-1 font-size-13"></i> 저장</a>
-              <a
-                href="#"
+              <a href="#"
                 class="theme-btn theme-btn-sm me-1"
                 data-bs-toggle="modal"
                 data-bs-target="#shareModal"
@@ -289,10 +288,7 @@
                 ></div>
                 <ul class="list-items mt-4">
                   <li>
-                    <span
-                      class="fal fa-map-marker-alt icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
-                    ></span>
-                    101 East Parkview Road, New York
+                    <span class="fal fa-map-marker-alt icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span><a href="#" id="iAdress" th:text="${item?.iAdress}"></a>
                   </li>
                   <li>
                     <span
@@ -301,28 +297,21 @@
                     ><a href="mailto:example@gmail.com">example@gmail.com</a>
                   </li>
                   <li>
-                    <span
-                      class="fal fa-phone icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
-                    ></span>
-                    +7(111)123456789
+                    <span class="fal fa-phone icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span><a href="#" id="iTel" th:text="${item?.iTel}"></a>
                   </li>
                   <li>
-                    <span
-                      class="fal fa-external-link icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
-                    ></span
-                    ><a href="#">www.techydevs.com</a>
+                    <span class="fal fa-external-link icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span><a href="#" id="iEadress" th:text="${item?.iEadress}"></a>
                   </li>
                 </ul>
               </div>
               <!-- end listing-single-panel -->
               <div class="listing-single-panel mb-5">
-                <div class="rating-content row mb-4">
-               </div >
-                <div class="reviews">
+				<form name="form" method="post" action="/usr/v1/infra/user/usersideDetail">
+                <div class="reviews" >
                   <h4 class="font-size-20 font-weight-semi-bold mb-4">
                     후기 <span class="badge badge-light">(5)</span>
                   </h4>
-                  <div class="comments-wrapper">
+                  <div class="comments-wrapper" th:each="relist:${relist}">
                     <div class="comment media mb-5">
                       <a
                         href="user-profile.html"
@@ -338,11 +327,10 @@
                             <h4 class="comment-title">
                               <a href="user-profile.html">Adam Smith</a>
                             </h4>
-                            <span class="comment-meta">San Francisco, CA</span>
                           </div>
                           <div class="star-rating" data-rating="4"></div>
                         </div>
-                        <p class="comment-desc mt-2">
+                        <p class="comment-desc mt-2" id="reDesc" name="reDesc" th:text="${relist.reDesc}">
                           It is a long established 
                         </p>
                         <div class="review-photos d-flex flex-wrap align-items-center mt-3">
@@ -360,24 +348,10 @@
                           </a>
                         </div>
                         <!-- end review-photos -->
-                        <div
-                          class="comment-actions d-flex align-items-center justify-content-between mt-3"
-                        >
-                          <a class="btn-link" href="#">
-                            <i class="fas fa-reply me-1"></i> Reply
-                          </a>
+                        <div class="comment-actions d-flex align-items-center justify-content-between mt-3" >
                           <div class="feedback-box">
-                            <button
-                              type="button"
-                              class="theme-btn theme-btn-sm"
-                            >
+                            <button type="button" class="theme-btn theme-btn-sm">
                               <i class="fal fa-thumbs-up me-1"></i> Helpful
-                            </button>
-                            <button
-                              type="button"
-                              class="theme-btn theme-btn-sm"
-                            >
-                              <i class="fal fa-smile me-1"></i> Funny
                             </button>
                           </div>
                         </div>
@@ -386,30 +360,14 @@
                       <!-- end comment-body -->
                     </div>
                     <!-- end comment -->
-                    <div class="comment media mb-5 comment-reply">
-                      <div class="comment-body media-body">
-                        <h4 class="comment-title">Kamran Adi</h4>
-                        <span class="comment-meta">Business owner</span>
-                        <p class="comment-desc mt-2">
-                          It is a long established fact that 
-                        </p>
-                      </div>
-                      <!-- end comment-body -->
-                    </div>
-                    <!-- end comment -->
                   </div>
                   <!-- end comments-wrapper -->
                   <hr class="border-top-gray mt-0" />
                   <nav aria-label="Page navigation example">
-                    <ul
-                      class="pagination justify-content-center pagination-list"
-                    >
+                    <ul class="pagination justify-content-center pagination-list">
                       <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
-                          <span
-                            aria-hidden="true"
-                            class="fal fa-angle-left"
-                          ></span>
+                          <span aria-hidden="true" class="fal fa-angle-left"></span>
                           <span class="sr-only">이전</span>
                         </a>
                       </li>
@@ -423,8 +381,52 @@
                     </ul>
                   </nav>
                 </div>
+				</form>
                 <!-- end reviews -->
               </div>
+			  <!-- end listing-single-panel -->
+	            <div class="listing-single-panel">
+	              <h4 class="font-size-20 font-weight-semi-bold mb-1">리뷰쓰기</h4>
+	              <p class="font-size-15"></p>
+	              <hr class="border-top-gray my-4" />
+	              <div class="rating" id="review">
+	                <form class="leave-rating">
+	                  <input type="radio" name="rating" id="rating-1" value="1" />
+	                  <label for="rating-1" class="fas fa-star"></label>
+	                  <input type="radio" name="rating" id="rating-2" value="2" />
+	                  <label for="rating-2" class="fas fa-star"></label>
+	                  <input type="radio" name="rating" id="rating-3" value="3" />
+	                  <label for="rating-3" class="fas fa-star"></label>
+	                  <input type="radio" name="rating" id="rating-4" value="4" />
+	                  <label for="rating-4" class="fas fa-star"></label>
+	                  <input type="radio" name="rating" id="rating-5" value="5" />
+	                  <label for="rating-5" class="fas fa-star"></label>
+	                </form>
+	                <form method="post" name="form" action="/usr/v1/infra/user/userXdmInst" class="row mt-4">
+	                  <!-- end col-lg-6 -->
+	                  <div class="col-lg-12">
+	                    <label class="label-text">리뷰</label>
+	                    <div class="form-group">
+	                      <textarea
+	                        class="form-control form--control ps-3"
+	                        rows="5"
+	                        name="reDesc"
+							id="reDesc"
+	                        placeholder="Tell about your experience or leave a tip for others"
+	                      ></textarea>
+	                    </div>
+	                  </div>
+	                  <!-- end col-lg-12 -->
+	                  <div class="col-lg-12">
+	                    <button class="theme-btn border-0" type="submit" action="/usr/v1/infra/user/userXdmInst">
+	                      작성
+	                    </button>
+	                  </div>
+	                  <!-- end col-lg-12 -->
+	                </form>
+	              </div>
+	              <!-- end add-review-wrap -->
+	            </div>
             </div>
             <!-- end listing-wrapper -->
           </div>
@@ -435,7 +437,7 @@
                 <div class="card-body">
                   <div class="form-group select2-container-wrapper">
                   </div>
-                  <a href="0_pricing.html" class="theme-btn w-100">이용권 구매</a>
+                  <a href="/usr/v1/infra/user/userPrice" class="theme-btn w-100">이용권 구매</a>
                 </div>
                 <!-- end card-body -->
               </div>
@@ -465,9 +467,7 @@
                     />
                     <div class="media-body align-self-center">
                       <h4 class="font-size-18 font-weight-semi-bold mb-1">
-                        <a href="0_user-profile.html" class="btn-link text-black"
-                          >이한나</a
-                        >
+                        <a href="0_user-profile.html" class="btn-link text-black" id="iCeoName" th:text="${item?.iCeoName}"></a>
                       </h4>
                       <p class="font-size-14">20 listing hosted</p>
                     </div>
@@ -480,16 +480,10 @@
                       ><a href="mailto:example@gmail.com">example@gmail.com</a>
                     </li>
                     <li>
-                      <span
-                        class="fal fa-phone icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
-                      ></span>
-                      02-382-4335
+                      <span class="fal fa-phone icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span><a href="#" id="iTel" th:text="${item?.iTel}"></a>
                     </li>
                     <li>
-                      <span
-                        class="fal fa-external-link icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
-                      ></span
-                      ><a href="#">www.techydevs.com</a>
+                      <span class="fal fa-external-link icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span><a href="#" id="iEadress" th:text="${item?.iEadress}"></a>
                     </li>
                   </ul>
                 </div>
@@ -566,7 +560,7 @@
               <div class="stroke-shape mb-4"></div>
               <ul class="list-items list-items-underline">
                 <li><a href="0_sign-up.html">가입하기</a></li>
-                <li><a href="0_login.html">로그인</a></li>
+                <li><a href="/usr/v1/infra/user/userlogin">로그인</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
                 <li><a href="#">Privacy Policy</a></li>
               </ul>
@@ -706,6 +700,105 @@
       </div>
     </div>
     <!-- Template JS Files -->
+	<script>
+		const rateWrap = document.querySelectorAll('.rating'),
+		    label = document.querySelectorAll('.rating .rating__label'),
+		    input = document.querySelectorAll('.rating .rating__input'),
+		    labelLength = label.length,
+		    opacityHover = '0.5';
+
+		let stars = document.querySelectorAll('.rating .star-icon');
+
+		checkedRate();
+
+
+		rateWrap.forEach(wrap => {
+		    wrap.addEventListener('mouseenter', () => {
+		        stars = wrap.querySelectorAll('.star-icon');
+
+		        stars.forEach((starIcon, idx) => {
+		            starIcon.addEventListener('mouseenter', () => {
+		                if (wrap.classList.contains('readonly') == false) {
+		                    initStars(); // 기선택된 별점 무시하고 초기화
+		                    filledRate(idx, labelLength);  // hover target만큼 별점 active
+
+		                    // hover 시 active된 별점의 opacity 조정
+		                    for (let i = 0; i < stars.length; i++) {
+		                        if (stars[i].classList.contains('filled')) {
+		                            stars[i].style.opacity = opacityHover;
+		                        }
+		                    }
+		                }
+		            });
+
+		            starIcon.addEventListener('mouseleave', () => {
+		                if (wrap.classList.contains('readonly') == false) {
+		                    starIcon.style.opacity = '1';
+		                    checkedRate(); // 체크된 라디오 버튼 만큼 별점 active
+		                }
+		            });
+
+		            // rate wrap을 벗어날 때 active된 별점의 opacity = 1
+		            wrap.addEventListener('mouseleave', () => {
+		                if (wrap.classList.contains('readonly') == false) {
+		                    starIcon.style.opacity = '1';
+		                }
+		            });
+
+		            // readonnly 일 때 비활성화
+		            wrap.addEventListener('click', (e) => {
+		                if (wrap.classList.contains('readonly')) {
+		                    e.preventDefault();
+		                }
+		            });
+		        });
+		    });
+		});
+
+		// target보다 인덱스가 낮은 .star-icon에 .filled 추가 (별점 구현)
+		function filledRate(index, length) {
+		    if (index <= length) {
+		        for (let i = 0; i <= index; i++) {
+		            stars[i].classList.add('filled');
+		        }
+		    }
+		}
+
+		// 선택된 라디오버튼 이하 인덱스는 별점 active
+		function checkedRate() {
+		    let checkedRadio = document.querySelectorAll('.rating input[type="radio"]:checked');
+
+
+		    initStars();
+		    checkedRadio.forEach(radio => {
+		        let previousSiblings = prevAll(radio);
+
+		        for (let i = 0; i < previousSiblings.length; i++) {
+		            previousSiblings[i].querySelector('.star-icon').classList.add('filled');
+		        }
+
+		        radio.nextElementSibling.classList.add('filled');
+
+		        function prevAll() {
+		            let radioSiblings = [],
+		                prevSibling = radio.parentElement.previousElementSibling;
+
+		            while (prevSibling) {
+		                radioSiblings.push(prevSibling);
+		                prevSibling = prevSibling.previousElementSibling;
+		            }
+		            return radioSiblings;
+		        }
+		    });
+		}
+
+		// 별점 초기화 (0)
+		function initStars() {
+		    for (let i = 0; i < stars.length; i++) {
+		        stars[i].classList.remove('filled');
+		    }
+		}
+	</script>
     <script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
     <script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>

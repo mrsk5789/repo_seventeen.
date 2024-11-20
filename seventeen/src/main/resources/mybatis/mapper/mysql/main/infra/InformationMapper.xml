@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hybe.infra.information.InformationDao"> 
+<!--mapper와 연결될 dao //  ctrl+shift+c-->
+	  
+	  <resultMap id="resultMapObj" type="com.example.hybe.infra.information.InformationDto"></resultMap>
+	  
+    <select id="selectList" resultMap="resultMapObj">
+	  SELECT aa.* FROM (
+	   SELECT
+		c.iSeq 
+	   ,c.iName 
+       ,c.iOpentime 
+       ,c.iClosetime 
+       ,c.iTelNumber 
+       ,c.iEadress 
+       ,c.iEmail 
+       ,c.iParkingNy 
+       ,c.iPtNy 
+       ,c.iGroupNy 
+       ,c.iLetter 
+       ,c.iRegDate 
+       ,c.iModDate 
+       ,c.iSpecifics 
+       ,c.iAdress 
+       ,c.iDelNy 
+       ,c.iCeoName
+     <include refid="selectCommon"/>
+		ORDER BY
+		   c.iSeq desc
+	   ) aa limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+		
+	<sql id="selectCommon">	
+     FROM
+          seventeen.information c
+     WHERE 1=1
+			<if test="shDelNy !=null and !shDelNy.equals('')">AND iDelNy = #{shDelNy}</if>	
+			<if test="shParkingNy !=null and !shParkingNy.equals('')">AND iParkingNy = #{shParkingNy}</if>
+			<if test="shPtNy !=null and !shPtNy.equals('')">AND iPtNy = #{shPtNy}</if>
+			<if test="shGroupNy !=null and !shGroupNy.equals('')">AND iGroupNy = #{shGroupNy}</if>
+			<choose>
+			    <when test="shOption==1">AND iSeq=#{shValue}</when>
+			    <when test="shOption==2">AND iName=#{shValue}</when>
+			    <when test="shOption==3">AND iCeoName=#{shValue}</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 1">AND c.iRegdate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND c.iModDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
+	 </sql>
+           
+	  
+	  <insert id="insert">
+	  INSERT INTO information(
+	  	iName 
+       ,iOpentime 
+       ,iClosetime 
+       ,iTelNumber 
+       ,iEadress 
+       ,iEmail 
+       ,iParkingNy 
+       ,iPtNy 
+       ,iGroupNy 
+       ,iLetter 
+       ,iRegDate 
+       ,iModDate 
+       ,iSpecifics 
+       ,iAdress 
+       ,iDelNy 
+       ,iCeoName
+	  )VALUES(
+	  	#{iName}
+	   ,#{iOpentime}
+	   ,#{iClosetime} 
+       ,#{iTelNumber} 
+       ,#{iEadress} 
+       ,#{iEmail} 
+       ,#{iParkingNy} 
+       ,#{iPtNy} 
+       ,#{iGroupNy} 
+       ,#{iLetter} 
+       ,now()
+       ,now() 
+       ,#{iSpecifics} 
+       ,#{iAdress} 
+       ,0 
+       ,#{iCeoName}
+	  	)
+	  	<selectKey resultType="String" keyProperty="iSeq" order="AFTER">
+				SELECT last_insert_id()
+	    </selectKey>
+	  </insert>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	 SELECT
+	  	 	c.iSeq 
+	  	   ,c.iName 
+	       ,c.iOpentime 
+	       ,c.iClosetime 
+	       ,c.iTelNumber 
+	       ,c.iEadress 
+	       ,c.iEmail
+	       ,c.iParkingNy 
+	       ,c.iPtNy 
+	       ,c.iGroupNy 
+	       ,c.iLetter 
+	       ,c.iRegDate 
+	       ,c.iModDate 
+	       ,c.iSpecifics 
+	       ,c.iAdress 
+	       ,c.iDelNy 
+	       ,c.iCeoName
+        FROM 
+			information c	
+		WHERE 1=1
+			AND	c.iSeq = #{iSeq}
+	  </select>
+	  <update id="update">
+	  	UPDATE information
+	  	SET
+	  		iName = #{iName}
+	       ,iOpentime = #{iOpentime}
+	       ,iClosetime = #{iClosetime}
+	       ,iTelNumber = #{iTelNumber}
+	       ,iEadress = #{iEadress}
+	       ,iEmail = #{iEmail}
+	       ,iParkingNy = #{iParkingNy}
+	       ,iPtNy = #{iPtNy}
+	       ,iLetter = #{iLetter}
+	       ,iGroupNy = #{iGroupNy}
+	       ,iSpecifics = #{iSpecifics}
+	       ,iAdress = #{iAdress}
+	       ,iDelNy = #{iDelNy}
+	       ,iCeoName= #{iCeoName}
+	    WHERE 1=1
+	    	AND c.iSeq = #{iSeq}  
+	  </update>
+	  <update id="uelete">
+	  	UPDATE information
+	  	SET
+	  		iDelNy=1
+	  	WHERE 1=1
+	  		AND iSeq=#{iSeq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	DELETE FROM information
+	  	WHERE 1=1
+	  		AND iSeq=#{iSeq}	
+	  </delete>
+	  
+	  <select id="selectOneCount">
+	  	SELECT COUNT(*)
+	  	<include refid="selectCommon"/>
+	  </select>
+</mapper>

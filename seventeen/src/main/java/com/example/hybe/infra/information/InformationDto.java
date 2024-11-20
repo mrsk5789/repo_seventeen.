@@ -3,119 +3,208 @@ package com.example.hybe.infra.information;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class InformationDto {
 	
-	private String seq;
-	private Integer specifics;
-	private Integer ptNy;
-	private Integer groupNy;
-	private Integer delny;
-	private String name;
-	private String ceoName;
-	private String adress;
-	private String opentime;
-	private String closetime;
-	private String telNumber;
-	private String eadress;
-	private Integer parkingNy;
-	private String letter;
-	private Date regDate;
-	private Date modDate;
-	public String getSeq() {
-		return seq;
+	private String iSeq;
+	private Integer iSpecifics;
+	private Integer iPtNy;
+	private Integer iGroupNy;
+	private Integer iDelNy;
+	private String iName;
+	private String iCeoName;
+	private String iAdress;
+	private String iOpentime;
+	private String iClosetime;
+	private String iTelNumber;
+	private String iEadress;
+	private Integer iParkingNy;
+	private String iLetter;
+	private Date iRegDate;
+	private Date iModDate;
+	private String iEmail;
+	private String Path;
+	private String OriginalName;
+	private String OriginalFilename;
+	private String ContentType;
+	private String UuidName;
+	private String InputStream;
+	private long size;
+
+	private MultipartFile uploadFile;
+	private MultipartFile[] uploadFiles;
+	
+	
+	
+	public String getInputStream() {
+		return InputStream;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setInputStream(String inputStream) {
+		InputStream = inputStream;
 	}
-	public Integer getSpecifics() {
-		return specifics;
+	public String getUuidName() {
+		return UuidName;
 	}
-	public void setSpecifics(Integer specifics) {
-		this.specifics = specifics;
+	public void setUuidName(String uuidName) {
+		UuidName = uuidName;
 	}
-	public Integer getPtNy() {
-		return ptNy;
+	public String getContentType() {
+		return ContentType;
 	}
-	public void setPtNy(Integer ptNy) {
-		this.ptNy = ptNy;
+	public void setContentType(String contentType) {
+		ContentType = contentType;
 	}
-	public Integer getGroupNy() {
-		return groupNy;
+	public String getPath() {
+		return Path;
 	}
-	public void setGroupNy(Integer groupNy) {
-		this.groupNy = groupNy;
+	public void setPath(String path) {
+		Path = path;
 	}
-	public Integer getDelny() {
-		return delny;
+	public String getOriginalName() {
+		return OriginalName;
 	}
-	public void setDelny(Integer delny) {
-		this.delny = delny;
+	public void setOriginalName(String originalName) {
+		OriginalName = originalName;
 	}
-	public String getName() {
-		return name;
+	public String getOriginalFilename() {
+		return OriginalFilename;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setOriginalFilename(String originalFilename) {
+		OriginalFilename = originalFilename;
 	}
-	public String getCeoName() {
-		return ceoName;
+	public MultipartFile getUploadFile() {
+		return uploadFile;
 	}
-	public void setCeoName(String ceoName) {
-		this.ceoName = ceoName;
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
 	}
-	public String getAdress() {
-		return adress;
+	public MultipartFile[] getUploadFiles() {
+		return uploadFiles;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setUploadFiles(MultipartFile[] uploadFiles) {
+		this.uploadFiles = uploadFiles;
 	}
-	public String getOpentime() {
-		return opentime;
+	public String getiEmail() {
+		return iEmail;
 	}
-	public void setOpentime(String opentime) {
-		this.opentime = opentime;
+	public void setiEmail(String iEmail) {
+		this.iEmail = iEmail;
 	}
-	public String getClosetime() {
-		return closetime;
+	public String getiSeq() {
+		return iSeq;
 	}
-	public void setClosetime(String closetime) {
-		this.closetime = closetime;
+	public void setiSeq(String iSeq) {
+		this.iSeq = iSeq;
 	}
-	public String getTelNumber() {
-		return telNumber;
+	public Integer getiSpecifics() {
+		return iSpecifics;
 	}
-	public void setTelNumber(String telNumber) {
-		this.telNumber = telNumber;
+	public void setiSpecifics(Integer iSpecifics) {
+		this.iSpecifics = iSpecifics;
 	}
-	public String getEadress() {
-		return eadress;
+	public Integer getiPtNy() {
+		return iPtNy;
 	}
-	public void setEadress(String eadress) {
-		this.eadress = eadress;
+	public void setiPtNy(Integer iPtNy) {
+		this.iPtNy = iPtNy;
 	}
-	public Integer getParkingNy() {
-		return parkingNy;
+	public Integer getiGroupNy() {
+		return iGroupNy;
 	}
-	public void setParkingNy(Integer parkingNy) {
-		this.parkingNy = parkingNy;
+	public void setiGroupNy(Integer iGroupNy) {
+		this.iGroupNy = iGroupNy;
 	}
-	public String getLetter() {
-		return letter;
+	public Integer getiDelNy() {
+		return iDelNy;
 	}
-	public void setLetter(String letter) {
-		this.letter = letter;
+	public void setiDelNy(Integer iDelNy) {
+		this.iDelNy = iDelNy;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public String getiName() {
+		return iName;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setiName(String iName) {
+		this.iName = iName;
 	}
-	public Date getModDate() {
-		return modDate;
+	public String getiCeoName() {
+		return iCeoName;
 	}
-	public void setModDate(Date modDate) {
-		this.modDate = modDate;
+	public void setiCeoName(String iCeoName) {
+		this.iCeoName = iCeoName;
+	}
+	public String getiAdress() {
+		return iAdress;
+	}
+	public void setiAdress(String iAdress) {
+		this.iAdress = iAdress;
+	}
+	public String getiOpentime() {
+		return iOpentime;
+	}
+	public void setiOpentime(String iOpentime) {
+		this.iOpentime = iOpentime;
+	}
+	public String getiClosetime() {
+		return iClosetime;
+	}
+	public void setiClosetime(String iClosetime) {
+		this.iClosetime = iClosetime;
+	}
+	public String getiTelNumber() {
+		return iTelNumber;
+	}
+	public void setiTelNumber(String iTelNumber) {
+		this.iTelNumber = iTelNumber;
+	}
+	public String getiEadress() {
+		return iEadress;
+	}
+	public void setiEadress(String iEadress) {
+		this.iEadress = iEadress;
+	}
+	public Integer getiParkingNy() {
+		return iParkingNy;
+	}
+	public void setiParkingNy(Integer iParkingNy) {
+		this.iParkingNy = iParkingNy;
+	}
+	public String getiLetter() {
+		return iLetter;
+	}
+	public void setiLetter(String iLetter) {
+		this.iLetter = iLetter;
+	}
+	public Date getiRegDate() {
+		return iRegDate;
+	}
+	public void setiRegDate(Date iRegDate) {
+		this.iRegDate = iRegDate;
+	}
+	public Date getiModDate() {
+		return iModDate;
+	}
+	public void setiModDate(Date iModDate) {
+		this.iModDate = iModDate;
+	}
+	public long getSize() {
+		return size;
+	}
+	public void setSize(long size) {
+		this.size = size;
+	}
+	
+	public void setExt(String ext) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setType(Object type) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setTableName(Object tableName) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

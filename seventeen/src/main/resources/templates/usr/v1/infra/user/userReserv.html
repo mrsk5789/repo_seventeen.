@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="TechyDevs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dirto - Directory & Listing HTML Template</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/select2.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="/user/v1/template/qwer/assert/css/style.css" />
+	<script src="/user/v1/template/qwer/assert/js/jquery-3.7.1.min.js"></script>
+	<script src="/xdm/v1/template/qwer/assert/js/bootstrap.min.js"></script>
+	<script src="/xdm/v1/js/datetimepicker/bootstrap-datepicker.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/bootstrap.bundle.min.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/select2.min.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/owl.carousel.min.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/jquery.lazy.min.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/jquery.fancybox.min.js"></script>
+
+	<!-- Start google map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_my4aX1ULOXNZcIxmpBnJmVF7U544p2k"></script>
+	<script src="/user/v1/template/qwer/assert/js/maps.js"></script>
+	<!-- End google map -->
+	<script src="/user/v1/template/qwer/assert/js/jquery.MultiFile.min.js"></script>
+	<!-- Start Date range picker -->
+	<script src="/user/v1/template/qwer/assert/js/moment.min.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/daterangepicker.min.js"></script>
+	<!-- end Date range picker -->
+	<script src="/user/v1/template/qwer/assert/js/rating-script.js"></script>
+	<script src="/user/v1/template/qwer/assert/js/main.js"></script>
+	<style>
+	       
+	       #calendar {
+	           width: 100%;
+	           max-width: 500px;
+	           background-color: #fff;
+	           border: 1px solid #ddd;
+	           border-radius: 8px;
+	           padding: 20px;
+	           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	       }
+	       table {
+	           width: 100%;
+	           border-collapse: collapse;
+	       }
+	       th, td {
+	           padding: 15px;
+	           text-align: center;
+	           border: 1px solid #ddd;
+	           cursor: pointer;
+	       }
+	       th {
+	           background-color: #f2f2f2;
+	       }
+	       td:hover {
+	           background-color: #f0f0f0;
+	       }
+	       #selected-date {
+	           margin-top: 20px;
+	           font-size: 18px;
+	       }
+	   </style>
+  </head>
+  <body>
+    <!-- start per-loader -->
+    <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- end per-loader -->
+
+    <header class="header-area border-bottom border-bottom-gray">
+      <div class="main-header py-3">
+        <div class="container">
+          <div class="main-header-action-wrap">
+            <div class="logo">
+              <a href="0_index.html"><img src="images/logo.png" alt="logo" /></a>
+            </div>
+            <!-- end logo -->
+            <nav class="main-menu me-4 ms-auto">
+              <ul>
+                <li>
+                  <a href="0_index.html">Home</a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Categories <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="all-categories.html">all categories</a></li>
+                    <li><a href="all-locations.html">all locations</a></li>
+                    <li><a href="top-place.html">top places </a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"
+                    >Listings <span class="fal fa-angle-down"></span
+                  ></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="listing-grid.html">listing grid</a></li>
+                    <li><a href="list-with-map.html">list with map</a></li>
+                    <li><a href="listing-list.html">listing list </a></li>
+                    <li><a href="list-left-sidebar.html">left sidebar </a></li>
+                    <li><a href="0_listing-details.html">listing details</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Pages <span class="fal fa-angle-down"></span></a>
+                  <ul class="dropdown-menu-item">
+                    <li><a href="0_user-profile.html">user profile</a></li>
+                    <li><a href="top-author.html">top authors </a></li>
+                    <li><a href="dashboard.html">dashboard</a></li>
+                    <li><a href="0_booking.html">booking </a></li>
+                    <li>
+                      <a href="booking-confirmation.html"
+                        >booking confirmation
+                      </a>
+                    </li>
+                    <li><a href="pricing.html">pricing</a></li>
+                    <li><a href="faq.html">faq</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="recover.html">recover pass</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blog-right-sidebar.html">Blog</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="nav-right-content d-flex align-items-center">
+              <div class="author-access-list me-3">
+                <a href="0_login.html">Login</a>
+                <span class="or-text">&nbsp;&nbsp;</span>
+                <a href="0_sign-up.html">Sign Up</a>
+              </div>
+              <!-- end side-menu-open -->
+            </div>
+            <!-- end nav-right-content -->
+          </div>
+          <!-- end main-header-action-wrap -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end main-header -->
+      <div class="off-canvas">
+        <div class="off-canvas-close icon-element icon-element-sm bg-white shadow-sm">
+          <i class="fal fa-times"></i>
+        </div>
+        <!-- end off-canvas-close -->
+        <ul class="off-canvas-menu padding-top-60px">
+          <li>
+            <a href="0_index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Categories
+              <span class="fal fa-angle-down sub-menu-toggler"></span></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="all-categories.html">All categories</a></li>
+              <li><a href="all-locations.html">All locations</a></li>
+              <li><a href="top-place.html">Top places </a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Listings <span class="fal fa-angle-down sub-menu-toggler"></span></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="listing-grid.html">Listing grid</a></li>
+              <li><a href="list-with-map.html">list with map</a></li>
+              <li><a href="listing-list.html">Listing list </a></li>
+              <li><a href="0_list-left-sidebar.html">Left sidebar </a></li>
+              <li><a href="0_listing-details.html">Listing details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Pages <span class="fal fa-angle-down sub-menu-toggler"></span></a>
+            <ul class="off-canvas-sub-menu">
+              <li><a href="0_user-profile.html">user profile</a></li>
+              <li><a href="top-author.html">top authors </a></li>
+              <li><a href="dashboard.html">dashboard</a></li>
+              <li><a href="0_booking.html">booking </a></li>
+              <li><a href="booking-confirmation.html">booking confirmation </a></li>
+              <li><a href="pricing.html">pricing</a></li>
+              <li><a href="faq.html">faq</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li><a href="recover.html">recover pass</a></li>
+            </ul>
+          </li>
+          <li><a href="blog-right-sidebar.html">blog</a></li>
+        </ul>
+        <div class="mt-4 text-center">
+          <a href="0_login.html" class="theme-btn me-2">Login</a>
+          <a href="0_sign-up.html" class="theme-btn">Sign up</a>
+        </div>
+      </div>
+      <!-- end off-canvas -->
+    </header>
+    <!-- ========================== -->
+    <section class="breadcrumb-area1 bread-bg">
+      <div class="overlay opacity-8"></div>
+      <!-- end overlay -->
+      <div class="container">
+          <h2 class="sec__title text-white mb-2">아이엘 필라테스</h2>
+          <p class="sec__desc text-white">
+            <i class="fal fa-map-marker-alt me-1"></i> 서울 강남구 강남대로
+          </p>
+          <ul class="listing-info my-3">
+            <li>
+              <div class="theme-btn theme-btn-sm average-ratings bg-success">
+                4.5 <i class="fas fa-star ms-1 font-size-12"></i>
+              </div>
+              <span class="text-white">36 Reviews</span>
+            </li>
+          </ul>
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-between"
+          >
+            <div class="bread-btns my-1">
+              <a href="#" class="theme-btn theme-btn-sm me-1"
+                ><i class="far fa-bookmark me-1 font-size-13"></i> 저장</a
+              >
+              <a
+                href="#"
+                class="theme-btn theme-btn-sm me-1"
+                data-bs-toggle="modal"
+                data-bs-target="#shareModal"
+                ><i class="far fa-external-link me-1 font-size-13"></i> 공유</a
+              >
+            </div>
+            <div class="bread-btns my-1">
+              <a
+                href="#review"
+                class="theme-btn theme-btn-sm bg-white text-black me-1"
+                ><i class="far fa-star me-1 font-size-13"></i> 리뷰쓰기</a
+              >
+            </div>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+    </section>
+    <!-- end breadcrumb-area -->
+    <section class="card-area padding-top-60px padding-bottom-90px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mb-4">
+            <div class="listing-wrapper">
+              <!-- end listing-single-panel -->
+              <div class="listing-single-panel mb-5">
+                <h4 class="font-size-20 font-weight-semi-bold mb-3">Photos</h4>
+                <div class="gallery-carousel owl-carousel owl-theme">
+                  <div class="gallery-item">
+                    <img src="images/img17.jpg" alt="gallery-image" />
+                  </div>
+                  <div class="gallery-item">
+                    <img src="images/img18.jpg" alt="gallery-image" />
+                  </div>
+                  <div class="gallery-item">
+                    <img src="images/img19.jpg" alt="gallery-image" />
+                  </div>
+                </div>
+              </div>
+              <!-- end listing-single-panel -->
+              <div class="listing-single-panel mb-5">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <ul class="list-items">
+                      <li>
+                        <i class="fal fa-check-circle me-1 text-success"></i>
+                        주차가능
+                      </li>
+                      <li>
+                        <i class="fal fa-check-circle me-1 text-success"></i>
+                        기구 필라테스
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end col-lg-4 -->
+                  <div class="col-lg-4">
+                    <ul class="list-items">
+                      <li>
+                        <i class="fal fa-check-circle me-1 text-success"></i>
+                        주말운영
+                      </li>
+                      <li><i class="fal fa-check-circle me-1 text-success"></i>메트제공
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end col-lg-4 -->
+                  <div class="col-lg-4">
+                    <ul class="list-items">
+                      <li>
+                        <i class="fal fa-check-circle me-1 text-success"></i>
+                        공휴일 운영
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end col-lg-4 -->
+                </div>
+                <!-- end row -->
+              </div>
+              <!-- end listing-single-panel -->
+              <div class="listing-single-panel mb-5">
+                <h4 class="font-size-20 font-weight-semi-bold mb-3">
+                  찾아오시는 길
+                </h4>
+                <div
+                  id="map-single"
+                  data-latitude="40.728157"
+                  data-longitude="-74.077644"
+                  class="w-100 height-300"
+                ></div>
+                <ul class="list-items mt-4">
+                  <li>
+                    <span
+                      class="fal fa-map-marker-alt icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
+                    ></span>
+                    101 East Parkview Road, New York
+                  </li>
+                  <li>
+                    <span
+                      class="fal fa-envelope icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
+                    ></span
+                    ><a href="mailto:example@gmail.com">example@gmail.com</a>
+                  </li>
+                  <li>
+                    <span
+                      class="fal fa-phone icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
+                    ></span>
+                    +7(111)123456789
+                  </li>
+                  <li>
+                    <span
+                      class="fal fa-external-link icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"
+                    ></span
+                    ><a href="#">www.techydevs.com</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- end listing-single-panel -->
+              <div class="listing-single-panel mb-5">
+                <div class="reviews">
+                  <h4 class="font-size-20 font-weight-semi-bold mb-4">
+                    후기 <span class="badge badge-light">(5)</span>
+                  </h4>
+                  <div class="comments-wrapper">
+                    <div class="comment media mb-5">
+                      <a
+                        href="user-profile.html"
+                        class="user-avatar flex-shrink-0 d-block me-3"
+                      >
+                        <img src="images/small-team1.jpg" alt="author-img" />
+                      </a>
+                      <div class="comment-body media-body">
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <div class="pe-2">
+                            <h4 class="comment-title">
+                              <a href="user-profile.html">Adam Smith</a>
+                            </h4>
+                            <span class="comment-meta">San Francisco, CA</span>
+                          </div>
+                          <div class="star-rating" data-rating="4"></div>
+                        </div>
+                        <p class="comment-desc mt-2">
+                          It is a long established fact that 
+                        </p>
+                        <div
+                          class="review-photos d-flex flex-wrap align-items-center mt-3"
+                        >
+                          <a
+                            href="images/img1.jpg"
+                            class="d-inline-block"
+                            data-fancybox="review-gallery"
+                          >
+                            <img
+                              class="lazy"
+                              src="images/img-loading.jpg"
+                              data-src="images/img1.jpg"
+                              alt="review image"
+                            />
+                          </a>
+                          <a
+                            href="images/img2.jpg"
+                            class="d-inline-block"
+                            data-fancybox="review-gallery"
+                          >
+                            <img
+                              class="lazy"
+                              src="images/img-loading.jpg"
+                              data-src="images/img2.jpg"
+                              alt="review image"
+                            />
+                          </a>
+                        </div>
+                        <!-- end review-photos -->
+                        <div class="comment-actions d-flex align-items-center justify-content-between mt-3">
+                          <div class="feedback-box">
+                            <button type="button" class="theme-btn theme-btn-sm">
+                              <i class="fal fa-thumbs-up me-1"></i> Helpful
+                            </button>
+                          </div>
+                        </div>
+                        <!-- end comment-actions -->
+                      </div>
+                      <!-- end comment-body -->
+                    </div>
+                    <!-- end comment -->
+                  </div>
+                  <!-- end comments-wrapper -->
+                  <hr class="border-top-gray mt-0" />
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center pagination-list">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true" class="fal fa-angle-left"></span>
+                          <span class="sr-only">이전</span>
+                        </a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span
+                            aria-hidden="true"
+                            class="fal fa-angle-right"
+                          ></span>
+                          <span class="sr-only">다음</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- end reviews -->
+              </div>
+              <!-- end listing-single-panel -->
+              <div class="listing-single-panel">
+                <h4 class="font-size-20 font-weight-semi-bold mb-1">
+                  리뷰쓰기
+                </h4>
+                <p class="font-size-15">
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="add-review-wrap" id="review">
+                  <form class="leave-rating">
+                    <input type="radio" name="rating" id="rating-1" value="1" />
+                    <label for="rating-1" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-2" value="2" />
+                    <label for="rating-2" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-3" value="3" />
+                    <label for="rating-3" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-4" value="4" />
+                    <label for="rating-4" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-5" value="5" />
+                    <label for="rating-5" class="fas fa-star"></label>
+                  </form>
+                  <form method="post" class="row mt-4">
+                    <div class="col-lg-6 col-md-6">
+                      <label class="label-text">이름</label>
+                      <div class="form-group">
+                        <span class="fal fa-user form-icon"></span>
+                        <input
+                          class="form-control form--control"
+                          type="text"
+                          name="name"
+                          placeholder="이름"
+                        />
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-6 col-md-6">
+                      <label class="label-text">이메일</label>
+                      <div class="form-group">
+                        <span class="fal fa-envelope form-icon"></span>
+                        <input
+                          class="form-control form--control"
+                          type="email"
+                          name="email"
+                          placeholder="이메일을 작성하세요"
+                        />
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-12">
+                      <label class="label-text">리뷰</label>
+                      <div class="form-group">
+                        <textarea
+                          class="form-control form--control ps-3"
+                          rows="5"
+                          name="message"
+                          placeholder="Tell about your experience or leave a tip for others"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <!-- end col-lg-12 -->
+                    <div class="col-lg-12">
+                      <button class="theme-btn border-0" type="submit">
+                        작성
+                      </button>
+                    </div>
+                    <!-- end col-lg-12 -->
+                  </form>
+                </div>
+                <!-- end add-review-wrap -->
+              </div>
+              <!-- end listing-single-panel -->
+            </div>
+            <!-- end listing-wrapper -->
+          </div>
+          <!-- end col-lg-8 -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mb-3">예약</h4>
+                  <div class="form-group">
+                    <span class="fal fa-calendar-alt form-icon"></span>
+					<div id="calendar">
+					        <h2>2024년 11월 달력</h2>
+					        <table id="calendar-table">
+					            <!-- 달력 내용이 이곳에 동적으로 삽입됩니다. -->
+					        </table>
+					        <div id="selected-date">날짜를 클릭하세요.</div>
+					    </div>
+                    <input class="form-control form--control date-picker" type="text" id="resDate"/>
+                  </div>
+                  <!-- end form-group -->
+                  <div class="form-group select2-container-wrapper">
+                    <select class="select-picker" data-width="100%" data-size="5">
+                      <option value="0">시간을 선택해 주세요</option>
+                      <option value="1">8:00am - 9:00am</option>
+                      <option value="2">9:00am - 10:00am</option>
+                      <option value="3">10:00am - 11:00am</option>
+                      <option value="4">11:00am - 12:00am</option>
+                      <option value="5">12:00pm - 13:00pm</option>
+                      <option value="6">13:00pm - 14:00pm</option>
+                      <option value="7">14:00pm - 15:00pm</option>
+                      <option value="8">15:00pm - 16:00pm</option>
+                      <option value="9">16:00pm - 17:00pm</option>
+                      <option value="10">17:00pm - 18:00pm</option>
+                      <option value="11">18:00pm - 19:00pm</option>
+                    </select>
+                  </div>
+                  <a href="/usr/v1/infra/user/userBookCon" class="theme-btn w-100" action="redirect:/usr/v1/infra/user/reserveXdmInst" onclick="saveData()">예약 완료</a>
+                </div>
+                <!-- end card-body -->
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mb-3">&nbsp;&nbsp;&nbsp;&nbsp;신청 가능한 시간</h4>
+                  <ul class="list-items">
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;월요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;화요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;수요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;목요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;금요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;토요일</span> 8am - 9pm
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                      <span class="text-black">&nbsp;&nbsp;&nbsp;일요일</span>
+                      <span class="text-danger">Closed</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- end card-body -->
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mb-3">태그</h4>
+                  <ul class="tag-list">
+                    <li><a href="#">필라테스</a></li>
+                    <li><a href="#">요가</a></li>
+                    <li><a href="#">플라잉요가</a></li>
+                    <li><a href="#">헬스</a></li>
+                    <li><a href="#">클라이밍</a></li>
+                  </ul>
+                </div>
+                <!-- end card-body -->
+              </div>
+              <!-- end card -->
+              <div class="card">
+				<form name="form" method="post" action="/usr/v1/infra/user/userReserv">
+                <div class="card-body" th:each="teachlist:${teachlist}">
+                  <h4 class="card-title mb-3">선생님</h4>
+                  <div class="media mt-4">
+                    <img src="images/small-team1.jpg" alt="avatar" class="user-avatar flex-shrink-0 me-3"/>
+                    <div class="media-body align-self-center">
+                      <h4 class="font-size-18 font-weight-semi-bold mb-1"><a id="tName" th:text="${teachlist?.tName}" class="btn-link text-black"></a></h4>
+                      <span class="fab fa-instagram icon-element icon-element-sm bg-white shadow-sm text-black me-2 font-size-14"></span>
+                      <a id="tInsta" th:text="${teachlist?.tInsta}"></a>
+                    </div>
+                  </div>
+                </div>
+				</form>
+                <!-- end card-body -->
+              </div>
+              <!-- end card -->
+            </div>
+            <!-- end sidebar -->
+          </div>
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <section class="footer-area bg-gray padding-top-130px pattern-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6" style="width: 100px;"></div>
+          <div class="col-lg-3 col-md-6" >
+            <div class="footer-item">
+              <a href="0_index.html" class="footer-logo mb-4 d-inline-block"><img src="images/logo2.png" alt="logo"/></a>
+              <ul class="info-list">
+                <li><span class="fal fa-home icon me-2"></span> 서울 강남구 태해란로</li>
+                <li><span class="fal fa-headphones icon me-2"></span><a href="#">02-382-4335</a></li>
+                <li><span class="fal fa-envelope icon me-2"></span><a href="#">dirto@gmail.com</a></li>
+                <li><span class="fal fa"></span><a href="#"></a></li>
+              </ul>
+              <p></p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- end col-lg-3 -->
+           <div class="col-lg-3 col-md-6" style="width: 120px;" > 
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">모든 카테고리</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="#">필라테스</a></li>
+                <li><a href="#">요가</a></li>
+                <li><a href="#">헬스</a></li>
+                <li><a href="#">플라잉요가</a></li>
+                <li><a href="#">클라이밍</a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="footer__title mb-3">바로가기</h4>
+              <div class="stroke-shape mb-4"></div>
+              <ul class="list-items list-items-underline">
+                <li><a href="0_sign-up.html">가입하기</a></li>
+                <li><a href="0_login.html">로그인</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+        <hr class="border-top-gray" />
+        <div class="copy-right d-flex flex-wrap align-items-center justify-content-between pb-4">
+          <p class="copy__desc py-2">
+            &copy; Copyright Dirto <span id="copyright-year"></span>. Made with
+            <span class="fas fa-heart bounce-anim"></span> by
+            <a href="https://techydevs.com">TechyDevs</a>
+          </p>
+        </div>
+        <!-- end copy-right -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end footer-area -->
+    <div id="back-to-top">
+      <i class="fal fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end back-to-top -->
+
+    
+
+	<script>
+
+		$(function() {	
+			$("#resDate").datepicker({
+				format: "yyyy-mm-dd",
+				onSelect : function(dataText, inst){
+					alert("테스트");
+				}
+				
+			});
+		});
+/*
+		window.addEventListener('load', function () {
+			$('#resDate').date
+		});	
+	*/	
+		
+	</script>
+	<script>
+	       function generateCalendar(year, month) {
+	           const calendarTable = document.getElementById('calendar-table');
+	           const selectedDateDiv = document.getElementById('selected-date');
+
+	           // 월의 첫 번째 날과 마지막 날 구하기
+	           const firstDay = new Date(year, month).getDay(); // 첫째 날의 요일
+	           const lastDate = new Date(year, month + 1, 0).getDate(); // 월의 마지막 날
+
+	           // 테이블 헤더: 요일 표시
+	           let tableHTML = "<thead><tr>";
+	           tableHTML += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+	           tableHTML += "</tr></thead><tbody>";
+
+	           let currentDay = 1;
+
+	           // 빈 칸을 추가하여 첫 번째 날을 맞추기
+	           for (let i = 0; i < 6; i++) {
+	               tableHTML += "<tr>";
+	               for (let j = 0; j < 7; j++) {
+	                   if (i === 0 && j < firstDay) {
+	                       tableHTML += "<td></td>"; // 첫 번째 주의 빈 칸
+	                   } else if (currentDay <= lastDate) {
+	                       tableHTML += `<td onclick="selectDate(${currentDay})">${currentDay}</td>`;
+	                       currentDay++;
+	                   } else {
+	                       tableHTML += "<td></td>"; // 나머지 빈 칸
+	                   }
+	               }
+	               tableHTML += "</tr>";
+	               if (currentDay > lastDate) break;
+	           }
+
+	           tableHTML += "</tbody>";
+	           calendarTable.innerHTML = tableHTML;
+
+	           // 날짜 클릭 시 선택된 날짜 표시
+	           window.selectDate = function(day) {
+	               selectedDateDiv.textContent = `2024년 11월 ${day}일`;
+	           };
+	       }
+
+	       // 달력 초기화 (2024년 11월 달력)
+	       generateCalendar(2024, 10); // 11월(0-based index)
+	   </script>
+	   <script>
+		// 요소를 ID로 선택
+		const resDateInput = document.getElementById('resDate');
+
+		// onclick 속성으로 클릭 이벤트 추가
+		resDateInput.onclick = function() {
+		    console.log('날짜 입력 필드를 클릭했습니다!');
+		    // 클릭 시 추가적으로 필요한 작업을 여기에 추가
+		};
+	   </script>
+  </body>
+</html>

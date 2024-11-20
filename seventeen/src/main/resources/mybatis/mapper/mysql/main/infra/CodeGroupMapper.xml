@@ -18,7 +18,7 @@
 			,a.ifcgDelNy
 			,a.ifcgRegDate
 			,a.ifcgRenDate
-			,(SELECT count(ifcdSeq) FROM code AS ab where 1=1 AND ab.codegroup_seq = a.ifcgSeq) as xcount
+			,(SELECT count(ifcdSeq) FROM code AS b where 1=1 AND b.codegroup_seq = a.ifcgSeq) as xcount
 		<include refid="selectCommon"/>
 			ORDER BY
 			   a.ifcgSeq desc

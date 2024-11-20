@@ -457,117 +457,81 @@
 												<div class="row">
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="form-group">코드</label>
-															<input type="text" id="seq" name="seq"
-																th:value="${item?.seq}" class="form-control"
-																placeholder="자동생성" readonly disabled>
+															<label for="mSeq">코드</label>
+															<input type="text" id="mSeq" name="mSeq" class="form-control"placeholder="자동생성" readonly disabled>
 														</div>
 													</div>
 
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="name">이름</label>
-															<input class="form-control form-control-lg" name="name"
-																th:value="${item?.name}" type="text" id="name"
-																placeholder="한글,영대소문자, 숫자">
-															<!-- th:value="${item?.ifcdName"}-->
+															<label for="mName">이름</label>
+															<input class="form-control form-control-lg" name="mName"  type="text" id="mName"placeholder="한글,영대소문자, 숫자">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="id">ID</label>
-															<input class="form-control form-control-lg" name="id"
-																th:value="${item?.id}" type="text" id="id"
-																placeholder="한글,영대소문자, 숫자">
+															<label for="mId">ID</label>
+															<input class="form-control form-control-lg" name="mId"  type="text" id="mId"placeholder="한글,영대소문자, 숫자">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="id">PW</label>
-															<input class="form-control form-control-lg" name="password"
-																th:value="${item?.password}" type="text" id="password"
-																placeholder="한글,영대소문자, 숫자">
+															<label for="mPassword">PW</label>
+															<input class="form-control form-control-lg" name="mPassword"  type="text" id="mPassword" placeholder="한글,영대소문자, 숫자">
 														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="nickname">닉네임</label>
-															<input class="form-control form-control-lg" name="nickname"
-																th:value="${item?.nickname}" type="text" id="nickname"
-																placeholder="한글,영대소문자, 숫자">
+															<label for="mNickname">닉네임</label>
+															<input class="form-control form-control-lg" name="mNickname" type="text" id="mNickname" placeholder="한글,영대소문자, 숫자">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="email">이메일</label>
-															<input class="form-control form-control-lg" name="email"
-																th:value="${item?.email}" type="text" id="email"
-																placeholder="영대소문자, 숫자">
+															<label for="mEmail">이메일</label>
+															<input class="form-control form-control-lg" name="mEmail" type="text" id="mEmail"placeholder="영대소문자, 숫자">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="phonenumber">전화번호</label>
-															<input class="form-control form-control-lg"
-																name="phonenumber" th:value="${item?.phonenumber}"
-																type="text" id="phonenumber" placeholder="숫자">
+															<label for="mPhonenumber">전화번호</label>
+															<input class="form-control form-control-lg" name="mPhonenumber" type="text" id="mPhonenumber" placeholder="숫자">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="delny">삭제여부</label>
-															<select class="form-control form-control-lg" id="delny"
-																name="delny">
-																<option value="1" th:selected="${item?.delny==1}">Y
-																</option>
-																<option value="0" th:selected="${item?.delny==0}">N
-																</option>
+															<label for="mDelny">삭제여부</label>
+															<select class="form-control form-control-lg" id="mDelny" name="mDelny">
+																<option value="1" th:selected="${item?.mDelny==1}">Y</option>
+																<option value="0" th:selected="${item?.mDelny==0}">N</option>
 															</select>
 														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-sm-4 col-12">
-														<!--<div class="form-group">
-															<label for="gender">성별</label>
-															<select class="form-control form-control-lg" id="gender"
-																name="gender">
-																<option value="1" th:selected="${item?.gender==1}">F
-																</option>
-																<option value="0" th:selected="${item?.gender==0}">M
-																</option>
-															</select>
-														</div>-->
-
-														<label for="gender" class="form-group">성별 <span class="text-danger fs-0">*</span></label>
-														<select id="gender" name="gender" class="form-control form-control-lg">
+														<label for="mGender" class="form-group">성별 <span class="text-danger fs-0">*</span></label>
+														<select id="mGender" name="mGender" class="form-control form-control-lg">
 															<option value="">선택하세요</option>
-															<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.ifcdSeq}" th:text="${list.ifcdName}" th:selected="${list.ifcdSeq} == ${item?.gender}"></option>
+															<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.ifcdSeq}" th:text="${list.ifcdName}" th:selected="${list.ifcdSeq} == ${item?.mGender}"></option>
 														</select>							
 													</div>
-													
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="adress">주소</label>
-															<input class="form-control form-control-lg" name="adress"
-																th:value="${item?.adress}" type="text" id="adress"
-																placeholder="한글">
+															<label for="mAdress">주소</label>
+															<input class="form-control form-control-lg" name="mAdress"  type="text" id="mAdress" placeholder="한글">
 														</div>
 													</div>
 													<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 													<div class="col-sm-4 col-12"><div class="form-group"><label for="disabledInput"></label></div></div>
 												</div>
 												<div class="row">
-
 													<div class="col-sm-4 col-12">
 														<div class="form-group">
-															<label for="desc">설명</label>
-															<textarea class="form-control" rows="2" name="desc"
-																id="desc" type="text"
-																style="width: 570px; height: 80px;"
-																th:value="${item?.desc}"></textarea>
+															<label for="mDesc">설명</label>
+															<textarea class="form-control" rows="2" name="mDesc" id="mDesc" type="text" style="width: 570px; height: 80px;"></textarea>
 														</div>
 													</div>
 												</div>
@@ -616,15 +580,15 @@
 	<script type="text/javascript">
 				document.getElementById("btnSubmit").onclick = function (){
 				//코드이름	
-			    var Name = document.getElementById("Name");
-			    var NameValue = document.getElementById("Name").value.trim();
-				var NameRegExp = /^[가-힣A-Za-z0-9]+$/;
-				var NameFeedback=document.getElementById("invalid-feedback");
-				var NameRegExpFeedback=document.getElementById("NameRegExpFeedback");
+			    var mName = document.getElementById("mName");
+			    var mNameValue = document.getElementById("mName").value.trim();
+				var mNameRegExp = /^[가-힣A-Za-z0-9]+$/;
+				var mNameFeedback=document.getElementById("invalid-feedback");
+				var mNameRegExpFeedback=document.getElementById("mNameRegExpFeedback");
 				
-				Name.classList.remove('is-vaild','is-invalid');
-				NameFeedback.style.display='none';
-			    NameRegExpFeedback.style.display='none';
+				mName.classList.remove('is-vaild','is-invalid');
+				mNameFeedback.style.display='none';
+			    mNameRegExpFeedback.style.display='none';
 				/*			
 				if(!ifcgNameRegExp.test(ifcgName)){
 					alert("이름은 한국, 영대소문자, 숮자만 입력해 주세요");
@@ -633,21 +597,21 @@
 				} else {
 				   // pass
 				}*/
-			    if (NameValue == "" || NameValue == null) {
-					NameFeedback.style.display='block';
-					Name.classList.add('is-invaild');
-					Name.focus();
+			    if (mNameValue == "" || mNameValue == null) {
+					mNameFeedback.style.display='block';
+					mName.classList.add('is-invaild');
+					mName.focus();
 					return false;
 			    } else {
 				}
 
-				if(!NameRegExp.test(NameValue)){
-					NameRegExpFeedback.style.display='block';
-					Name.classList.add('is-invaild');
-					Name.focus();
+				if(!mNameRegExp.test(mNameValue)){
+					mNameRegExpFeedback.style.display='block';
+					mName.classList.add('is-invaild');
+					mName.focus();
 					return false;
 				} else {
-					Name.classList.add('is-vaild');
+					mName.classList.add('is-vaild');
 				}
 				
 				//순서	

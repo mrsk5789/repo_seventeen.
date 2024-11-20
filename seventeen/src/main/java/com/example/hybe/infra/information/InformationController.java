@@ -22,7 +22,7 @@ public class InformationController {
 	
 	@RequestMapping(value="/xdm/v1/infra/information/informationXdmInst")
 	public String informationXdmInst(InformationDto informationDto) {
-		System.out.println("informationDto.getName():"+informationDto.getName());
+		System.out.println("informationDto.getName():"+informationDto.getiName());
 	    informationService.insert(informationDto);
 	    return "redirect:/xdm/v1/infra/information/informationXdmList";
 	}
