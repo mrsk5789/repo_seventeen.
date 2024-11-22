@@ -429,7 +429,26 @@
                   </div>
                   <!-- end comments-wrapper -->
                   <hr class="border-top-gray mt-0" />
-                  <nav aria-label="Page navigation example">
+				  <nav aria-label="Page navigation example">
+				  										<ul class="pagination justify-content-center">
+				  											<li class="page-item disabled" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
+				  												<a class="page-link" aria-label="Previous" href="javascript:goList(${vo.startPage - 1})"
+				  													th:attr="onclick=|goList('${vo.startPage - 1}')|"> 
+				  													<span aria-hidden="true">&laquo;</span>
+				  												</a>
+				  											</li>
+				  											<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}"
+				  												th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
+				  												<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+				  											</li>
+				  											<li class="page-item" th:if="${vo.endPage ne vo.totalPages}" style="cursor: pointer;">
+				  												<a class="page-link" aria-label="Next" th:attr="onclick=|goList('${vo.endPage + 1}')|"> 
+				  													<span aria-hidden="true">&raquo;</span>
+				  												</a>
+				  											</li>
+				  										</ul>
+				  									</nav>
+                  <!--<nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center pagination-list">
                       <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
@@ -448,7 +467,7 @@
                         </a>
                       </li>
                     </ul>
-                  </nav>
+                  </nav>-->
                 </div>
                 <!-- end reviews -->
               </div>

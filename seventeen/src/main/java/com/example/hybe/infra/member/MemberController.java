@@ -23,7 +23,7 @@ public class MemberController {
     //Form
 	@RequestMapping(value="/xdm/v1/infra/member/memberXdmForm")
 	public String MemberXdmForm() {
-		return "/xdm/v1/infra/member/memberXdmForm";
+		return "xdm/v1/infra/member/memberXdmForm";
 	}
 	
 	//List
@@ -37,7 +37,7 @@ public class MemberController {
 			model.addAttribute("list", memberService.selectList(membervo));
 			model.addAttribute("vo", membervo);
 		}
-		return "/xdm/v1/infra/member/memberXdmList";
+		return "xdm/v1/infra/member/memberXdmList";
   	}
 	
 	//insert
@@ -47,7 +47,7 @@ public class MemberController {
 		System.out.println("memberDto.getName():"+memberDto.getmName());
 		memberService.insert(memberDto);
 		
-		return "redirect:/xdm/v1/infra/member/memberXdmList";
+		return "xdm/v1/infra/member/memberXdmList";
 	}
 	
 	//MForm
@@ -56,7 +56,7 @@ public class MemberController {
 	    model.addAttribute("item",memberService.selectOne(memberDto));	
 	    System.out.println("memberDto");
 		
-		return "/xdm/v1/infra/member/memberXdmMForm";
+		return "xdm/v1/infra/member/memberXdmMForm";
 	}
 	//수정 update
 	@RequestMapping(value="/xdm/v1/infra/member/memberXdmUpdt")
@@ -64,7 +64,7 @@ public class MemberController {
 	    memberService.update(memberDto);
 		System.out.println("memberDto");
 			
-		 return "redirect:/xdm/v1/infra/member/memberXdmList";
+		 return "xdm/v1/infra/member/memberXdmList";
 	}
 	
 	//uelete
@@ -72,7 +72,7 @@ public class MemberController {
 	public String memberXdmUele(MemberDto memberDto){
 		memberService.uelete(memberDto);
 		System.out.println("uelete");
-		return "redirect:/xdm/v1/infra/member/memberXdmList";
+		return "xdm/v1/infra/member/memberXdmList";
 	}
 	
 	//delete
@@ -80,14 +80,14 @@ public class MemberController {
 	public String memberXdmDele(MemberDto memberDto){
 		memberService.delete(memberDto);
 		System.out.println("delete");
-		return "redirect:/xdm/v1/infra/member/memberXdmList";
+		return "xdm/v1/infra/member/memberXdmList";
 	}
 	
 	//로그인 창
 	@RequestMapping(value="/xdm/v1/infra/member/signXdmForm")
 	public String signXdmForm(MemberDto memberDto) {
 		memberService.selectOneLogin(memberDto);
-		return "/xdm/v1/infra/member/signXdmForm";
+		return "xdm/v1/infra/member/signXdmForm";
 	}
 	
 	@ResponseBody
